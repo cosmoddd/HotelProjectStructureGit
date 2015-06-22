@@ -6,7 +6,7 @@ labels:
 - architecture
 - texture
 - 'substance '
-timeCreated: 1433966732
+timeCreated: 1434642938
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -15,7 +15,7 @@ SubstanceImporter:
     name: bricks_019
     prototypeName: bricks_019
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 5
     inputs:
@@ -42,58 +42,58 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Bricks_Amount_X
       value:
-        scalar[0]: 3
+        scalar[0]: 2.63000011
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Bricks_Amount_Y
       value:
-        scalar[0]: 8
+        scalar[0]: 4.67999983
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Bricks_Color
       value:
-        scalar[0]: .491400003
-        scalar[1]: .425099999
-        scalar[2]: .362699986
+        scalar[0]: .0661764741
+        scalar[1]: .0221147574
+        scalar[2]: .0170307104
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Dirtiness
       value:
-        scalar[0]: .5
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Light_Angle
       value:
-        scalar[0]: .125
+        scalar[0]: .344999999
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Mortar_Color
       value:
-        scalar[0]: .75
-        scalar[1]: .600000024
-        scalar[2]: .529999971
+        scalar[0]: 1
+        scalar[1]: 1
+        scalar[2]: 1
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Moss
       value:
-        scalar[0]: .5
+        scalar[0]: 1
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Moss_Color
       value:
-        scalar[0]: .144299999
-        scalar[1]: .140400007
-        scalar[2]: .0974999964
+        scalar[0]: .0460640267
+        scalar[1]: .0882353187
+        scalar[2]: .0690401047
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: White_Stains
@@ -119,21 +119,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Relief_Balance
       value:
-        scalar[0]: 32
+        scalar[0]: 31.7000008
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Normal
       value:
-        scalar[0]: .5
+        scalar[0]: .853999972
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Emboss
       value:
-        scalar[0]: .5
+        scalar[0]: .587000012
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -147,7 +147,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Saturation
       value:
-        scalar[0]: .5
+        scalar[0]: .680000007
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -188,7 +188,7 @@ SubstanceImporter:
             name: _BumpMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: 1, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -202,7 +202,7 @@ SubstanceImporter:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: 1, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -230,7 +230,7 @@ SubstanceImporter:
             name: _DetailAlbedoMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: .5, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -267,7 +267,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 1
+          second: .99000001
         data:
           first:
             name: _OcclusionStrength
@@ -296,7 +296,7 @@ SubstanceImporter:
         data:
           first:
             name: _EmissionColor
-          second: {r: 0, g: 0, b: 0, a: 1}
+          second: {r: 0, g: 0, b: 0, a: 0}
         data:
           first:
             name: _Color

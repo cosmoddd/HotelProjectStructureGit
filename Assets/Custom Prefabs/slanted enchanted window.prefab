@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2341430}
   - 114: {fileID: 11492692}
   - 114: {fileID: 11424452}
-  - 64: {fileID: 6404366}
   m_Layer: 0
   m_Name: slanted enchanted window
   m_TagString: Untagged
@@ -62,18 +61,6 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160052}
-  m_Mesh: {fileID: 0}
---- !u!64 &6404366
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
   m_Mesh: {fileID: 0}
 --- !u!114 &11424452
 MonoBehaviour:
