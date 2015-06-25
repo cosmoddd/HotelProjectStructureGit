@@ -1,0 +1,119 @@
+fileFormatVersion: 2
+guid: 8e5464f2a277ab143a44b471b675b5e7
+timeCreated: 1435154415
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Couch_Arms
+    100004: Couch_Back
+    100006: couch_back_pillow
+    100008: couch_back_pillow_001
+    100010: couch_back_pillow_002
+    100012: Couch_Bottom
+    100014: Couch_Cushion
+    100016: Couch_Cushion_001
+    100018: Couch_Cushion_002
+    100020: Couch_Arms_002
+    400000: //RootNode
+    400002: Couch_Arms
+    400004: Couch_Back
+    400006: couch_back_pillow
+    400008: couch_back_pillow_001
+    400010: couch_back_pillow_002
+    400012: Couch_Bottom
+    400014: Couch_Cushion
+    400016: Couch_Cushion_001
+    400018: Couch_Cushion_002
+    400020: Couch_Arms_002
+    2300000: Couch_Arms
+    2300002: Couch_Back
+    2300004: couch_back_pillow
+    2300006: couch_back_pillow_001
+    2300008: couch_back_pillow_002
+    2300010: Couch_Bottom
+    2300012: Couch_Cushion
+    2300014: Couch_Cushion_001
+    2300016: Couch_Cushion_002
+    2300018: Couch_Arms_002
+    3300000: Couch_Arms
+    3300002: Couch_Back
+    3300004: couch_back_pillow
+    3300006: couch_back_pillow_001
+    3300008: couch_back_pillow_002
+    3300010: Couch_Bottom
+    3300012: Couch_Cushion
+    3300014: Couch_Cushion_001
+    3300016: Couch_Cushion_002
+    3300018: Couch_Arms_002
+    4300000: couch_back_pillow
+    4300002: Couch_Cushion
+    4300004: Couch_Bottom
+    4300006: Couch_Arms
+    4300008: Couch_Back
+    4300010: Couch_Cushion_001
+    4300012: Couch_Cushion_002
+    4300014: couch_back_pillow_001
+    4300016: couch_back_pillow_002
+    4300018: Couch_Arms_002
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

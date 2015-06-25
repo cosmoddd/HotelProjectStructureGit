@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: be5213c4ec9f12b4192f7ae0681dc3a0
+timeCreated: 1435248176
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BezierCircle
+    100004: BezierCircle_001
+    100006: BezierCircle_002
+    100008: BezierCurve
+    100010: BezierCurve_001
+    100012: BezierCurve_002
+    100014: BezierCurve_003
+    100016: BezierCurve_004
+    100018: BezierCurve_005
+    100020: BezierCurve_006
+    100022: BezierCurve_007
+    100024: Cylinder
+    400000: //RootNode
+    400002: BezierCircle
+    400004: BezierCircle_001
+    400006: BezierCircle_002
+    400008: BezierCurve
+    400010: BezierCurve_001
+    400012: BezierCurve_002
+    400014: BezierCurve_003
+    400016: BezierCurve_004
+    400018: BezierCurve_005
+    400020: BezierCurve_006
+    400022: BezierCurve_007
+    400024: Cylinder
+    2300000: BezierCircle
+    2300002: BezierCircle_001
+    2300004: BezierCircle_002
+    2300006: BezierCurve
+    2300008: BezierCurve_001
+    2300010: BezierCurve_002
+    2300012: BezierCurve_003
+    2300014: BezierCurve_004
+    2300016: BezierCurve_005
+    2300018: BezierCurve_006
+    2300020: BezierCurve_007
+    2300022: Cylinder
+    3300000: BezierCircle
+    3300002: BezierCircle_001
+    3300004: BezierCircle_002
+    3300006: BezierCurve
+    3300008: BezierCurve_001
+    3300010: BezierCurve_002
+    3300012: BezierCurve_003
+    3300014: BezierCurve_004
+    3300016: BezierCurve_005
+    3300018: BezierCurve_006
+    3300020: BezierCurve_007
+    3300022: Cylinder
+    4300000: BezierCurve_006
+    4300002: Cylinder
+    4300004: BezierCircle
+    4300006: BezierCurve
+    4300008: BezierCurve_001
+    4300010: BezierCurve_002
+    4300012: BezierCurve_003
+    4300014: BezierCircle_001
+    4300016: BezierCircle_002
+    4300018: BezierCurve_005
+    4300020: BezierCurve_004
+    4300022: BezierCurve_007
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

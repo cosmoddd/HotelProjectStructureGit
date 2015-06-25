@@ -1913,10 +1913,10 @@ MonoBehaviour:
       fill: 1
       scale: {x: 1, y: 1}
       offset: {x: 0, y: 0}
-      rotation: 0
+      rotation: 89
       justify: 5
-      localPivot: {x: .400000006, y: 3.24422503}
-      localSize: {x: .800000012, y: 6.48845005}
+      localPivot: {x: .400000095, y: 3.24422503}
+      localSize: {x: 6.50142384, y: .913116932}
     _mat: {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
     manualUV: 0
     elementGroup: -1
@@ -2014,11 +2014,11 @@ MonoBehaviour:
   - {x: 3.07625723, y: 4.52698421}
   - {x: 6.41555882, y: 4.73233032}
   - {x: 2.74919224, y: 4.67964363}
-  - {x: 0, y: 0}
-  - {x: 0, y: 6.48845005}
-  - {x: .800000012, y: 6.48845005}
-  - {x: .800000012, y: 0}
-  - {x: .400000006, y: 0}
+  - {x: -2.85071182, y: 3.58754468}
+  - {x: 3.63675022, y: 3.70078349}
+  - {x: 3.65071201, y: 2.90090537}
+  - {x: -2.83675003, y: 2.78766656}
+  - {x: -2.84373093, y: 3.18760562}
   _sharedIndicesUV: []
   _submeshTriangleCount: 42000000
   _colors:
