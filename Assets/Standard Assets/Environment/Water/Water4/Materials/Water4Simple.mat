@@ -2,14 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Water4Simple
   m_Shader: {fileID: 4800000, guid: 8aaff0751054e4a9cb4642d01eaf5be9, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -87,11 +89,11 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 349.137939
+        second: 11
       data:
         first:
           name: _FresnelScale
-        second: .389714301
+        second: 1.85000002
       data:
         first:
           name: _GerstnerIntensity
@@ -111,6 +113,10 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _SpecularColor
+        second: {r: .820895553, g: .805815935, b: .771886885, a: 1}
+      data:
+        first:
           name: _DistortParams
         second: {r: 1.02857149, g: .201872215, b: 2.76662493, a: -.417142838}
       data:
@@ -120,7 +126,7 @@ Material:
       data:
         first:
           name: _AnimationTiling
-        second: {r: .400000006, g: .390999973, b: .560000002, a: .699999988}
+        second: {r: 1.37, g: .390999973, b: .560000002, a: .699999988}
       data:
         first:
           name: _AnimationDirection
@@ -128,7 +134,7 @@ Material:
       data:
         first:
           name: _BumpTiling
-        second: {r: .0399999991, g: .0399999991, b: .0399999991, a: .0799999982}
+        second: {r: .0199999996, g: .0199999996, b: .0399999991, a: .0199999996}
       data:
         first:
           name: _BumpDirection
@@ -143,12 +149,8 @@ Material:
         second: {r: .47582978, g: .606486499, b: .664179087, a: .470588237}
       data:
         first:
-          name: _SpecularColor
-        second: {r: .820895553, g: .805815935, b: .771886885, a: 1}
-      data:
-        first:
           name: _WorldLightDir
-        second: {r: .0139923692, g: -.173590809, b: -.984718621, a: 0}
+        second: {r: -.731167018, g: -.173590809, b: -.659743488, a: 0}
       data:
         first:
           name: _Foam
@@ -156,7 +158,7 @@ Material:
       data:
         first:
           name: _GAmplitude
-        second: {r: .300000012, g: .200000003, b: .25, a: .25}
+        second: {r: .0199999996, g: .0199999996, b: .0500000007, a: .0500000007}
       data:
         first:
           name: _GFrequency
@@ -164,7 +166,7 @@ Material:
       data:
         first:
           name: _GSteepness
-        second: {r: 3.03013062, g: 1, b: 1, a: 1}
+        second: {r: 3.03013062, g: 1, b: .75, a: -.610000014}
       data:
         first:
           name: _GSpeed
