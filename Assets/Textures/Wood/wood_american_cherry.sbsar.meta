@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d6ab0d3d562c5547adba32aab62a3d9
-timeCreated: 1435073242
+timeCreated: 1439330370
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -201,16 +201,16 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
           first:
             name: _DstBlend
           second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
         data:
           first:
             name: _Parallax
@@ -241,11 +241,11 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
+            name: _Mode
           second: 0
         data:
           first:
-            name: _Mode
+            name: _EmissionScaleUI
           second: 0
       colors:
         data:
@@ -356,7 +356,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: 0
+        scalar[0]: .382999986
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -370,7 +370,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: .465999991
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -391,44 +391,44 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .5
+        scalar[0]: .52700001
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .150000006
+        scalar[0]: .245000005
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: .620999992
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .5
+        scalar[0]: .654999971
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: .470999986
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .764705896
-        scalar[1]: .394424111
-        scalar[2]: .219290644
+        scalar[0]: .632352948
+        scalar[1]: .354568183
+        scalar[2]: .223183379
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
@@ -514,16 +514,16 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
           first:
             name: _DstBlend
           second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
         data:
           first:
             name: _Parallax
@@ -539,7 +539,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 1
+          second: .949999988
         data:
           first:
             name: _OcclusionStrength
@@ -554,11 +554,11 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
+            name: _Mode
           second: 0
         data:
           first:
-            name: _Mode
+            name: _EmissionScaleUI
           second: 0
       colors:
         data:
@@ -568,7 +568,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: 1, g: 1, b: 1, a: 1}
+          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
         data:
           first:
             name: _SpecColor
@@ -827,16 +827,16 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
           first:
             name: _DstBlend
           second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
         data:
           first:
             name: _Parallax
@@ -867,15 +867,15 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
-          second: 0
-        data:
-          first:
             name: _Mode
           second: 0
         data:
           first:
             name: _Metallic
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
           second: 0
         data:
           first:
