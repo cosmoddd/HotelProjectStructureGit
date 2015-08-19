@@ -93,7 +93,7 @@ Material:
       data:
         first:
           name: _FresnelScale
-        second: 1.85000002
+        second: 2.30999994
       data:
         first:
           name: _GerstnerIntensity
@@ -113,6 +113,10 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _SpecularColor
+        second: {r: .820895553, g: .805815935, b: .771886885, a: 1}
+      data:
+        first:
           name: _DistortParams
         second: {r: 1.02857149, g: .201872215, b: 2.76662493, a: -.417142838}
       data:
@@ -130,7 +134,7 @@ Material:
       data:
         first:
           name: _BumpTiling
-        second: {r: .0199999996, g: .0199999996, b: .0399999991, a: .0199999996}
+        second: {r: .119999997, g: .119999997, b: .140000001, a: .112000003}
       data:
         first:
           name: _BumpDirection
@@ -145,12 +149,8 @@ Material:
         second: {r: .47582978, g: .606486499, b: .664179087, a: .470588237}
       data:
         first:
-          name: _SpecularColor
-        second: {r: .820895553, g: .805815935, b: .771886885, a: 1}
-      data:
-        first:
           name: _WorldLightDir
-        second: {r: -.731167018, g: -.173590809, b: -.659743488, a: 0}
+        second: {r: .0139923692, g: -.173590809, b: -.984718621, a: 0}
       data:
         first:
           name: _Foam
