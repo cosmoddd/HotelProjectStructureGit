@@ -61,7 +61,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: .335000008
       data:
         first:
           name: _Shininess
@@ -73,7 +73,7 @@ Material:
       data:
         first:
           name: _TranslucencyViewDependency
-        second: .699999988
+        second: .515999973
       data:
         first:
           name: _ShadowStrength
@@ -86,7 +86,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .0443238243, g: .558823526, b: .309139848, a: 1}
       data:
         first:
           name: _TreeInstanceColor

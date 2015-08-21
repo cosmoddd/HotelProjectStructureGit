@@ -163,7 +163,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: .532000005
+      data:
+        first:
+          name: _ShadowStrength
+        second: .807573676
       data:
         first:
           name: _SquashAmount
@@ -172,10 +176,6 @@ Material:
         first:
           name: _TranslucencyViewDependency
         second: .699999988
-      data:
-        first:
-          name: _ShadowStrength
-        second: .807573676
       data:
         first:
           name: _ShadowOffsetScale
@@ -191,16 +191,16 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _TranslucencyColor
+        second: {r: .174535662, g: .203921571, b: .0951633975, a: 1}
+      data:
+        first:
           name: _TreeInstanceColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _TreeInstanceScale
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _TranslucencyColor
-        second: {r: .174535662, g: .203921571, b: .0951633975, a: 1}
 --- !u!1002 &2100003
 EditorExtensionImpl:
   serializedVersion: 6
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 3516
-  materialHash: 432878e9d46c396142bcecc358cbfeca-550813696
+  materialHash: e70fbd546eb4f491a42f5c47d3b2f3b6-550813696
   root:
     _uniqueID: 1
     seed: 1234
@@ -460,7 +460,7 @@ MonoBehaviour:
     nodeIDs: 02000000
     parentGroupID: -1
     childGroupIDs: 03000000
-    adaptiveLODQuality: .519480526
+    adaptiveLODQuality: .545000017
     shadowTextureQuality: 3
     enableWelding: 1
     enableAmbientOcclusion: 1

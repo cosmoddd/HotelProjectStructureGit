@@ -166,16 +166,16 @@ Material:
         second: .5
       data:
         first:
+          name: _ShadowStrength
+        second: .800000012
+      data:
+        first:
           name: _SquashAmount
         second: 1
       data:
         first:
           name: _TranslucencyViewDependency
         second: .699999988
-      data:
-        first:
-          name: _ShadowStrength
-        second: .800000012
       data:
         first:
           name: _ShadowOffsetScale
@@ -191,16 +191,16 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _TranslucencyColor
+        second: {r: .148822978, g: .203921571, b: 0, a: 1}
+      data:
+        first:
           name: _TreeInstanceColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _TreeInstanceScale
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _TranslucencyColor
-        second: {r: .148822978, g: .203921571, b: 0, a: 1}
 --- !u!1002 &2100003
 EditorExtensionImpl:
   serializedVersion: 6

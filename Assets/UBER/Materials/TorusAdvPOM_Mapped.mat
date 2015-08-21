@@ -1,0 +1,1217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: TorusAdvPOM_Mapped
+  m_Shader: {fileID: 4800000, guid: 241459db962af064f9fb505f446f309a, type: 3}
+  m_ShaderKeywords: SILHOUETTE_CURVATURE_MAPPED _OCCLUSION_FROM_ALBEDO_ALPHA _PARALLAX_POM
+    _WETNESS_NONE
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: b5b672f2262e0494d93665a5a9198b78, type: 3}
+          m_Scale: {x: 1, y: 4}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 7fd348dde11531b449f7228a3e6e02b6, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 96e8bb14fbe47414f9183098ab02ab58, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailNormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 9f4c4675f799f3040be81738569719ae, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _EmissionMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 4}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 2, y: 8}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 2800000, guid: c0af69cac2b824d4e8dd73c354ecd831, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 7d7c8ca1a441d8643bd1aedc144f6b63, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTex2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecGlossMap2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecularRGBGlossADetail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMapDetail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ObjectNormalsTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 35c000e98efc7da4390e6c27eec0c2a1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ObjectTangentsTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 06529d5db6f0b0542ab0f3c249f7354c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RippleMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RippleMapWet
+        second:
+          m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DropletsMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 471631afc291fae4087fd072b5dbe4f3, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RippleMapSnow
+        second:
+          m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SparkleMapSnow
+        second:
+          m_Texture: {fileID: 2800000, guid: 58d91b9c15e76ee489eb634baedb9497, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SparkleMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 58d91b9c15e76ee489eb634baedb9497, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SparkleMapGlitter
+        second:
+          m_Texture: {fileID: 2800000, guid: 58d91b9c15e76ee489eb634baedb9497, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _HeightMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 5028ffd00e255244c9dd3d639a0c53b5, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AlphaTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailMaskTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DiffuseRGBAOADetail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalMapDetail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecularRGBGlossA
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: unity_SpecCube
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DiffuseIBLCubemap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _SrcBlend
+        second: 1
+      data:
+        first:
+          name: _DstBlend
+        second: 0
+      data:
+        first:
+          name: _Cutoff
+        second: .559000015
+      data:
+        first:
+          name: _Shininess
+        second: .078125
+      data:
+        first:
+          name: _DetailMask
+        second: 0
+      data:
+        first:
+          name: _Parallax
+        second: .0799999982
+      data:
+        first:
+          name: _ZWrite
+        second: 1
+      data:
+        first:
+          name: _Glossiness
+        second: 0
+      data:
+        first:
+          name: _BumpScale
+        second: 1
+      data:
+        first:
+          name: _OcclusionStrength
+        second: 0
+      data:
+        first:
+          name: _DetailNormalMapScale
+        second: 1
+      data:
+        first:
+          name: _UVSec
+        second: 0
+      data:
+        first:
+          name: _Mode
+        second: 0
+      data:
+        first:
+          name: _Metallic
+        second: 1
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
+          name: _Phong
+        second: 0
+      data:
+        first:
+          name: _ShadowStrength
+        second: 1
+      data:
+        first:
+          name: _Glossiness2
+        second: .5
+      data:
+        first:
+          name: _BumpScale2
+        second: 1
+      data:
+        first:
+          name: _Parallax2
+        second: .0399999991
+      data:
+        first:
+          name: _OcclusionStrength2
+        second: 0
+      data:
+        first:
+          name: _SecOcclusionStrength
+        second: 0
+      data:
+        first:
+          name: _UVSecOcclusion
+        second: 0
+      data:
+        first:
+          name: _UVSecOcclusionLightmapPacked
+        second: 0
+      data:
+        first:
+          name: _DiffuseScatter
+        second: 1
+      data:
+        first:
+          name: _DiffuseScatteringExponent
+        second: 2.17000008
+      data:
+        first:
+          name: _DiffuseScatteringOffset
+        second: .061999999
+      data:
+        first:
+          name: _GlossMin
+        second: 0
+      data:
+        first:
+          name: _GlossMax
+        second: 1
+      data:
+        first:
+          name: _BendNormalsFreq
+        second: 22.8999996
+      data:
+        first:
+          name: _BendNormalsStrength
+        second: .0199999996
+      data:
+        first:
+          name: _DetailUVMult
+        second: 1
+      data:
+        first:
+          name: _DetailNormalLerp
+        second: .541000009
+      data:
+        first:
+          name: _DetailEmissiveness
+        second: 0
+      data:
+        first:
+          name: _DetailSpecLerp
+        second: 1
+      data:
+        first:
+          name: _DetailMetalness
+        second: 1
+      data:
+        first:
+          name: _DetailGloss
+        second: 1
+      data:
+        first:
+          name: _PanEmissionMask
+        second: 0
+      data:
+        first:
+          name: _PanUSpeed
+        second: 0
+      data:
+        first:
+          name: _PanVSpeed
+        second: .200000003
+      data:
+        first:
+          name: _PulsateEmission
+        second: 0
+      data:
+        first:
+          name: _EmissionPulsateSpeed
+        second: 1
+      data:
+        first:
+          name: _MinPulseBrightness
+        second: 0
+      data:
+        first:
+          name: _Translucency
+        second: 0
+      data:
+        first:
+          name: _TranslucencyShown
+        second: 1
+      data:
+        first:
+          name: _TranslucencyStrength
+        second: 8
+      data:
+        first:
+          name: _TranslucencyPointLightDirectionality
+        second: .352999985
+      data:
+        first:
+          name: _TranslucencyConstant
+        second: 0
+      data:
+        first:
+          name: _TranslucencyNormalOffset
+        second: .0359999985
+      data:
+        first:
+          name: _TranslucencyExponent
+        second: 30
+      data:
+        first:
+          name: _TranslucencyOcclusion
+        second: 0
+      data:
+        first:
+          name: _TranslucencySuppressRealtimeShadows
+        second: 20
+      data:
+        first:
+          name: _TranslucencyDeferredLightIndex
+        second: 0
+      data:
+        first:
+          name: _POM
+        second: 1
+      data:
+        first:
+          name: _POMShown
+        second: 1
+      data:
+        first:
+          name: _DepthWrite
+        second: 0
+      data:
+        first:
+          name: _Depth
+        second: .100000001
+      data:
+        first:
+          name: _DistSteps
+        second: 1024
+      data:
+        first:
+          name: _ReliefMIPbias
+        second: 1
+      data:
+        first:
+          name: _POM_BottomCut
+        second: 0
+      data:
+        first:
+          name: _POM_MeshIsVolume
+        second: 0
+      data:
+        first:
+          name: _POM_ExtrudeVolume
+        second: 0
+      data:
+        first:
+          name: _POMPrecomputedFlag
+        second: 1
+      data:
+        first:
+          name: _POMCurvatureType
+        second: 1
+      data:
+        first:
+          name: _DepthReductionDistance
+        second: 20
+      data:
+        first:
+          name: _CurvatureCustomU
+        second: 0
+      data:
+        first:
+          name: _CurvatureCustomV
+        second: 0
+      data:
+        first:
+          name: _CurvatureMultU
+        second: 1
+      data:
+        first:
+          name: _CurvatureMultV
+        second: 1
+      data:
+        first:
+          name: _Tan2ObjCustomU
+        second: 10
+      data:
+        first:
+          name: _Tan2ObjCustomV
+        second: 10
+      data:
+        first:
+          name: _Tan2ObjMultU
+        second: 1
+      data:
+        first:
+          name: _Tan2ObjMultV
+        second: 1
+      data:
+        first:
+          name: _UV_Clip
+        second: 0
+      data:
+        first:
+          name: _POMShadows
+        second: 0
+      data:
+        first:
+          name: _DistStepsShadows
+        second: 11.8999996
+      data:
+        first:
+          name: _ShadowMIPbias
+        second: 1.30999994
+      data:
+        first:
+          name: _Softness
+        second: 2
+      data:
+        first:
+          name: _SoftnessFade
+        second: .400000006
+      data:
+        first:
+          name: _Refraction
+        second: .120999999
+      data:
+        first:
+          name: _RefractionBumpScale
+        second: .5
+      data:
+        first:
+          name: _RefractionChromaticAberration
+        second: 0
+      data:
+        first:
+          name: _Wetness
+        second: 0
+      data:
+        first:
+          name: _WetnessShown
+        second: 1
+      data:
+        first:
+          name: _WetnessLevel
+        second: .717999995
+      data:
+        first:
+          name: _WetnessConst
+        second: 0
+      data:
+        first:
+          name: _WetnessDarkening
+        second: 0
+      data:
+        first:
+          name: _WetnessEmissiveness
+        second: 0
+      data:
+        first:
+          name: _WetnessNormalInfluence
+        second: 1
+      data:
+        first:
+          name: _WetnessUVMult
+        second: 1
+      data:
+        first:
+          name: _WetRipples
+        second: 1
+      data:
+        first:
+          name: _RippleStrength
+        second: 1
+      data:
+        first:
+          name: _RippleTiling
+        second: 4
+      data:
+        first:
+          name: _RippleSpecFilter
+        second: 0
+      data:
+        first:
+          name: _RippleAnimSpeed
+        second: 1
+      data:
+        first:
+          name: _FlowCycleScale
+        second: 23.1100006
+      data:
+        first:
+          name: _RippleRefraction
+        second: .25999999
+      data:
+        first:
+          name: _WetnessNormMIP
+        second: 5
+      data:
+        first:
+          name: _WetnessNormStrength
+        second: 2
+      data:
+        first:
+          name: _WetnessEmissivenessWrap
+        second: 0
+      data:
+        first:
+          name: _WetnessLevelFromGlobal
+        second: 1
+      data:
+        first:
+          name: _WetnessConstFromGlobal
+        second: 1
+      data:
+        first:
+          name: _WetnessFlowGlobalTime
+        second: 1
+      data:
+        first:
+          name: _WetnessMergeWithSnowPerMaterial
+        second: 0
+      data:
+        first:
+          name: _RippleStrengthFromGlobal
+        second: 0
+      data:
+        first:
+          name: _RainIntensityFromGlobal
+        second: 0
+      data:
+        first:
+          name: _WetDroplets
+        second: 1
+      data:
+        first:
+          name: _RainIntensity
+        second: 0
+      data:
+        first:
+          name: _DropletsTiling
+        second: .5
+      data:
+        first:
+          name: _DropletsAnimSpeed
+        second: 10
+      data:
+        first:
+          name: _TessDepth
+        second: .100000001
+      data:
+        first:
+          name: _TessOffset
+        second: .606999993
+      data:
+        first:
+          name: _Tess
+        second: 5.69999981
+      data:
+        first:
+          name: _TessEdgeLengthLimit
+        second: 5
+      data:
+        first:
+          name: minDist
+        second: 20
+      data:
+        first:
+          name: maxDist
+        second: 25
+      data:
+        first:
+          name: _Snow
+        second: 0
+      data:
+        first:
+          name: _SnowShown
+        second: 1
+      data:
+        first:
+          name: _Frost
+        second: 0
+      data:
+        first:
+          name: _SnowSlopeDamp
+        second: .829999983
+      data:
+        first:
+          name: _SnowDiffuseScatteringExponent
+        second: 6
+      data:
+        first:
+          name: _SnowDiffuseScatteringOffset
+        second: .400000006
+      data:
+        first:
+          name: _SnowDeepSmoothen
+        second: 5.55999994
+      data:
+        first:
+          name: _SnowEmissionTransparency
+        second: 0
+      data:
+        first:
+          name: _SnowMicroTiling
+        second: 2
+      data:
+        first:
+          name: _SnowBumpMicro
+        second: .0313999988
+      data:
+        first:
+          name: _SnowMacroTiling
+        second: .289999992
+      data:
+        first:
+          name: _SnowBumpMacro
+        second: .231000006
+      data:
+        first:
+          name: _SnowWorldMapping
+        second: 0
+      data:
+        first:
+          name: _SnowDissolve
+        second: 2
+      data:
+        first:
+          name: _SnowDissolveMaskOcclusion
+        second: 0
+      data:
+        first:
+          name: _SnowHeightThreshold
+        second: -10000
+      data:
+        first:
+          name: _SnowHeightThresholdTransition
+        second: 1000
+      data:
+        first:
+          name: _SnowLevelFromGlobal
+        second: 1
+      data:
+        first:
+          name: _FrostFromGlobal
+        second: 1
+      data:
+        first:
+          name: _SnowBumpMicroFromGlobal
+        second: 1
+      data:
+        first:
+          name: _SnowDissolveFromGlobal
+        second: 1
+      data:
+        first:
+          name: _SnowSpecGlossFromGlobal
+        second: 1
+      data:
+        first:
+          name: _SnowGlitterColorFromGlobal
+        second: 0
+      data:
+        first:
+          name: _Glitter
+        second: 0
+      data:
+        first:
+          name: _GlitterShown
+        second: 0
+      data:
+        first:
+          name: _GlitterColorization
+        second: 1
+      data:
+        first:
+          name: _GlitterDensity
+        second: .425000012
+      data:
+        first:
+          name: _GlitterTiling
+        second: 1
+      data:
+        first:
+          name: _GlitterAnimationFrequency
+        second: .0199999996
+      data:
+        first:
+          name: _GlitterFilter
+        second: .0900000036
+      data:
+        first:
+          name: _GlitterMask
+        second: 0
+      data:
+        first:
+          name: _MainShown
+        second: 1
+      data:
+        first:
+          name: _SecondaryShown
+        second: 0
+      data:
+        first:
+          name: _PresetsShown
+        second: 1
+      data:
+        first:
+          name: _ShadowCull
+        second: 2
+      data:
+        first:
+          name: _Animated_Emission
+        second: 0
+      data:
+        first:
+          name: _RefractionLens
+        second: 0
+      data:
+        first:
+          name: _Refraction_Used
+        second: 0
+      data:
+        first:
+          name: _DynamicEmissionLM
+        second: 0
+      data:
+        first:
+          name: section_features
+        second: 1
+      data:
+        first:
+          name: _Parallax_Type
+        second: 0
+      data:
+        first:
+          name: _Wetness_Type
+        second: 0
+      data:
+        first:
+          name: _Skyshop
+        second: 0
+      data:
+        first:
+          name: _Tessellation
+        second: 0
+      data:
+        first:
+          name: _Cutout
+        second: 0
+      data:
+        first:
+          name: _Transparent
+        second: 0
+      data:
+        first:
+          name: _Refraction_Type
+        second: 0
+      data:
+        first:
+          name: _IBL_Diffuse
+        second: 1
+      data:
+        first:
+          name: _Emissive
+        second: 0
+      data:
+        first:
+          name: section_main
+        second: 1
+      data:
+        first:
+          name: _AlphaCutout
+        second: .5
+      data:
+        first:
+          name: _AOIntensity
+        second: 1
+      data:
+        first:
+          name: _NormalMapMulti
+        second: 1
+      data:
+        first:
+          name: section_detail
+        second: 0
+      data:
+        first:
+          name: _NormalMapDetailMulti
+        second: 1
+      data:
+        first:
+          name: section_specular
+        second: 0
+      data:
+        first:
+          name: section_IBL
+        second: 0
+      data:
+        first:
+          name: _IBLMulti
+        second: 1
+      data:
+        first:
+          name: _IBLSaturation
+        second: .800000012
+      data:
+        first:
+          name: _IBLContrast
+        second: 1.5
+      data:
+        first:
+          name: _SpecIBLAtten
+        second: .699999988
+      data:
+        first:
+          name: _IBLMultiDiff
+        second: 1
+      data:
+        first:
+          name: _SHMult
+        second: 1
+      data:
+        first:
+          name: _AdvIBLProps
+        second: 0
+      data:
+        first:
+          name: _IBL_HDR
+        second: 1
+      data:
+        first:
+          name: _IBLSpecRoughMIP
+        second: 5
+      data:
+        first:
+          name: _IBLMIPDim_Rough
+        second: .25
+      data:
+        first:
+          name: _IBLSpecGlossMIP
+        second: .5
+      data:
+        first:
+          name: _IBLMIPDim_Gloss
+        second: 1
+      data:
+        first:
+          name: section_emissive
+        second: 0
+      data:
+        first:
+          name: _EmissionMulti
+        second: 1
+      data:
+        first:
+          name: _LightmapProps
+        second: 0
+      data:
+        first:
+          name: _EmissionLM
+        second: 0
+      data:
+        first:
+          name: section_parallax
+        second: 1
+      data:
+        first:
+          name: PARALLAX_SCALE
+        second: .0500000007
+      data:
+        first:
+          name: PARALLAX_BIAS
+        second: .5
+      data:
+        first:
+          name: section_tessellation
+        second: 0
+      data:
+        first:
+          name: section_wetness
+        second: 0
+      data:
+        first:
+          name: _WetnessSpecMultIBL
+        second: 1
+      data:
+        first:
+          name: _BendNormals_Used
+        second: 0
+      data:
+        first:
+          name: _SnowUVMult
+        second: 1
+      data:
+        first:
+          name: _SnowSubsurfaceScatteringOffset
+        second: 0
+      data:
+        first:
+          name: _DiffuseScatteringSoftness
+        second: 0
+      data:
+        first:
+          name: _SnowDiffuseScatteringSoftness
+        second: 0
+      data:
+        first:
+          name: _TranslucencyPower
+        second: 10
+      data:
+        first:
+          name: _TranslucencyEnvelope
+        second: 40
+      data:
+        first:
+          name: _SnowTranslucency
+        second: .200000003
+      data:
+        first:
+          name: _Curvature
+        second: 0
+      data:
+        first:
+          name: _CurvatureCustomFlag
+        second: 1
+      data:
+        first:
+          name: _CurvaturePrecomputedFlag
+        second: 1
+      data:
+        first:
+          name: _EdgeLength
+        second: 3
+    m_Colors:
+      data:
+        first:
+          name: _EmissionColor
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Color2
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor
+        second: {r: .31527862, g: .316176474, b: .251081318, a: 1}
+      data:
+        first:
+          name: _CutoffEdgeGlow
+        second: {r: 0, g: 0, b: 0, a: .0199999996}
+      data:
+        first:
+          name: _SpecColor2
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+      data:
+        first:
+          name: _DiffuseScatteringColor
+        second: {r: .139705896, g: .139705896, b: .139705896, a: 1}
+      data:
+        first:
+          name: _DiffuseScatteringColor2
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _DetailColor
+        second: {r: 1, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _DetailSpecGloss
+        second: {r: .110294104, g: .110294104, b: .110294104, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor2
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _CurvatureMultOffset
+        second: {r: 1, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _Tan2ObjectMultOffset
+        second: {r: 1, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _UV_Clip_Borders
+        second: {r: -20, g: 0, b: 20, a: 1}
+      data:
+        first:
+          name: _WetnessColor
+        second: {r: 1, g: 0, b: .931038857, a: 0}
+      data:
+        first:
+          name: _WetnessSpecGloss
+        second: {r: .132352948, g: .132352948, b: .132352948, a: .75686276}
+      data:
+        first:
+          name: _SnowColorAndCoverage
+        second: {r: .839856684, g: .839856684, b: .839856684, a: 0}
+      data:
+        first:
+          name: _SnowSpecGloss
+        second: {r: .279411793, g: .279411793, b: .279411793, a: .160784319}
+      data:
+        first:
+          name: _SnowDiffuseScatteringColor
+        second: {r: .361862034, g: .459226698, b: .507352948, a: 1}
+      data:
+        first:
+          name: _SnowEmissionTransparency
+        second: {r: .705882311, g: .705882311, b: .705882311, a: 1}
+      data:
+        first:
+          name: _SnowTranslucencyColor
+        second: {r: .75, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SnowGlitterColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _GlitterColor
+        second: {r: .492647052, g: .492647052, b: .492647052, a: 1}
+      data:
+        first:
+          name: _GlitterColor2
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+      data:
+        first:
+          name: heightMapTexelSize
+        second: {r: .001953125, g: .001953125, b: 512, a: 512}
+      data:
+        first:
+          name: bumpMapTexelSize
+        second: {r: .00048828125, g: .00048828125, b: 2048, a: 2048}
+      data:
+        first:
+          name: bumpMap2TexelSize
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Curvature
+        second: {r: 1, g: 1, b: 0, a: 0}
+      data:
+        first:
+          name: _CustSpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}

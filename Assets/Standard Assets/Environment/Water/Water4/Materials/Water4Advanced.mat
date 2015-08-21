@@ -162,12 +162,12 @@ Material:
         second: 9
       data:
         first:
-          name: _Ambient
-        second: 1
-      data:
-        first:
           name: _InvFade
         second: .628782988
+      data:
+        first:
+          name: _Ambient
+        second: 1
       data:
         first:
           name: _WaveScale
