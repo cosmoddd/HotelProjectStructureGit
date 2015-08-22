@@ -780,8 +780,8 @@ namespace Voxeland
 					if (aimData.type == AimData.Type.face)
 					{
 						if (brushSize==0) highlight.DrawFace(aimData.chunk, aimData.face);
-						else if (brushSphere) highlight.DrawSphere(new Vector3(aimData.x-130.6f, aimData.y-79.5f, aimData.z-180.4f), brushSize);
-						else highlight.DrawBox(new Vector3(aimData.x-130.6f, aimData.y-79.5f, aimData.z-180.4f), new Vector3(brushSize,brushSize,brushSize));
+						else if (brushSphere) highlight.DrawSphere(new Vector3(aimData.x-130.6f+0.5f, aimData.y-80f+0.5f, aimData.z-180.9f+0.5f), brushSize);
+						else highlight.DrawBox(new Vector3(aimData.x-130.6f+0.5f, aimData.y-80f+0.5f, aimData.z-180.9f+0.5f), new Vector3(brushSize,brushSize,brushSize));
 					}
 				
 					if (aimData.type == AimData.Type.obj)
