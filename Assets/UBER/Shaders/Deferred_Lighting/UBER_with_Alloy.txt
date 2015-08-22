@@ -1,0 +1,27 @@
+Use "Deferred Shading with UBER.shader" instead of this from Alloy installation to have Alloy with UBER features working.
+
+If you'd like UBER shaders to keep the same light falloff in FORWARD (for example transparent materials) look into UBER_StandardConfig.cginc and set #define UBER_MATCH_ALLOY_LIGHT_FALLOFF 1
+
+Deferred lighting pass shader included here apply to Alloy3.2.3.
+If you'd like to update newer Alloy deferred lighting shader look at it's contents. There should be #include for UBER placed already - just uncomment it. Guys from Alloy promised to put it in next release. If not, step by step instruction is like follows:
+
+ 1. Find "Alloy Deferred Shading.shader"
+ 
+ 2. After all #includes at the beginning add this line:
+ 
+ #include "Assets/UBER/Shaders/Deferred_Lighting/UBER2AlloyDeferred.cginc"
+ 
+ 3. Find all "light.shadow =" occurences. After all of them put this line:
+ 
+ UBER2ALLOY_SELFSHADOW_MACRO
+ 
+ 4. Find such line "color.rgb = AlloyHdrClamp(AlloyDirect(light, s));"
+ 
+ 5. Before the line found (4) add this line:
+ 
+ UBER2ALLOY_TRANSLUCENCY_MACRO_INIT
+ 
+ 6. After the line found (4) add this line:
+ 
+ UBER2ALLOY_TRANSLUCENCY_MACRO_APPLY
+ 
