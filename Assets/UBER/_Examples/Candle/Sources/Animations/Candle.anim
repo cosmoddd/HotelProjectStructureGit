@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Candle
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 4
+        inSlope: .00580143929
+        outSlope: .00580143929
+        tangentMode: 10
+      - time: .666666687
+        value: 4.00386763
+        inSlope: -.139379755
+        outSlope: -.139379755
+        tangentMode: 10
+      - time: 1.5333333
+        value: 3.75724816
+        inSlope: .320664525
+        outSlope: .320664525
+        tangentMode: 10
+      - time: 2.13333344
+        value: 4.31278229
+        inSlope: .0283316374
+        outSlope: .0283316374
+        tangentMode: 10
+      - time: 2.83333325
+        value: 3.70432377
+        inSlope: -.235204622
+        outSlope: -.235204622
+        tangentMode: 10
+      - time: 3.9333334
+        value: 4.14302301
+        inSlope: -.151858523
+        outSlope: -.151858523
+        tangentMode: 10
+      - time: 4.5666666
+        value: 3.69808459
+        inSlope: -.00290337205
+        outSlope: -.00290337205
+        tangentMode: 10
+      - time: 5
+        value: 4
+        inSlope: .696727753
+        outSlope: .696727753
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: material._TranslucencyStrength
+    path: 
+    classID: 23
+    script: {fileID: 0}
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - path: 0
+      attribute: 2367370068
+      script: {fileID: 0}
+      classID: 23
+      customType: 22
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_StartTime: 0
+    m_StopTime: 5
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 4
+        inSlope: .00580143929
+        outSlope: .00580143929
+        tangentMode: 10
+      - time: .666666687
+        value: 4.00386763
+        inSlope: -.139379755
+        outSlope: -.139379755
+        tangentMode: 10
+      - time: 1.5333333
+        value: 3.75724816
+        inSlope: .320664525
+        outSlope: .320664525
+        tangentMode: 10
+      - time: 2.13333344
+        value: 4.31278229
+        inSlope: .0283316374
+        outSlope: .0283316374
+        tangentMode: 10
+      - time: 2.83333325
+        value: 3.70432377
+        inSlope: -.235204622
+        outSlope: -.235204622
+        tangentMode: 10
+      - time: 3.9333334
+        value: 4.14302301
+        inSlope: -.151858523
+        outSlope: -.151858523
+        tangentMode: 10
+      - time: 4.5666666
+        value: 3.69808459
+        inSlope: -.00290337205
+        outSlope: -.00290337205
+        tangentMode: 10
+      - time: 5
+        value: 4
+        inSlope: .696727753
+        outSlope: .696727753
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: material._TranslucencyStrength
+    path: 
+    classID: 23
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []

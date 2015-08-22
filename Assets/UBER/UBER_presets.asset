@@ -1,0 +1,2493 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf34402cb255db74c93f05a0eced356a, type: 3}
+  m_Name: UBER_presets
+  m_EditorClassIdentifier: 
+  currentPresetName: 4865626520547269706c616e6172
+  whatToRestore: 0
+  matPresets:
+  - name: 4865626520547269706c616e6172
+    shader: {fileID: 4800000, guid: cecd42a14961cfa42884fe9e52f8eb6f, type: 3}
+    props:
+    - type: 0
+      name: 5f436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f436f6c6f7232
+      floatValue: 0
+      colorValue:
+        r: .623538971
+        g: .615695953
+        b: .59608835
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f4d61696e546578
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 46eeea11b67e4e34390a4de629e0f828, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 2, y: 1}
+    - type: 4
+      name: 5f4d61696e54657832
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f4375746f6666
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f4375746f666645646765476c6f77
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: .0199999996
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c6f7373696e657373
+      floatValue: .305000007
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c6f7373696e65737332
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f53706563436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f53706563436f6c6f7232
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f53706563476c6f73734d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 5be9c707c480c5b4da5bddf3ee404442, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f53706563476c6f73734d617032
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 2
+      name: 5f42756d705363616c65
+      floatValue: .100000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f42756d705363616c6532
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f42756d704d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 183d0732e50d5cb4e8e13eadbf6a9f7e, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f42756d704d617032
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f506172616c6c6178
+      floatValue: .0199999996
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f506172616c6c617832
+      floatValue: .0399999991
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f506172616c6c61784d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: fb5246de543dfd14f9c2de731a848899, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f506172616c6c61784d617032
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f4f63636c7573696f6e537472656e677468
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4f63636c7573696f6e537472656e67746832
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5365634f63636c7573696f6e537472656e677468
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f4f63636c7573696f6e4d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: e82ad381656ec684882911080c3031d2, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 0
+      name: 5f456d697373696f6e436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f456d697373696f6e4d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 2, y: 1}
+    - type: 4
+      name: 5f44657461696c4d61736b
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f44657461696c416c6265646f4d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 3, y: 1}
+    - type: 2
+      name: 5f44657461696c4e6f726d616c4d61705363616c65
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f44657461696c4e6f726d616c4d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 18fbbf58a0e58014d9dc4e95f1be08f8, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 2
+      name: 5f5556536563
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f55565365634f63636c7573696f6e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f55565365634f63636c7573696f6e4c696768746d61705061636b6564
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f4d6f6465
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f537263426c656e64
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f447374426c656e64
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5a5772697465
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f4469666675736553636174746572
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f4469666675736553636174746572696e67436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f4469666675736553636174746572696e67436f6c6f7232
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4469666675736553636174746572696e674578706f6e656e74
+      floatValue: 8
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4469666675736553636174746572696e674f6666736574
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c6f73734d696e
+      floatValue: .100000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c6f73734d6178
+      floatValue: .400000006
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f42656e644e6f726d616c7346726571
+      floatValue: 4
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f42656e644e6f726d616c73537472656e677468
+      floatValue: .0500000007
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f44657461696c55564d756c74
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f44657461696c4e6f726d616c4c657270
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f44657461696c436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f44657461696c456d6973736976656e657373
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f53706563756c6172524742476c6f73734144657461696c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f44657461696c537065634c657270
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f44657461696c53706563476c6f7373
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f4d6574616c6c6963476c6f73734d617044657461696c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f44657461696c4d6574616c6e657373
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f44657461696c476c6f7373
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f50616e456d697373696f6e4d61736b
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f50616e555370656564
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f50616e565370656564
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f50756c73617465456d697373696f6e
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f456d697373696f6e50756c736174655370656564
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4d696e50756c73654272696768746e657373
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5472616e736c7563656e6379
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5472616e736c7563656e637953686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f5472616e736c7563656e6379436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: .98326689
+        b: .889714241
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f5472616e736c7563656e6379436f6c6f7232
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5472616e736c7563656e6379537472656e677468
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e6379506f696e744c69676874446972656374696f6e616c697479
+      floatValue: .699999988
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e6379436f6e7374616e74
+      floatValue: .100000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e63794e6f726d616c4f6666736574
+      floatValue: .0599999987
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e63794578706f6e656e74
+      floatValue: 39.7000008
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e63794f63636c7573696f6e
+      floatValue: .88499999
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5472616e736c7563656e637953757070726573735265616c74696d65536861646f7773
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5472616e736c7563656e637944656665727265644c69676874496e646578
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d53686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f44657074685772697465
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4465707468
+      floatValue: .100000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f446973745374657073
+      floatValue: 64
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f52656c6965664d495062696173
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f4f626a6563744e6f726d616c73546578
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f4f626a65637454616e67656e7473546578
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 1
+      name: 5f4375727661747572654d756c744f6666736574
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 1
+      name: 5f54616e324f626a6563744d756c744f6666736574
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 1, w: 1}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 1
+      name: 5f55565f436c69705f426f7264657273
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 1, w: 1}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f504f4d5f426f74746f6d437574
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d5f4d6573684973566f6c756d65
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d5f45787472756465566f6c756d65
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d507265636f6d7075746564466c6167
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d43757276617475726554797065
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f4465707468526564756374696f6e44697374616e6365
+      floatValue: 20
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f437572766174757265437573746f6d55
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f437572766174757265437573746f6d56
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f4375727661747572654d756c7455
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f4375727661747572654d756c7456
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f54616e324f626a437573746f6d55
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f54616e324f626a437573746f6d56
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f54616e324f626a4d756c7455
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f54616e324f626a4d756c7456
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f55565f436c6970
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f504f4d536861646f7773
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536861646f77537472656e677468
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f446973745374657073536861646f7773
+      floatValue: 64
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536861646f774d495062696173
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536f66746e657373
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536f66746e65737346616465
+      floatValue: .400000006
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f52656672616374696f6e
+      floatValue: .0199999996
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f52656672616374696f6e42756d705363616c65
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f52656672616374696f6e4368726f6d6174696341626572726174696f6e
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e657373
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e65737353686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e6573734c6576656c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e657373436f6e7374
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f5765746e657373436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e6573734461726b656e696e67
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f5765746e65737353706563476c6f7373
+      floatValue: 0
+      colorValue:
+        r: .0500077233
+        g: .0500077233
+        b: .0500077233
+        a: .699999988
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e657373456d6973736976656e657373
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e6573734e6f726d616c496e666c75656e6365
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e65737355564d756c74
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f526970706c654d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 2
+      name: 5f576574526970706c6573
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f526970706c654d6170576574
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f526970706c65537472656e677468
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f526970706c6554696c696e67
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f526970706c655370656346696c746572
+      floatValue: .0199999996
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f526970706c65416e696d5370656564
+      floatValue: .5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f466c6f774379636c655363616c65
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f526970706c6552656672616374696f6e
+      floatValue: .300000012
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e6573734e6f726d4d4950
+      floatValue: 5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f5765746e6573734e6f726d537472656e677468
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e657373456d6973736976656e65737357726170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e6573734c6576656c46726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e657373436f6e737446726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e657373466c6f77476c6f62616c54696d65
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5765746e6573734d6572676557697468536e6f775065724d6174657269616c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f526970706c65537472656e67746846726f6d476c6f62616c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f57657444726f706c657473
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f44726f706c6574734d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 471631afc291fae4087fd072b5dbe4f3, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 3
+      name: 5f5261696e496e74656e73697479
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f44726f706c65747354696c696e67
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f44726f706c657473416e696d5370656564
+      floatValue: 10
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5261696e496e74656e7369747946726f6d476c6f62616c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f546573734465707468
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f546573734f6666736574
+      floatValue: .100000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f54657373
+      floatValue: 7
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f54657373456467654c656e6774684c696d6974
+      floatValue: 5
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 6d696e44697374
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 6d617844697374
+      floatValue: 10
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f50686f6e67
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f77
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f7753686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f526970706c654d6170536e6f77
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 0
+      name: 5f536e6f77436f6c6f72416e64436f766572616765
+      floatValue: 0
+      colorValue:
+        r: .705195308
+        g: .793058455
+        b: .876820922
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f46726f7374
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f536e6f7753706563476c6f7373
+      floatValue: 0
+      colorValue:
+        r: .426494628
+        g: .426494628
+        b: .426494628
+        a: .121568628
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f77536c6f706544616d70
+      floatValue: .550000012
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f536e6f774469666675736553636174746572696e67436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: .445783973
+        g: .573096454
+        b: .625009537
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f774469666675736553636174746572696e674578706f6e656e74
+      floatValue: 4.9000001
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f774469666675736553636174746572696e674f6666736574
+      floatValue: .261999995
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f7744656570536d6f6f7468656e
+      floatValue: 8
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f537061726b6c654d6170536e6f77
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 62374e4b8f7def5419f230210740938e, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 0
+      name: 5f536e6f77456d697373696f6e5472616e73706172656e6379
+      floatValue: 0
+      colorValue:
+        r: .705890238
+        g: .705890238
+        b: .705890238
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f774d6963726f54696c696e67
+      floatValue: 6
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f7742756d704d6963726f
+      floatValue: .0397000015
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f774d6163726f54696c696e67
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f7742756d704d6163726f
+      floatValue: .179000005
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f77576f726c644d617070696e67
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f77446973736f6c7665
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f77446973736f6c76654d61736b4f63636c7573696f6e
+      floatValue: .101000004
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f536e6f775472616e736c7563656e6379436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: .499584436
+        g: .522093534
+        b: .56619215
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f536e6f77476c6974746572436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 1
+        g: 1
+        b: 1
+        a: .270588249
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f774865696768745468726573686f6c64
+      floatValue: -10000
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f536e6f774865696768745468726573686f6c645472616e736974696f6e
+      floatValue: 10
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f774c6576656c46726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f46726f737446726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f7742756d704d6963726f46726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f77446973736f6c766546726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f7753706563476c6f737346726f6d476c6f62616c
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536e6f77476c6974746572436f6c6f7246726f6d476c6f62616c
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f476c6974746572
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f476c697474657253686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 4
+      name: 5f537061726b6c654d6170
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 58d91b9c15e76ee489eb634baedb9497, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 4
+      name: 5f537061726b6c654d6170476c6974746572
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 2800000, guid: 58d91b9c15e76ee489eb634baedb9497, type: 3}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 1, y: 1}
+    - type: 0
+      name: 5f476c6974746572436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: .200011492
+        g: .200011492
+        b: .200011492
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f476c6974746572436f6c6f7232
+      floatValue: 0
+      colorValue:
+        r: .200011492
+        g: .200011492
+        b: .200011492
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c6974746572436f6c6f72697a6174696f6e
+      floatValue: .200000003
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c697474657244656e73697479
+      floatValue: .200000003
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f476c697474657254696c696e67
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f476c6974746572416e696d6174696f6e4672657175656e6379
+      floatValue: .0199999996
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c697474657246696c746572
+      floatValue: -1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f476c69747465724d61736b
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f547269706c616e617253686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f4d61696e54657841766572616765436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 0
+      name: 5f4d61696e5465783241766572616765436f6c6f72
+      floatValue: 0
+      colorValue:
+        r: .500028253
+        g: .500028253
+        b: .500028253
+        a: 1
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f547269706c616e6172426c656e6453686172706e657373
+      floatValue: 27.2000008
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f547269706c616e61724e6f726d616c426c656e6453686172706e657373
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f547269706c616e61724865696768746d6170426c656e64696e6756616c7565
+      floatValue: .592999995
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 3
+      name: 5f547269706c616e6172426c656e64416d6269656e744f63636c7573696f6e
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f547269706c616e6172576f726c644d617070696e67
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f4d61696e53686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5365636f6e6461727953686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f5072657365747353686f776e
+      floatValue: 1
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 2
+      name: 5f536861646f7743756c6c
+      floatValue: 2
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 0, y: 0, z: 0, w: 0}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 1
+      name: 6865696768744d6170546578656c53697a65
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: .001953125, y: .001953125, z: 512, w: 512}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 1
+      name: 62756d704d6170546578656c53697a65
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: .001953125, y: .001953125, z: 512, w: 512}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+    - type: 1
+      name: 62756d704d617032546578656c53697a65
+      floatValue: 0
+      colorValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      vectorValue: {x: 1, y: 1, z: 1, w: 1}
+      textureValue: {fileID: 0}
+      textureOffset: {x: 0, y: 0}
+      textureScale: {x: 0, y: 0}
+  names:
+  - 4865626520547269706c616e6172
