@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 
-namespace ProGrids2 
+namespace ProGrids
 {
 	public static class pg_Util
 	{
@@ -30,6 +30,67 @@ namespace ProGrids2
 				float.Parse(rgba[1]),
 				float.Parse(rgba[2]),
 				float.Parse(rgba[3]));
+		}
+
+		private static Vector3 VectorToMask(Vector3 vec)
+		{
+			return new Vector3( Mathf.Abs(vec.x) > Mathf.Epsilon ? 1f : 0f, 
+								Mathf.Abs(vec.y) > Mathf.Epsilon ? 1f : 0f, 
+								Mathf.Abs(vec.z) > Mathf.Epsilon ? 1f : 0f );
+		}
+
+		private static Axis MaskToAxis(Vector3 vec)
+		{
+			Axis axis = Axis.None;
+			if( Mathf.Abs(vec.x) > 0 ) axis |= Axis.X;
+			if( Mathf.Abs(vec.y) > 0 ) axis |= Axis.Y;
+			if( Mathf.Abs(vec.z) > 0 ) axis |= Axis.Z;
+			return axis;
+		}
+
+		private static Axis BestAxis(Vector3 vec)
+		{
+			float x = Mathf.Abs(vec.x);
+			float y = Mathf.Abs(vec.y);
+			float z = Mathf.Abs(vec.z);
+
+			return (x > y && x > z) ? Axis.X : ((y > x && y > z) ? Axis.Y : Axis.Z);
+		}
+
+		public static Axis CalcDragAxis(Vector3 movement, Camera cam)
+		{
+			Vector3 mask = VectorToMask(movement);
+
+			if(mask.x + mask.y + mask.z == 2)
+			{
+				return MaskToAxis(Vector3.one - mask);
+			}
+			else
+			{
+				switch( MaskToAxis(mask) )
+				{
+					case Axis.X:
+						if( Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.up)) < Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.forward)))
+							return Axis.Z;
+						else
+							return Axis.Y;
+
+					case Axis.Y:
+						if( Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.right)) < Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.forward)))
+							return Axis.Z;
+						else
+							return Axis.X;
+
+					case Axis.Z:
+						if( Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.right)) < Mathf.Abs(Vector3.Dot(cam.transform.forward, Vector3.up)))
+							return Axis.Y;
+						else
+							return Axis.X;
+					default:
+
+						return Axis.None;
+				}
+			}
 		}
 
 #region SNAP
@@ -54,15 +115,15 @@ namespace ProGrids2
 				);
 		}
 
-		const float APPROX_ZERO = .0001f;
+		const float EPSILON = .0001f;
 		public static Vector3 SnapValue(Vector3 val, Vector3 mask, float snapValue)
 		{
 
 			float _x = val.x, _y = val.y, _z = val.z;
 			return new Vector3(
-				( Mathf.Abs(mask.x) < APPROX_ZERO ? _x : Snap(_x, snapValue) ),
-				( Mathf.Abs(mask.y) < APPROX_ZERO ? _y : Snap(_y, snapValue) ),
-				( Mathf.Abs(mask.z) < APPROX_ZERO ? _z : Snap(_z, snapValue) )
+				( Mathf.Abs(mask.x) < EPSILON ? _x : Snap(_x, snapValue) ),
+				( Mathf.Abs(mask.y) < EPSILON ? _y : Snap(_y, snapValue) ),
+				( Mathf.Abs(mask.z) < EPSILON ? _z : Snap(_z, snapValue) )
 				);
 		}
 
@@ -70,9 +131,9 @@ namespace ProGrids2
 		{
 			float _x = val.x, _y = val.y, _z = val.z;
 			return new Vector3(
-				( Mathf.Abs(mask.x) < APPROX_ZERO ? _x : SnapToCeil(_x, snapValue) ),
-				( Mathf.Abs(mask.y) < APPROX_ZERO ? _y : SnapToCeil(_y, snapValue) ),
-				( Mathf.Abs(mask.z) < APPROX_ZERO ? _z : SnapToCeil(_z, snapValue) )
+				( Mathf.Abs(mask.x) < EPSILON ? _x : SnapToCeil(_x, snapValue) ),
+				( Mathf.Abs(mask.y) < EPSILON ? _y : SnapToCeil(_y, snapValue) ),
+				( Mathf.Abs(mask.z) < EPSILON ? _z : SnapToCeil(_z, snapValue) )
 				);
 		}
 
@@ -90,9 +151,9 @@ namespace ProGrids2
 		{
 			float _x = val.x, _y = val.y, _z = val.z;
 			return new Vector3(
-				( Mathf.Abs(mask.x) < APPROX_ZERO ? _x : SnapToFloor(_x, snapValue) ),
-				( Mathf.Abs(mask.y) < APPROX_ZERO ? _y : SnapToFloor(_y, snapValue) ),
-				( Mathf.Abs(mask.z) < APPROX_ZERO ? _z : SnapToFloor(_z, snapValue) )
+				( Mathf.Abs(mask.x) < EPSILON ? _x : SnapToFloor(_x, snapValue) ),
+				( Mathf.Abs(mask.y) < EPSILON ? _y : SnapToFloor(_y, snapValue) ),
+				( Mathf.Abs(mask.z) < EPSILON ? _z : SnapToFloor(_z, snapValue) )
 				);
 		}
 

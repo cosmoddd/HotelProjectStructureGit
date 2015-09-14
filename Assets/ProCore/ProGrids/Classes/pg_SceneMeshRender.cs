@@ -15,47 +15,13 @@ public class pg_SceneMeshRender : MonoBehaviour
 	// HideFlags.HideInHierarchy | HideFlags.DontSaveInEditor | HideFlags.NotEditable
 	HideFlags SceneCameraHideFlags = (HideFlags) (1 | 4 | 8);
 
-	void OnEnable()
-	{
-		// If something has gone terribly wrong and the grid object somehow survived a 'pg_Editor.OnDisable', self destruct here.
-		if( !Resources.FindObjectsOfTypeAll(typeof(EditorWindow)).Any(x => x.ToString().Contains("pg_Editor")) )
-			DestroyImmediate(gameObject);
-	}
-
-	private Material _material;
-	private Material material 
-	{
-		get
-		{
-			if(_material == null)
-			{
-				MeshRenderer mr = GetComponent<MeshRenderer>();
-				if(mr != null) _material = mr.sharedMaterial;
-			}
-
-			return _material;
-		}
-	}
-
-	private Mesh _mesh;
-	private Mesh mesh 
-	{
-		get
-		{
-			if(_mesh == null)
-			{
-				MeshFilter mf = GetComponent<MeshFilter>();
-				_mesh = mf.sharedMesh;
-			}
-
-			return _mesh;
-		}
-	}
+	public Mesh mesh;
+	public Material material;
 
 	void OnDestroy()
 	{
-		if(_mesh) DestroyImmediate(_mesh);
-		if(_material) DestroyImmediate(_material);
+		if(mesh) DestroyImmediate(mesh);
+		if(material) DestroyImmediate(material);
 	}
 
 	void OnRenderObject()
@@ -66,17 +32,16 @@ public class pg_SceneMeshRender : MonoBehaviour
 		if( (Camera.current.gameObject.hideFlags & SceneCameraHideFlags) != SceneCameraHideFlags || Camera.current.name != "SceneCamera" )
 			return;
 
-		Mesh msh = mesh;
-		Material mat = material;
-
-		if(mat == null || msh == null)
+		if(material == null || mesh == null)
 		{
-			DestroyImmediate(gameObject);
+			
+			GameObject.DestroyImmediate(this.gameObject);
+			// Debug.Log("NULL MESH || MATERIAL");
 			return;
 		}
 
 		material.SetPass(0);
-		Graphics.DrawMeshNow(msh, Vector3.zero, Quaternion.identity, 0);
+		Graphics.DrawMeshNow(mesh, Vector3.zero, Quaternion.identity, 0);
 	}
 }
 #endif

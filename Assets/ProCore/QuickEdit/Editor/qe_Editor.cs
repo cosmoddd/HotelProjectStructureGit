@@ -24,7 +24,7 @@ namespace QuickEdit
 		Rect windowRect = new Rect(24, 24, 200, 260);
 #else
 		// Size of the GUI window.
-		Rect windowRect = new Rect(24, 24, 105, 132);
+		Rect windowRect = new Rect(24, 24, 105, 150);
 #endif
 
 		// Automatically set - used to clamp the GUI window to the sceneview window rect.
@@ -49,6 +49,7 @@ namespace QuickEdit
 		GUIContent gc_Facetize = new GUIContent("Tri", "Rebuild the mesh will all hard edges.  Also called Facetize, or Triangulate.");
 		GUIContent gc_RebuildColliders = new GUIContent("Collider", "Rebuild the mesh collisions.");
 		GUIContent gc_DeleteFaces = new GUIContent("Delete Faces", "Delete all selected faces from the mesh.");
+		GUIContent gc_CenterPivot = new GUIContent("Center Pivot", "Make the pivot point of this mesh equal to the center of the mesh bounds.");
 
 		public static qe_Editor instance { get { return singleton; } }
 		[SerializeField] private static qe_Editor singleton;
@@ -265,6 +266,7 @@ namespace QuickEdit
 
 #region Scene GUI
  
+		private int lastHotControl = -1;
 		void OnSceneGUI(SceneView scene)
 		{
 			if( NullCheck() )
@@ -284,8 +286,29 @@ namespace QuickEdit
 
 			Tools.hidden = selection.mesh != null && selection.selectedUserVertexCount > 0;
 
-			if( GUIUtility.hotControl < 1 && movingVertices )
-				OnFinishVertexMovement();
+			if( GUIUtility.hotControl != lastHotControl )
+			{
+				lastHotControl = GUIUtility.hotControl;
+
+				if( lastHotControl < 1 )
+				{
+					if( movingVertices )
+					{
+						OnFinishVertexMovement();
+					}
+					else
+					{
+						//
+						if( selection.transform.hasChanged )
+						{
+							selection.CacheMeshValues();
+							CacheIndicesForGraphics();
+							UpdateGraphics();
+							selection.transform.hasChanged = true;
+						}
+					}
+				}
+			}
 
 			if( Tools.hidden )
 			{
@@ -421,6 +444,15 @@ namespace QuickEdit
 					qe_Mesh_Utility.RebuildColliders(selection.mesh);
 				}
 			GUILayout.EndHorizontal();
+
+			if(GUILayout.Button(gc_CenterPivot, EditorStyles.miniButton))
+			{
+				qeUtil.RecordMeshUndo(selection.mesh, "Center Pivot");
+				Vector3 offset = qe_Mesh_Utility.CenterPivot(selection.mesh.cloneMesh);
+				Undo.RecordObject(selection.transform, "Center Pivot");
+				selection.transform.position += offset;
+				selection.CacheMeshValues();
+			}
 
 			if(GUILayout.Button(gc_DeleteFaces, EditorStyles.miniButton) && selection.faces.Count > 0)
 			{

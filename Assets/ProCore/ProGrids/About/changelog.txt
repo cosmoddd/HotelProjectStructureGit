@@ -1,3 +1,53 @@
+-- ProGrids 2.2.4f0 -
+
+# Bug Fixes
+	- Fix issue where adjusting grid offset would not repaint grid.
+	- Attempt to load GUI resources on deserialization, possibly addressing issues with menu icons not loading.
+
+-- ProGrids 2.2.3f0 -
+
+# Bug Fixes
+	- If icons aren't found, search the project for matching images (allows user to rename or move ProGrids folder).
+	- Make menu usable even if icons aren't found in project.
+	- Fix bug where grid would fail to render on Mac.
+	- Improve performance of grid rendering and increase draw distance.
+
+-- ProGrids 2.2.2f0 -
+
+# Bug Fixes
+	- Fix possible leak in pg_GridRenderer.
+	- Fix 10th line highlight being lost on script reload.
+	- Remember open/closed state between Unity loads.
+	- Fix bug where multiple ProGrids instances could potentially be instantiated.
+
+-- ProGrids 2.2.1f0 -
+
+# Features
+	- New interface jettisons bulky Editor Window in favor of a minimal dropdown in the active sceneview.
+	- New "Predictive Grid" option will automatically change the grid plane to best match the current movement.
+	- Add option to snap all selected objects independently of on another (toggle off "Snap as Group").
+
+# Bug Fixes
+	- Improve support for multiple open scene view windows.
+	- Respect local rotation when calculating snap value.
+
+-- ProGrids 2.1.7f0 -
+
+# Features
+	- Add preference to enabled snapping scale values.
+
+-- ProGrids 2.1.6p2 -
+
+# Features
+	- Unity 5 compatibility.
+
+# Patch 1
+	- Add documentation PDF.
+
+# Patch 2
+	- Fix Upgradable API warning.
+	- Fix version marking in About.
+
 -- ProGrids 2.1.5 -
 
 # Bug Fixes

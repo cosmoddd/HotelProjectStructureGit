@@ -31,6 +31,7 @@ namespace QuickEdit
 			destMesh.colors32 = src.colors32;
 			destMesh.bindposes = src.bindposes;
 
+			destMesh.subMeshCount = src.subMeshCount;
 			for(int i = 0; i < src.subMeshCount; i++)
 				destMesh.SetIndices(src.GetIndices(i), src.GetTopology(i), i);
 		}
@@ -60,6 +61,163 @@ namespace QuickEdit
 			}
 
 			return str;
+		}
+
+		private static T[] Fill<T>(int count)
+		{
+			T[] val = new T[count];
+			for(int i = 0; i < count; i++)
+				val[i] = default(T);
+			return val;
+		}
+
+		[MenuItem("Tools/QuickEdit/Combine Meshes", true, 20)]
+		public static bool VerifyMergeSelectedMeshes()
+		{
+			return Selection.transforms.SelectMany(x => x.GetComponentsInChildren<MeshFilter>()).Where(x => x.sharedMesh != null).ToList().Count > 1;
+		}
+
+		[MenuItem("Tools/QuickEdit/Combine Meshes")]
+		public static void MergeSelectedMeshes()
+		{
+			List<MeshFilter> meshFilters = new List<MeshFilter>();
+			List<Material> materials = new List<Material>();
+
+			foreach(Transform t in Selection.transforms)
+			{
+				foreach(MeshFilter mf in t.GetComponentsInChildren<MeshFilter>())
+				{
+					MeshRenderer mr = mf.transform.GetComponent<MeshRenderer>();
+
+					if(mf == null || mf.sharedMesh == null) continue;
+
+					meshFilters.Add(mf);
+
+					for(int i = 0; i < mf.sharedMesh.subMeshCount; i++)
+					{
+						Material[] sharedMaterials = mr == null ? null : mr.sharedMaterials;
+
+						if(sharedMaterials != null && i < sharedMaterials.Length)
+							materials.Add(sharedMaterials[i]);
+						else
+							materials.Add(null);
+					}
+				}
+			}
+
+			Mesh combined;
+			Combine(meshFilters, out combined);
+			Undo.RegisterCreatedObjectUndo(combined, "Combine Meshes");
+
+			Vector3 offset = CenterPivot(combined);
+
+			GameObject go = new GameObject();
+			Undo.RegisterCreatedObjectUndo(go, "Combine Meshes");
+
+			go.transform.position = offset;
+			go.AddComponent<MeshFilter>().sharedMesh = combined;
+			MeshRenderer ren = go.AddComponent<MeshRenderer>();
+			ren.sharedMaterials = materials.ToArray();
+
+			Selection.activeTransform = go.transform;
+			EditorGUIUtility.PingObject(go);
+		}
+
+		/**
+		 * Merge all meshes to a single mesh.
+		 */
+		public static bool Combine(IEnumerable<MeshFilter> meshes, out Mesh result)
+		{
+			List<Vector3[]>		vertices 		= new List<Vector3[]>();
+			List<BoneWeight[]>	boneWeights 	= new List<BoneWeight[]>();
+			List<Color[]>		colors 			= new List<Color[]>();
+			List<Color32[]>		colors32 		= new List<Color32[]>();
+			List<Vector3[]>		normals 		= new List<Vector3[]>();
+			List<Vector4[]>		tangents 		= new List<Vector4[]>();
+			List<Vector2[]>		uv 				= new List<Vector2[]>();
+			List<Vector2[]>		uv2 			= new List<Vector2[]>();
+#if UNITY_5
+			List<Vector2[]>		uv3 			= new List<Vector2[]>();
+			List<Vector2[]>		uv4 			= new List<Vector2[]>();
+#endif
+
+			List<int[]> indices = new List<int[]>();
+			List<MeshTopology> topology = new List<MeshTopology>();
+
+			int vertexOffset = 0;
+
+			foreach(MeshFilter mf in meshes)
+			{
+				Mesh m = mf.sharedMesh;
+
+				int vc = m.vertexCount;
+
+				Vector3[] vrt = m.vertices;
+				Vector3[] nrm = m.normals;
+
+				for(int i = 0; i < vc; i++)
+				{
+					vrt[i] = mf.transform.TransformPoint(vrt[i]);
+					nrm[i] = mf.transform.TransformDirection(nrm[i]);
+				}
+
+				vertices.Add( vrt );
+				boneWeights.Add( m.boneWeights == null || m.boneWeights.Length < 1 ? Fill<BoneWeight>(vc) : m.boneWeights);
+				colors.Add( m.colors == null || m.colors.Length < 1 ? Fill<Color>(vc) : m.colors);
+				colors32.Add( m.colors32 == null || m.colors32.Length < 1 ? Fill<Color32>(vc) : m.colors32);
+				normals.Add( nrm );
+				tangents.Add( m.tangents == null || m.tangents.Length < 1 ? Fill<Vector4>(vc) : m.tangents);
+				uv.Add( m.uv == null || m.uv.Length < 1 ? Fill<Vector2>(vc) : m.uv);
+				uv2.Add( m.uv2 == null || m.uv2.Length < 1 ? Fill<Vector2>(vc) : m.uv2);
+#if UNITY_5
+				uv3.Add(uv3 == null || m.uv3.Length < 1 ? Fill<Vector2>(vc) : m.uv3); 				
+				uv4.Add(uv3 == null || m.uv4.Length < 1 ? Fill<Vector2>(vc) : m.uv4); 				
+#endif
+
+				for(int i = 0; i < m.subMeshCount; i++)
+				{
+					int[] ind = m.GetIndices(i);
+
+					for(int n = 0; n < ind.Length; n++)
+						ind[n] += vertexOffset;
+
+					indices.Add(ind);
+
+					topology.Add(m.GetTopology(i));
+				}
+
+				vertexOffset += vc;
+			}
+
+			if( vertexOffset > 64999 )
+			{
+				result = null;
+				return false;
+			}
+
+			result = new Mesh();
+
+			result.vertices 	= vertices.SelectMany(x => x).ToArray();
+			result.boneWeights 	= boneWeights.SelectMany(x => x).ToArray();
+			result.colors 		= colors.SelectMany(x => x).ToArray();
+			result.colors32 	= colors32.SelectMany(x => x).ToArray();
+			result.normals 		= normals.SelectMany(x => x).ToArray();
+			result.tangents 	= tangents.SelectMany(x => x).ToArray();
+			result.uv 			= uv.SelectMany(x => x).ToArray();
+			result.uv2 			= uv2.SelectMany(x => x).ToArray();
+#if UNITY_5
+			result.uv3 			= uv3.SelectMany(x => x).ToArray();
+			result.uv4 			= uv4.SelectMany(x => x).ToArray();
+#endif
+
+			result.subMeshCount = indices.Count;
+
+			for(int i = 0; i < indices.Count; i++)
+			{
+				result.SetIndices(indices[i], topology[i], i);
+			}
+
+			return true;
 		}
 
 		/**
@@ -170,6 +328,7 @@ namespace QuickEdit
 			Vector3[] vertices 			= new Vector3[triangleCount];
 
 			// cache mesh arrays because accessing them through the reference is slooooow
+			Vector3[] 		mVertices 		= mesh.vertices;
 			BoneWeight[] 	mBoneWeights 	= mesh.boneWeights;
 			Color[] 		mColors 		= mesh.colors;
 			Color32[] 		mColors32 		= mesh.colors32;
@@ -181,7 +340,6 @@ namespace QuickEdit
 			Vector2[] 		mUv3 			= mesh.uv3;
 			Vector2[] 		mUv4 			= mesh.uv4;
 #endif
-			Vector3[] 		mVertices 		= mesh.vertices;
 
 			int index = 0;
 			int[][] triangles = new int[mesh.subMeshCount][];
@@ -252,6 +410,21 @@ namespace QuickEdit
 			mesh.RecalculateNormals();
 
 			qmesh.CacheElements();
+		}
+
+		public static Vector3 CenterPivot(Mesh mesh)
+		{
+			Vector3[] v = mesh.vertices;
+			Vector3 cen = mesh.bounds.center;
+
+			for(int i = 0; i < v.Length; i++)
+				v[i] -= cen;
+
+			mesh.vertices = v;
+
+			mesh.RecalculateBounds();
+
+			return cen;
 		}
 
 		/**

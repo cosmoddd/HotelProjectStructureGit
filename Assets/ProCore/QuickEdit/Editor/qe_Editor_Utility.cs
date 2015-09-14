@@ -77,9 +77,9 @@ namespace QuickEdit
 		 */
 		public enum Culling
 		{
-			Back = 0x0,
-			Front = 0x1,
-			FrontBack = 0x2
+			Back = 0x1,
+			Front = 0x2,
+			FrontBack = 0x4
 		}
 
 		/**

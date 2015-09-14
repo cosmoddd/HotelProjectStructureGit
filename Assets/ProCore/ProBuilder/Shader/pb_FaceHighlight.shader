@@ -28,20 +28,17 @@ Shader "Hidden/ProBuilder/FaceHighlight"
 			struct appdata
 			{
 				float4 vertex : POSITION;
-			//	float4 color : COLOR;
 			};
 
 			struct v2f
 			{
 				float4 pos : SV_POSITION;
-			//	float4 color : COLOR;
 			};
 
 			v2f vert (appdata v)
 			{
 				v2f o;
 
-				/// so simple, but oh so effective
 				/// https://www.opengl.org/discussion_boards/showthread.php/166719-Clean-Wireframe-Over-Solid-Mesh
 				o.pos = mul(UNITY_MATRIX_MV, v.vertex);
 				o.pos.xyz *= .99;

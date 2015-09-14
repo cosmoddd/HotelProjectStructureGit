@@ -6,19 +6,63 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
-using ProGrids2;
-using ProCore.Common;
+using System.IO;
 
-public class pg_Editor : EditorWindow
+namespace ProGrids
+{
+[InitializeOnLoad]
+public static class pg_Initializer
+{
+	/**
+	 * When opening Unity, remember whether or not ProGrids was open when Unity was shut down last.
+	 * Only check within 10 seconds of opening Unity because otherwise Init will be called multiple
+	 * times due to _instance not being set (OnAfterDeserialize is called after static constructors).
+	 */
+	static pg_Initializer()
+	{
+		if( EditorApplication.timeSinceStartup < 10f && EditorPrefs.GetBool(pg_Constant.ProGridsIsEnabled) )
+			pg_Editor.InitProGrids();
+	}
+}
+
+public class pg_Editor : ScriptableObject, ISerializationCallbackReceiver
 {
 
 #region MEMBERS
 
-	const float MIN_SNAP_VALUE = .01f;
+	string ProGrids_Icons_Path = "Assets/ProCore/ProGrids/GUI/ProGridsToggles";
 	
-	public static pg_Editor instance;
-	Color pgButtonColor = new Color(.35f, .35f, .35f, 1f);
+	public static pg_Editor instance
+	{
+		get
+		{
+			if(_instance == null)
+			{
+				pg_Editor[] editor = Resources.FindObjectsOfTypeAll<pg_Editor>();
+
+				if(editor != null && editor.Length > 0)
+				{
+					_instance = editor[0];
+
+					for(int i = 1; i < editor.Length; i++)
+					{
+						GameObject.DestroyImmediate(editor[i]);
+					}
+				}
+			}
+
+			return _instance;
+		}
+
+		set
+		{
+			_instance = value;
+		}
+	}
+	private static pg_Editor _instance;
+	
 	Color oldColor;
 
 	private bool useAxisConstraints = false;
@@ -33,13 +77,73 @@ public class pg_Editor : EditorWindow
 	#endif
 	private bool drawGrid = true;
 	private bool drawAngles = false;
-	private float angleValue = 45f;
+	public float angleValue = 45f;
 	private bool gridRepaint = true;
+	public bool predictiveGrid = true;
+
+	private bool _snapAsGroup = true;
+	public bool snapAsGroup
+	{
+		get
+		{
+			return EditorPrefs.HasKey(pg_Constant.SnapAsGroup) ? EditorPrefs.GetBool(pg_Constant.SnapAsGroup) : true;
+		}
+
+		set
+		{
+			_snapAsGroup = value;
+			EditorPrefs.SetBool(pg_Constant.SnapAsGroup, _snapAsGroup);
+		}
+	}
 
 	public bool fullGrid { get; private set; }
 
+	private bool _scaleSnapEnabled = false;
+	public bool ScaleSnapEnabled
+	{
+		get
+		{
+			return EditorPrefs.HasKey(pg_Constant.SnapScale) ? EditorPrefs.GetBool(pg_Constant.SnapScale) : false;
+		}
+
+		set
+		{
+			_scaleSnapEnabled = value;
+			EditorPrefs.SetBool(pg_Constant.SnapScale, _scaleSnapEnabled);
+		}
+	}
+
 	bool lockGrid = false;
 	private Axis renderPlane = Axis.Y;
+
+	#if PG_DEBUG
+	private GameObject _pivotGo;
+	public GameObject pivotGo
+	{
+		get
+		{
+			if(_pivotGo == null)
+			{
+				GameObject find = GameObject.Find("PG_PIVOT_CUBE");
+
+				if(find == null)
+				{
+					_pivotGo = GameObject.CreatePrimitive(PrimitiveType.Cube);
+					_pivotGo.name = "PG_PIVOT_CUBE";
+				}
+				else
+					_pivotGo = find;
+			}
+
+			return _pivotGo;
+		}
+
+		set
+		{
+			_pivotGo = value;
+		}
+	}
+	#endif
 #endregion
 
 #region CONSTANT
@@ -53,44 +157,28 @@ public class pg_Editor : EditorWindow
 	const int WINDOW_HEIGHT = 260;
 	#endif
 
-	const float METER = 1f;
-	#if PRO
-	const float CENTIMETER = .01f;
-	const float MILLIMETER = .001f;
-	const float INCH = 0.0253999862840074f;
-	const float FOOT = 0.3048f;
-	const float YARD = 1.09361f;
-	const float PARSEC = 5f;
-	#endif
 
 	const int MAX_LINES = 150;				// the maximum amount of lines to display on screen in either direction
 	public static float alphaBump;			// Every tenth line gets an alpha bump by this amount
 	const int BUTTON_SIZE = 46;
 
-	private Texture2D gui_SnapEnabled_on, gui_SnapEnabled_off;
-	private Texture2D gui_GridEnabled_on, gui_GridEnabled_off;
-	private Texture2D gui_AngleEnabled_on, gui_AngleEnabled_off;
-	private Texture2D gui_SnapToGrid;//, gui_SnapToGrid_pressed;
-	private Texture2D gui_Divider;
-	private Texture2D gui_fullGrid_on, gui_fullGrid_off;
-	private Texture2D gui_PlaneX_on, gui_PlaneX_off;
-	private Texture2D gui_PlaneY_on, gui_PlaneY_off;
-	private Texture2D gui_PlaneZ_on, gui_PlaneZ_off;
-	private Texture2D gui_LockGrid_on, gui_LockGrid_off;
-
-	private GUIContent gc_SnapToGrid = new GUIContent((Texture2D)null, "Snaps all selected objects to grid.");
-	private GUIContent gc_SnapEnabled 	= new GUIContent((Texture2D)null, "Toggles snapping on or off.");
-	private GUIContent gc_GridEnabled 	= new GUIContent((Texture2D)null, "Toggles drawing of guide lines on or off.  Note that object snapping is not affected by this setting.");
-	private GUIContent gc_AngleEnabled 	= new GUIContent((Texture2D)null, "If on, ProGrids will draw angled line guides.  Angle is settable in degrees.");
-	private GUIContent gc_AngleValue 	= new GUIContent((Texture2D)null, "The degree at which angle guides will be drawn.");
-	private GUIContent gc_RenderPlaneX 	= new GUIContent((Texture2D)null, "Renders a grid on the X plane.");
-	private GUIContent gc_RenderPlaneY 	= new GUIContent((Texture2D)null, "Renders a grid on the Y plane.");
-	private GUIContent gc_RenderPlaneZ 	= new GUIContent((Texture2D)null, "Renders a grid on the Z plane.");
-	private GUIContent gc_RenderPerspectiveGrid = new GUIContent("", "Renders a 3d grid in perspective mode.");
-	private GUIContent gc_LockGrid 		= new GUIContent("", "Lock the perspective grid center in place.");
+	private Texture2D icon_extendoClose, icon_extendoOpen;
+	
+	[SerializeField] private pg_ToggleContent gc_SnapToGrid 	= new pg_ToggleContent("Snap", "", "Snaps all selected objects to grid.");
+	[SerializeField] private pg_ToggleContent gc_GridEnabled = new pg_ToggleContent("Hide", "Show", "Toggles drawing of guide lines on or off.  Note that object snapping is not affected by this setting.");
+	[SerializeField] private pg_ToggleContent gc_SnapEnabled = new pg_ToggleContent("On", "Off", "Toggles snapping on or off.");
+	[SerializeField] private pg_ToggleContent gc_LockGrid 	= new pg_ToggleContent("Lock", "Unlck", "Lock the perspective grid center in place.");
+	[SerializeField] private pg_ToggleContent gc_AngleEnabled = new pg_ToggleContent("> On", "> Off", "If on, ProGrids will draw angled line guides.  Angle is settable in degrees.");
+	[SerializeField] private pg_ToggleContent gc_RenderPlaneX 	= new pg_ToggleContent("X", "X", "Renders a grid on the X plane.");
+	[SerializeField] private pg_ToggleContent gc_RenderPlaneY 	= new pg_ToggleContent("Y", "Y", "Renders a grid on the Y plane.");
+	[SerializeField] private pg_ToggleContent gc_RenderPlaneZ 	= new pg_ToggleContent("Z", "Z", "Renders a grid on the Z plane.");
+	[SerializeField] private pg_ToggleContent gc_RenderPerspectiveGrid = new pg_ToggleContent("Full", "Plane", "Renders a 3d grid in perspective mode.");
+	[SerializeField] private GUIContent gc_ExtendMenu 	= new GUIContent("", "Show or hide the scene view menu.");
+	[SerializeField] private GUIContent gc_SnapIncrement = new GUIContent("", "Set the snap increment.");
 #endregion
 
 #region PREFERENCES
+	
 	/** Settings **/
 	public Color gridColorX, gridColorY, gridColorZ;
 	public Color gridColorX_primary, gridColorY_primary, gridColorZ_primary;
@@ -152,8 +240,6 @@ NoParseForYou:
 		
 		renderPlane = EditorPrefs.HasKey(pg_Constant.GridAxis) ? (Axis)EditorPrefs.GetInt(pg_Constant.GridAxis) : Axis.Y;
 		
-		SharedProperties.useAxisConstraints = useAxisConstraints;
-
 		alphaBump = (EditorPrefs.HasKey("pg_alphaBump")) ? EditorPrefs.GetFloat("pg_alphaBump") : pg_Preferences.ALPHA_BUMP;
 
 		gridColorX = (EditorPrefs.HasKey("gridColorX")) ? pg_Util.ColorWithString(EditorPrefs.GetString("gridColorX")) : pg_Preferences.GRID_COLOR_X;
@@ -164,102 +250,14 @@ NoParseForYou:
 		gridColorZ_primary = new Color(gridColorZ.r, gridColorZ.g, gridColorZ.b, gridColorZ.a + alphaBump);
 
 		drawGrid = (EditorPrefs.HasKey("showgrid")) ? EditorPrefs.GetBool("showgrid") : pg_Preferences.SHOW_GRID;
+
+		predictiveGrid = EditorPrefs.HasKey(pg_Constant.PredictiveGrid) ? EditorPrefs.GetBool(pg_Constant.PredictiveGrid) : true;
+
+		_snapAsGroup = snapAsGroup;
+		_scaleSnapEnabled = ScaleSnapEnabled;
 	}
 
 	private GUISkin sixBySevenSkin;
-#endregion
-
-#region ENUM
-
-	public enum Axis {
-		X = 0x1,
-		Y = 0x2,
-		Z = 0x4,
-		NegX = 0x8,
-		NegY = 0x16,
-		NegZ = 0x32
-	}
-
-	/**
-	 * Multiplies a Vector3 using the inverse value of an axis (eg, Axis.Y becomes Vector3(1, 0, 1) )
-	 */
-	private Vector3 InverseAxisMask(Vector3 v, Axis axis)
-	{
-		switch(axis)
-		{
-			case Axis.X:
-			case Axis.NegX:
-				return Vector3.Scale(v, new Vector3(0f, 1f, 1f));
-			
-			case Axis.Y:
-			case Axis.NegY:
-				return Vector3.Scale(v, new Vector3(1f, 0f, 1f));
-
-			case Axis.Z:
-			case Axis.NegZ:
-				return Vector3.Scale(v, new Vector3(1f, 1f, 0f));
-
-			default:
-				return v;
-		}
-	}
-
-	private Vector3 AxisMask(Vector3 v, Axis axis)
-	{
-		switch(axis)
-		{
-			case Axis.X:
-			case Axis.NegX:
-				return Vector3.Scale(v, new Vector3(1f, 0f, 0f));
-			
-			case Axis.Y:
-			case Axis.NegY:
-				return Vector3.Scale(v, new Vector3(0f, 1f, 0f));
-
-			case Axis.Z:
-			case Axis.NegZ:
-				return Vector3.Scale(v, new Vector3(0f, 0f, 1f));
-
-			default:
-				return v;
-		}
-	}
-
-	public enum SnapUnit {
-		Meter,
-		#if PRO
-		Centimeter,
-		Millimeter,
-		Inch,
-		Foot,
-		Yard,
-		Parsec
-		#endif
-	}
-
-	public float SnapUnitValue(SnapUnit su) {
-		switch(su)
-		{
-			case SnapUnit.Meter:
-				return METER;
-			#if PRO
-			case SnapUnit.Centimeter:
-				return CENTIMETER;
-			case SnapUnit.Millimeter:
-				return MILLIMETER;
-			case SnapUnit.Inch:
-				return INCH;
-			case SnapUnit.Foot:
-				return FOOT;
-			case SnapUnit.Yard:
-				return YARD;
-			case SnapUnit.Parsec:
-				return PARSEC;
-			#endif
-			default:
-				return METER;
-		}
-	}
 #endregion
 
 #region MENU
@@ -273,8 +271,32 @@ NoParseForYou:
 	[MenuItem("Tools/ProGrids/ProGrids Window", false, 15)]
 	public static void InitProGrids()
 	{
-		EditorWindow.GetWindow(typeof(pg_Editor), false, "PG", true).autoRepaintOnSceneChange = true;
+		if( instance == null )
+		{
+			EditorPrefs.SetBool(pg_Constant.ProGridsIsEnabled, true);
+			instance = ScriptableObject.CreateInstance<pg_Editor>();
+			instance.hideFlags = HideFlags.DontSave;
+			EditorApplication.delayCall += instance.Initialize;
+		}
+		else
+		{
+			CloseProGrids();
+		}
+
 		SceneView.RepaintAll();
+	}
+
+	[MenuItem("Tools/ProGrids/Close ProGrids", true, 200)]
+	public static bool VerifyCloseProGrids()
+	{
+		return instance != null || Resources.FindObjectsOfTypeAll<pg_Editor>().Length > 0;
+	}
+
+	[MenuItem("Tools/ProGrids/Close ProGrids")]
+	public static void CloseProGrids()
+	{
+		foreach(pg_Editor editor in Resources.FindObjectsOfTypeAll<pg_Editor>())
+			editor.Close();
 	}
 
 	[MenuItem("Tools/ProGrids/Cycle SceneView Projection", false, 101)]
@@ -334,7 +356,8 @@ NoParseForYou:
 		multiplier /= 2;
 
 		instance.SetSnapValue(instance.snapUnit, val, multiplier);
-		instance.Repaint();
+		
+		SceneView.RepaintAll();
 	}
 
 	[MenuItem("Tools/ProGrids/Increase Grid Size", false, 203)]
@@ -348,7 +371,8 @@ NoParseForYou:
 		multiplier *= 2;
 
 		instance.SetSnapValue(instance.snapUnit, val, multiplier);
-		instance.Repaint();
+
+		SceneView.RepaintAll();
 	}
 
 	[MenuItem("Tools/ProGrids/Nudge Perspective Backward", true, 304)]
@@ -364,6 +388,7 @@ NoParseForYou:
 	{
 		if(!instance.lockGrid) return;
 		instance.offset -= instance.snapValue;
+		instance.gridRepaint = true;
 		SceneView.RepaintAll();
 	}
 
@@ -372,6 +397,7 @@ NoParseForYou:
 	{
 		if(!instance.lockGrid) return;
 		instance.offset += instance.snapValue;
+		instance.gridRepaint = true;
 		SceneView.RepaintAll();
 	}
 
@@ -380,197 +406,333 @@ NoParseForYou:
 	{
 		if(!instance.lockGrid) return;
 		instance.offset = 0;
+		instance.gridRepaint = true;
 		SceneView.RepaintAll();
 	}
 #endregion
 
-#region INITIALIZATION
+#region INITIALIZATION / SERIALIZATION
 
-	#if DEBUG
-		GameObject pivotGo;
-		GameObject scenePivotGo;
-		GameObject scenePlaneIntercept;
-	#endif
+	public void OnBeforeSerialize() {}
 
-	public void OnEnable()
+	public void OnAfterDeserialize()
 	{
-		#if DEBUG
-			pivotGo = new GameObject();//GameObject.CreatePrimitive(PrimitiveType.Cube);
-			scenePivotGo = new GameObject();//GameObject.CreatePrimitive(PrimitiveType.Cube);
-			scenePlaneIntercept = new GameObject();//GameObject.CreatePrimitive(PrimitiveType.Cube);
-		#endif
-
 		instance = this;
+		instance.LoadGUIResources();
+		SceneView.onSceneGUIDelegate += OnSceneGUI;
+		EditorApplication.update += Update;
+		EditorApplication.hierarchyWindowChanged += HierarchyWindowChanged;
 
-		HookSceneView();
+		LoadPreferences();
+	}
+
+	public void Initialize()
+	{
+		SceneView.onSceneGUIDelegate += OnSceneGUI;
+		EditorApplication.update += Update;
+		EditorApplication.hierarchyWindowChanged += HierarchyWindowChanged;
+
 		LoadGUIResources();
 		LoadPreferences();
-		autoRepaintOnSceneChange = true;
-		SetSharedSnapValues(snapEnabled, snapValue);
-		this.minSize = new Vector2(BUTTON_SIZE+4, WINDOW_HEIGHT);
-		this.maxSize = new Vector2(BUTTON_SIZE+4, WINDOW_HEIGHT);
+		instance = this;
+		pg_GridRenderer.Init();
+
+		SetMenuIsExtended(false);
+		lastTime = Time.realtimeSinceStartup;
+		ToggleMenuVisibility();
 
 		gridRepaint = true;
-		SceneView.RepaintAll();
+		RepaintSceneView();
 	}
 
-	public void OnFocus()
+	void OnDestroy()
 	{
-		SetSharedSnapValues(snapEnabled, snapValue);
-		SceneView.RepaintAll();
+		this.Close(true);
 	}
 
-	public void OnDisable()
+	public void Close()
 	{
-		if(!EditorApplication.isPlayingOrWillChangePlaymode)
-			pg_GridRenderer.Destroy();
+		EditorPrefs.SetBool(pg_Constant.ProGridsIsEnabled, false);
+		GameObject.DestroyImmediate(this);
+	}
 
-		#if DEBUG
-		if(pivotGo != null)
-			DestroyImmediate(pivotGo);
-		if(scenePivotGo != null)
-			DestroyImmediate(scenePivotGo);
+	public void Close(bool isBeingDestroyed)
+	{
+		pg_GridRenderer.Destroy();
 		
-		if(scenePlaneIntercept != null)
-			DestroyImmediate(scenePivotGo);
-		#endif
+		SceneView.onSceneGUIDelegate -= OnSceneGUI;
+		EditorApplication.update -= Update;
+		EditorApplication.hierarchyWindowChanged -= HierarchyWindowChanged;
+
+		instance = null;
+
+		foreach(System.Action<bool> listener in toolbarEventSubscribers)
+			listener(false);
 
 		SceneView.RepaintAll();
-		SetSharedSnapValues(false, snapValue);
-		SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
 	}
 
-	public void HookSceneView()
+	private void LoadGUIResources()
 	{
-		if(SceneView.onSceneGUIDelegate != this.OnSceneGUI)
+		if(gc_GridEnabled.image_on == null)
+			gc_GridEnabled.image_on = LoadIcon("ProGrids2_GUI_Vis_On.png");
+
+		if(gc_GridEnabled.image_off == null)
+			gc_GridEnabled.image_off = LoadIcon("ProGrids2_GUI_Vis_Off.png");
+
+
+		if(gc_SnapEnabled.image_on == null)
+			gc_SnapEnabled.image_on = LoadIcon("ProGrids2_GUI_Snap_On.png");
+
+		if(gc_SnapEnabled.image_off == null)
+			gc_SnapEnabled.image_off = LoadIcon("ProGrids2_GUI_Snap_Off.png");
+
+		
+		if(gc_SnapToGrid.image_on == null)
+			gc_SnapToGrid.image_on = LoadIcon("ProGrids2_GUI_PushToGrid_Normal.png");
+
+
+		if(gc_LockGrid.image_on == null)
+			gc_LockGrid.image_on = LoadIcon("ProGrids2_GUI_PGrid_Lock_On.png");
+
+		if(gc_LockGrid.image_off == null)
+			gc_LockGrid.image_off = LoadIcon("ProGrids2_GUI_PGrid_Lock_Off.png");
+
+
+		if(gc_AngleEnabled.image_on == null)
+			gc_AngleEnabled.image_on = LoadIcon("ProGrids2_GUI_AngleVis_On.png");
+
+		if(gc_AngleEnabled.image_off == null)
+			gc_AngleEnabled.image_off = LoadIcon("ProGrids2_GUI_AngleVis_Off.png");
+
+
+		if(gc_RenderPlaneX.image_on == null)
+			gc_RenderPlaneX.image_on = LoadIcon("ProGrids2_GUI_PGrid_X_On.png");
+
+		if(gc_RenderPlaneX.image_off == null)
+			gc_RenderPlaneX.image_off = LoadIcon("ProGrids2_GUI_PGrid_X_Off.png");
+
+
+		if(gc_RenderPlaneY.image_on == null)
+			gc_RenderPlaneY.image_on = LoadIcon("ProGrids2_GUI_PGrid_Y_On.png");
+
+		if(gc_RenderPlaneY.image_off == null)
+			gc_RenderPlaneY.image_off = LoadIcon("ProGrids2_GUI_PGrid_Y_Off.png");
+
+		
+		if(gc_RenderPlaneZ.image_on == null)
+			gc_RenderPlaneZ.image_on = LoadIcon("ProGrids2_GUI_PGrid_Z_On.png");
+
+		if(gc_RenderPlaneZ.image_off == null)
+			gc_RenderPlaneZ.image_off = LoadIcon("ProGrids2_GUI_PGrid_Z_Off.png");
+
+
+		if(gc_RenderPerspectiveGrid.image_on == null)
+			gc_RenderPerspectiveGrid.image_on = LoadIcon("ProGrids2_GUI_PGrid_3D_On.png");
+
+		if(gc_RenderPerspectiveGrid.image_off == null)
+			gc_RenderPerspectiveGrid.image_off = LoadIcon("ProGrids2_GUI_PGrid_3D_Off.png");
+
+
+		if(icon_extendoOpen == null)
+			icon_extendoOpen = LoadIcon("ProGrids2_MenuExtendo_Open.png");
+
+		if(icon_extendoClose == null)
+			icon_extendoClose = LoadIcon("ProGrids2_MenuExtendo_Close.png");
+
+	}
+
+	private Texture2D LoadIcon(string iconName)
+	{
+		string iconPath = ProGrids_Icons_Path + "/" + iconName;
+		if(!File.Exists(iconPath))
 		{
-			SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
-			SceneView.onSceneGUIDelegate += this.OnSceneGUI;
+			string[] path = Directory.GetFiles("Assets", iconName, SearchOption.AllDirectories);
+			
+			if(path.Length > 0)
+			{
+				ProGrids_Icons_Path = Path.GetDirectoryName(path[0]);
+				iconPath = path[0];
+			}
+			else
+			{
+				Debug.LogError("ProGrids failed to locate menu image: " + iconName + ".\nThis can happen if the GUI folder is moved or deleted.  Deleting and re-importing ProGrids will fix this error.");
+				return (Texture2D) null;
+			}
 		}
+		
+		return LoadAssetAtPath<Texture2D>(iconPath);
 	}
 
-	public void LoadGUIResources()
+	T LoadAssetAtPath<T>(string path) where T : UnityEngine.Object
 	{
-		// toggleStyle.margin = new RectOffset(5,5,5,5);
-
-		gui_SnapEnabled_on 		= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_Snap_On");
-		gui_SnapEnabled_off 	= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_Snap_Off");
-		
-		gui_GridEnabled_on 		= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_Vis_On");
-		gui_GridEnabled_off 	= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_Vis_Off");
-		
-		gui_AngleEnabled_on 	= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_AngleVis_On");
-		gui_AngleEnabled_off 	= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_AngleVis_Off");
-
-		gui_SnapToGrid 			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PushToGrid_Normal");
-		// gui_SnapToGrid_pressed	= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PushToGrid_Pressed");
-		gc_SnapToGrid.image 	= gui_SnapToGrid;
-
-		gui_Divider				= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_Divider");
-
-		gui_fullGrid_on			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_3D_On");
-		gui_fullGrid_off		= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_3D_Off");
-
-		gui_PlaneX_on			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_X_On");
-		gui_PlaneX_off			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_X_Off");
-
-		gui_PlaneY_on			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Y_On");
-		gui_PlaneY_off			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Y_Off");
-		
-		gui_PlaneZ_on			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Z_On");
-		gui_PlaneZ_off			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Z_Off");
-
-		gui_LockGrid_on			= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Lock_On");
-		gui_LockGrid_off		= (Texture2D)Resources.Load("GUI/ProGridsToggles/ProGrids2_GUI_PGrid_Lock_Off");
+		return (T) AssetDatabase.LoadAssetAtPath(path, typeof(T));
 	}
 #endregion 
 
 #region INTERFACE
 
-	GUIStyle pbStyle = new GUIStyle();
-	const int TOGGLE_WIDTH = 20;
-
+	GUIStyle gridButtonStyle = new GUIStyle();
+	GUIStyle extendoStyle = new GUIStyle();
+	GUIStyle gridButtonStyleBlank = new GUIStyle();
+	GUIStyle backgroundStyle = new GUIStyle();
 	bool guiInitialized = false;
-	public void OnGUI()
-	{	
-		if(!guiInitialized) 
+
+	public float GetSnapIncrement()
+	{
+		return t_snapValue;
+	}
+
+	public void SetSnapIncrement(float inc)
+	{
+		SetSnapValue(snapUnit, Mathf.Max(inc, .001f), 100);
+	}
+
+	void RepaintSceneView()
+	{
+		SceneView.RepaintAll();
+	}
+
+	int MENU_HIDDEN { get { return menuIsOrtho ? -192 : -173; } }
+
+	const int MENU_EXTENDED = 8;
+	const int PAD = 3;
+	Rect r = new Rect(8, MENU_EXTENDED, 42, 16);
+	Rect backgroundRect = new Rect(00,0,0,0);
+	Rect extendoButtonRect = new Rect(0,0,0,0);
+	bool menuOpen = true;
+	float menuStart = MENU_EXTENDED;
+	const float MENU_SPEED = 500f;
+	float deltaTime = 0f;
+	float lastTime = 0f;
+	const float FADE_SPEED = 2.5f;
+	float backgroundFade = 1f;
+	bool mouseOverMenu = false;
+	Color menuBackgroundColor = new Color(0f, 0f, 0f, .5f);
+	Color extendoNormalColor = new Color(.9f, .9f, .9f, .7f);
+	Color extendoHoverColor = new Color(0f, 1f, .4f, 1f);
+	bool extendoButtonHovering = false;
+	bool menuIsOrtho = false;
+
+	void Update()
+	{
+		deltaTime = Time.realtimeSinceStartup - lastTime;
+		lastTime = Time.realtimeSinceStartup;
+
+		if( menuOpen && menuStart < MENU_EXTENDED || !menuOpen && menuStart > MENU_HIDDEN )
 		{
-			GUISkin t_skin = EditorGUIUtility.GetBuiltinSkin(EditorGUIUtility.isProSkin ? EditorSkin.Scene : EditorSkin.Inspector);
-			pbStyle.padding = new RectOffset(2,2,1,1);
-			pbStyle.border = new RectOffset(6, 6, 4, 4);
-			pbStyle.normal.background = t_skin.GetStyle("Button").normal.background;
-			pbStyle.margin = new RectOffset(4,2,2,2);
-			pbStyle.contentOffset = new Vector2(0,0);
-
+			menuStart += deltaTime * MENU_SPEED * (menuOpen ? 1f : -1f);
+			menuStart = Mathf.Clamp(menuStart, MENU_HIDDEN, MENU_EXTENDED);
+			RepaintSceneView();
 		}
-		
-		if(!EditorGUIUtility.isProSkin)
+
+		float a = menuBackgroundColor.a;
+		backgroundFade = (mouseOverMenu || !menuOpen) ? FADE_SPEED : -FADE_SPEED;
+
+		menuBackgroundColor.a = Mathf.Clamp(menuBackgroundColor.a + backgroundFade * deltaTime, 0f, .5f);
+		extendoNormalColor.a = menuBackgroundColor.a;
+		extendoHoverColor.a = (menuBackgroundColor.a / .5f);
+
+		if( !Mathf.Approximately(menuBackgroundColor.a,a) )
+			RepaintSceneView();
+	}
+
+	void DrawSceneGUI()
+	{
+
+		// GUILayout.BeginArea(new Rect(300, 200, 400, 600));
+		// off = EditorGUILayout.RectField("Rect", off);
+		// extendoHoverColor = EditorGUI.ColorField(new Rect(200, 40, 200, 18), "howver", extendoHoverColor);
+		// GUILayout.EndArea();
+
+		GUI.backgroundColor = menuBackgroundColor;
+		backgroundRect.x = r.x - 4;
+		backgroundRect.y = 0;
+		backgroundRect.width = r.width + 8;
+		backgroundRect.height = r.y + r.height + PAD;
+		GUI.Box(backgroundRect, "", backgroundStyle);
+
+		// when hit testing mouse for showing the background, add some leeway
+		backgroundRect.width += 32f;
+		backgroundRect.height += 32f;
+		GUI.backgroundColor = Color.white;
+
+		if( !guiInitialized )
 		{
-			oldColor = GUI.backgroundColor;
-			GUI.backgroundColor = pgButtonColor;
+			extendoStyle.normal.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;
+			extendoStyle.hover.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;
+
+			guiInitialized = true;
+			backgroundStyle.normal.background = EditorGUIUtility.whiteTexture;
+
+			Texture2D icon_button_normal = LoadIcon("ProGrids2_Button_Normal.png");
+			Texture2D icon_button_hover = LoadIcon("ProGrids2_Button_Hover.png");
+
+			if(icon_button_normal == null)
+			{
+				gridButtonStyleBlank = new GUIStyle("button");
+			}
+			else
+			{
+				gridButtonStyleBlank.normal.background = icon_button_normal;
+				gridButtonStyleBlank.hover.background = icon_button_hover;
+				gridButtonStyleBlank.normal.textColor = icon_button_normal != null ? Color.white : Color.black;
+				gridButtonStyleBlank.hover.textColor = new Color(.7f, .7f, .7f, 1f);
+			}
+
+			gridButtonStyleBlank.padding = new RectOffset(1,2,1,2);
+			gridButtonStyleBlank.alignment = TextAnchor.MiddleCenter;
 		}
 
-		EditorGUI.BeginChangeCheck();
-		t_snapValue = EditorGUILayout.FloatField("", t_snapValue,
-			GUILayout.MinWidth(BUTTON_SIZE),
-			GUILayout.MaxWidth(BUTTON_SIZE));
-		if(EditorGUI.EndChangeCheck()) {
-			#if PRO
-			// If user sets new snap value, make the default multiplier 100 again.
-			SetSnapValue(snapUnit, t_snapValue, 100);
-			#endif
+		r.y = menuStart;
+
+		gc_SnapIncrement.text = t_snapValue.ToString();
+
+		if( GUI.Button(r, gc_SnapIncrement, gridButtonStyleBlank) )
+		{
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+		// On Mac ShowAsDropdown and ShowAuxWindow both throw stack pop exceptions when initialized.
+		pg_ParameterWindow options = EditorWindow.GetWindow<pg_ParameterWindow>(true, "ProGrids Settings", true);
+		Rect screenRect = SceneView.lastActiveSceneView.position;
+		options.editor = this;
+		options.position = new Rect(screenRect.x + r.x + r.width + PAD,
+										screenRect.y + r.y + 24,
+										256,
+										162);
+#else
+		pg_ParameterWindow options = ScriptableObject.CreateInstance<pg_ParameterWindow>();
+		Rect screenRect = SceneView.lastActiveSceneView.position;
+		options.editor = this;
+		options.ShowAsDropDown(new Rect(screenRect.x + r.x + r.width + PAD,
+										screenRect.y + r.y + 24,
+										0,
+										0),
+										new Vector2(256, 162));
+#endif
 		}
 
-		gc_SnapEnabled.image = snapEnabled ? gui_SnapEnabled_on : gui_SnapEnabled_off;
-		if( GUILayout.Button(gc_SnapEnabled, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)) )
-			SetSnapEnabled(!snapEnabled);
+		r.y += r.height + PAD;
 
-		gc_GridEnabled.image = drawGrid ? gui_GridEnabled_on : gui_GridEnabled_off;
-		if( GUILayout.Button(gc_GridEnabled, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)) )
+		// Draw grid
+		if(pg_ToggleContent.ToggleButton(r, gc_GridEnabled, drawGrid, gridButtonStyle, EditorStyles.miniButton))
 			SetGridEnabled(!drawGrid);
 
-		// if(!ortho)	GUI.enabled = false;
-		gc_AngleEnabled.image = drawAngles ? gui_AngleEnabled_on : gui_AngleEnabled_off;
-		if( GUILayout.Button(gc_AngleEnabled, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)) )
-			SetDrawAngles(!drawAngles);
+		r.y += r.height + PAD;
 
-		EditorGUI.BeginChangeCheck();
-		angleValue = EditorGUILayout.FloatField(gc_AngleValue, angleValue,
-			GUILayout.MinWidth(BUTTON_SIZE),
-			GUILayout.MaxWidth(BUTTON_SIZE));
-		if(EditorGUI.EndChangeCheck()) {
-			SceneView.RepaintAll();
-		}
-		// GUI.enabled = true;
+		// Snap enabled
+		if(pg_ToggleContent.ToggleButton(r, gc_SnapEnabled, snapEnabled, gridButtonStyle, EditorStyles.miniButton))
+			SetSnapEnabled(!snapEnabled);
 
-		if(GUILayout.Button(gc_SnapToGrid, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))//, GUILayout.MaxWidth(50), GUILayout.MinHeight(16)))
+		r.y += r.height + PAD;
+
+		// Push to grid
+		if(pg_ToggleContent.ToggleButton(r, gc_SnapToGrid, true, gridButtonStyle, EditorStyles.miniButton))
 			SnapToGrid(Selection.transforms);
 
-		GUILayout.Label(gui_Divider, GUILayout.MaxWidth(BUTTON_SIZE));
+		r.y += r.height + PAD;
 
-		gc_RenderPlaneX.image = (renderPlane & Axis.X) == Axis.X && !fullGrid ? gui_PlaneX_on : gui_PlaneX_off;
-		if(GUILayout.Button(gc_RenderPlaneX, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))
-			SetRenderPlane(Axis.X);
-
-		gc_RenderPlaneY.image = (renderPlane & Axis.Y) == Axis.Y && !fullGrid ? gui_PlaneY_on : gui_PlaneY_off;
-		if(GUILayout.Button(gc_RenderPlaneY, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))
-			SetRenderPlane(Axis.Y);
-		
-		gc_RenderPlaneZ.image = (renderPlane & Axis.Z) == Axis.Z && !fullGrid ? gui_PlaneZ_on : gui_PlaneZ_off;
-		if(GUILayout.Button(gc_RenderPlaneZ, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))
-			SetRenderPlane(Axis.Z);
-
-		gc_RenderPerspectiveGrid.image = fullGrid ? gui_fullGrid_on : gui_fullGrid_off;
-		if(GUILayout.Button(gc_RenderPerspectiveGrid, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))
-		{
-			fullGrid = !fullGrid;
-			gridRepaint = true;
-			EditorPrefs.SetBool(pg_Constant.PerspGrid, fullGrid);
-			SceneView.RepaintAll();
-		}
-
-		gc_LockGrid.image = lockGrid ? gui_LockGrid_on : gui_LockGrid_off;
-		if(GUILayout.Button(gc_LockGrid, pbStyle, GUILayout.MaxWidth(BUTTON_SIZE)))
+		 // Lock grid
+		if(pg_ToggleContent.ToggleButton(r, gc_LockGrid, lockGrid, gridButtonStyle, EditorStyles.miniButton))
 		{
 			lockGrid = !lockGrid;
 			EditorPrefs.SetBool(pg_Constant.LockGrid, lockGrid);
@@ -582,18 +744,91 @@ NoParseForYou:
 
 			gridRepaint = true;
 
-			SceneView.RepaintAll();
+			RepaintSceneView();
 		}
 
-		#if PROFILE_TIMES
-		if(GUILayout.Button("Times"))
-			profiler.DumpTimes();
-		if(GUILayout.Button("Reset"))
-			profiler.ClearValues();
-		#endif	
+		if(menuIsOrtho)
+		{
+			r.y += r.height + PAD;
 
-		if(!EditorGUIUtility.isProSkin)
-			GUI.backgroundColor = oldColor;
+			if(pg_ToggleContent.ToggleButton(r, gc_AngleEnabled, drawAngles, gridButtonStyle, EditorStyles.miniButton))
+				SetDrawAngles(!drawAngles);
+		}
+
+		/**
+		 * Perspective Toggles
+		 */
+		r.y += r.height + PAD + 4;
+
+		if(pg_ToggleContent.ToggleButton(r, gc_RenderPlaneX, (renderPlane & Axis.X) == Axis.X && !fullGrid, gridButtonStyle, EditorStyles.miniButton))
+			SetRenderPlane(Axis.X);
+
+		r.y += r.height + PAD;
+
+		if(pg_ToggleContent.ToggleButton(r, gc_RenderPlaneY, (renderPlane & Axis.Y) == Axis.Y && !fullGrid, gridButtonStyle, EditorStyles.miniButton))
+			SetRenderPlane(Axis.Y);
+		
+		r.y += r.height + PAD;
+
+		if(pg_ToggleContent.ToggleButton(r, gc_RenderPlaneZ, (renderPlane & Axis.Z) == Axis.Z && !fullGrid, gridButtonStyle, EditorStyles.miniButton))
+			SetRenderPlane(Axis.Z);
+
+		r.y += r.height + PAD;
+
+		if(pg_ToggleContent.ToggleButton(r, gc_RenderPerspectiveGrid, fullGrid, gridButtonStyle, EditorStyles.miniButton))
+		{
+			fullGrid = !fullGrid;
+			gridRepaint = true;
+			EditorPrefs.SetBool(pg_Constant.PerspGrid, fullGrid);
+			RepaintSceneView();
+		}
+
+		r.y += r.height + PAD;
+
+		extendoButtonRect.x = r.x;
+		extendoButtonRect.y = r.y;
+		extendoButtonRect.width = r.width;
+		extendoButtonRect.height = r.height;
+
+		GUI.backgroundColor = extendoButtonHovering ? extendoHoverColor : extendoNormalColor;
+		gc_ExtendMenu.text = icon_extendoOpen == null ? (menuOpen ? "Close" : "Open") : "";
+		if(GUI.Button(r, gc_ExtendMenu, icon_extendoOpen ? extendoStyle : gridButtonStyleBlank))
+		{
+			ToggleMenuVisibility();
+			extendoButtonHovering = false;
+		}
+		GUI.backgroundColor = Color.white;
+	}
+
+	void ToggleMenuVisibility()
+	{
+		menuOpen = !menuOpen;
+
+		extendoStyle.normal.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;
+		extendoStyle.hover.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;
+
+		foreach(System.Action<bool> listener in toolbarEventSubscribers)
+			listener(menuOpen);
+
+		RepaintSceneView();
+	}
+
+	// skip color fading and stuff
+	void SetMenuIsExtended(bool isExtended)
+	{
+		menuOpen = isExtended;
+		menuIsOrtho = ortho;
+		menuStart = menuOpen ? MENU_EXTENDED : MENU_HIDDEN;
+
+		menuBackgroundColor.a = 0f;
+		extendoNormalColor.a = menuBackgroundColor.a;
+		extendoHoverColor.a = (menuBackgroundColor.a / .5f);
+
+		extendoStyle.normal.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;
+		extendoStyle.hover.background 	= menuOpen ? icon_extendoClose : icon_extendoOpen;		
+
+		foreach(System.Action<bool> listener in toolbarEventSubscribers)
+			listener(menuOpen);
 	}
 
 	private void OpenProGridsPopup()
@@ -620,10 +855,14 @@ NoParseForYou:
 	private bool toggleAxisConstraint = false;
 	private bool toggleTempSnap = false;
 	private Vector3 lastPosition = Vector3.zero;
+	// private Vector3 lastRotation = Vector3.zero;
+	private Vector3 lastScale = Vector3.one;
 	private Vector3 pivot = Vector3.zero, lastPivot = Vector3.zero;
 	private Vector3 camDir = Vector3.zero, prevCamDir = Vector3.zero;
 	private float lastDistance = 0f;	///< Distance from camera to pivot at the last time the grid mesh was updated.
 	public float offset = 0f;
+
+	private bool firstMove = true;
 
 	#if PROFILE_TIMES
 	pb_Profiler profiler = new pb_Profiler();
@@ -636,26 +875,46 @@ NoParseForYou:
 
 	public void OnSceneGUI(SceneView scnview)
 	{
-		if(EditorApplication.isPlayingOrWillChangePlaymode) return;	// don't snap stuff in play mode
+		bool isCurrentView = scnview == SceneView.lastActiveSceneView;
 
+		if( isCurrentView )
+		{
+			Handles.BeginGUI();
+			DrawSceneGUI();
+			Handles.EndGUI();
+		}
+
+		// don't snap stuff in play mode
+		if(EditorApplication.isPlayingOrWillChangePlaymode)
+
+			return;
 		Event e = Event.current;
+
+		// repaint scene gui if mouse is near controls
+		if( isCurrentView && e.type == EventType.MouseMove )
+		{
+			bool tmp = extendoButtonHovering;
+			extendoButtonHovering = extendoButtonRect.Contains(e.mousePosition);
+
+			if( extendoButtonHovering != tmp )
+				RepaintSceneView();
+
+			mouseOverMenu = backgroundRect.Contains(e.mousePosition);
+		}
 
 		if (e.Equals(Event.KeyboardEvent(AXIS_CONSTRAINT_KEY)))
 		{
 			toggleAxisConstraint = true;
-			SharedProperties.useAxisConstraints = !useAxisConstraints;
 		}
 
 		if (e.Equals(Event.KeyboardEvent(TEMP_DISABLE_KEY)))
 		{
-			SetSharedSnapValues(false, snapValue);
 			toggleTempSnap = true;
 		}
 
 		if(e.type == EventType.KeyUp)
 		{
 			toggleAxisConstraint = false;
-			SharedProperties.useAxisConstraints = useAxisConstraints;
 			toggleTempSnap = false;
 			bool used = true;
 
@@ -693,20 +952,24 @@ NoParseForYou:
 					break;
 			}
 
-			SetSharedSnapValues(snapEnabled, snapValue);
-
 			if(used)
 				e.Use();
 		}
 
 		Camera cam = Camera.current;
 		
+		if(cam == null)
+			return;
+
 		ortho = cam.orthographic && IsRounded(scnview.rotation.eulerAngles.normalized);
 
 		camDir = pg_Util.CeilFloor( pivot - cam.transform.position );
 
-		if(ortho && !prevOrtho)
-			pg_GridRenderer.Destroy();
+		if(ortho && !prevOrtho || ortho != menuIsOrtho)
+			OnSceneBecameOrtho(isCurrentView);
+
+		if(!ortho && prevOrtho)
+			OnSceneBecamePersp(isCurrentView);
 
 		prevOrtho = ortho;
 
@@ -726,7 +989,7 @@ NoParseForYou:
 
 			// the only time a locked grid should ever move is if it's pivot is out 
 			// of the camera's frustum.
-			if( (lockGrid && !cam.InFrustum(pivot)) || !lockGrid )
+			if( (lockGrid && !cam.InFrustum(pivot)) || !lockGrid || scnview != SceneView.lastActiveSceneView)
 			{
 				if(plane.Raycast(ray, out dist))
 					sceneViewPlanePivot = ray.GetPoint( Mathf.Min(dist, planeGridDrawDistance/2f) );				
@@ -736,7 +999,7 @@ NoParseForYou:
 
 			if(lockGrid)
 			{
-				pivot = InverseAxisMask(sceneViewPlanePivot, renderPlane) + AxisMask(pivot, renderPlane);
+				pivot = pg_Enum.InverseAxisMask(sceneViewPlanePivot, renderPlane) + pg_Enum.AxisMask(pivot, renderPlane);
 			}
 			else
 			{
@@ -744,21 +1007,14 @@ NoParseForYou:
 
 				if( Selection.activeTransform == null || !cam.InFrustum(pivot) )
 				{
-					pivot = InverseAxisMask(sceneViewPlanePivot, renderPlane) + AxisMask(Selection.activeTransform == null ? pivot : Selection.activeTransform.position, renderPlane);
+					pivot = pg_Enum.InverseAxisMask(sceneViewPlanePivot, renderPlane) + pg_Enum.AxisMask(Selection.activeTransform == null ? pivot : Selection.activeTransform.position, renderPlane);
 				}
 			}
-
-			#if DEBUG
-				pivotGo.transform.position = pivot;
-				scenePivotGo.transform.position = SceneView.lastActiveSceneView.pivot;
-				scenePlaneIntercept.transform.position = sceneViewPlanePivot;
-
-				Handles.Label(scenePivotGo.transform.position, "SceneView Pivot: " + scenePivotGo.transform.position.ToString());
-				Handles.Label(scenePlaneIntercept.transform.position, "\nPivot Plane Intercept: " + scenePlaneIntercept.transform.position.ToString());
-				Handles.Label(pivot, "ProGrids Pivot: " + pivot.ToString());
-
-			#endif
 		}
+
+		#if PG_DEBUG
+		pivotGo.transform.position = pivot;
+		#endif
 
 		if(drawGrid)
 		{	
@@ -783,18 +1039,18 @@ NoParseForYou:
 					if(fullGrid)
 					{
 						//  if perspective and 3d, use pivot like normal
-						pg_GridRenderer.DrawGridPerspective( cam, pivot, snapValue, new Color[3] { gridColorX, gridColorY, gridColorZ }, alphaBump );
+						pg_GridRenderer.DrawGridPerspective(cam, pivot, snapValue, new Color[3] { gridColorX, gridColorY, gridColorZ }, alphaBump );
 					}
 					else
 					{
 						if( (renderPlane & Axis.X) == Axis.X)
-							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.right*offset, Vector3.up, Vector3.forward, snapValue, gridColorX, alphaBump);
+							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.right * offset, Vector3.up, Vector3.forward, snapValue, gridColorX, alphaBump);
 
 						if( (renderPlane & Axis.Y) == Axis.Y)
-							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.up*offset, Vector3.right, Vector3.forward, snapValue, gridColorY, alphaBump);
+							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.up * offset, Vector3.right, Vector3.forward, snapValue, gridColorY, alphaBump);
 
 						if( (renderPlane & Axis.Z) == Axis.Z)
-							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.forward*offset, Vector3.up, Vector3.right, snapValue, gridColorZ, alphaBump);
+							planeGridDrawDistance = pg_GridRenderer.DrawPlane(cam, pivot + Vector3.forward * offset, Vector3.up, Vector3.right, snapValue, gridColorZ, alphaBump);
 
 					}
 				}
@@ -811,8 +1067,13 @@ NoParseForYou:
 			{
 				lastTransform = Selection.activeTransform;
 				lastPosition = Selection.activeTransform.position;
+				lastScale = Selection.activeTransform.localScale;
 			}
 		}
+
+
+		if( e.type == EventType.MouseUp )
+			firstMove = true;
 
 		if(!snapEnabled || GUIUtility.hotControl < 1)
 			return;
@@ -842,12 +1103,64 @@ NoParseForYou:
 		
 					Vector3 offset = selected.position - old;
 
-					OffsetTransforms(Selection.transforms, selected, offset);
+					if( predictiveGrid && firstMove && !fullGrid )
+					{
+						firstMove = false;
+						Axis dragAxis = pg_Util.CalcDragAxis(offset, scnview.camera);
+
+						if(dragAxis != Axis.None && dragAxis != renderPlane)
+							SetRenderPlane(dragAxis);
+					}
+
+					if(_snapAsGroup)
+					{
+						OffsetTransforms(Selection.transforms, selected, offset);
+					}
+					else
+					{
+						foreach(Transform t in Selection.transforms)
+							t.position = constraintsOn ? pg_Util.SnapValue(t.position, mask, snapValue) : pg_Util.SnapValue(t.position, snapValue);
+					}
 				}
 
 				lastPosition = selected.position;
 			}
+
+			if( !FuzzyEquals(lastTransform.localScale, lastScale) && _scaleSnapEnabled )
+			{
+				if( !toggleTempSnap )
+				{
+					Vector3 old = lastTransform.localScale;
+					Vector3 mask = old - lastScale;
+
+					if( predictiveGrid )
+					{
+						Axis dragAxis = pg_Util.CalcDragAxis( Selection.activeTransform.TransformDirection(mask), scnview.camera);
+						if(dragAxis != Axis.None && dragAxis != renderPlane)
+							SetRenderPlane(dragAxis);
+					}
+
+					foreach(Transform t in Selection.transforms)
+						t.localScale = pg_Util.SnapValue(t.localScale, mask, snapValue);
+
+					lastScale = lastTransform.localScale;
+				}
+			}
 		}
+	}
+
+	void OnSceneBecameOrtho(bool isCurrentView)
+	{
+		pg_GridRenderer.Destroy();
+
+		if(isCurrentView && ortho != menuIsOrtho)
+			SetMenuIsExtended(menuOpen);
+	}
+
+	void OnSceneBecamePersp(bool isCurrentView)
+	{
+		if(isCurrentView && ortho != menuIsOrtho)
+			SetMenuIsExtended(menuOpen);
 	}
 #endregion
 
@@ -1068,7 +1381,6 @@ NoParseForYou:
 	}
 #endregion
 
-
 #region MOVING TRANSFORMS
 
 	static bool FuzzyEquals(Vector3 lhs, Vector3 rhs)
@@ -1084,13 +1396,16 @@ NoParseForYou:
 				t.position += offset;
 		}
 	}
+
+	void HierarchyWindowChanged()
+	{
+		if( Selection.activeTransform != null)
+			lastPosition = Selection.activeTransform.position;
+	}
 #endregion
 
 #region SETTINGS
 
-	/**
-	 *	ALL SETTERS ARE RESPONSIBLE FOR UPDATING PROBUILDER
-	 */
 	public void SetSnapEnabled(bool enable)
 	{
 		EditorPrefs.SetBool(pg_Constant.SnapEnabled, enable);
@@ -1103,8 +1418,7 @@ NoParseForYou:
 
 		snapEnabled = enable;
 		gridRepaint = true;
-		SceneView.RepaintAll();
-		SetSharedSnapValues(snapEnabled, snapValue);
+		RepaintSceneView();
 	}
 
 	public void SetSnapValue(SnapUnit su, float val, int multiplier)
@@ -1119,17 +1433,13 @@ NoParseForYou:
 		 */
 
 		#if PRO
-		snapValue = SnapUnitValue(su) * val * value_multiplier;
-		SceneView.RepaintAll();
-		SetSharedSnapValues(snapEnabled, snapValue);
+		snapValue = pg_Enum.SnapUnitValue(su) * val * value_multiplier;
+		RepaintSceneView();
 		
 		EditorPrefs.SetInt(pg_Constant.GridUnit, (int)su);
 		EditorPrefs.SetFloat(pg_Constant.SnapValue, val);
 		EditorPrefs.SetInt(pg_Constant.SnapMultiplier, clamp_multiplier);
 		
-		// Bugger.SetKey("Grid Unit", (int)su);
-		// Bugger.SetKey("Snap Value", val);
-		// Bugger.SetKey("Snap Multiplier", clamp_multiplier);
 
 		// update gui (only necessary when calling with editorpref values)
 		t_snapValue = val * value_multiplier;
@@ -1165,7 +1475,7 @@ NoParseForYou:
 		EditorPrefs.SetBool(pg_Constant.PerspGrid, fullGrid);
 		EditorPrefs.SetInt(pg_Constant.GridAxis, (int)renderPlane);
 		gridRepaint = true;
-		SceneView.RepaintAll();
+		RepaintSceneView();
 	}
 
 	public void SetGridEnabled(bool enable)
@@ -1177,14 +1487,14 @@ NoParseForYou:
 		EditorPrefs.SetBool("showgrid", enable);
 
 		gridRepaint = true;
-		SceneView.RepaintAll();
+		RepaintSceneView();
 	}
 
 	public void SetDrawAngles(bool enable)
 	{
 		drawAngles = enable;
 		gridRepaint = true;
-		SceneView.RepaintAll();
+		RepaintSceneView();
 	}
 	
 	private void SnapToGrid(Transform[] transforms)
@@ -1195,17 +1505,92 @@ NoParseForYou:
 			t.position = pg_Util.SnapValue(t.position, snapValue);
 		
 		gridRepaint = true;
-		SharedProperties.PushToGrid(snapValue);
-	}
 
+		PushToGrid(snapValue);
+	}
 #endregion
 
 #region GLOBAL SETTING
-	
-	public void SetSharedSnapValues(bool enable, float snapVal)
+
+	internal bool GetUseAxisConstraints() { return toggleAxisConstraint ? !useAxisConstraints : useAxisConstraints; }
+	internal float GetSnapValue() { return snapValue; }
+	internal bool GetSnapEnabled() { return (toggleTempSnap ? !snapEnabled : snapEnabled); }
+
+	/**
+	 * Returns the value of useAxisConstraints, accounting for the shortcut key toggle.
+	 */
+	public static bool UseAxisConstraints()
 	{
-		SharedProperties.snapEnabled = enable;
-		SharedProperties.snapValue = snapVal;
+		return instance != null ? instance.GetUseAxisConstraints() : false;
+	}
+
+	/**
+	 * Return the current snap value.
+	 */
+	public static float SnapValue()
+	{
+		return instance != null ? instance.GetSnapValue() : 0f;	
+	}
+
+	/**
+	 * Return true if snapping is enabled, false otherwise.
+	 */
+	public static bool SnapEnabled()
+	{
+		return instance == null ? false : instance.GetSnapEnabled();
+	}
+
+	public static void AddPushToGridListener(System.Action<float> listener)
+	{
+		pushToGridListeners.Add(listener);
+	}
+
+	public static void RemovePushToGridListener(System.Action<float> listener)
+	{
+		pushToGridListeners.Remove(listener);
+	}
+
+	public static void AddToolbarEventSubscriber(System.Action<bool> listener)
+	{
+		toolbarEventSubscribers.Add(listener);
+	}
+
+	public static void RemoveToolbarEventSubscriber(System.Action<bool> listener)
+	{
+		toolbarEventSubscribers.Remove(listener);
+	}
+
+	public static bool SceneToolbarActive()
+	{
+		return instance != null;
+	}
+
+	[SerializeField] static List<System.Action<float>> pushToGridListeners = new List<System.Action<float>>();
+	[SerializeField] static List<System.Action<bool>> toolbarEventSubscribers = new List<System.Action<bool>>();
+
+	private void PushToGrid(float snapValue)
+	{
+		foreach(System.Action<float> listener in pushToGridListeners)
+			listener(snapValue);
+	}
+
+	public static void OnHandleMove(Vector3 worldDirection)
+	{
+		if (instance != null)
+			instance.OnHandleMove_Internal(worldDirection);
+	}
+
+	private void OnHandleMove_Internal(Vector3 worldDirection)
+	{
+		if( predictiveGrid && firstMove && !fullGrid )
+		{
+			firstMove = false;
+			Axis dragAxis = pg_Util.CalcDragAxis(worldDirection, SceneView.lastActiveSceneView.camera);
+
+			if(dragAxis != Axis.None && dragAxis != renderPlane)
+				SetRenderPlane(dragAxis);
+		}
 	}
 #endregion
+}
 }

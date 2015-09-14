@@ -1,3 +1,13 @@
+-- QuickEdit v2.0.1 (v3440)
+
+# Features	
+	- Add Center Pivot action.
+	- Add Combine Meshes menu item.
+
+# Bug Fixes
+	- Fix bug where editing meshes with multiple submeshes would throw null-reference errors.
+	- Fix offset element highlighting after translating a mesh position in inspector.
+
 -- QuickEdit v2.0.0 (v3412)
 	
 # Features
