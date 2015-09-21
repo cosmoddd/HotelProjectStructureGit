@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d6ab0d3d562c5547adba32aab62a3d9
-timeCreated: 1440029519
+timeCreated: 1442860071
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -539,7 +539,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: .949999988
+          second: 3.44000006
         data:
           first:
             name: _OcclusionStrength
