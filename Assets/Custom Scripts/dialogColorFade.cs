@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class dialogColorFade : MonoBehaviour
+public class DialogColorFade : MonoBehaviour
 {
 
     //public GameObject objectToFade;  // object selection for fading (eh?)
@@ -9,6 +9,7 @@ public class dialogColorFade : MonoBehaviour
     public float currentValue;
     public float target;
     //public Material mat;  // material selection for fading
+    public TypogenicText text;
     Renderer rend;
 
     // Use this for initialization
@@ -24,28 +25,43 @@ public class dialogColorFade : MonoBehaviour
     {
 
         objectColor.a = currentValue;  // the key for lerping colors
-        //  mat.color = objectColor;  // assigning the color to the variable in question
-        
+                                       //  mat.color = objectColor;  // assigning the color to the variable in question
+        text.ColorTopLeft.a = currentValue;
+
         updateAlpha();
 
     }
 
-
-    void OnMouseOver()
+    void OnTriggerEnter()
     {
-        Debug.Log("the mouse is hovering over this thing");
+
+        Debug.Log("step in the areana");
         target = 1;
     }
 
-    void OnMouseExit()
+    void OnTriggerExit()
     {
-        Debug.Log("nothing");
+
+        Debug.Log("leave the areana");
         target = 0;
     }
 
+    //void OnMouseOver()
+    //{
+    //    Debug.Log("the mouse is hovering over this thing");
+    //    target = 1;
+    //}
+
+    //void OnMouseExit()
+    //{
+    //    Debug.Log("nothing");
+    //    target = 0;
+    //}
+
     void updateAlpha()
     {
-        currentValue = Mathf.Lerp(currentValue, target, Time.deltaTime * statics.gameTime
-            );
+        currentValue = Mathf.Lerp(currentValue, target, Time.deltaTime * Statics.gameTime);
+
     }
+
 }
