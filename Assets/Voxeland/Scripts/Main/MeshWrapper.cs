@@ -2,17 +2,49 @@
 using System.Collections;
 using System.Collections.Generic;
 
+//TODO: Test performance with appendFn
+
 namespace Voxeland 
 {
 	[System.Serializable]
-	public struct Submesh
+	public class Submesh
 	{
-		public int[] tris;
+		public int[] array;
 		public int triNum;
 
-		public int this[int num] { get {return tris[num];} set {tris[num] = value;} }
-	}	
+		public int this[int num] { get {return array[num];} set {array[num] = value;} }
+		public int Length { get{return array.Length;} }
+
+		public Submesh (int max) { array = new int[max]; triNum = 0; }
+		public Submesh (int[] src) { array = (int[])src.Clone(); triNum = src.Length; }
+
+		public void Append (Submesh a)
+		{
+			for (int i=0; i<a.triNum; i++) array[triNum+i] = a.array[i] + triNum;
+			triNum += a.triNum;
+		}
+	}
 	
+	[System.Serializable]
+	public class CountedArray<T>
+	{
+		public T[] array;
+		public int count;
+
+		public CountedArray () { array = new T[0]; count = 0; }
+		public CountedArray (int c) { array = new T[c]; count = 0; }
+		public CountedArray (T[] src, int c) { array = new T[c]; int max = Mathf.Min(c,src.Length); for (int i=0; i<max; i++) array[i]=src[i]; count = 0; }
+		public CountedArray (T[] src) { array = (T[])src.Clone(); }
+
+		public void Append (CountedArray<T> a, System.Func<T,T> appendFn=null)
+		{
+			if (appendFn==null) for (int i=0; i<a.count; i++) array[count+i] = a.array[i];
+			else for (int i=0; i<a.count; i++) array[count+i] = appendFn(a.array[i]);
+
+			count += a.count;
+		}
+	}
+
 	[System.Serializable]
 	public class MeshWrapper
 	{
@@ -20,94 +52,306 @@ namespace Voxeland
 		public Vector3[] verts;
 		public Vector3[] normals; 
 		public Vector4[] tangents;
-		public Vector2[] uvs;
-		public Vector2[] uv1;
-		public Color[] colors; 
+		public Color[] colors;
+		public Vector2[][] uvs;
+		public int vertNum = 0;
+		
+		//triangles
+		public Submesh[] tris;
 
-		public int vertCounter = 0;
-
-		//tris
-		public int[][] triangles;
-		public int[] triCounters;
-		public int subCount { get{
+		public int subMeshesCount 
+		{get{
 			int result = 0;
-			for (int i=0; i<triangles.Length; i++) 
-				if (triangles[i] != null) result++; 
-			return result; }}
+			for (int i=0; i<tris.Length; i++) 
+				if (tris[i] != null) result++; 
+			return result; 
+		}}
+
 
 		//constructors
 		public MeshWrapper () { Initialize(0,new int[0]); }
-		public MeshWrapper (int numVerts, int numTris, bool useNormals=false, bool useTangents=false, bool useUvs=false, bool useUv1=false, bool useColors=false)
-			{ Initialize(numVerts, new int[] {numTris}, useNormals, useTangents, useUvs, useUv1, useColors); }
-		public MeshWrapper (int numVerts, int[] numTris, bool useNormals=false, bool useTangents=false, bool useUvs=false, bool useUv1=false, bool useColors=false)
-			{ Initialize(numVerts, numTris, useNormals, useTangents, useUvs, useUv1, useColors); }
-		public void Initialize (int numVerts, int[] numTris, bool useNormals=false, bool useTangents=false, bool useUvs=false, bool useUv1=false, bool useColors=false)
+		
+		public MeshWrapper (int numVerts, int numTris, bool useNormals=false, bool useTangents=false, bool useColors=false, int numUvs=0)
+			{ Initialize(numVerts, new int[] {numTris}, useNormals, useTangents, useColors, numUvs); }
+		
+		public MeshWrapper (int numVerts, int[] numTris, bool useNormals=false, bool useTangents=false, bool useColors=false, int numUvs=0)
+			{ Initialize(numVerts, numTris, useNormals, useTangents, useColors, numUvs); }
+		
+		public void Initialize (int numVerts, int[] numTris, bool useNormals=false, bool useTangents=false, bool useColors=false, int numUvs=0)
 		{
 			verts = new Vector3[numVerts];
 			if (useNormals) normals = new Vector3[numVerts];
 			if (useTangents) tangents = new Vector4[numVerts];
-			if (useUvs) uvs = new Vector2[numVerts];
-			if (useUv1) uv1 = new Vector2[numVerts];
 			if (useColors) colors = new Color[numVerts];
-			vertCounter = 0;
+			
+			uvs = new Vector2[numUvs][];
+			for (int i=0; i<uvs.Length; i++) uvs[i] = new Vector2[numVerts];
 
-			triangles = new int[numTris.Length][];
-			for (int t=0; t<triangles.Length; t++) 
+			vertNum = 0;
+
+			tris = new Submesh[numTris.Length];
+			for (int t=0; t<tris.Length; t++) 
 				if (numTris[t] != 0) 
-					triangles[t] = new int[numTris[t]];
-			triCounters = new int[numTris.Length];
+					tris[t] = new Submesh(numTris[t]);
 		}
-		public MeshWrapper (Mesh mesh, bool useNormals=false, bool useTangents=false, bool useUvs=false, bool useUv1=false, bool useColors=false)
+
+		public MeshWrapper (Mesh mesh, bool useNormals=false, bool useTangents=false, bool useColors=false)
 		{
 			verts = mesh.vertices;
 			if (useNormals) normals = mesh.normals;
 			if (useTangents) tangents = mesh.tangents;
-			if (useUvs) uvs = mesh.uv;
-			if (useUv1) uv1 = mesh.uv2;
 			if (useColors) colors = mesh.colors;
-			triangles = new int[1][];
-			triCounters = new int[1];
-			triangles[0] = mesh.triangles;
+			
+			Vector2[] uv0 =  mesh.uv;
+			Vector2[] uv1 =  mesh.uv2;
+			Vector2[] uv2 =  mesh.uv3;
+			Vector2[] uv3 =  mesh.uv4;
+
+			if (uv3 != null) uvs = new Vector2[][] {uv0, uv1, uv2, uv3};
+			else if (uv2 != null) uvs = new Vector2[][] {uv0, uv1, uv2};
+			else if (uv1 != null) uvs = new Vector2[][] {uv0, uv1};
+			else if (uv0 != null) uvs = new Vector2[][] {uv0};
+
+			vertNum = verts.Length;
+
+			tris = new Submesh[1];
+			tris[0] = new Submesh(mesh.triangles);
+			//TODO: MeshWrapper does not load submeshes
 		}
 
-		//operators
-		public void Append (MeshWrapper addMesh, Vector3 offset) { Append(addMesh, offset, 0); }
-		public void Append (MeshWrapper addMesh, Vector3 offset, int type)
+
+		//append
+		public void Append (MeshWrapper addMesh, int submesh=-1, System.Func<Vector3,Vector3> vertFn=null, System.Func<Vector3,Vector3> normalFn=null)
 		{
 			//verts
-			for (int v=0; v<addMesh.verts.Length; v++) verts[vertCounter+v] = addMesh.verts[v] + offset;
-			if (normals != null) for (int v=0; v<addMesh.verts.Length; v++) verts[vertCounter+v] = addMesh.normals[v];
-			if (tangents != null) for (int v=0; v<addMesh.verts.Length; v++) tangents[vertCounter+v] = addMesh.tangents[v];
-			if (uvs != null) for (int v=0; v<addMesh.verts.Length; v++) uvs[vertCounter+v] = addMesh.uvs[v];
-			if (uv1 != null) for (int v=0; v<addMesh.verts.Length; v++) uv1[vertCounter+v] = addMesh.uv1[v];
-			if (colors != null) for (int v=0; v<addMesh.verts.Length; v++) colors[vertCounter+v] = addMesh.colors[v];
+			if (vertFn==null) for (int v=0; v<addMesh.verts.Length; v++) verts[vertNum+v] = addMesh.verts[v];
+			else for (int v=0; v<addMesh.verts.Length; v++) verts[vertNum+v] = vertFn(addMesh.verts[v]);
+			
+			if (normals != null)
+			{
+				if (normalFn == null) 
+				{
+					if (addMesh.normals != null)
+						for (int v=0; v<addMesh.normals.Length; v++) normals[vertNum+v] = addMesh.normals[v];
+					//else 
+					//	for (int v=0; v<addMesh.verts.Length; v++) normals[vertNum+v] = Vector3.up;
+				}
+				else 
+				{
+					if (addMesh.normals != null) 
+						for (int v=0; v<addMesh.normals.Length; v++) normals[vertNum+v] = normalFn(addMesh.normals[v]); //kinda complicated there with null-checking
+					else 
+						for (int v=0; v<addMesh.verts.Length; v++) normals[vertNum+v] = normalFn(Vector3.up);
+				}
+			}
+			
+			if (tangents !=null && addMesh.tangents !=null) for (int v=0; v<addMesh.tangents.Length; v++) tangents[vertNum+v] = addMesh.tangents[v];
+			if (colors !=null && addMesh.colors !=null) for (int v=0; v<addMesh.colors.Length; v++) colors[vertNum+v] = addMesh.colors[v];
+
+			for (int i=0; i<Mathf.Min(uvs.Length,addMesh.uvs.Length); i++)
+			{
+				Vector2[] uv = uvs[i]; Vector2[] adduv = addMesh.uvs[i];
+				if (uv!=null && adduv!=null)
+					for (int v=0; v<addMesh.verts.Length; v++) uv[vertNum+v] = adduv[v];
+				
+			}
+
+			vertNum += addMesh.verts.Length;
 
 			//tris
-		//	for (int t=0; t<addMesh.triangles[0].Length; t++) 
-		//		triangles[type][triCounters[type] + t] = addMesh.triangles[0][t] + vertCounter;
-
-			for (int t=0; t<addMesh.tris.Length; t++) 
-				triangles[type][triCounters[type] + t] = addMesh.tris[t] + vertCounter;
-			triCounters[type] += addMesh.tris.Length;
-			
-			//increment counters	
-		//	triCounters[type] += addMesh.triangles[0].Length;
-			vertCounter += addMesh.verts.Length;
+			if (submesh < 0) //if submesh number is not defined - appending all of submeshes from additive mesh
+			{
+				int max = Mathf.Min(addMesh.tris.Length, tris.Length);
+				for (int i=0; i<max; i++)
+					if (addMesh.tris[i] != null) tris[i].Append(addMesh.tris[i]);
+			}
+			else
+			{
+				for (int i=0; i<addMesh.tris.Length; i++)
+					tris[submesh].Append(addMesh.tris[i]);
+			}
 		}
 
-		public void AppendWithFFD (MeshWrapper addMesh, int type, Vector3 cornerA, Vector3 cornerB, Vector3 cornerC, Vector3 cornerD, Vector3 normal)
+		public void AppendWithOffset (MeshWrapper addMesh, Vector3 offset, int submesh=-1)
 		{
-			//verts
-			for (int v=0; v < addMesh.verts.Length; v++) 
+			System.Func<Vector3,Vector3> vertFn = delegate(Vector3 addVert) { return addVert+offset; };
+			Append(addMesh, submesh, vertFn);
+		}
+
+		public void AppendWithFFD (MeshWrapper addMesh, int submesh, Vector3 cornerA, Vector3 cornerB, Vector3 cornerC, Vector3 cornerD, Vector3 normal)
+		{
+			System.Func<Vector3,Vector3> vertFn = delegate(Vector3 addVert) 
 			{
-				float xPercent = addMesh.verts[v].x + 0.5f;
-				float zPercent = addMesh.verts[v].z + 0.5f;
+				float xPercent = addVert.x + 0.5f;
+				float zPercent = addVert.z + 0.5f;
 				
 				Vector3 vertX1 = cornerB*xPercent + cornerA*(1-xPercent);
 				Vector3 vertX2 = cornerC*xPercent + cornerD*(1-xPercent);
 				
-				verts[vertCounter+v] = vertX1*zPercent + vertX2*(1-zPercent) + new Vector3(0, addMesh.verts[v].y, 0); 
+				return vertX1*zPercent + vertX2*(1-zPercent) + new Vector3(0, addVert.y, 0);
+			};
+
+			System.Func<Vector3,Vector3> normalFn = null;
+			if (normal.sqrMagnitude > 0.01f) normalFn = delegate(Vector3 addNormal) { return normal; };
+
+			Append(addMesh, submesh, vertFn, normalFn);
+		}
+
+		public void AppendToFace (MeshWrapper addMesh, Chunk.Face face, Vector3[] terrainVerts, int submesh, float height=1f, float incline=0f, float random=0f, bool takeNormals=true)
+		{
+			System.Func<Vector3,Vector3> vertFn = delegate(Vector3 addVert) 
+			{
+				float xPercent = addVert.x + 0.5f;
+				float zPercent = addVert.z + 0.5f;
+				
+				Vector3 vertX1 = terrainVerts[face.cornerNums.b]*xPercent + terrainVerts[face.cornerNums.a]*(1-xPercent);
+				Vector3 vertX2 = terrainVerts[face.cornerNums.c]*xPercent + terrainVerts[face.cornerNums.d]*(1-xPercent);
+				Vector3 vert = vertX1*zPercent + vertX2*(1-zPercent); 
+
+				//TODO: there should be vertex num added, otherwise all grass bush will be of the same height
+				return new Vector3(
+					vert.x + face.normal.x*incline + (Noise.Random(face.x,face.y,face.z,face.dir)-0.5f)*random, 
+					vert.y + addVert.y*height + (Noise.Random(face.x,face.y,face.z,face.dir+1)-0.5f)*random, 
+					vert.z + face.normal.z*incline + (Noise.Random(face.x,face.y,face.z,face.dir+2)-0.5f)*random );
+			};
+
+			System.Func<Vector3,Vector3> normalFn = null;
+			if (takeNormals) normalFn = delegate(Vector3 addNormal) { return face.normal; };
+
+			Append(addMesh, submesh, vertFn, normalFn);
+		}
+
+
+		//apply
+		public void ApplyTo (Mesh mesh)
+		{
+			ApplyVertsTo(mesh);
+			ApplyTrisTo(mesh);
+		}
+
+		public void ApplyVertsTo (Mesh mesh)
+		{
+			mesh.Clear();
+
+			//setting verts
+			mesh.vertices = verts;
+			mesh.vertices = verts;
+			if (normals != null && normals.Length == verts.Length) mesh.normals = normals;
+			if (tangents != null && tangents.Length == verts.Length) mesh.tangents = tangents;
+			if (colors != null && colors.Length == verts.Length) mesh.colors = colors;
+			if (uvs.Length>=1 && uvs[0].Length == verts.Length) mesh.uv = uvs[0];
+			if (uvs.Length>=2 && uvs[1].Length == verts.Length) mesh.uv2 = uvs[1];
+			if (uvs.Length>=3 && uvs[2].Length == verts.Length) mesh.uv3 = uvs[2];
+			if (uvs.Length>=4 && uvs[3].Length == verts.Length) mesh.uv4 = uvs[3];
+
+			mesh.RecalculateBounds();
+		}
+
+		public void ApplyTrisTo (Mesh mesh)
+		{
+			mesh.subMeshCount = subMeshesCount;
+			
+			int counter = 0;
+			for (int i=0; i<tris.Length; i++)
+			{
+				if (tris[i] == null) continue;
+				mesh.SetTriangles(tris[i].array, counter);
+				counter++;
 			}
+			
+			if (normals == null) mesh.RecalculateNormals(); //if not custom normals - recalculating them. This should be done after applying tris
+			mesh.RecalculateBounds();
+		}
+
+		//materials
+		public Material[] GetMaterials (Material[] allMats)
+		{
+			Material[] mats = new Material[subMeshesCount];
+
+			int counter = 0;
+			for (int i=0; i<Mathf.Min(tris.Length, allMats.Length); i++)
+			{
+				if (tris[i] == null) continue;
+				mats[counter] = allMats[i];
+				counter++;
+			}
+
+			return mats;
+		}
+
+		public void RotateMirror (int rotation, bool mirror) //rotation in 90-degree
+		{
+			//setting mesh rot-mirror params
+			bool mirrorX = false;
+			bool mirrorZ = false;
+			bool rotate = false;
+			
+			switch (rotation)
+			{
+				case 90: rotate = true; mirrorX = true; break;
+				case 180: mirrorX = true; mirrorZ = true; break;
+				case 270: rotate = true; mirrorZ = true; break;
+			}
+			
+			if (mirror) mirrorX = !mirrorX;
+			
+			//rotating verts
+			for (int v=0; v<verts.Length; v++)
+			{ 
+				Vector3 pos = verts[v];
+				//Vector3 normal = ns.array[v];
+				//Vector4 tangent = ts.array[v];
+				
+				if (rotate)
+				{
+					float temp;
+
+					temp = pos.x;
+					pos.x = pos.z;
+					pos.z = temp;
+					
+					//temp = normal.x;
+					//normal.x = normal.z;
+					//normal.z = temp;
+
+					//temp = tangent.x;
+					//tangent.x = tangent.z;
+					//tangent.z = temp;
+				}
+				
+				if (mirrorX) { pos.x = -pos.x;  }
+				if (mirrorZ) { pos.z = -pos.z; } 
+				
+				verts[v] = pos;
+				//ns.array[v] = normal;
+				//ts.array[v] = tangent;
+			}
+			
+			//mirroring tris
+			if (mirror) 
+				for (int t=0; t<tris.Length; t++) 
+					for (int i=0; i<tris[0].array.Length; i+=3) 
+			{
+				int temp = tris[0].array[i];
+				tris[0].array[i] = tris[0].array[i+2];
+				tris[0].array[i+2] = temp;
+			}
+		}
+
+		/*public void AppendWithFFD (MeshWrapper addMesh, int type, Vector3 cornerA, Vector3 cornerB, Vector3 cornerC, Vector3 cornerD, Vector3 normal)
+		{
+			//verts
+			for (int v=0; v < addMesh.verts.array.Length; v++) 
+			{
+				float xPercent = addMesh.verts.array[v].x + 0.5f;
+				float zPercent = addMesh.verts.array[v].z + 0.5f;
+				
+				Vector3 vertX1 = cornerB*xPercent + cornerA*(1-xPercent);
+				Vector3 vertX2 = cornerC*xPercent + cornerD*(1-xPercent);
+				
+				verts.array[verts.count+v] = vertX1*zPercent + vertX2*(1-zPercent) + new Vector3(0, addMesh.verts.array[v].y, 0); 
+			}
+			verts.count += addMesh.verts.array.Length;
 
 			if (normals != null) 
 			{
@@ -117,7 +361,9 @@ namespace Voxeland
 
 			if (tangents != null) for (int v=0; v<addMesh.verts.Length; v++) tangents[vertCounter+v] = addMesh.tangents[v];
 			if (uvs != null) for (int v=0; v<addMesh.verts.Length; v++) uvs[vertCounter+v] = addMesh.uvs[v];
-			if (uv1 != null) for (int v=0; v<addMesh.verts.Length; v++) uv1[vertCounter+v] = addMesh.uv1[v];
+			if (uv2 != null) for (int v=0; v<addMesh.verts.Length; v++) uv2[vertCounter+v] = addMesh.uv2[v];
+			if (uv3 != null) for (int v=0; v<addMesh.verts.Length; v++) uv3[vertCounter+v] = addMesh.uv3[v];
+			if (uv4 != null) for (int v=0; v<addMesh.verts.Length; v++) uv4[vertCounter+v] = addMesh.uv4[v];
 			if (colors != null) for (int v=0; v<addMesh.verts.Length; v++) colors[vertCounter+v] = addMesh.colors[v];
 
 			//tris
@@ -159,8 +405,7 @@ namespace Voxeland
 				else normals[vBase] = addMesh.normals[v];
 				
 				tangents[vBase] = addMesh.tangents[v];
-				uvs[vBase] = addMesh.uvs[v];
-				uv1[vBase] = addMesh.uv1[v];
+				uvs[vBase] = addMesh.uvs[v]; uv2[vBase] = addMesh.uv2[v]; uv3[vBase] = addMesh.uv3[v]; uv4[vBase] = addMesh.uv4[v];
 				
 				colors[vBase] = addMesh.colors[v];
 			}
@@ -176,63 +421,13 @@ namespace Voxeland
 			//increment counters	
 		//	triCounters[type] += addMesh.triangles[0].Length;
 			vertCounter += addMesh.verts.Length;
-		}
+		}*/
 
-		//apply
-		public void ApplyTo (Mesh mesh)
-		{
-			ApplyVertsTo(mesh);
-			ApplyTrisTo(mesh);
-		}
 
-		public void ApplyVertsTo (Mesh mesh)
-		{
-			mesh.Clear();
-			
-			//setting verts
-			mesh.vertices = verts;
-			if (normals != null && normals.Length == verts.Length) mesh.normals = normals;
-			if (tangents != null && tangents.Length == verts.Length) mesh.tangents = tangents;
-			if (colors != null && colors.Length == verts.Length) mesh.colors = colors;
-			if (uv1 != null && uv1.Length == verts.Length) mesh.uv2 = uv1;
-			if (uvs != null && uvs.Length == verts.Length) mesh.uv = uvs;
-
-			mesh.RecalculateBounds();
-		}
-
-		public void ApplyTrisTo (Mesh mesh)
-		{
-			mesh.subMeshCount = subCount;
-			
-			int counter = 0;
-			for (int i=0; i<triangles.Length; i++)
-			{
-				if (triangles[i] == null) continue;
-				mesh.SetTriangles(triangles[i], counter);
-				counter++;
-			}
-			
-			if (normals == null) mesh.RecalculateNormals(); //if not custom normals - recalculating them. This should be done after applying tris
-		}
-
-		//materials
-		public Material[] GetMaterials (Material[] allMats)
-		{
-			Material[] mats = new Material[subCount];
-
-			int counter = 0;
-			for (int i=0; i<Mathf.Min(triangles.Length, allMats.Length); i++)
-			{
-				if (triangles[i] == null) continue;
-				mats[counter] = allMats[i];
-				counter++;
-			}
-
-			return mats;
-		}
 
 
 //-------------------------
+/*
 		public int vertNum = 0;
 		public Submesh[] subs = new Submesh[128];	
 		public int[] tris { get{return subs[0].tris;} set {subs[0].tris = value;} }
@@ -283,66 +478,7 @@ namespace Voxeland
 			subs[0].triNum = 0;
 		}
 	
-		public void RotateMirror (int rotation, bool mirror) //rotation in 90-degree
-		{
-			//setting mesh rot-mirror params
-			bool mirrorX = false;
-			bool mirrorZ = false;
-			bool rotate = false;
-			
-			switch (rotation)
-			{
-				case 90: rotate = true; mirrorX = true; break;
-				case 180: mirrorX = true; mirrorZ = true; break;
-				case 270: rotate = true; mirrorZ = true; break;
-			}
-			
-			if (mirror) mirrorX = !mirrorX;
-			
-			//rotating verts
-			for (int v=0; v<verts.Length; v++)
-			{ 
-				float posX = verts[v].x;
-				float posY = verts[v].y;
-				float posZ = verts[v].z;
-				
-				float normX = normals[v].x;
-				float normY = normals[v].y;
-				float normZ = normals[v].z;
 
-				float tangentX = tangents[v].x;
-				float tangentY = tangents[v].y;
-				float tangentZ = tangents[v].z;
-				
-				if (rotate)
-				{
-					posX = verts[v].z;
-					posZ = verts[v].x;
-					
-					normX = normals[v].z;
-					normZ = normals[v].x;
-
-					tangentX = tangents[v].z;
-					tangentZ = tangents[v].x;
-				}
-				
-				if (mirrorX) { posX = -posX; normX = -normX; tangentX = -tangentX; }
-				if (mirrorZ) { posZ = -posZ; normZ = -normZ; tangentZ = -tangentZ; } 
-				
-				verts[v] =  new Vector3(posX, posY, posZ);
-				normals[v] = new Vector3(normX, normY, normZ);
-				tangents[v] = new Vector4(tangentX, tangentY, tangentZ, tangents[v].w);
-			}
-			
-			//mirroring tris
-			if (mirror) 
-				for (int v=0; v<subs[0].tris.Length; v+=3) 
-			{
-				int temp = subs[0].tris[v];
-				subs[0].tris[v] = subs[0].tris[v+2];
-				subs[0].tris[v+2] = temp;
-			}
-		}
 		
 		public void SetAmbient (Vector4 ambient)
 		{
@@ -440,7 +576,7 @@ namespace Voxeland
 			}
 			
 			if (normals == null) mesh.RecalculateNormals(); //if not custom normals - recalculating them
-		}
+		}*/
 
 	}//class
 	

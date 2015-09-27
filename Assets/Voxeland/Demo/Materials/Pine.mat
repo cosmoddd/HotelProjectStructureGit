@@ -8,10 +8,11 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Pine
   m_Shader: {fileID: 4800000, guid: 3838e226e9c13ef48bd8369f610bc59f, type: 3}
-  m_ShaderKeywords: _WIND
+  m_ShaderKeywords: _ALPHATEST_ON _WIND
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2450
+  stringTagMap:
+    RenderType: TransparentCutout
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -39,13 +40,6 @@ Material:
       data:
         first:
           name: _ParallaxMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -80,9 +74,23 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _MetallicGlossMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _WindTex
+        second:
+          m_Texture: {fileID: 2800000, guid: bcdfc0ed24be5754e8876883ca3d5a8e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -97,13 +105,6 @@ Material:
           name: _TranslucencyMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _WindTex
-        second:
-          m_Texture: {fileID: 2800000, guid: bcdfc0ed24be5754e8876883ca3d5a8e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -132,20 +133,20 @@ Material:
         second: .0184710696
       data:
         first:
-          name: _Parallax
-        second: 0
+          name: _Occlusion
+        second: 7.5
       data:
         first:
-          name: _Glossiness
-        second: .5
+          name: _Parallax
+        second: 0
       data:
         first:
           name: _ZWrite
         second: 1
       data:
         first:
-          name: _Metallic
-        second: 0
+          name: _Glossiness
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -164,16 +165,40 @@ Material:
         second: 0
       data:
         first:
+          name: _Mode
+        second: 1
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
           name: _EmissionScaleUI
         second: 0
       data:
         first:
-          name: _Mode
+          name: _Culling
         second: 0
       data:
         first:
-          name: _Occlusion
-        second: 7.5
+          name: _AmbientPower
+        second: 2
+      data:
+        first:
+          name: _WindSize
+        second: 300
+      data:
+        first:
+          name: _WindSpeedX
+        second: .5
+      data:
+        first:
+          name: _WindSpeedZ
+        second: 2
+      data:
+        first:
+          name: _WindStrength
+        second: 0
       data:
         first:
           name: _SquashAmount
@@ -194,30 +219,6 @@ Material:
         first:
           name: _ShadowStrength
         second: 1
-      data:
-        first:
-          name: _Culling
-        second: 0
-      data:
-        first:
-          name: _AmbientPower
-        second: 2
-      data:
-        first:
-          name: _WindSize
-        second: 50
-      data:
-        first:
-          name: _WindSpeedX
-        second: .5
-      data:
-        first:
-          name: _WindSpeedZ
-        second: 2
-      data:
-        first:
-          name: _WindStrength
-        second: .150000006
     m_Colors:
       data:
         first:
@@ -241,20 +242,16 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Ambient
-        second: {r: 0, g: 0, b: 0, a: 1}
+          name: _Specular
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _TranslucencyColor
-        second: {r: .730000019, g: .850000024, b: .409999996, a: 1}
-      data:
-        first:
-          name: _Specular
-        second: {r: 0, g: 0, b: 0, a: 0}
+          name: _Ambient
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _TopAmbient
@@ -267,3 +264,7 @@ Material:
         first:
           name: _BottomAmbient
         second: {r: .522058845, g: .484307528, b: .403060138, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor
+        second: {r: .730000019, g: .850000024, b: .409999996, a: 1}

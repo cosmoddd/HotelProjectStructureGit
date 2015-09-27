@@ -42,8 +42,9 @@ namespace Voxeland
 					case TakeVisualizeCoords.Zero: aimRay = new Ray(new Vector3(0,1000,0), Vector3.down*2000); break;
 				}
 
-				VoxelandTerrain.AimData coordsData = land.GetCoordsByRay(aimRay);
-				if (!coordsData.hit) return;
+				Coord coordsData = land.GetCoordsByRay(aimRay);
+				if (!coordsData.exists) return;
+				Chunk chunk = land.chunks[Mathf.FloorToInt(1f*coordsData.x/land.chunkSize), Mathf.FloorToInt(1f*coordsData.z/land.chunkSize)];
 			
 				#region Coords
 				if (showCoords)
@@ -51,9 +52,9 @@ namespace Voxeland
 					Gizmos.color = new Color(0,0.5f,0,0.8f);
 					Gizmos.DrawCube(new Vector3(coordsData.x+0.5f, coordsData.y+0.5f, coordsData.z+0.5f), Vector3.one);
 					Gizmos.DrawWireCube(new Vector3(
-						coordsData.x+0.5f+VoxelandTerrain.oppositeDirX[coordsData.dir], 
-						coordsData.y+0.5f+VoxelandTerrain.oppositeDirY[coordsData.dir], 
-						coordsData.z+0.5f+VoxelandTerrain.oppositeDirZ[coordsData.dir]), Vector3.one);	
+						coordsData.x+0.5f+Coord.oppositeDirX[coordsData.dir], 
+						coordsData.y+0.5f+Coord.oppositeDirY[coordsData.dir], 
+						coordsData.z+0.5f+Coord.oppositeDirZ[coordsData.dir]), Vector3.one);	
 				}
 				#endregion
 			
@@ -78,19 +79,19 @@ namespace Voxeland
 				#region Ambient
 				if (showAmbient)
 				{ 
-					coordsData.chunk.CalculateAmbient();
+					chunk.CalculateAmbient();
 				
 					for (int x=-land.ambientMargins; x<land.chunkSize+land.ambientMargins; x++)
 						for (int z=-land.ambientMargins; z<land.chunkSize+land.ambientMargins; z++)
-							for (int y=coordsData.chunk.ambient.offsetY; y<coordsData.chunk.ambient.offsetY+coordsData.chunk.ambient.sizeY; y++)
+							for (int y=chunk.ambient.offsetY; y<chunk.ambient.offsetY+chunk.ambient.sizeY; y++)
 						{
-							if ((!rotateAmbient && coordsData.face.x != x) || (rotateAmbient && coordsData.face.z != z)) continue;
+							if ((!rotateAmbient && coordsData.x != x) || (rotateAmbient && coordsData.z != z)) continue;
 
 							Gizmos.color = new Color(0f,1f,0f,1f);
 							if(x<0 || x>=land.chunkSize || z<0 || z>=land.chunkSize) Gizmos.color = new Color(0.8f, 0.8f, 0f, 1f);
-							Vector3 center = new Vector3(coordsData.chunk.offsetX + x + 0.5f,y + 0.5f,coordsData.chunk.offsetZ + z + 0.5f);
+							Vector3 center = new Vector3(chunk.offsetX + x + 0.5f,y + 0.5f,chunk.offsetZ + z + 0.5f);
 
-							float val = (coordsData.chunk.ambient[x,y,z] / 250f) * 0.45f;
+							float val = (chunk.ambient[x,y,z] / 250f) * 0.45f;
 							if (val>0.01f) Gizmos.DrawSphere(center, val);
 						}
 				}
@@ -99,12 +100,13 @@ namespace Voxeland
 				#region Normal
 				if (showFaceNormal)
 				{ 
-					coordsData.chunk.CalculateAmbient();
+					Chunk.Face face = chunk.GetFaceByCoord( new Coord(coordsData.x, coordsData.y, coordsData.z, coordsData.dir) );
+					chunk.CalculateAmbient();
 				
 					Gizmos.color = Color.red;
-					Vector3 start = coordsData.chunk.verts[coordsData.face.centerNum] + new Vector3(coordsData.chunk.offsetX, 0, coordsData.chunk.offsetZ);
+					Vector3 start = chunk.verts[face.centerNum] + new Vector3(chunk.offsetX, 0, chunk.offsetZ);
 					Gizmos.DrawSphere(start, 0.1f);
-					Gizmos.DrawLine(start, start + coordsData.face.normal);
+					Gizmos.DrawLine(start, start + face.normal);
 				}
 				#endregion
 
@@ -119,12 +121,12 @@ namespace Voxeland
 					for (int x = Mathf.FloorToInt(1f*(coordsData.x-2)/land.chunkSize); x <= Mathf.FloorToInt(1f*(coordsData.x+2)/land.chunkSize); x++)
 						for (int z = Mathf.FloorToInt(1f*(coordsData.z-2)/land.chunkSize); z <= Mathf.FloorToInt(1f*(coordsData.z+2)/land.chunkSize); z++)
 						{
-							Chunk chunk = land.chunks[x,z];
-							if (chunk != null) Gizmos.DrawWireCube(
+							Chunk chunk1 = land.chunks[x,z];
+							if (chunk1 != null) Gizmos.DrawWireCube(
 								new Vector3(
-									chunk.offsetX + land.chunkSize/2 + 0.5f,
+									chunk1.offsetX + land.chunkSize/2 + 0.5f,
 									50f,
-									chunk.offsetZ + land.chunkSize/2 + 0.5f),
+									chunk1.offsetZ + land.chunkSize/2 + 0.5f),
 								new Vector3(land.chunkSize, 100f, land.chunkSize));
 						}
 				}
@@ -140,23 +142,19 @@ namespace Voxeland
 					for (int x=0; x<density+1; x++)
 						for (int z=0; z<density+1; z++)
 					{
-						float xCoord = area.offsetX + x*area.size/density;
-						float zCoord = area.offsetZ + z*area.size/density;
+						float xCoord = area.offsetX + x*land.data.areaSize/density;
+						float zCoord = area.offsetZ + z*land.data.areaSize/density;
 			
 						if (x!=density) Gizmos.DrawLine( 
 							new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)zCoord), zCoord), 
-							new Vector3(xCoord+area.size/density, land.data.GetTopPoint((int)(xCoord+area.size/density), (int)zCoord), zCoord) );
+							new Vector3(xCoord+land.data.areaSize/density, land.data.GetTopPoint((int)(xCoord+land.data.areaSize/density), (int)zCoord), zCoord) );
 						if (z!=density) Gizmos.DrawLine( 
 							new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)zCoord), zCoord), 
-							new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)(zCoord+area.size/density)), zCoord+area.size/density) );
+							new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)(zCoord+land.data.areaSize/density)), zCoord+land.data.areaSize/density) );
 					}
 				}
 				#endregion
 			
-				#region always rebuild
-				if (UnityEditor.EditorApplication.isPlaying && alwaysRebuild)
-					land.ResetProgress(coordsData.x,coordsData.z,1); //x,z,extend
-				#endregion
 
 				#region selected area for generator
 					//if (land.guiGenerate && land.guiSelectedAreaShow) DrawArea(land, land.data.areas[ land.guiSelectedAreaNum ]);
@@ -173,12 +171,12 @@ namespace Voxeland
 					for (int x=0; x<density+1; x++)
 						for (int z=0; z<density+1; z++)
 					{
-						float xCoord = area.offsetX + x*area.size/density;
-						float zCoord = area.offsetZ + z*area.size/density;
+						float xCoord = area.offsetX + x*land.data.areaSize/density;
+						float zCoord = area.offsetZ + z*land.data.areaSize/density;
 			
 						Vector3 start = new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)zCoord), zCoord);
-						Vector3 xPoint = new Vector3(xCoord+area.size/density, land.data.GetTopPoint((int)(xCoord+area.size/density), (int)zCoord), zCoord);
-						Vector3 zPoint = new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)(zCoord+area.size/density)), zCoord+area.size/density);
+						Vector3 xPoint = new Vector3(xCoord+land.data.areaSize/density, land.data.GetTopPoint((int)(xCoord+land.data.areaSize/density), (int)zCoord), zCoord);
+						Vector3 zPoint = new Vector3(xCoord, land.data.GetTopPoint((int)xCoord, (int)(zCoord+land.data.areaSize/density)), zCoord+land.data.areaSize/density);
 
 						start = land.transform.TransformPoint(start);
 						xPoint = land.transform.TransformPoint(xPoint);

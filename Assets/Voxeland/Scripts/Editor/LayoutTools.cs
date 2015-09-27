@@ -235,7 +235,7 @@ namespace Voxeland
 
 		#region Array Instruments
 
-			static public void ArrayButtons<T> (ref T[] array, ref int selected, bool drawUpDown=true)
+			static public void ArrayButtons<T> (ref T[] array, ref int selected, bool drawUpDown=true, bool addToLast=false)
 			{
 				NewLine();
 				AutoRect(0.4f);
@@ -261,19 +261,28 @@ namespace Voxeland
 			
 				if (GUI.Button(AutoRect(0.15f), new GUIContent("+", "Add new array element")))
 				{
-					//System.Reflection.MethodInfo memberwiseCloneMethod = typeof(T).GetMethod ("MemberwiseClone", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance); 
 					T[] newArray = new T[array.Length+1];
-					for (int i=0; i<array.Length; i++) 
+
+					if (addToLast)
 					{
-						if (i<=selected) newArray[i] = array[i];
-						//else if (i==selected) newArray[i] = new T();
-						else newArray[i+1] = array[i];
+						for (int i=0; i<array.Length; i++) newArray[i] = array[i];
+						//newArray[array.Length] = new T();
+						selected = array.Length;
+					}
+
+					else
+					{
+						for (int i=0; i<array.Length; i++) 
+						{
+							if (i<=selected) newArray[i] = array[i];
+							//else if (i==selected) newArray[i] = new T();
+							else newArray[i+1] = array[i];
+						}
+						selected++;
 					}
 					
-					//array.Add(memberwiseCloneMethod.Invoke (array[0], null));
-
 					array = newArray;
-					selected++;
+					
 				}
 			
 				if (GUI.Button(AutoRect(0.15f), new GUIContent("✕", "Remove element")))
