@@ -88,14 +88,18 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _GlossMap
+          name: _WindTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: bcdfc0ed24be5754e8876883ca3d5a8e, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
+<<<<<<< HEAD
           name: _WindTex
+=======
+          name: _GlossMap
+>>>>>>> origin/RELIEF-TERRAIN
         second:
           m_Texture: {fileID: 2800000, guid: bcdfc0ed24be5754e8876883ca3d5a8e, type: 3}
           m_Scale: {x: 1, y: 1}
@@ -166,6 +170,7 @@ Material:
       data:
         first:
           name: _Mode
+<<<<<<< HEAD
         second: 1
       data:
         first:
@@ -195,6 +200,17 @@ Material:
         first:
           name: _AmbientPower
         second: 2
+=======
+        second: 1
+      data:
+        first:
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
+>>>>>>> origin/RELIEF-TERRAIN
       data:
         first:
           name: _Culling
@@ -217,8 +233,29 @@ Material:
         second: 0
       data:
         first:
+<<<<<<< HEAD
           name: _TranslucencyViewDependency
         second: .699999988
+=======
+          name: _SquashAmount
+        second: 1
+      data:
+        first:
+          name: _BaseLight
+        second: .349999994
+      data:
+        first:
+          name: _AO
+        second: 2.4000001
+      data:
+        first:
+          name: _TranslucencyViewDependency
+        second: .699999988
+      data:
+        first:
+          name: _ShadowStrength
+        second: 1
+>>>>>>> origin/RELIEF-TERRAIN
     m_Colors:
       data:
         first:
@@ -250,12 +287,17 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
+<<<<<<< HEAD
           name: _TranslucencyColor
         second: {r: .730000019, g: .850000024, b: .409999996, a: 1}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
+=======
+          name: _Ambient
+        second: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> origin/RELIEF-TERRAIN
       data:
         first:
           name: _TopAmbient
@@ -268,3 +310,7 @@ Material:
         first:
           name: _BottomAmbient
         second: {r: .522058845, g: .484307528, b: .403060138, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor
+        second: {r: .730000019, g: .850000024, b: .409999996, a: 1}

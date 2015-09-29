@@ -38,14 +38,18 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _GlossMap
+          name: _WindTex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
+<<<<<<< HEAD
           name: _WindTex
+=======
+          name: _GlossMap
+>>>>>>> origin/RELIEF-TERRAIN
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -79,6 +83,7 @@ Material:
         second: 7.5
       data:
         first:
+<<<<<<< HEAD
           name: _ShadowStrength
         second: 1
       data:
@@ -101,6 +106,14 @@ Material:
         first:
           name: _Culling
         second: 2
+=======
+          name: _Culling
+        second: 2
+      data:
+        first:
+          name: _AmbientPower
+        second: .00999999978
+>>>>>>> origin/RELIEF-TERRAIN
       data:
         first:
           name: _WindSize
@@ -119,8 +132,29 @@ Material:
         second: .150000006
       data:
         first:
+<<<<<<< HEAD
           name: _TranslucencyViewDependency
         second: .699999988
+=======
+          name: _SquashAmount
+        second: 1
+      data:
+        first:
+          name: _BaseLight
+        second: .349999994
+      data:
+        first:
+          name: _AO
+        second: 2.4000001
+      data:
+        first:
+          name: _TranslucencyViewDependency
+        second: .699999988
+      data:
+        first:
+          name: _ShadowStrength
+        second: 1
+>>>>>>> origin/RELIEF-TERRAIN
     m_Colors:
       data:
         first:
@@ -144,12 +178,17 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
+<<<<<<< HEAD
           name: _TranslucencyColor
         second: {r: .730000019, g: .850000024, b: .409999996, a: 1}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
+=======
+          name: _Ambient
+        second: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> origin/RELIEF-TERRAIN
       data:
         first:
           name: _TopAmbient
@@ -162,3 +201,7 @@ Material:
         first:
           name: _BottomAmbient
         second: {r: .522058845, g: .484307528, b: .403060138, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor
+        second: {r: .730000019, g: .850000024, b: .409999996, a: 1}

@@ -151,6 +151,13 @@ Material:
       data:
         first:
           name: _Metallic
+<<<<<<< HEAD
+=======
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+>>>>>>> origin/RELIEF-TERRAIN
         second: 0
       data:
         first:
