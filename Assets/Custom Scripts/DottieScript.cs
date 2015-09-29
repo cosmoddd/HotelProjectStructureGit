@@ -4,6 +4,7 @@ using HutongGames.PlayMaker;
 
 public class DottieScript : MonoBehaviour {
 
+	public TextAsset textFile;
     public PlayMakerFSM thisFSM;
     public string[] dottieScript;
     public string dottieTest;
@@ -13,22 +14,32 @@ public class DottieScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        dottieTest = "nothing";
+		{
+			// Make sure there this a text
+			// file assigned before continuing
+			if(textFile != null)
+			{
+				// Add each line of the text file to
+				// the array using the new line
+				// as the delimiter
+				dottieScript = ( textFile.text.Split( '\n' ) );
+			}
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    void TimeVacuum()
+		
+		// Update is called once per frame
+		void Update () {
+			
+		}
+		
+		void TimeVacuum()
     {
         Debug.Log("hot pants in the evening sun");
     }
 
     void SetDialogLocator(int i)
     {
-        dialogLocator = i;
+        dialogLocator = (i-1);
     }
 
 

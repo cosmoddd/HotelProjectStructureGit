@@ -1,0 +1,77 @@
+Sandro, Stop doing that. 
+Guests don’t leave books like this in the library.
+Oh, Oh wait, you’re not Sandro.  Please excuse me.  
+These glasses are for reading, not face recognition.  
+Ah, a late arrival.   No matter.  
+Can I see a reservation confirmation number?  	
+		// DOES NOT HAVE RESERVATION NUMBER
+Ok, well, unfortunately I can’t give you a room key without a reservation confirmation.  
+Our system is a little antiquated up here, you see - all key info in this little red book.  
+I'll need a reservation confirmation number from you before I can give you a room.  
+You would have gotten it in an email.  If you need to access your email, there’s  terminal behind you.
+		// broken terminal?
+The terminal is broken, eh?   Well, Sandro can help you with that.  
+		// loop back to 5    confirm ---v
+Ah, yes.  I have your room assignment and...
+Oh boy, there must be a mistake.  
+Hmmm..  
+211 is Andre’s room.  Andre has been staying here twenty years.  
+Who in there right mind would think to make it available?  Oh dearie.  
+All of our other rooms seem to be full up for the big conference this weekend.  
+I feel so terrible, I don’t know what to do… wait.  
+		// Sandro enters the picture.
+What about 316?
+	//Dottie
+316?  
+	//Sandro
+Yeah, the Norwood Suite.  
+	//Dottie
+Are you joking?  The Norwood Suite is not available.  Absolutely no way.
+	//Sandro
+But it’s still vacant, right?
+	//Dottie	
+Of course it’s vacant.  
+It’s the Norwood Suite.  
+No one is permitted to stay there.
+	//Sandro
+Says Nadia.  
+	//Dottie
+And last I heard, Nadia still cuts our checks.  
+	//Sandro
+That she does.
+	//Dottie
+And she has said under no uncertain terms that the Norwood Suite is off-limits.  
+Really, I’m sorry, but there is very little I can do here besides offer you a refund and a case of Blue Moose.  
+	//Sandro
+Dottie, it’s late.  And Blue Moose?  
+Do you want to risk another bad write-up in Traveller’s Quarterly.  
+You were singled out last time.  
+	//Dottie
+No, and let’s not discuss that in front of our customers.
+	//Sandro
+Technically, our friend here is no longer a customer - you’re turning him away! 
+	//Dottie
+You know what?  Here.  Take the key.  
+But by 8am, you need to be out of there.  
+The Norwood Suite was Peter Norwood’s bedroom when this was still his estate.
+A lot of his old stuff is still in there.  
+Anything out of place and you’ll be on the hook for a while.  
+In fact I’m going to need a card for registration and payment when you check out.  
+Can I have that?  
+	//Credit Card check false
+Hmmm.. this debit card doesn’t seem to want to go through.  Try something else...
+	//Loop back to 56 --- Credit Card Check true  ===v
+Very fine.  Now, here’s the key.  
+Consider this an incredibly rare privilege.   
+I don’t think half our staff have even seen inside the Norwood Suite,
+But oh boy am I in the rarest of generous moods today.  
+And Sandro, you’re responsible for making that room look like no one has been in there in twenty years.
+Because that is indeed the case.  Right, Sandro? 
+	//Sandro
+I’m a professional, Dottie.  
+	//Dottie
+You keep telling yourself that.  
+Report to me in the morning.  
+As for you… anything out of place and it goes on your card, got it?  
+Good.  Goodnight!
+
