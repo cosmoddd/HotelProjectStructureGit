@@ -46,10 +46,14 @@ Material:
       data:
         first:
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: _WindTex
 =======
           name: _GlossMap
 >>>>>>> origin/RELIEF-TERRAIN
+=======
+          name: _GlossMap
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -84,6 +88,7 @@ Material:
       data:
         first:
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: _ShadowStrength
         second: 1
       data:
@@ -109,6 +114,10 @@ Material:
 =======
           name: _Culling
         second: 2
+=======
+          name: _Culling
+        second: 2
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
       data:
         first:
           name: _AmbientPower
@@ -133,9 +142,12 @@ Material:
       data:
         first:
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: _TranslucencyViewDependency
         second: .699999988
 =======
+=======
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
           name: _SquashAmount
         second: 1
       data:
@@ -154,7 +166,10 @@ Material:
         first:
           name: _ShadowStrength
         second: 1
+<<<<<<< HEAD
 >>>>>>> origin/RELIEF-TERRAIN
+=======
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
     m_Colors:
       data:
         first:
@@ -179,6 +194,7 @@ Material:
       data:
         first:
 <<<<<<< HEAD
+<<<<<<< HEAD
           name: _TranslucencyColor
         second: {r: .730000019, g: .850000024, b: .409999996, a: 1}
       data:
@@ -189,6 +205,10 @@ Material:
           name: _Ambient
         second: {r: 0, g: 0, b: 0, a: 1}
 >>>>>>> origin/RELIEF-TERRAIN
+=======
+          name: _Ambient
+        second: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
       data:
         first:
           name: _TopAmbient

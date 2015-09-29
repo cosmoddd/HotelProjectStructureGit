@@ -152,7 +152,14 @@ Material:
         first:
           name: _Metallic
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+>>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
         second: 0
       data:
         first:
