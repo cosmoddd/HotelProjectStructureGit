@@ -18,15 +18,7 @@ namespace Voxeland
 		public int backgroundHeight = 0; //to draw type background
 		public int oldSelectedType = 0; //to repaint gui with new background if new type was selected
 
-		public void OnDisable ()
-		{
-			script = (VoxelandTerrain)target;
-			
-			//assigning delegates in Voxeland.OnDrawGizmos to make run withous selecting Voxeland
-			UnityEditor.SceneView.onSceneGUIDelegate -= script.GetMouseButton;
-			UnityEditor.EditorApplication.update -= script.EditorUpdate;
-		}
-		
+		private GUIStyle progressLabelStyle;
 		
 		public void  OnSceneGUI ()
 		{	
@@ -34,7 +26,7 @@ namespace Voxeland
 			if (!script.enabled) return;
 
 			//disabling selection
-			HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+			HandleUtility.AddDefaultControl( GUIUtility.GetControlID(FocusType.Passive) );
 			
 			Vector2 mousePos = Event.current.mousePosition; 
 			mousePos.y = Screen.height - mousePos.y - 40;
@@ -46,30 +38,20 @@ namespace Voxeland
 				Matrix2<Data.Column> lastStep = script.undoSteps[lastStepNum];
 				
 				//marking chunks progress to reset
-				script.SetBlocks(lastStep.offsetX + lastStep.sizeX/2, 0, lastStep.offsetZ + lastStep.sizeZ/2, extend:lastStep.sizeX/2, mode:VoxelandTerrain.SetBlockMode.none); 
+//				script.SetBlocks(lastStep.offsetX + lastStep.sizeX/2, 0, lastStep.offsetZ + lastStep.sizeZ/2, extend:lastStep.sizeX/2, mode:VoxelandTerrain.SetBlockMode.none); 
 				//SetBlockMode.none just resets progress
 				//and btw we can do with these columns whatever, they will be replaced with undo
 				
+				//marking chunks progress to reset
+				Coord lastStepCoord = new Coord(lastStep.offsetX + lastStep.sizeX/2, 0, lastStep.offsetZ + lastStep.sizeZ/2);
+				script.SetBlocks(lastStepCoord, extend:lastStep.sizeX/2, mode:EditMode.none); 
+
 				script.data.SetColumnMatrix( script.undoSteps[lastStepNum] ); //setting last undo step matrix
 				script.undoSteps.RemoveAt(lastStepNum); //removing last step
+
+
 			}
 			#endregion
-			
-			
-			//script.Display (UnityEditor.SceneView.lastActiveSceneView.camera.transform.position); //is done in EditorUpdate delegate
-			if (!Event.current.alt && !script.guiSelectArea && script.enabled)
-			{
-				Ray aimRay = UnityEditor.SceneView.lastActiveSceneView.camera.ScreenPointToRay(mousePos);
-				bool mouseDown = Event.current.type == EventType.MouseDown && Event.current.button == 0;
-				bool shift = Event.current.shift;
-				bool control = Event.current.control;
-			
-				script.Edit(aimRay, script.selected,
-					mouseDown && !shift && !control,
-					mouseDown && shift && !control,
-					mouseDown && control && !shift,
-					mouseDown && control && shift);
-			}
 
 			#region Area selection
 
@@ -84,8 +66,8 @@ namespace Voxeland
 				if (script.guiSelectArea && script.data.areas != null)
 				{
 					Ray aimRay = UnityEditor.SceneView.lastActiveSceneView.camera.ScreenPointToRay(mousePos);
-					VoxelandTerrain.AimData coordsData = script.GetCoordsByRay(aimRay);
-					if (coordsData.hit)
+					Coord coordsData = script.GetCoordsByRay(aimRay);
+					if (coordsData.exists)
 					{
 						Handles.color = new Color(0.5f, 0.7f, 1f, 0.7f);
 						Visualizer.DrawArea(script, script.data.GetArea(coordsData.x, coordsData.z));
@@ -105,8 +87,8 @@ namespace Voxeland
 				if (script.guiFocusOnBrush && Event.current.keyCode == KeyCode.G && Event.current.type == EventType.KeyDown) 
 				{ 
 					Ray aimRay = UnityEditor.SceneView.lastActiveSceneView.camera.ScreenPointToRay(mousePos);
-					VoxelandTerrain.AimData coordsData = script.GetCoordsByRay(aimRay);
-					if (coordsData.hit)
+					Coord coordsData = script.GetCoordsByRay(aimRay);
+					if (coordsData.exists)
 					{
 						//UnityEditor.SceneView.lastActiveSceneView.pivot = new Vector3(coordsData.x, coordsData.y, coordsData.z);
 						//UnityEditor.SceneView.lastActiveSceneView.size = 10f;
@@ -121,87 +103,64 @@ namespace Voxeland
 				}
 
 			#endregion
-		}
-
-		public void Rebuild ()
-		{
-			//re-loading data
-			script.data.LoadFromByteList(script.data.compressed);
-					
-			//setting terrain size
-			//if (script.guiLimitedSize != script.terrainSize || script.guiAreaSize != script.data.areaSize)
-			if (script.guiAreaSize != script.data.areaSize)
-				New(reason:"Change Terrain Area Size");
-					
-			//applying settings
-			script.chunkSize = script.guiNewChunkSize;
-
-			script.data.emptyColumn = new Data.Column(true); //sending boolean argument with fn will create a list
-			script.data.emptyColumn.AddBlocks(script.guiEmptyColumnType, script.guiEmptyColumnHeight);
 			
-			//adding renderer if rtp compatibility is on
-			if (script.rtpCompatible)
-			{
-				MeshRenderer renderer = script.GetComponent<MeshRenderer>();
-				if (renderer==null) 
-				{ 
-					renderer = script.gameObject.AddComponent<MeshRenderer>(); 
-					renderer.hideFlags = HideFlags.HideInInspector;
-				}
-				script.terrainMaterial = renderer.sharedMaterial;
-			}
-
-			//rebuilding
-			script.chunks.Clear();
-			script.Display(true);
 		}
 
-		public void Clear (string reason="Clear Terrain")
-		{
-			if (EditorUtility.DisplayDialog(reason, "This will remove all terrain data. This operation cannot be undone.", "Clear", "Cancel"))
-			{
-				script.data.areaSize = script.guiAreaSize;
-
-				//clearing terrain and saving data
-				script.data.Clear();
-				script.data.compressed = script.data.SaveToByteList();
-				UnityEditor.EditorUtility.SetDirty(script.data);
-
-				//does not contain rebuild operation as it could be called from rebuild
-			}
-			script.guiAreaSize = script.data.areaSize; //if was not cleared - resetting gui area size
-		}
-
-		public void New (string reason="Create New Terrain")
-		{
-			Clear(reason:reason);
-
-			//creating initial level
-			script.data.AddHeight(30, 0,0,script.data.areaSize,script.data.areaSize, type:1);
-			script.data.areas[5050].save = true;
-
-			//saving data
-			script.data.compressed = script.data.SaveToByteList();
-			UnityEditor.EditorUtility.SetDirty(script.data);
-		}
 		
 		public override void  OnInspectorGUI ()
 		{
 			script = (VoxelandTerrain)target;
 			
+			#region Renderer for material
+
+				MeshRenderer renderer = script.GetComponent<MeshRenderer>();
+				if (script.guiDisplayMaterial || script.rtpCompatible)
+				{
+					if (renderer==null) 
+					{ 
+						renderer = script.gameObject.AddComponent<MeshRenderer>(); 
+						renderer.hideFlags = HideFlags.HideInInspector;
+					}
+					renderer.sharedMaterial = script.terrainMaterial;
+				}
+				else 
+					if (renderer!=null) DestroyImmediate(renderer);
+				
+			#endregion
+
 			EditorGUI.indentLevel = 0;
 	
 			LayoutTools.Start();
 			
-			LayoutTools.NewLine(5);
-			LayoutTools.QuickInt(ref script.brushSize, "Brush Size:", "The extend of the brush. If size is more than 0 a volume brush is turned on, which allows to set multiple blocks in one click.", max:6);
-			LayoutTools.QuickBool(ref script.brushSphere, "Spherify", "Smoothes volume brush and shapes it in form of pseudo-sphere. Please note that Voxeland data is a cubical structure which cannot give clear spheres – all round objects will become a bit aliased");
-			LayoutTools.NewLine(50); EditorGUI.HelpBox(LayoutTools.AutoRect(), "Press Left Click to add block,\nShift-Left Click to dig block,\nCtrl-Left Click to smooth blocks,\nCtrl-Shift-Left Click to replace block", MessageType.None);
+			#region Brush, Progress, Rebuild
 
-			#region Rebuild
 				LayoutTools.NewLine(5);
+				LayoutTools.QuickInt(ref script.brushSize, "Brush Size:", "The extend of the brush. If size is more than 0 a volume brush is turned on, which allows to set multiple blocks in one click.", max:6);
+				LayoutTools.QuickBool(ref script.brushSphere, "Spherify", "Smoothes volume brush and shapes it in form of pseudo-sphere. Please note that Voxeland data is a cubical structure which cannot give clear spheres – all round objects will become a bit aliased");
+				LayoutTools.NewLine(50); EditorGUI.HelpBox(LayoutTools.AutoRect(), "Press Left Click to add block,\nShift-Left Click to dig block,\nCtrl-Left Click to smooth blocks,\nCtrl-Shift-Left Click to replace block", MessageType.None);
+
+				LayoutTools.NewLine(5);
+				
+				//displaing build progress gauge
+				LayoutTools.NewLine();
+				if (progressLabelStyle==null) { progressLabelStyle = new GUIStyle(UnityEditor.EditorStyles.label); }
+				//progressLabelStyle.fontStyle = FontStyle.Bold;
+				progressLabelStyle.alignment = TextAnchor.LowerCenter;
+
+				if (script.gradualQueue.Count != 0) 
+				{
+					float gaugeStart = LayoutTools.lastPos.x;
+					EditorGUI.ProgressBar(LayoutTools.AutoRect(), 1f-script.queueProgress, "");
+					LayoutTools.lastPos.x=gaugeStart; EditorGUI.LabelField(LayoutTools.AutoRect(), "Build Progress: " + (script.maxQueue-script.gradualQueue.Count) + "/" + script.maxQueue, progressLabelStyle);
+					Repaint();
+				}
+				else EditorGUI.LabelField(LayoutTools.AutoRect(), "Build Progress: complete", progressLabelStyle);
+				
 				if (LayoutTools.QuickButton("Rebuild", "Removes all chunks and creates new terrain mesh. This will not delete terrain data (unless terrain size is changed), it just re-creates same terrain with new settings. Rebuild operation is performed after each script compile."))
-					Rebuild();
+				{
+					script.chunks.Clear();
+					script.Display();
+				}
 			#endregion
 
 			#region Block Types
@@ -325,7 +284,7 @@ namespace Voxeland
 					if (oldSelectedType != script.selected) { oldSelectedType=script.selected; this.Repaint(); return; }
 
 					//drawing array buttons
-					LayoutTools.ArrayButtons<VoxelandBlockType>(ref script.types, ref script.selected, drawUpDown:false);
+					LayoutTools.ArrayButtons<VoxelandBlockType>(ref script.types, ref script.selected, drawUpDown:false, addToLast:true);
 					for (int i=0; i<script.types.Length; i++) 
 						if (script.types[i] == null)
 							script.types[i] = new VoxelandBlockType("New", true);
@@ -568,8 +527,8 @@ namespace Voxeland
                     else script.Generate(script.guiSelectedAreaNum);
 
                     //resetting progress
-                    //for (int cx = Mathf.FloorToInt(1f*area.offsetX/script.chunkSize); cx <= Mathf.FloorToInt(1f*(area.offsetX+area.size)/script.chunkSize); cx++)
-                    //    for (int cz = Mathf.FloorToInt(1f*area.offsetZ/script.chunkSize); cz <= Mathf.FloorToInt(1f*(area.offsetZ+area.size)/script.chunkSize); cz++)
+                    //for (int cx = Mathf.FloorToInt(1f*area.offsetX/script.chunkSize); cx <= Mathf.FloorToInt(1f*(area.offsetX+land.data.areaSize)/script.chunkSize); cx++)
+                    //    for (int cz = Mathf.FloorToInt(1f*area.offsetZ/script.chunkSize); cz <= Mathf.FloorToInt(1f*(area.offsetZ+land.data.areaSize)/script.chunkSize); cz++)
                     //{
                     //    if (!script.chunks.CheckInRange(cx,cz)) continue;
                     //    Chunk chunk = script.chunks[cx,cz];
@@ -585,7 +544,7 @@ namespace Voxeland
 
                     //rebuilding
                     script.chunks.Clear();
-                    script.Display(true);
+                    script.Display();
                 }
 
 				LayoutTools.QuickBool(ref script.autoGeneratePlaymode, "Auto Generate New Areas in Playmode", "Will automatically generate new areas when they get in build distance range in playmode and in final game build. Generated areas will not be saved to data.", isLeft:true);
@@ -612,25 +571,19 @@ namespace Voxeland
                 script.data = EditorGUI.ObjectField(LayoutTools.AutoRect(0.5f), script.data, typeof(Voxeland.Data), false) as Voxeland.Data;
                 if (GUI.Button(LayoutTools.AutoRect(0.25f), new GUIContent("Save", "Terrain data could be saved in separate .asset file. When it is not saved to file Data is stored in current scene."))) SaveData();
 
-                LayoutTools.QuickBool(ref script.limited, "Limited Size", "When this toggle is checked terrain size is limited by the size of one area. This is useful for small terrains that do not require dynamic build or horizon plane. Moreover, only limited-size terrains could be baked to meshes.");
-                if (script.limited)
+                LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), (script.limited ? "Limited" : "Unlimited") + " Terrain");
+				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), "Chunk Size: \t" + script.chunkSize.ToString());
+				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), (script.limited ? "Terrain" : "Area") + " Size: \t" + script.data.areaSize.ToString());
+
+				LayoutTools.NewLine(); if (GUI.Button(LayoutTools.AutoRect(), new GUIContent("New / Resize / Offset", "Shows new terrain creation utility. This utility can also resize an existing terrain."))) 
+				{
+					VoxelandCreate window = VoxelandCreate.ShowCreateWindow();
+					window.LoadTerrainParams(script);
+				}
+				
+				LayoutTools.NewLine(5);
+				if (!script.limited)
                 {
-                    LayoutTools.NewLine();
-					script.guiAreaSize = EditorGUI.IntField(LayoutTools.AutoRect(0.75f), 
-						new GUIContent("Terrain Size", "Size of the limited terrain. Internally it is the size of terrain area. Resizing terrain will destroy all the terrain data."),
-						script.guiAreaSize);
-                    //rounding terrain size to chunk size
-                    script.guiAreaSize = Mathf.RoundToInt(1f*script.guiAreaSize/script.guiNewChunkSize) * script.guiNewChunkSize;
-					if (GUI.Button(LayoutTools.AutoRect(0.25f),"Revert")) script.guiAreaSize = script.data.areaSize;
-                }
-                else
-                {
-					LayoutTools.NewLine();
-					script.guiAreaSize = EditorGUI.IntField(LayoutTools.AutoRect(0.75f), 
-						new GUIContent("Area Size", "Size of the data area. Terrain generation is done per-area. Big areas increase data size, small areas increase generation time."),
-						script.guiAreaSize);
-					if (GUI.Button(LayoutTools.AutoRect(0.25f),"Revert")) script.guiAreaSize = script.data.areaSize;
-					
                     LayoutTools.QuickFloat(ref script.generateDistance, "Build Distance", "Chunks that will get in this range from camera will be automatically build. When camera moves, new chunks will be built as they get in range.");
                     LayoutTools.QuickFloat(ref script.removeDistance, "Remove Distance", "Chunks that are further from camera that this distance will be destroyed. As camera moves new chunks will be destroyed as they get out of destroy range. Remove Distance should be larger than Build Distance");
                 }
@@ -643,7 +596,9 @@ namespace Voxeland
                 LayoutTools.QuickInt(ref script.terrainMargins, "Terrain Margins", "Chunk invisible faces overlap. Lowering this value will speed up chunk build, especially on small chunks, but will open gaps between chunks. Setting this value more than 2 does not have a sense.");
                 LayoutTools.QuickBool(ref script.playmodeEdit, "Playmode Edit", "Enable terrain editing in playmode. Adds a possibility to edit terrain in-game the way it is done in editor. It is recommended to use special Edit() controller instead (see Demo VoxelandController example script)", fieldSize:0.1f);
                 
-                LayoutTools.QuickBool(ref script.multiThreadEdit, "Multithread (experimental)", "Can cause Unity crash. Use it on your own risc.", fieldSize:0.1f);
+				LayoutTools.QuickBool(ref script.continuous, "Continuous Painting", "Add (remove) blocks until the mouse is pressed. Otherwise each block chenge should require one mouse click.", fieldSize:0.1f);
+
+                //LayoutTools.QuickBool(ref script.multiThreadEdit, "Multithread (experimental)", "Can cause Unity crash. Use it on your own risc.", fieldSize:0.1f);
                 //if (!script.multiThreadEdit && script.threadsId!=0) script.StopThreads(); //turning off all threads if multithreaded edit off
                 
                 LayoutTools.QuickBool(ref script.saveMeshes, "Save Meshes with Scene", "Saves terrain mesh with scene. Turn this off if you do not plan to bake your terrain as terrain rebuilds its mesh any time the scene loaded anyway.", fieldSize:0.1f);
@@ -658,15 +613,26 @@ namespace Voxeland
 					LayoutTools.NewLine(40); 
 					EditorGUI.HelpBox(LayoutTools.AutoRect(), "Comment the line 326\n(#define WNORMAL_COVERAGE_X_Z_Ypos_Yneg)\nof ReliefTerrainPMTriplanarStandalone shader.", MessageType.None);
 				}
+				LayoutTools.QuickBool(ref script.guiDisplayMaterial, "Display Material in Voxeland Inspector", "Displays a material properties right under Voxeland script in inspector as if Voxeland was a simple 3D object.", fieldSize:0.1f);
 
                 LayoutTools.NewLine(5);
                 LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("Display non-generated Terrain:", "The way non-generated terrain is displayed. Sets the default height and type for all non-generated areas."));
                     LayoutTools.margin += 15;
 
-                    LayoutTools.QuickInt(ref script.guiEmptyColumnHeight, "Level", "Height of non-generated terrain.");
-                    string[] typeNames = new string[script.types.Length];
+					int emptyColumnHeight = script.data.emptyColumn.GetTopPoint(); int originalEmptyColumnHeight = emptyColumnHeight;
+					byte emptyColumnType = script.data.emptyColumn.GetTopType(); byte originalEmptyColumnType = emptyColumnType;
+
+					LayoutTools.QuickInt(ref emptyColumnHeight, "Level", "Height of non-generated terrain.");
+					string[] typeNames = new string[script.types.Length];
                     for (int i=0; i<script.types.Length; i++) typeNames[i] = script.types[i].name;
-                    LayoutTools.NewLine(); script.guiEmptyColumnType = (byte)EditorGUI.Popup(LayoutTools.AutoRect(), "Type", script.guiEmptyColumnType, typeNames);
+                    LayoutTools.NewLine(); emptyColumnType = (byte)EditorGUI.Popup(LayoutTools.AutoRect(), "Type", script.guiEmptyColumnType, typeNames);
+
+					if (emptyColumnHeight != originalEmptyColumnHeight || emptyColumnType != originalEmptyColumnType)
+					{
+						script.data.emptyColumn = new Data.Column(true); //sending boolean argument with fn will create a list
+						script.data.emptyColumn.AddBlocks(emptyColumnType, emptyColumnHeight); 
+					}
+
                     LayoutTools.margin-=15;
 
                 //ambient
@@ -680,6 +646,7 @@ namespace Voxeland
                 }
 
                 //far
+				EditorGUI.BeginDisabledGroup(script.limited);
                 LayoutTools.QuickBool(ref script.useFar, "Horizon Plane", "Planar (non-voxel) terrain to display on far distances as lod", isLeft:true);
                 if (script.useFar)
                 {
@@ -699,36 +666,16 @@ namespace Voxeland
 
                     LayoutTools.margin-=15;
                 }
+				EditorGUI.EndDisabledGroup();
 
                 LayoutTools.NewLine(5);
                 LayoutTools.NewLine(); script.terrainMaterial = (Material)EditorGUI.ObjectField(LayoutTools.AutoRect(), new GUIContent("Terrain Material", "Material of the terrain. Double-click it to set terrain material parameter, or assign a new terrain."), script.terrainMaterial, typeof(Material), false);
                 LayoutTools.NewLine(); script.highlightMaterial = (Material)EditorGUI.ObjectField(LayoutTools.AutoRect(), new GUIContent("Highlight Material", "Material of the highlight object. Highlight color or decal dist could be set by modifying this material."), script.highlightMaterial, typeof(Material), false);
 
-                LayoutTools.NewLine(5); LayoutTools.NewLine();
-				if (GUI.Button(LayoutTools.AutoRect(0.5f), new GUIContent("New Terrain", "Creates new terrain. It will create a default 30-block terrain layer in origin area."))) { New(); Rebuild(); }
-				if (GUI.Button(LayoutTools.AutoRect(0.5f), new GUIContent("Clear Terrain", "Creates empty terrain. It will not display any chunks unless they are manually generated"))) { Clear(); Rebuild(); }
-
                 LayoutTools.NewLine(5);
                 LayoutTools.margin -= 15;
             }
             #endregion
-
-			#region Auto-turning Shader Normalmap and Specmap on/off
-			//TODO: maybe should be in rebuild?
-			if (script.terrainMaterial != null)
-			{
-				bool hasBump = false;
-				bool hasSpec = false;
-				for (int t=0; t<script.types.Length; t++)
-				{
-					if (!script.types[t].filledTerrain) continue;
-					if (script.types[t].bumpTexture != null) hasBump = true;
-					if (script.types[t].specGlossMap != null) hasSpec = true;
-				}
-				if (hasBump) script.terrainMaterial.EnableKeyword("_NORMALMAP"); else script.terrainMaterial.DisableKeyword("_NORMALMAP");
-				if (hasSpec) script.terrainMaterial.EnableKeyword("_SPECGLOSSMAP"); else script.terrainMaterial.DisableKeyword("_SPECGLOSSMAP");
-			}
-			#endregion
 			
 			#region Import and Export
 			LayoutTools.QuickFoldout(ref script.guiImportExport, "Import and Export");
@@ -770,7 +717,7 @@ namespace Voxeland
 						
 						//rebuilding
 						script.chunks.Clear();
-						script.Display(true);
+						script.Display();
 					}
 				}
 				#endregion
@@ -791,7 +738,7 @@ namespace Voxeland
 								script.data.LoadFromString( reader.ReadToEnd() );
 						
 						script.chunks.Clear();
-						script.Display(true);
+						script.Display();
 					}
 					script.data.compressed = script.data.SaveToByteList();
 					EditorUtility.SetDirty(script.data);	
@@ -877,7 +824,7 @@ namespace Voxeland
 				LayoutTools.lastPos.y -= 100; LayoutTools.lastPos.y -= 7;
 
 				LayoutTools.margin += 52; 
-				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("Voxeland v4.2U51")); 
+				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("Voxeland v4.31")); 
 				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("by Denis Pahunov"));
 				LayoutTools.NewLine(5);
 
@@ -989,13 +936,23 @@ namespace Voxeland
 			
 				//clearing and re-creating chunks
 				script.chunks.Clear();
-				script.Display(true);
+				script.Display();
 
-				//rebuilding //setting all chunk stages to "Force all"
+				//rebuilding
+				Queue<System.Action[]> tempQueue = new Queue<System.Action[]>();
 				for (int i=0; i<script.chunks.array.Length; i++)
 				{
-					script.chunks.array[i].stage = Chunk.Stage.forceAll;
-					script.chunks.array[i].Process();
+					Chunk chunk = script.chunks.array[i];
+					chunk.EnqueueAll(tempQueue);
+					chunk.EnqueueUpdateCollider(tempQueue);
+
+					while (tempQueue.Count > 0)
+					{
+						System.Action[] actions = tempQueue.Dequeue();
+						for (int a=0; a<actions.Length; a++) actions[a]();
+					}
+
+					script.chunks.array[i].loFilter.GetComponent<Renderer>().enabled = false;
 				}
 			
 				script.saveMeshes = oldSaveMeshes;
@@ -1006,48 +963,136 @@ namespace Voxeland
 				script.lodDistance = oldLodDist;
 
 				script.enabled = false;
-				OnDisable();
 			}
 		#endregion
-	
-		#region Create terrain
-		[MenuItem("GameObject/3D Object/Voxeland Terrain")]
-		static void  Init ()
-		{
-			//VoxelandCreate window= ScriptableObject.CreateInstance<VoxelandCreate>();
-			//window.position = new Rect(Screen.width/2,Screen.height/2, 370, 170);
-			//window.ShowUtility();
-
-			GameObject terrainObj= new GameObject("Voxeland");
-			VoxelandTerrain terrain= terrainObj.AddComponent<VoxelandTerrain>();
-			terrain.limited = true;
-			
-			//setting initial types
-			terrain.types = new VoxelandBlockType[] {new VoxelandBlockType("Empty", false), new VoxelandBlockType("Ground", true)};
-			terrain.grass = new VoxelandGrassType[] {new VoxelandGrassType("Empty")};
-			terrain.selected = 1;
-
-			//creating initial data
-			terrain.data = ScriptableObject.CreateInstance<Data>();
-			terrain.data.name = "VoxelandData";
-			terrain.data.areaSize = terrain.chunkSize*7;
-			terrain.guiAreaSize = terrain.data.areaSize;
-			terrain.data.Clear();
-
-			//creating initial level
-			terrain.data.AddHeight(30, 0,0,terrain.data.areaSize,terrain.data.areaSize, type:1);
-			terrain.data.areas[5050].save = true;
-
-			//saving data
-			terrain.data.compressed = terrain.data.SaveToByteList();
-			UnityEditor.EditorUtility.SetDirty(terrain.data);
-
-			//rebuilding
-			terrain.chunks.Clear();
-			terrain.Display(true);
-		}
-		#endregion
 	}
+	
+	#region Create terrain
+
+		public class VoxelandCreate : EditorWindow
+		{
+			public VoxelandTerrain terrain;
+			public bool limited = false;
+			public int areaSize = 300;
+			public int chunkSize = 30;
+			public int chunkMargins = 2;
+			public int fillLevel = 10;
+			public bool resetBlockTypes = false;
+			public bool keepOldTerrainData = false;
+			public int offsetX = 0;
+			public int offsetZ = 0;
+
+			public void OnGUI ()
+			{
+				LayoutTools.Start();
+				LayoutTools.margin = 5;
+				EditorGUI.indentLevel = 0;
+
+				LayoutTools.NewLine(); limited = EditorGUI.ToggleLeft(LayoutTools.AutoRect(), new GUIContent("Limited Size", "When this toggle is checked terrain size is limited by the size of one area. This is useful for small terrains that do not require dynamic build or horizon plane. Moreover, only limited-size terrains could be baked to meshes."), limited);
+				LayoutTools.NewLine(); chunkSize = EditorGUI.IntField(LayoutTools.AutoRect(), new GUIContent("Chunk Size:", "Dimensions of a terrain element mesh. Higher values will speed up the whole terrain building and reduce the number of draw calls but will slow down the terrain editing."), chunkSize);
+				//LayoutTools.NewLine(); chunkMargins = EditorGUI.IntField(LayoutTools.AutoRect(), new GUIContent("Chunk Margins:"), chunkMargins);
+				LayoutTools.NewLine(); areaSize = EditorGUI.IntField(LayoutTools.AutoRect(), new GUIContent ((limited ? "Terrain Size:" : "Area Size:"), "Size of the data area. Terrain generation is done per-area. Big areas increase data size, small areas increase generation time. Limited terrain has only one area."), areaSize);
+
+				//rounding area size for a limited terrain
+				areaSize = Mathf.RoundToInt(1f*areaSize/chunkSize) * chunkSize;
+
+				LayoutTools.NewLine(5);
+				LayoutTools.NewLine(); fillLevel = EditorGUI.IntField(LayoutTools.AutoRect(), new GUIContent("Initial Fill Level:"), fillLevel);
+
+				LayoutTools.NewLine(5);
+				EditorGUI.BeginDisabledGroup(terrain==null);
+				if (terrain == null) resetBlockTypes = true; //setting resetBlockTypes to always true if terrain is null
+				LayoutTools.NewLine(); resetBlockTypes = EditorGUI.ToggleLeft(LayoutTools.AutoRect(), new GUIContent("Reset Block Types"), resetBlockTypes);
+				LayoutTools.NewLine(); keepOldTerrainData = EditorGUI.ToggleLeft(LayoutTools.AutoRect(), new GUIContent("Transfer Old Terrain Data"), keepOldTerrainData);
+				EditorGUI.BeginDisabledGroup(!keepOldTerrainData);
+				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(0.4f), "Offset:");
+				offsetX = EditorGUI.IntField(LayoutTools.AutoRect(0.3f), offsetX);
+				offsetZ = EditorGUI.IntField(LayoutTools.AutoRect(0.3f), offsetZ);
+				EditorGUI.EndDisabledGroup();
+				EditorGUI.EndDisabledGroup();
+
+				LayoutTools.NewLine(5);
+				LayoutTools.NewLine(); if (GUI.Button(LayoutTools.AutoRect(), "Create"))
+				{
+					if (terrain != null && !keepOldTerrainData) //if terrain exists AND keep data not checked
+					{
+						if (EditorUtility.DisplayDialog("Warning", "Removing all of the current terrain data. This operation is not undoable. To resize or offset the terrain check Transfer Terrain Data.", "OK", "Cancel"))
+							Create();
+					}
+					else Create();
+				}
+
+				LayoutTools.Finish();
+			}
+
+			[MenuItem("GameObject/3D Object/Voxeland Terrain")]
+			static public VoxelandCreate ShowCreateWindow ()
+			{
+				VoxelandCreate window = new VoxelandCreate();
+				window.titleContent = new GUIContent("New Voxeland Terrain");
+				window.position = new Rect(window.position.x, window.position.y, 250, 140);
+				window.ShowUtility();
+				return window;
+			}
+
+			public void LoadTerrainParams (VoxelandTerrain t)
+			{
+				terrain = t;
+				chunkSize = t.chunkSize;
+				areaSize = t.data.areaSize;
+				limited = t.limited;
+				//chunkMargins = t.terrainMargins;
+				fillLevel = t.data.emptyColumn.GetTopPoint();
+			}
+
+			public void Create ()
+			{
+				//creating terrain if it does not exists
+				if (terrain == null)
+				{
+					GameObject terrainObj= new GameObject("Voxeland");
+					terrain = terrainObj.AddComponent<VoxelandTerrain>();
+				}
+
+				//setting initial types
+				if (resetBlockTypes)
+				{
+					terrain.types = new VoxelandBlockType[] {new VoxelandBlockType("Empty", false), new VoxelandBlockType("Ground", true)};
+					terrain.grass = new VoxelandGrassType[] {new VoxelandGrassType("Empty")};
+					terrain.selected = 1;
+				}
+
+				//terrain settings
+				terrain.limited = limited;
+				terrain.chunkSize = chunkSize;
+
+				//creating initial data
+				Voxeland.Data newData = ScriptableObject.CreateInstance<Data>();
+				newData.name = "VoxelandData";
+				newData.areaSize = areaSize;
+				newData.Clear();
+
+				//fill level
+				newData.emptyColumn = new Data.Column(true); //sending boolean argument with fn will create a list
+				newData.emptyColumn.AddBlocks(1, fillLevel);
+
+				//copy old terrain data
+				if (keepOldTerrainData) {newData.Refill(terrain.data,offsetX,offsetZ);}
+				terrain.data = newData;
+
+				//saving data
+				terrain.data.compressed = terrain.data.SaveToByteList();
+				UnityEditor.EditorUtility.SetDirty(terrain.data);
+
+				//rebuilding
+				terrain.chunks.Clear();
+				terrain.Display();
+
+				Selection.activeTransform = terrain.transform;
+				this.Close();
+			}
+		}
+	#endregion
 	
 	
 	

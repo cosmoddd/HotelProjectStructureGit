@@ -19,7 +19,7 @@ namespace Voxeland
 
 		public int pos;
 
-		public int[] orderedByDistance; //from center
+		//public int[] orderedByDistance; //from center
 		
 		public T this[int x, int z] 
 		{
@@ -43,7 +43,7 @@ namespace Voxeland
 			offsetX = 0;
 			offsetZ = 0;
 			pos = 0;
-			orderedByDistance = new int[0];
+			//orderedByDistance = new int[0];
 		}
 
 		public Matrix2 (Matrix2<T> m)
@@ -54,7 +54,7 @@ namespace Voxeland
 			offsetX = m.offsetX;
 			offsetZ = m.offsetZ;
 			pos = m.pos;
-			orderedByDistance = new int[0];
+			//orderedByDistance = new int[0];
 		}
 
 		public Matrix2 (Matrix2<float> m)
@@ -65,7 +65,7 @@ namespace Voxeland
 			offsetX = m.offsetX;
 			offsetZ = m.offsetZ;
 			pos = m.pos;
-			orderedByDistance = new int[0];
+			//orderedByDistance = new int[0];
 		}
 
 		public void GetValuesFrom (Matrix2<T> m)
@@ -120,7 +120,7 @@ namespace Voxeland
 				//test: if (temp.IsOnEdge(x,z) != temp.IsOnEdge(temp.pos))  Debug.Log("error " + x + " " + z + " " + temp.pos + " " + temp.IsOnEdge(temp.pos));
 		}
 
-		public T GetByDistance(int num) //from center
+		/*public T GetByDistance(int num) //from center
 		{
 			//generating spiral if it does not exist
 			if (spiral==null)
@@ -160,7 +160,7 @@ namespace Voxeland
 			}
 			
 			return array[orderedByDistance[num]];
-		}
+		}*/
 
 		public void Reset(T def)
 		{
@@ -172,6 +172,66 @@ namespace Voxeland
 		{
 			sizeX = x; sizeZ = z;
 			array = new T[sizeX*sizeZ];
+		}
+
+		public void Refill (Matrix2<T> src, List<T> unused=null, List<T> swapped=null)
+		{
+			//copy overlapping values to this
+			int startX = Mathf.Max(offsetX, src.offsetX); int endX = Mathf.Min(offsetX+sizeX, src.offsetX+src.sizeX);
+			int startZ = Mathf.Max(offsetZ, src.offsetZ); int endZ = Mathf.Min(offsetZ+sizeZ, src.offsetZ+src.sizeZ);
+			
+			for (int x=startX; x<endX; x++)
+				for (int z=startZ; z<endZ; z++)
+					this[x,z] = src[x,z];
+
+			//filling list of unused values
+			for (int x=src.offsetX; x<src.offsetX+src.sizeX; x++)
+				for (int z=src.offsetZ; z<src.offsetZ+src.sizeZ; z++)
+					if (!CheckInRange(x,z)) unused.Add(src[x,z]); //if out-of-range in this matrix
+
+			//filling empty spaces with unused (and filling swapped list)
+			/*for (int x=offsetX; x<offsetX+sizeX; x++)
+				for (int z=offsetZ; z<offsetZ+sizeZ; z++)
+				{
+					if (src.CheckInRange(x,z)) continue;
+
+					T val = unused[unused.Count-1];
+					unused.RemoveAt(unused.Count-1);
+					this[x,z] = val;
+					swapped.Add(val);
+				}
+			 */
+		}
+
+		public IEnumerable<T> OrderedFromCenter ()
+		{
+			int[] sortedByDistance = new int[array.Length];
+			for (int i=0; i<sortedByDistance.Length; i++) sortedByDistance[i] = i;
+
+			int[] distances = new int[array.Length];
+			for (int z=0; z<sizeZ; z++)
+				for (int x=0; x<sizeX; x++)
+					distances[z*sizeX + x] = (x-sizeX/2)*(x-sizeX/2) + (z-sizeZ/2)*(z-sizeZ/2); //Mathf.Max( Mathf.Abs(x-chunks.sizeX/2), Mathf.Abs(z-chunks.sizeZ/2) );
+
+			//TODO replace it with qsort
+			for (int i=0; i<distances.Length; i++) 
+				for (int d=0; d<distances.Length-1; d++)
+					if (distances[d] > distances[d+1])
+			{
+				int temp = distances[d+1];
+				distances[d+1] = distances[d];
+				distances[d] = temp;
+
+				temp = sortedByDistance[d+1];
+				sortedByDistance[d+1] = sortedByDistance[d];
+				sortedByDistance[d] = temp;
+			}
+
+			for (int i=0; i<sortedByDistance.Length; i++)
+			{
+				yield return array[sortedByDistance[i]];
+			}
+
 		}
 	}
 	

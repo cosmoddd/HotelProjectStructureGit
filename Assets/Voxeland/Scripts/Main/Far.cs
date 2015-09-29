@@ -61,8 +61,11 @@ namespace Voxeland
 			
 			//creating wrapper
 			MeshWrapper wrapper = new MeshWrapper(land.farMesh);
-			wrapper.uvs = new Vector2[wrapper.verts.Length]; //do not load arrays from mesh, but create them
-			wrapper.uv1 = new Vector2[wrapper.verts.Length];
+			wrapper.uvs = new Vector2[4][];
+			wrapper.uvs[0] = new Vector2[wrapper.verts.Length]; //do not load arrays from mesh, but create them
+			wrapper.uvs[1] = new Vector2[wrapper.verts.Length];
+			wrapper.uvs[2] = new Vector2[wrapper.verts.Length];
+			wrapper.uvs[3] = new Vector2[wrapper.verts.Length];
 			if (land.rtpCompatible) wrapper.colors = new Color[wrapper.verts.Length];
 
 			//calculating array of types
@@ -106,10 +109,14 @@ namespace Voxeland
 					{
 						switch (textureNum)
 						{
-							case 0: wrapper.uvs[v] = new Vector2(1,0); break;
-							case 1: wrapper.uvs[v] = new Vector2(0,1); break;
-							case 2: wrapper.uv1[v] = new Vector2(1,0); break;
-							case 3: wrapper.uv1[v] = new Vector2(0,1); break;
+							case 0: wrapper.uvs[0][v] = new Vector2(1,0); break;
+							case 1: wrapper.uvs[0][v] = new Vector2(0,1); break;
+							case 2: wrapper.uvs[1][v] = new Vector2(1,0); break;
+							case 3: wrapper.uvs[1][v] = new Vector2(0,1); break;
+							case 4: wrapper.uvs[2][v] = new Vector2(1,0); break;
+							case 5: wrapper.uvs[2][v] = new Vector2(0,1); break;
+							case 6: wrapper.uvs[3][v] = new Vector2(1,0); break;
+							case 7: wrapper.uvs[3][v] = new Vector2(0,1); break;
 						}
 					}
 					else
@@ -145,7 +152,7 @@ namespace Voxeland
 				{
 					Chunk chunk = land.chunks.array[i];
 					if (chunk == null) continue;
-					if (chunk.stage != Chunk.Stage.complete) continue;
+					if (!chunk.stage.applyTerrainComplete) continue;
 					if (chunk.faces == null || chunk.faces.Length == 0) continue;
 
 					if (chunk.offsetX < minX) minX = chunk.offsetX;
@@ -170,14 +177,15 @@ namespace Voxeland
 					if (!land.chunks.CheckInRange(vertChunkX, vertChunkZ)) { vertInChunk[i] = false; continue; }
 
 					Chunk chunk = land.chunks[vertChunkX, vertChunkZ];
-					if (chunk == null || chunk.stage != Chunk.Stage.complete) vertInChunk[i] = false;
+					if (chunk == null || !chunk.stage.applyTerrainComplete) vertInChunk[i] = false;
+					//Debug.Log(chunk.stage.ToString());
 
 					//flooring vert a bit
 					wrapper.verts[i] -= wrapper.normals[i]*0.5f;
 				}
 
 				//if all of the triangle verts are in chunk or at floor - disable triangle
-				int[] tris = wrapper.triangles[0];
+				int[] tris = wrapper.tris[0].array;
 				for (int t=0; t<tris.Length; t+=3)
 				{
 					if ((vertInChunk[ tris[t] ] && vertInChunk[ tris[t+1] ] && vertInChunk[ tris[t+2] ]) ||
@@ -251,7 +259,7 @@ namespace Voxeland
 			{
 				Chunk chunk = land.chunks.array[i];
 				if (chunk == null) continue;
-				if (chunk.stage != Chunk.Stage.complete) continue;
+				if (!chunk.stage.complete) continue;
 				if (chunk.faces == null || chunk.faces.Length == 0) continue;
 
 				if (chunk.offsetX < minX) minX = chunk.offsetX;
@@ -276,7 +284,7 @@ namespace Voxeland
 				if (!land.chunks.CheckInRange(vertChunkX, vertChunkZ)) { vertInChunk[i] = false; continue; }
 
 				Chunk chunk = land.chunks[vertChunkX , vertChunkZ ];
-				if (chunk == null || chunk.stage != Chunk.Stage.complete) vertInChunk[i] = false;
+				if (chunk == null || !chunk.stage.complete) vertInChunk[i] = false;
 			}
 
 			//if one of the triangle verts is not in chunk - all 3 verts should not be floored
@@ -323,7 +331,7 @@ namespace Voxeland
 			{
 				Chunk chunk = land.chunks.array[i];
 				if (chunk == null) continue;
-				if (chunk.stage != Chunk.Stage.complete) continue;
+				if (!chunk.stage.complete) continue;
 				if (chunk.faces == null || chunk.faces.Length == 0) continue;
 
 				if (chunk.offsetX < minX) minX = chunk.offsetX;
@@ -344,7 +352,7 @@ namespace Voxeland
 				if (!land.chunks.CheckInRange(vertChunkX, vertChunkZ)) { adjustedVerts[v] = builtVerts[v]; continue; }
 
 				Chunk chunk = land.chunks[vertChunkX , vertChunkZ ];
-				if (chunk == null || chunk.stage != Chunk.Stage.complete) { adjustedVerts[v] = builtVerts[v]; continue; }
+				if (chunk == null || !chunk.stage.complete) { adjustedVerts[v] = builtVerts[v]; continue; }
 
 				adjustedVerts[v] = new Vector3(builtVerts[v].x, 0, builtVerts[v].z);
 			}

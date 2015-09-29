@@ -9,6 +9,7 @@ namespace VoxelandDemo
 		public Voxeland.VoxelandTerrain land;
 		public VoxelandDemo.CameraController cameraController;
 		public VoxelandDemo.CharController charController;
+		public Voxeland.Coord usedCoord;
 
 		//gui
 		public GameObject helpPanel;
@@ -20,7 +21,6 @@ namespace VoxelandDemo
 		private int oldScreenWidth = 0;
 		private int oldScreenHeight = 0;
 		public UnityEngine.UI.Slider buildProgress;
-		private int chunksUnbuiltInitial = 0;
 		public GameObject autogeneratePleaseWait;
 
 		//instrument selection
@@ -82,31 +82,50 @@ namespace VoxelandDemo
 			fullscreenCheckmark.SetActive(Screen.fullScreen);
 
 			//displaing build progress
-			if (land.chunksUnbuiltLeft != 0 && !buildProgress.gameObject.activeSelf) 
-			{
-				chunksUnbuiltInitial = land.chunksUnbuiltLeft;
-				buildProgress.gameObject.SetActive(true);
-			}
-			if (land.chunksUnbuiltLeft == 0 && buildProgress.gameObject.activeSelf) buildProgress.gameObject.SetActive(false);
-			buildProgress.maxValue = chunksUnbuiltInitial;
-			buildProgress.value = chunksUnbuiltInitial - land.chunksUnbuiltLeft;
+			if (land.gradualQueue.Count != 0 && !buildProgress.gameObject.activeSelf) buildProgress.gameObject.SetActive(true);
+			if (land.gradualQueue.Count == 0 && buildProgress.gameObject.activeSelf) buildProgress.gameObject.SetActive(false);
+			buildProgress.maxValue = land.maxQueue;
+			buildProgress.value = land.maxQueue - land.gradualQueue.Count;
 
-			//displaing please wait panel
+			//display "please wait" panel
 			if (land.autoGenerateStarted && !autogeneratePleaseWait.activeSelf) autogeneratePleaseWait.SetActive(true);
 			if (!land.autoGenerateStarted && autogeneratePleaseWait.activeSelf) autogeneratePleaseWait.SetActive(false);
 
 			//editing
 			if (cameraController.lockCursor || !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) //IsPointerOverGameObject returns true if mouse hidden
 			{
+				//reading controls
+				bool leftMouse = Input.GetMouseButton(0);
+				bool middleMouse = Input.GetMouseButton(2);
+				bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+				//getting edit mode
+				Voxeland.EditMode editMode = Voxeland.EditMode.none;
+				if (leftMouse && !shift) editMode = Voxeland.EditMode.dig;
+				else if (middleMouse) editMode = Voxeland.EditMode.add;
+				else if (leftMouse && shift) editMode = Voxeland.EditMode.replace;
+
+				//getting aiming ray
 				Ray aimRay;
 				if (cameraController.lockCursor) aimRay = Camera.main.ViewportPointToRay(new Vector3(0.5f,0.5f,0.5f));
 				else aimRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-				land.Edit(aimRay, selectedTool,
-					add:( Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift) ),
-					dig:Input.GetMouseButtonDown(1),
-					smooth:false, 
-					replace:( Input.GetMouseButtonDown(0) && (Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift)) )	);
+				//aiming terrain block
+				Voxeland.Coord coord = land.PointOut(aimRay, highlight:land.highlight); //note that a custom highlight could be added there
+
+				//editing
+				if (coord.exists && coord != usedCoord && editMode != Voxeland.EditMode.none) //if aiming to terrain (not the sky or othe object) and clicked one of edit modes
+				{
+					//setting terrain
+					if (land.selected>0)
+						land.SetBlocks(coord, (byte)land.selected, extend:0, spherify:false, mode:editMode);
+
+					//setting grass
+					else //for grass (negative selected num)
+						land.SetGrass(coord, (byte)(-land.selected), extend:0, spherify:false, mode:editMode);
+
+					usedCoord = coord; //preventing editing the same coord
+				}
 			}
 		}
 

@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 3838e226e9c13ef48bd8369f610bc59f, type: 3}
   m_ShaderKeywords: _WIND
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -45,13 +45,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MetallicGlossMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _OcclusionMap
         second:
           m_Texture: {fileID: 0}
@@ -74,6 +67,13 @@ Material:
       data:
         first:
           name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -111,7 +111,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .419552267
+        second: .550000012
       data:
         first:
           name: _Shininess
@@ -122,16 +122,12 @@ Material:
         second: .0199999996
       data:
         first:
-          name: _Glossiness
-        second: .5
-      data:
-        first:
           name: _ZWrite
         second: 1
       data:
         first:
-          name: _Metallic
-        second: 0
+          name: _Glossiness
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -150,11 +146,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
+          name: _Mode
         second: 0
       data:
         first:
-          name: _Mode
+          name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
       data:
         first:
@@ -162,12 +162,12 @@ Material:
         second: .25
       data:
         first:
-          name: _Culling
-        second: 0
-      data:
-        first:
           name: _AmbientPower
         second: .99000001
+      data:
+        first:
+          name: _Culling
+        second: 0
       data:
         first:
           name: _WindSize
@@ -219,12 +219,12 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Ambient
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _Specular
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _Ambient
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _TopAmbient

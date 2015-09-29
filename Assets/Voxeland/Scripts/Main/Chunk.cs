@@ -63,22 +63,86 @@ namespace Voxeland
 		*/
 		#endregion
 		
-		//in-progress marks
-		/*
-		public enum PartProgress { notCalculated=0, threadStarted=1, calculated=2, applied=3, dontChange=4 };
-		[System.NonSerialized] public PartProgress terrainProgress = PartProgress.notCalculated;
-		[System.NonSerialized] public PartProgress ambientProgress = PartProgress.notCalculated;
-		[System.NonSerialized] public PartProgress constructorProgress = PartProgress.notCalculated;
-		[System.NonSerialized] public PartProgress grassProgress = PartProgress.notCalculated;
-		[System.NonSerialized] public PartProgress prefabsProgress = PartProgress.notCalculated;
-		*/
+		#region Progress/Completion marks 
 
-		public enum Stage { gradual, calculateTerrain, applyTerrain, constructor, far, resetCollider, grassPrefabs, forceAll, forceAmbient, complete };
-		public Stage stage;
+			/*
+			public enum PartProgress { notCalculated=0, threadStarted=1, calculated=2, applied=3, dontChange=4 };
+			[System.NonSerialized] public PartProgress terrainProgress = PartProgress.notCalculated;
+			[System.NonSerialized] public PartProgress ambientProgress = PartProgress.notCalculated;
+			[System.NonSerialized] public PartProgress constructorProgress = PartProgress.notCalculated;
+			[System.NonSerialized] public PartProgress grassProgress = PartProgress.notCalculated;
+			[System.NonSerialized] public PartProgress prefabsProgress = PartProgress.notCalculated;
+			*/
+
+			/*public enum Stage { gradual, calculateTerrain, applyTerrain, constructor, far, resetCollider, grassPrefabs, forceAll, forceAmbient, complete };
+			public Stage stage;*/
+
+			public struct Stage
+			{
+				private bool ct; private bool at; private bool uc;
+				private bool bg; private bool bp; //private bool bc = false; //dconstructor
+				private bool ca; private bool t_amb; private bool g_amb; private bool p_amb; //private bool c_amb = false; //dconstructor
+
+				public bool calculateTerrainComplete { get {return ct;} set {if(value) ct=true; else ct=at=uc= bg=bp= t_amb=g_amb=p_amb = false;} } //all except calculateAmbient
+				public bool applyTerrainComplete { get {return at;} set {if(value) at=true; else at= uc= bg=g_amb = false;} } //+ update collider + grass(and grass ambient)
+				public bool updateColliderComplete { get {return uc;} set {uc=value;} }
+				
+				public bool buildGrassComplete { get {return bg;} set {if(value) bg=true; else bg=g_amb = false;} } //+ grass ambient
+				public bool buildPrefabsComplete { get {return bp;} set {if(value) bp=true; else bp=p_amb = false;} } //+ prefabs ambient
+				//public bool buildConstructorComplete { get {return bc;} set {if(value) bc=true; else bc=c_amb = false;} } //+ constructor ambient //dconstructor
+
+				public bool calculateAmbientComplete { get {return ca;} set {if(value) ca=true; else ca=t_amb=g_amb=p_amb = false;} } //+ all aplied ambient
+				public bool applyTerrainAmbientComplete { get {return t_amb;} set {t_amb=value;} }
+				public bool applyGrassAmbientComplete { get {return g_amb;} set {g_amb=value;} }
+				public bool applyPrefabsAmbientComplete { get {return p_amb;} set {p_amb=value;} }
+				//public bool applyConstructorAmbientComplete { get {return c_amb;} set {c_amb=value;} }
+
+				public bool complete
+				{
+					get {return ct && at && bg && bp &&	 ca && t_amb && g_amb && p_amb; }
+					set {ct = at = bg = bp = uc =	ca = t_amb = g_amb = p_amb = value; } 
+				}
+
+				public override string ToString () {return "ct:"+ct + " at:"+at + " uc:"+uc + " bg:"+bg + " bp:"+bp + " ca:"+ca + " t_amb:"+t_amb + " g_amb"+g_amb + " p_amb"+p_amb;}
+			}
+			[System.NonSerialized] public Stage stage = new Stage();
+			
+		#endregion
 		
+	#region Queue
+	
+		/*public void Enqueue (Queue<System.Action[]> queue, System.Action action, System.Action action1=null, System.Action action2=null, System.Action action3=null)
+		{
+			//creating action array
+			System.Action[] actionArray = null;
+			if (action3 != null) actionArray = new System.Action[]{action,action1,action2,action3};
+			else if (action2 != null) actionArray = new System.Action[]{action,action1,action2};
+			else if (action1 != null) actionArray = new System.Action[]{action,action1};
+			else actionArray = new System.Action[]{action};
+		}*/
+		
+		public void EnqueueAll (Queue<System.Action[]> queue)
+		{
+			queue.Enqueue( new System.Action[]{CalculateTerrain} );
+			queue.Enqueue( new System.Action[]{CalculateAmbient} );
+			queue.Enqueue( new System.Action[]{ApplyTerrain, ApplyAmbientToTerrain} );
+			queue.Enqueue( new System.Action[]{RebuildFar} );
+			queue.Enqueue( new System.Action[]{BuildGrass, BuildPrefabs, ApplyAmbientToGrass, ApplyAmbientToPrefabs} );
+		}
+
+		public void EnqueueAmbient (Queue<System.Action[]> queue) { queue.Enqueue( new System.Action[]{CalculateAmbient, ApplyAmbientToTerrain, ApplyAmbientToGrass, ApplyAmbientToPrefabs} ); }
+
+		public void EnqueueGrass (Queue<System.Action[]> queue) { queue.Enqueue( new System.Action[]{BuildGrass, ApplyAmbientToGrass} ); }
+
+		public void EnqueueUpdateCollider (Queue<System.Action[]> queue) { queue.Enqueue( new System.Action[]{UpdateCollider} ); }
+
+		public void RebuildFar () { if (land.far!=null) land.far.Build(); }
+
+	#endregion
+
 	#region Standard functions
 
-		public void Process ()
+		/*public void Process ()
 		{
 			//if (stage == Stage.terrain) stage = Stage.forceAll;
 			
@@ -90,7 +154,8 @@ namespace Voxeland
 				case Stage.applyTerrain:	ApplyTerrain(); ApplyAmbientToTerrain();			stage=Stage.far;	break;
 				//case Stage.constructor:		BuildConstructor();	ApplyAmbientToConstructor();	stage=Stage.far;			break;
 				case Stage.far:				if (land.far!=null) land.far.Build();				stage=Stage.resetCollider;	break;
-				case Stage.resetCollider:	ResetCollider();									stage=Stage.grassPrefabs;	break;
+				case Stage.resetCollider:	//ResetCollider();									
+					stage=Stage.grassPrefabs;	break;
 				case Stage.grassPrefabs:	BuildGrass(); BuildPrefabs(); ApplyAmbientToGrass(); ApplyAmbientToPrefabs(); stage=Stage.complete;	break;
 				
 				//building at once from scratch
@@ -100,7 +165,7 @@ namespace Voxeland
 					
 					CalculateTerrain(); ApplyTerrain(); ApplyAmbientToTerrain();
 					//BuildConstructor();	ApplyAmbientToConstructor();
-					ResetCollider();
+					//ResetCollider();
 
 					BuildGrass(); ApplyAmbientToGrass(); 
 					BuildPrefabs(); ApplyAmbientToPrefabs();
@@ -117,7 +182,7 @@ namespace Voxeland
 
 				case Stage.complete: return;
 			}
-		}
+		}*/
 		
 		static public Chunk CreateChunk (VoxelandTerrain land)
 		{
@@ -162,7 +227,7 @@ namespace Voxeland
 			obj.layer = gameObject.layer;
 			MeshFilter objFilter = obj.AddComponent<MeshFilter>();
 			obj.AddComponent<MeshRenderer>();
-			objFilter.sharedMesh = new Mesh ();
+			//objFilter.sharedMesh = new Mesh ();
 			
 			//if (land==null) land = transform.parent.GetComponent<Voxeland>();
 			//if (land!=null) obj.renderer.material = mat;
@@ -176,12 +241,17 @@ namespace Voxeland
 			UnityEditor.GameObjectUtility.SetStaticEditorFlags(obj, flags);
 			
 			//hiding in hierarchy / notsaving
-			if (land.hideChunks && !land.saveMeshes) obj.hideFlags = HideFlags.HideInHierarchy | HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+			/*if (land.hideChunks && !land.saveMeshes) obj.hideFlags = HideFlags.HideInHierarchy | HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
 			else if (!land.saveMeshes) obj.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
 			else if (land.hideChunks) obj.hideFlags = HideFlags.HideInHierarchy;
 
 			//not saving mesh
-			if (!land.saveMeshes) objFilter.sharedMesh.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+			if (!land.saveMeshes) objFilter.sharedMesh.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;*/
+ 
+			//if (land.saveMeshes) obj.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+			//if (land.hideChunks) obj.hideFlags |= HideFlags.HideInHierarchy;
+
+			
 
 			#endif
 			
@@ -215,9 +285,6 @@ namespace Voxeland
 			UnityEditor.GameObjectUtility.SetStaticEditorFlags(gameObject, flags);
 			foreach (Transform subTfm in transform) UnityEditor.GameObjectUtility.SetStaticEditorFlags(subTfm.gameObject, flags);
 			#endif
-
-			//resetting progress
-			stage = Stage.gradual;
 		}
 		
 		public void Clear ()
@@ -225,8 +292,6 @@ namespace Voxeland
 			hiFilter.sharedMesh.Clear();
 			loFilter.sharedMesh.Clear();
 			grassFilter.sharedMesh.Clear();
-			
-			stage = Stage.gradual;
 		}
 		
 		public void SwitchLod (bool lod)
@@ -257,6 +322,31 @@ namespace Voxeland
 			}
 		}
 
+		public Face GetFaceByCoord (Coord c)
+		{
+			c.x -= coordX*size; c.z -= coordZ*size;
+
+			//TODO: speed it up somehow
+			for (int f=0; f<faces.Length; f++) 
+			{
+				if (!faces[f].visible) continue;
+
+				//if (faces[f].coord == c) return faces[f];
+				if (faces[f].x==c.x && faces[f].z==c.z && faces[f].y==c.y && faces[f].dir==c.dir) return faces[f];
+			}
+
+			return new Face();
+		}
+
+		public void OnDestroy ()
+		{
+			if (hiFilter.sharedMesh != null) DestroyImmediate(hiFilter.sharedMesh);
+			if (loFilter.sharedMesh != null) DestroyImmediate(loFilter.sharedMesh);
+			if (grassFilter.sharedMesh != null) DestroyImmediate(grassFilter.sharedMesh);
+			//if (constructorFilter.sharedMesh != null) DestroyImmediate(constructorFilter.sharedMesh); //dconstructor
+			//if (constructorCollider.sharedMesh != null) DestroyImmediate(constructorCollider.sharedMesh); //dconstructor
+		}
+
 	#endregion
 		
 	
@@ -265,7 +355,8 @@ namespace Voxeland
 		[System.NonSerialized] public Face[] faces;
 		[System.NonSerialized] public Vector3[] verts; //first go corners (to convert to lopoly quick), then sides, then invisible
 
-		[System.NonSerialized] public int[] visibleFaceNums; //needed to get face by tri
+		//[System.NonSerialized] public int[] visibleFaceNums; //needed to get face by tri
+		[System.NonSerialized] public Coord[] triToCoord;
 
 		//probably outdated
 		[System.NonSerialized] private int numVisibleVerts = 0;
@@ -381,7 +472,9 @@ namespace Voxeland
 			public float ambient;
 
 			public byte type;
-			public Nodes<byte> blendedMaterial; //how much each of mat-spaced types affect face texture
+			public byte channel; //same as type, but contains texture number information (non-terrain types are skipped)
+			public IntArray blendedMaterial; //how much each of mat-spaced types affect face texture
+			public IntArray blurredMaterial;
 			
 			public int this[int num]
 			{
@@ -456,10 +549,36 @@ namespace Voxeland
 			return sum/div;
 		}
 		#endregion
+
+		#region IntArray
+
+			public struct IntArray
+			{
+				public uint val;
+
+				static public readonly uint[] masks = new uint[] { 0xF, 0xF0, 0xF00, 0xF000, 0xF0000, 0xF00000, 0xF000000, 0xF0000000 };
+				static public readonly uint[] invMasks = new uint[] { 0xFFFFFFF0, 0xFFFFFF0F, 0xFFFFF0FF, 0xFFFF0FFF, 0xFFF0FFFF, 0xFF0FFFFF, 0xF0FFFFFF, 0x0FFFFFFF };
+
+				public uint this[int i] 
+				{ 
+					get { return (val & masks[i]) >> i*4; }
+					set { val = (val & invMasks[i]) | (value << i*4); }
+				}
+
+				public void Add (IntArray a) { for (int i=0; i<8; i++) this[i] += a[i]; }
+				public void Divide (uint d) { for (int i=0; i<8; i++) this[i] /= d; }
+
+				public void Reset () { val = 0; }
+			}
+
+		#endregion
 		
 		public void CalculateTerrain (object stateInfo) { CalculateTerrain(); } //for multithreading
 		public void CalculateTerrain ()
 		{	
+			if (this==null) { stage.calculateTerrainComplete = true; return; } //if already deleted
+			stage.calculateTerrainComplete = false;
+			
 			if (land.profile) Profiler.BeginSample("CalculateTerrain");
 			int counter = 0;
 			
@@ -479,6 +598,7 @@ namespace Voxeland
 				faces = null; 
 				gameObject.SetActive(false);
 				if (land.profile) Profiler.EndSample();
+				stage.calculateTerrainComplete = true;
 				return; 
 			}
 			#endregion
@@ -586,23 +706,6 @@ namespace Voxeland
 			if (land.profile) Profiler.EndSample ();
 			#endregion
 			
-			#region Generating array of visible faces
-			//calculating vis face num
-			int facesNum = 0;
-			for (int f=0; f<faces.Length; f++) 
-				if (faces[f].visible) facesNum++;
-				
-			//creating array
-			visibleFaceNums = new int[facesNum];
-			counter = 0;
-			for (int f=0; f<faces.Length; f++) 
-			{
-				if (!faces[f].visible) continue;
-				
-				visibleFaceNums[counter] = f;
-				counter++;
-			}
-			#endregion
 			
 			#region Finding Neig faces
 			if (land.profile) Profiler.BeginSample ("Finding neigs");
@@ -905,8 +1008,8 @@ namespace Voxeland
 			if (land.profile) Profiler.EndSample ();
 			#endregion
 
-			#region Types
-			if (land.profile) Profiler.BeginSample ("Types");
+			#region Setting Type Channels To Faces
+			if (land.profile) Profiler.BeginSample ("Type Channels");
 
 				//calculating array of types
 				int[] typeToChannel = new int[land.types.Length]; //[0,1,2,3,4,0,0,0]
@@ -917,28 +1020,75 @@ namespace Voxeland
 					else typeToChannel[t] = -1;
 				}
 
-				//setting face blend values
+				//writing channels to faces
 				for (int f=0; f<faces.Length; f++)
 				{
-					//writing this face type
-					faces[f].blendedMaterial[ typeToChannel[faces[f].type] ] = 1; //-1 as type count starts from 1
+					byte faceType = (byte)typeToChannel[faces[f].type];
+					faces[f].channel = faceType;
+					faces[f].blendedMaterial[faceType] = 15;
+				}
 
-					//adding neig faces in 2-block range
+			if (land.profile) Profiler.EndSample ();
+			#endregion
+			
+			#region Types
+			if (land.profile) Profiler.BeginSample ("Types");
+
+				//blurring materials
+				uint[] channels = new uint[8];
+				for (int f=0; f<faces.Length; f++)
+				{
+					//adding this face to channels - with factor 2
+					for (int c=0; c<8; c++) channels[c] = 0;
+					channels[faces[f].channel] = 30;
+
+					//adding neig faces
 					for (int n=0; n<4; n++)
 					{
 						int faceNum = faces[f].neigFaceNums[n];
 						if (faceNum<0) continue;
-						faces[f].blendedMaterial[ typeToChannel[faces[faceNum].type] ] ++;
-
-						for (int nn=0; nn<4; nn++)
-						{
-							faceNum = faces[faces[f].neigFaceNums[n] ].neigFaceNums[nn]; //TODO: do a normal recursion, bring iterations num to settings
-							if (faceNum<0) continue;
-							faces[f].blendedMaterial[ typeToChannel[faces[faceNum].type] ] ++;
-						}
+						
+						channels[faces[faceNum].channel] += 15;
 					}
 
-					//improving opacity if it is a single block
+					//normalizing channel weights, saving to blurred
+					for (int c=0; c<8; c++) faces[f].blendedMaterial[c] = channels[c] / 6;
+				}
+
+				//second and etc iteration - commented out
+				//idea to make an iterational blur, but it shold be speed up somehow. TODO
+				//this code can work as a firs iteration too.
+				
+				/*
+				//blurring materials
+				uint[] channels = new uint[8];
+				for (int f=0; f<faces.Length; f++)
+				{
+					//adding this face to channels - with factor 2
+					for (int c=0; c<8; c++) 
+						channels[c] = faces[f].blendedMaterial[c]*2;
+					
+					//adding neig faces
+					for (int n=0; n<4; n++)
+					{
+						int faceNum = faces[f].neigFaceNums[n];
+						if (faceNum<0) continue;
+						
+						for (int c=0; c<8; c++) 
+							channels[c] += faces[faceNum].blendedMaterial[c];
+					}
+
+					//normalizing channel weights, saving to blurred
+					for (int c=0; c<8; c++) faces[f].blurredMaterial[c] = channels[c] / 6;
+				}
+
+				//copy blurred to blended
+				for (int f=0; f<faces.Length; f++) faces[f].blendedMaterial.val = faces[f].blurredMaterial.val;
+				*/
+
+				//improving opacity for a single blocks
+				for (int f=0; f<faces.Length; f++)
+				{
 					int neigsOfSameType = 0;
 					for (int n=0; n<4; n++)
 					{
@@ -952,21 +1102,28 @@ namespace Voxeland
 							neigsOfSameType++;
 						}
 					}
-					if (neigsOfSameType==0) faces[f].blendedMaterial[ typeToChannel[faces[f].type] ] += 100;
-					//else if (neigsOfSameType == 1) faces[f].blendedMaterial[ typeToChannel[faces[f].type] ] *= 2;
+					if (neigsOfSameType==0)
+					{
+						for (int c=0; c<8; c++) faces[f].blendedMaterial[c] /= 2; //making all other types twice less noticable
+						faces[f].blendedMaterial[ faces[f].channel ] += 8; 
+					}
 				}
 
 			if (land.profile) Profiler.EndSample ();
 			#endregion
 
 			if (land.profile) Profiler.EndSample();
+			stage.calculateTerrainComplete = true;
 		}
 		
 		public void ApplyTerrain ()
 		{
+			if (this==null) return; //if already deleted
+			stage.applyTerrainComplete = false;
+			
 			if (land.profile) Profiler.BeginSample("ApplyTerrain");
 			//old: 1.2 Mb, 40 ms
-			
+
 			#region Hiding wireframe
 			#if UNITY_EDITOR
 			if (land.hideWire)
@@ -980,9 +1137,10 @@ namespace Voxeland
 			#region Exit if no faces
 			if (faces == null || faces.Length == 0)
 			{
-				hiFilter.sharedMesh.Clear();
-				loFilter.sharedMesh.Clear();
+				if (hiFilter.sharedMesh!=null) hiFilter.sharedMesh.Clear();
+				if (loFilter.sharedMesh!=null) loFilter.sharedMesh.Clear();
 				if (land.profile) Profiler.EndSample();
+				stage.applyTerrainComplete = true;
 				return;
 			}
 			#endregion
@@ -1093,15 +1251,15 @@ namespace Voxeland
 				}
 
 				//declaring arrays
-				Vector2[] uvsHi = null; Vector2[] uv1Hi = null; Vector2[] uvsLo = null; Vector2[] uv1Lo = null; 
+				Vector2[] uvsHi = null; Vector2[] uv2Hi = null; Vector2[] uv3Hi = null; Vector2[] uv4Hi = null; 
+				Vector2[] uvsLo = null; Vector2[] uv2Lo = null; Vector2[] uv3Lo = null; Vector2[] uv4Lo = null;  
 				Color[] colors=null; Color[] colorsLo=null;
 
 				#region Standard
 				if (!land.rtpCompatible)
 				{
 					//setting uvs (hi)
-					uvsHi = new Vector2[vertsHi.Length];
-					uv1Hi = new Vector2[vertsHi.Length];
+					uvsHi = new Vector2[vertsHi.Length]; uv2Hi = new Vector2[vertsHi.Length]; uv3Hi = new Vector2[vertsHi.Length]; uv4Hi = new Vector2[vertsHi.Length];
 				
 					for (int f=0; f<faces.Length; f++)
 					{
@@ -1109,26 +1267,36 @@ namespace Voxeland
 						{
 							if (faces[f][v] >= uvsHi.Length) continue; //do not skip invisible faces, but skip verts out of range
 
-							uvsHi[faces[f][v]].x += faces[f].blendedMaterial.a;
-							uvsHi[faces[f][v]].y += faces[f].blendedMaterial.b;
-							uv1Hi[faces[f][v]].x += faces[f].blendedMaterial.c;
-							uv1Hi[faces[f][v]].y += faces[f].blendedMaterial.d;
+							uvsHi[faces[f][v]].x += faces[f].blendedMaterial[0];
+							uvsHi[faces[f][v]].y += faces[f].blendedMaterial[1];
+							uv2Hi[faces[f][v]].x += faces[f].blendedMaterial[2];
+							uv2Hi[faces[f][v]].y += faces[f].blendedMaterial[3];
+							uv3Hi[faces[f][v]].x += faces[f].blendedMaterial[4];
+							uv3Hi[faces[f][v]].y += faces[f].blendedMaterial[5];
+							uv4Hi[faces[f][v]].x += faces[f].blendedMaterial[6];
+							uv4Hi[faces[f][v]].y += faces[f].blendedMaterial[7];
 						}
 					}
 
 					//equalizing uvs
 					for (int v=0; v<uvsHi.Length; v++)
 					{
-						float sum = uvsHi[v].x + uvsHi[v].y + uv1Hi[v].x + uv1Hi[v].y;
-						uvsHi[v] = uvsHi[v]/sum; uv1Hi[v] = uv1Hi[v]/sum;
+						float sum = uvsHi[v].x + uvsHi[v].y + uv2Hi[v].x + uv2Hi[v].y + uv3Hi[v].x + uv3Hi[v].y + uv4Hi[v].x + uv4Hi[v].y;
+						uvsHi[v] = uvsHi[v]/sum; uv2Hi[v] = uv2Hi[v]/sum; uv3Hi[v] = uv3Hi[v]/sum; uv4Hi[v] = uv4Hi[v]/sum;
 					}
 
 					//baking uvs to lopoly
 					uvsLo = new Vector2[numColliderVisibleVerts];
 					for (int i=0; i<numColliderVisibleVerts; i++) uvsLo[i] = uvsHi[i];
 
-					uv1Lo = new Vector2[numColliderVisibleVerts];
-					for (int i=0; i<numColliderVisibleVerts; i++) uv1Lo[i] = uv1Hi[i];
+					uv2Lo = new Vector2[numColliderVisibleVerts];
+					for (int i=0; i<numColliderVisibleVerts; i++) uv2Lo[i] = uv2Hi[i];
+
+					uv3Lo = new Vector2[numColliderVisibleVerts];
+					for (int i=0; i<numColliderVisibleVerts; i++) uv3Lo[i] = uv3Hi[i];
+
+					uv4Lo = new Vector2[numColliderVisibleVerts];
+					for (int i=0; i<numColliderVisibleVerts; i++) uv4Lo[i] = uv4Hi[i];
 			
 					if (land.terrainMaterial != null)
 					{
@@ -1139,11 +1307,23 @@ namespace Voxeland
 
 						//MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
 
+						//disabling material keywords
+						material.DisableKeyword("_8CH"); 
+						material.DisableKeyword("_NORMALMAP");
+						material.DisableKeyword("_SPECGLOSSMAP");
+						material.DisableKeyword("_PARALLAXMAP"); 
+
+						//enabling or disabling 8 channels
+						int numChannels = 0;
+						for (int i=0; i<typeToChannel.Length; i++)
+							if (typeToChannel[i] != -1) numChannels++;
+						if (numChannels > 4) material.EnableKeyword("_8CH"); 
+
 						int defaultType = 0;
 						for(int i=0; i<typeToChannel.Length; i++) 
 							if (typeToChannel[i] != 0) defaultType = i;
 
-						for(int i=0; i<4; i++)
+						for(int i=0; i<8; i++)
 						{
 							string propPostfix = i==0 ? "" : (i+1).ToString();
 						
@@ -1153,8 +1333,16 @@ namespace Voxeland
 
 							material.SetColor("_Color"+propPostfix, land.types[type].color);
 							if (land.types[type].texture != null) material.SetTexture("_MainTex"+propPostfix, land.types[type].texture);
-							if (land.types[type].bumpTexture != null) material.SetTexture("_BumpMap"+propPostfix, land.types[type].bumpTexture);
-							if (land.types[type].specGlossMap != null) material.SetTexture("_SpecGlossMap"+propPostfix, land.types[type].specGlossMap);
+							if (land.types[type].bumpTexture != null) 
+							{ 
+								material.SetTexture("_BumpMap"+propPostfix, land.types[type].bumpTexture); 
+								material.EnableKeyword("_NORMALMAP"); 
+							}
+							if (land.types[type].specGlossMap != null) 
+							{ 
+								material.SetTexture("_SpecGlossMap"+propPostfix, land.types[type].specGlossMap); 
+								if (numChannels<=4) material.EnableKeyword("_SPECGLOSSMAP"); 
+							}
 							material.SetColor("_Specular"+propPostfix, land.types[type].specular);
 							material.SetFloat("_Tile"+propPostfix, land.types[type].tile);
 
@@ -1183,10 +1371,10 @@ namespace Voxeland
 						{
 							if (faces[f][v] >= colors.Length) continue; //do not skip invisible faces, but skip verts out of range
 
-							colors[faces[f][v]].r += faces[f].blendedMaterial.a;
-							colors[faces[f][v]].g += faces[f].blendedMaterial.b;
-							colors[faces[f][v]].b += faces[f].blendedMaterial.c;
-							colors[faces[f][v]].a += faces[f].blendedMaterial.d;
+							colors[faces[f][v]].r += faces[f].blendedMaterial[0];
+							colors[faces[f][v]].g += faces[f].blendedMaterial[1];
+							colors[faces[f][v]].b += faces[f].blendedMaterial[2];
+							colors[faces[f][v]].a += faces[f].blendedMaterial[3];
 						}
 					}
 
@@ -1238,9 +1426,14 @@ namespace Voxeland
 			#region Creating Tris
 			if (land.profile) Profiler.BeginSample ("Creating tris");
 			
-				//using visibleFaceNums array (the compliance list) to determine tri count
-				int[] trisHi = new int[visibleFaceNums.Length*8*3];
-				int[] trisLo = new int[visibleFaceNums.Length*2*3];
+				//calculating vis face num
+				int facesNum = 0;
+				for (int f=0; f<faces.Length; f++) 
+					if (faces[f].visible) facesNum++;
+				
+				//tris arrays
+				int[] trisHi = new int[facesNum*8*3];
+				int[] trisLo = new int[facesNum*2*3];
 			
 				counter = 0;
 				for (int f=0; f<faces.Length; f++)
@@ -1272,9 +1465,15 @@ namespace Voxeland
 
 				gameObject.SetActive(true); //remove after chunks will use object pool
 
-				hiFilter.sharedMesh.Clear();
+				if (hiFilter.sharedMesh == null)
+				{
+					hiFilter.sharedMesh = new Mesh();
+					if (!land.saveMeshes) hiFilter.sharedMesh.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+				}
+				else hiFilter.sharedMesh.Clear();
+				
 				hiFilter.sharedMesh.vertices = vertsHi; hiFilter.sharedMesh.normals = normalsHi;
-				if (!land.rtpCompatible) hiFilter.sharedMesh.uv = uvsHi; hiFilter.sharedMesh.uv2 = uv1Hi;
+				if (!land.rtpCompatible) { hiFilter.sharedMesh.uv = uvsHi; hiFilter.sharedMesh.uv2 = uv2Hi; hiFilter.sharedMesh.uv3 = uv3Hi; hiFilter.sharedMesh.uv4 = uv4Hi; }
 				hiFilter.sharedMesh.triangles = trisHi;
 				if (land.rtpCompatible) hiFilter.sharedMesh.colors = colors;
 				else if (!land.ambient) 
@@ -1285,10 +1484,15 @@ namespace Voxeland
 				}
 				//hiFilter.sharedMesh.colors = new Color[hiFilter.sharedMesh.vertices.Length]; //otherwise it will create random color array
 
+				if (loFilter.sharedMesh == null)
+				{
+					loFilter.sharedMesh = new Mesh();
+					if (!land.saveMeshes) loFilter.sharedMesh.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+				}
+				else loFilter.sharedMesh.Clear();
 
-				loFilter.sharedMesh.Clear();
 				loFilter.sharedMesh.vertices = vertsLo; loFilter.sharedMesh.normals = normalsLo;
-				if (!land.rtpCompatible) loFilter.sharedMesh.uv = uvsLo; loFilter.sharedMesh.uv2 = uv1Lo;
+				if (!land.rtpCompatible) { loFilter.sharedMesh.uv = uvsLo; loFilter.sharedMesh.uv2 = uv2Lo; loFilter.sharedMesh.uv3 = uv3Lo; loFilter.sharedMesh.uv4 = uv4Lo; }
 				loFilter.sharedMesh.triangles = trisLo;
 				if (land.rtpCompatible) loFilter.sharedMesh.colors = colorsLo;
 				else if (!land.ambient) 
@@ -1318,17 +1522,41 @@ namespace Voxeland
 			#endif
 
 			if (land.profile) Profiler.EndSample();
+			stage.applyTerrainComplete = true;
 		}
 
-		public void ResetCollider()
+		public void UpdateCollider()
 		{
+			if (this==null || faces==null) { stage.updateColliderComplete = true; return; }
+			stage.updateColliderComplete = false;
+			
 			if (land.profile) Profiler.BeginSample ("Reset Collider");
 
-			Mesh colliderMesh = collision.sharedMesh;
+			Mesh colliderMesh = loFilter.sharedMesh;
 			collision.sharedMesh = null;
 			collision.sharedMesh = colliderMesh;
 
+			#region Generating array of visible faces
+
+				//calculating vis face num
+				int facesNum = 0;
+				for (int f=0; f<faces.Length; f++) 
+					if (faces[f].visible) facesNum++;
+				
+				//creating array
+				triToCoord = new Coord[facesNum];
+				int counter = 0;
+				for (int f=0; f<faces.Length; f++) 
+				{
+					if (!faces[f].visible) continue;
+				
+					triToCoord[counter] = new Coord(faces[f].x+coordX*size, faces[f].y, faces[f].z+coordZ*size, faces[f].dir); //faces[f].coord + coord;
+					counter++;
+				}
+			#endregion
+
 			if (land.profile) Profiler.EndSample ();
+			stage.updateColliderComplete = true;
 		}
 		
 	#endregion
@@ -1338,9 +1566,10 @@ namespace Voxeland
 		
 		public void  BuildGrass ()
 		{
-			if (land.profile) Profiler.BeginSample("BuildGrass");
+			if (this==null || faces==null) { stage.buildGrassComplete = true; return; }
+			stage.buildGrassComplete = false;
 			
-			if (faces == null) return;
+			if (land.profile) Profiler.BeginSample("BuildGrass");
 
 			#region Getting grass types array, Calculating grass number
 				
@@ -1357,7 +1586,7 @@ namespace Voxeland
 				
 					byte typeNum = land.data.GetGrass(face.x+offsetX, face.z+offsetZ);
 					if (typeNum == 0 ) continue;
-					if (typeNum >= land.grass.Length) Debug.Log(typeNum + ": " + face.x + " " + face.z);
+					if (typeNum >= land.grass.Length) continue; //grass type is bigger than grass array
 					VoxelandGrassType type = land.grass[typeNum]; 
 					if (type.sourceMesh == null) continue;
 				
@@ -1371,8 +1600,8 @@ namespace Voxeland
 						type.meshes = new MeshWrapper[4];
 						for (int i=0; i<4; i++)
 						{
-							type.meshes[i] = new MeshWrapper();
-							type.meshes[i].ReadMesh(type.sourceMesh);
+							type.meshes[i] = new MeshWrapper(type.sourceMesh);
+							//type.meshes[i].ReadMesh(type.sourceMesh);
 							type.meshes[i].RotateMirror(i*90, false);
 						}
 					}
@@ -1382,7 +1611,7 @@ namespace Voxeland
 					
 					//calculating vert and tri num
 					vertNum += type.meshes[0].verts.Length;
-					triNums[typeNum] += type.meshes[0].subs[0].tris.Length;
+					triNums[typeNum] += type.meshes[0].tris[0].Length;
 
 					/* //debug
 					int cx = face.x+offsetX; int cz = face.z+offsetZ;
@@ -1404,15 +1633,16 @@ namespace Voxeland
 				if (vertNum == 0) 
 				{
 					if (grassFilter.gameObject.activeSelf) grassFilter.gameObject.SetActive(false);
-					grassFilter.sharedMesh.Clear();
+					if (grassFilter.sharedMesh != null) grassFilter.sharedMesh.Clear();
 					if (land.profile) Profiler.EndSample();
+					stage.buildGrassComplete = true;
 					return; 
 				}
 			#endregion
-			
+
 			#region Mesh
 
-				MeshWrapper mesh = new MeshWrapper(vertNum, triNums, useNormals:true, useUvs:true, useUv1:true, useColors:true);
+				MeshWrapper mesh = new MeshWrapper(vertNum, triNums, useNormals:true, useColors:true, numUvs:2);
 
 				for (int f=0; f<faces.Length; f++) 
 				{
@@ -1421,8 +1651,7 @@ namespace Voxeland
 					Face face = faces[f];
 					VoxelandGrassType type = land.grass[typeNums[f]];
 
-					int randomNum = (int)Mathf.Repeat(face.x*20 + face.y*10 + face.z*5 + face.dir, 998);
-					MeshWrapper grassSub = type.meshes[ Mathf.FloorToInt(VoxelandTerrain.random[randomNum]*4) ];
+					MeshWrapper grassSub = type.meshes[ Mathf.FloorToInt(Noise.Random(face.x,face.y,face.z,face.dir)*4) ];
 
 					mesh.AppendWithFFD(grassSub, typeNums[f], 
 						verts[face.cornerNums.a], verts[face.cornerNums.b], verts[face.cornerNums.c], verts[face.cornerNums.d],
@@ -1431,11 +1660,18 @@ namespace Voxeland
 					//setting grass tint
 					Color tint = land.types[face.type].grassTint;
 					//TODO make a smooth blend based on blendedMaterial
-					for (int v=mesh.vertCounter-grassSub.verts.Length; v<mesh.vertCounter; v++)
+					for (int v=mesh.vertNum-grassSub.verts.Length; v<mesh.vertNum; v++)
 						mesh.colors[v] = tint;
 				}
 
 				//apply
+				if (grassFilter.sharedMesh == null)
+				{
+					grassFilter.sharedMesh = new Mesh();
+					if (!land.saveMeshes) grassFilter.sharedMesh.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+				}
+				else grassFilter.sharedMesh.Clear();
+
 				mesh.ApplyTo(grassFilter.sharedMesh);
 				if (!grassFilter.gameObject.activeSelf) grassFilter.gameObject.SetActive(true);
 
@@ -1448,6 +1684,7 @@ namespace Voxeland
 			#endregion
 
 			if (land.profile) Profiler.EndSample();
+			stage.buildGrassComplete = true;
 		}
 
 		[System.NonSerialized] public Dictionary<int,Transform> prefabTransforms;
@@ -1456,6 +1693,9 @@ namespace Voxeland
 
 		public void BuildPrefabs ()
 		{
+			if (this==null) { stage.buildPrefabsComplete = true; return; } //if already deleted
+			stage.buildPrefabsComplete = false;
+			
 			//creating ref exist array
 			bool[] refExist = new bool[land.types.Length];
 			for(int i=0;i< land.types.Length;i++) 
@@ -1565,6 +1805,8 @@ namespace Voxeland
 					prefabConfirmed[entry.Key] == false)
 						DestroyImmediate(entry.Value.gameObject); 
 			}
+
+			stage.buildPrefabsComplete = true;
 		}
 		
 	#endregion
@@ -1577,7 +1819,8 @@ namespace Voxeland
 		public void CalculateAmbient (object stateInfo) { CalculateAmbient(); }
 		public void CalculateAmbient ()
 		{
-			if (!land.ambient) return;
+			if (!land.ambient || land.rtpCompatible || this==null) { stage.calculateAmbientComplete = true; return; }
+			stage.calculateAmbientComplete = false;
 			
 			if (land.profile) Profiler.BeginSample("CalculateAmbient");
 			
@@ -1605,7 +1848,7 @@ namespace Voxeland
 				refExist)-3; //-2 to add 1 layer of fill, -1 for make array inclusive
 			
 			if (ambientBottomPoint<0) ambientBottomPoint=0;
-			if (ambientTopPoint-ambientBottomPoint <= 2) { if (ambient != null) ambient.Reset(0); if (land.profile) Profiler.EndSample (); return; }
+			if (ambientTopPoint-ambientBottomPoint <= 2) { if (ambient != null) ambient.Reset(0); if (land.profile) Profiler.EndSample (); stage.calculateAmbientComplete = true; return; }
 			
 			if (land.profile) Profiler.EndSample ();
 			#endregion
@@ -1699,9 +1942,8 @@ namespace Voxeland
 			if(land.profile) Profiler.EndSample();
 			#endregion
  		
-/*
-			#region Light Pyramids
-			if (land.profile) Profiler.BeginSample ("Light Pyramid");
+			#region Light Pyramids (commented)
+			/*if (land.profile) Profiler.BeginSample ("Light Pyramid");
 			
 			for (int y=ambientTopPoint-1; y>=ambientBottomPoint+1; y--)
 			{
@@ -1722,9 +1964,8 @@ namespace Voxeland
 				}
 			}
 
-			if (land.profile) Profiler.EndSample ();
+			if (land.profile) Profiler.EndSample ();*/
 			#endregion
-*/
 	 
 			#region Spreading
 			if (land.profile) Profiler.BeginSample ("Spreading");
@@ -1788,6 +2029,7 @@ namespace Voxeland
 			#endregion
 			
 			if (land.profile) Profiler.EndSample();
+			stage.calculateAmbientComplete = true;
 		}
 		
 
@@ -1859,8 +2101,9 @@ namespace Voxeland
 		
 		public void ApplyAmbientToTerrain () 
 		{
-			if (!land.ambient) return;
-			if (land.rtpCompatible) return;
+			if (!land.ambient || land.rtpCompatible || this==null) { stage.applyTerrainAmbientComplete = true; return; }
+			stage.applyTerrainAmbientComplete = false;
+
 			if (land.profile) Profiler.BeginSample("ApplyAmbientToTerrain");
 			
 			#region Return if empty
@@ -1942,12 +2185,13 @@ namespace Voxeland
 			#endregion
 			
 			if (land.profile) Profiler.EndSample();
+			stage.applyTerrainAmbientComplete = true;
 		}		
 
 		public void ApplyAmbientToGrass ()
 		{
-			if (!land.ambient) return;
-			if (grassFilter.sharedMesh.vertexCount == 0) return;
+			if (!land.ambient || this==null || grassFilter.sharedMesh == null || grassFilter.sharedMesh.vertexCount == 0) { stage.applyGrassAmbientComplete = true; return; }
+			stage.applyGrassAmbientComplete = false;
 
 			Vector3[] meshVerts = grassFilter.sharedMesh.vertices;
 			Color[] meshColors = grassFilter.sharedMesh.colors;
@@ -1974,11 +2218,13 @@ namespace Voxeland
 			}*/
 
 			grassFilter.sharedMesh.colors = meshColors;
+			stage.applyGrassAmbientComplete = true;
 		}
 
 		public void ApplyAmbientToPrefabs ()
 		{
-			if (!land.ambient) return;
+			if (!land.ambient || this==null) { stage.applyPrefabsAmbientComplete = true; return; }
+			stage.applyPrefabsAmbientComplete = true;
 		}
 
 	#endregion

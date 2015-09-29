@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Voxeland 
 {
-	//[System.Serializable]
-	public class Data : ScriptableObject
+	[System.Serializable]
+	public class Data : ScriptableObject, ISerializationCallbackReceiver
 	{
 		//classes there are pure data holders.
-		[System.Serializable]
+		[System.Serializable] //to serialize empty column
 		public struct Column 
 		{ 
 			static readonly byte specialLevel = 245;
@@ -547,11 +547,13 @@ namespace Voxeland
 		{ 
 			//public static readonly int areaSize = 250;
 			
-			public Column[] columns;
+			[System.NonSerialized] public Column[] columns;
+
+			public Data data; //to know the area size and empty column. Could be replaces with static if voxeland is one for the scene
 
 			public int offsetX;
 			public int offsetZ;
-			public int size;
+			//public int size;
 
 			public bool initialized;
 			public bool save;
@@ -566,7 +568,7 @@ namespace Voxeland
 				
 				else //creating columns if it is the new area
 				{
-					columns = new Column[size*(size+1)];
+					columns = new Column[data.areaSize*(data.areaSize+1)];
 					for (int c=0; c<columns.Length; c++) 
 					{
 						columns[c] = new Column(); 
@@ -575,18 +577,16 @@ namespace Voxeland
 				}
 
 				//filling area with empty column
-				/*
 				for (int c=0; c<columns.Length; c++) 
-					for (int i=0; i<emptyColumn.list.Count; i++) 
-						columns[c].list.Add(emptyColumn.list[i]);
-				*/
+					for (int i=0; i<data.emptyColumn.list.Count; i++) 
+						columns[c].list.Add(data.emptyColumn.list[i]);
 
 				initialized = true;
 			}
 
-			public Column GetColumn(int x, int z) { return columns[(z-offsetZ)*size + x-offsetX]; }
+			public Column GetColumn(int x, int z) { return columns[(z-offsetZ)*data.areaSize + x-offsetX]; }
 			//public Column GetGrass(int x) { return grass[x-offsetX]; }
-			public Column GetGrass(int x) { return columns[size*size + x-offsetX]; }
+			public Column GetGrass(int x) { return columns[data.areaSize*data.areaSize + x-offsetX]; }
 			//public Column GetGrass(int x) { return columns[512*areaSize + x-offsetX]; } 
 		}
 		
@@ -617,7 +617,7 @@ namespace Voxeland
 						{
 							//working directly with columns
 							Area area = data.areas[ data.GetAreaNum( xi+minX, zi+minZ ) ];
-							int columnNum =  (z+minZ-area.offsetZ)*area.size + x+minX - area.offsetX;
+							int columnNum =  (z+minZ-area.offsetZ)*area.data.areaSize + x+minX - area.offsetX;
 							area.columns[columnNum] = new Column( columns[xi*(range*2+1) + zi] ); //copy from columns[]
 							//data.GetArea(xi+minX, zi+minZ).SetColumn(xi+minX, zi+minZ, new Column(columns[xi*(range*2+1) + zi]) ); 
 						}
@@ -639,7 +639,7 @@ namespace Voxeland
 				if (undos.Count > 16) undos.RemoveAt(0);
 				undos.Add(undo); 
 
-				Debug.Log("Registered undo");
+				//Debug.Log("Registered undo");
 			}
 			public void PerformUndo ()
 			{
@@ -789,7 +789,8 @@ namespace Voxeland
 			{
 				areas[z*100 + x].offsetX = x*areaSize - areaSize*50;
 				areas[z*100 + x].offsetZ = z*areaSize - areaSize*50;
-				areas[z*100 + x].size = areaSize;
+				areas[z*100 + x].data = this;
+				//areas[z*100 + x].size = areaSize;
 			}
 		}
 
@@ -839,7 +840,12 @@ namespace Voxeland
 				return areas[areaNum].GetGrass(x);
 			}
 
-			//TODO I don't like this system - Read, Write column, and there is a Save column at last... It's better do one GetColumn
+			//TODO I don't like this system - Read, Write column, and there is a Save column at last... It's better do one column{ get set }
+			//and mostly don't like  column assigment:
+			// 	Area area = areas[ GetAreaNum(x, z) ];
+			//	int columnNum =  (z-area.offsetZ)*area.data.areaSize + x - area.offsetX;
+			//	area.columns[columnNum] = new Column();
+
 
 		#endregion
 		
@@ -1040,6 +1046,48 @@ namespace Voxeland
 				}
 			}
 
+			public void Refill (Data src, int offsetX=0, int offsetZ=0)
+			{
+				//terrain
+				for (int a=0; a<src.areas.Length; a++)
+				{
+					Area srcArea = src.areas[a];
+					if (!srcArea.save) continue;
+
+					for (int x=srcArea.offsetX; x<srcArea.offsetX+src.areaSize; x++)
+						for (int z=srcArea.offsetZ; z<srcArea.offsetZ+src.areaSize; z++)
+						{
+							int areaNum = GetAreaNum(x,z);
+							if (!areas[areaNum].initialized) areas[areaNum].Initialize();
+							areas[areaNum].save = true;
+							Area area = areas[areaNum];
+							int columnNum =  (z-area.offsetZ)*area.data.areaSize + x - area.offsetX;
+							area.columns[columnNum] = new Column();
+							area.columns[columnNum].list = src.ReadColumn(x-offsetX,z-offsetZ).list;
+
+						}
+				}
+
+				//grass
+				Matrix3<byte> grassBuffer = new Matrix3<byte>(1,areaSize,1);
+				for (int a=0; a<areas.Length; a++)
+				{
+					Area area = areas[a];
+					if (!area.save) continue;
+					
+					for (int x=area.offsetX; x<area.offsetX+areaSize; x++)
+					{
+						for (int z=area.offsetZ; z<area.offsetZ+areaSize; z++)
+							grassBuffer[0,z-area.offsetZ,0] = src.GetGrass(x-offsetX,z-offsetZ);
+
+						int grassColumnNum = areaSize*areaSize + x-area.offsetX;
+						//area.columns[grassColumnNum] = new Column();
+						area.columns[grassColumnNum].FromMatrix(grassBuffer, 0,0);
+					}
+				}
+
+			}
+
 			public void Check ()
 			{
 				for (int a=0; a<areas.Length; a++)
@@ -1051,11 +1099,11 @@ namespace Voxeland
 					//	if (!area.columns[i].Check())
 					//		return;
 					
-					for (int x=area.offsetX; x<area.size+area.offsetX; x++)
-						for (int z=area.offsetZ; z<area.size+area.offsetZ; z++)
+					for (int x=area.offsetX; x<areaSize+area.offsetX; x++)
+						for (int z=area.offsetZ; z<areaSize+area.offsetZ; z++)
 						{
 							if (!area.GetColumn(x,z).Check())
-								{Debug.Log("Error checking column " + x + "," + z + " num:" + ((z-area.offsetZ)*area.size + x-area.offsetX) ); return; }
+								{Debug.Log("Error checking column " + x + "," + z + " num:" + ((z-area.offsetZ)*areaSize + x-area.offsetX) ); return; }
 							if (!area.GetGrass(x).Check())
 								{Debug.Log("Error checking grass " + x); return; }
 						}
@@ -1117,11 +1165,21 @@ namespace Voxeland
 
 		#region Save and load
 		
+			public virtual void OnBeforeSerialize()
+			{
+				compressed = SaveToByteList();
+			}
+
+			public virtual void OnAfterDeserialize()
+			{
+				LoadFromByteList(compressed);
+			}
+			
 			public List<byte> SaveToByteList ()
 			{
 				System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 				stopwatch.Start();
-			
+
 				//254 - uninitialized area, then 2 bytes count (* then +) of un-initialized areas
 				//253 - initialized area
 				//252 - empty column, then 2 number of empty columns

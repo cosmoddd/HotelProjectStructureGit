@@ -8,7 +8,25 @@ namespace Voxeland {
 	public class Highlight : MonoBehaviour 
 	{
 		public VoxelandTerrain land;
-		public MeshFilter filter;
+
+		public MeshFilter _filter = null;
+		public MeshFilter filter 
+		{ 
+			get{
+				if (_filter==null) _filter = GetComponent<MeshFilter>();
+				return _filter; }
+			set {_filter = value; }
+		}
+
+		public Renderer _renderer = null;
+		public Renderer rend 
+		{ 
+			get{
+				if (_renderer==null) _renderer = GetComponent<Renderer>(); 
+				return _renderer;
+			}
+			set {_renderer = value; }
+		} //to enable and disable
 		
 		public Vector3[] verts = new Vector3[0];
 		public Vector2[] uvs = new Vector2[0];
@@ -19,6 +37,8 @@ namespace Voxeland {
 	
 		public void DrawFace (Chunk chunk, Chunk.Face face) 
 		{ 
+			rend.enabled = true;
+			
 			//get change
 			newIndex = face.x*10000 + face.y*100 + face.z + chunk.offsetX*10000 + chunk.offsetZ + face.dir;
 			if (newIndex == oldIndex) return;
@@ -49,6 +69,7 @@ namespace Voxeland {
 		
 		public void DrawBox (Vector3 center, Vector3 size) 
 		{ 
+			rend.enabled = true;
 			filter.transform.position = center;
 
 			if (verts.Length != cubeVerts.Length)
@@ -65,6 +86,7 @@ namespace Voxeland {
 		
 		public void DrawSphere (Vector3 center, float radius) 
 		{ 
+			rend.enabled = true;
 			filter.transform.position = center;
 			
 			if (verts.Length != sphereVerts.Length)
@@ -81,6 +103,7 @@ namespace Voxeland {
 		
 		public void DrawPoly (Chunk chunk, Mesh mesh, int index) 
 		{ 
+			rend.enabled = true;
 			newIndex = index + chunk.offsetX + chunk.offsetZ;
 			if (newIndex == oldIndex) return;
 			oldIndex = newIndex;
@@ -100,6 +123,8 @@ namespace Voxeland {
 		
 		public void DrawPlane (int x, int y, int z, int dir) 
 		{ 
+			rend.enabled = true;
+			
 			newIndex = x*1000 + y*100 + z*10 + dir;
 			if (newIndex == oldIndex) return;
 			oldIndex = newIndex;
@@ -126,7 +151,6 @@ namespace Voxeland {
 		
 		public void Apply ()
 		{
-			if (!filter.sharedMesh) filter.sharedMesh = new Mesh();
 			filter.sharedMesh.Clear();
 			
 			filter.sharedMesh.vertices = verts;
@@ -174,14 +198,16 @@ namespace Voxeland {
 			#if UNITY_EDITOR
 			UnityEditor.EditorUtility.SetSelectedWireframeHidden(highlight.GetComponent<Renderer>(), true);
 			#endif
-			
+
 			return highlight;
 		}
 		
 		public void  Clear ()
 		{
-			if (!filter.sharedMesh) filter.sharedMesh = new Mesh();
-			filter.sharedMesh.Clear();
+			//if (!filter.sharedMesh) filter.sharedMesh = new Mesh();
+			//filter.sharedMesh.Clear();
+			
+			rend.enabled = false;
 		}
 		
 		static private Vector2[] planeUvs = {new Vector2(0,0), new Vector2(1,0), new Vector2(1,1), new Vector2(0,1)};

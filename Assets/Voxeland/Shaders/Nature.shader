@@ -26,7 +26,7 @@
 		LOD 200
 		
 		CGPROGRAM
-		#pragma surface surf StandardSpecular fullforwardshadows alphatest:_Cutoff vertex:vert 
+		#pragma surface surf StandardSpecular addshadow alphatest:_Cutoff vertex:vert 
 		#pragma target 3.0
 
 		#pragma shader_feature _NORMALMAP
@@ -108,6 +108,6 @@
 		}
 		ENDCG
 	} 
-	FallBack "Transparent/Cutout/Diffuse"
+	
 	CustomEditor "VoxelandMaterialInspector"
 }
