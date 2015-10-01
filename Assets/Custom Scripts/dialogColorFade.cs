@@ -46,17 +46,7 @@ public class DialogColorFade : MonoBehaviour
         target = 0;
     }
 
-    //void OnMouseOver()
-    //{
-    //    Debug.Log("the mouse is hovering over this thing");
-    //    target = 1;
-    //}
 
-    //void OnMouseExit()
-    //{
-    //    Debug.Log("nothing");
-    //    target = 0;
-    //}
 
     void updateAlpha()
     {
