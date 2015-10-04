@@ -27,3 +27,8 @@ MonoBehaviour:
     textureVariables: []
   events:
   - set_string
+  - Red Clicked
+  - Blue Clicked
+  - Green Clicked
+  - Animation Ends
+  - Is in Mid-Animation
