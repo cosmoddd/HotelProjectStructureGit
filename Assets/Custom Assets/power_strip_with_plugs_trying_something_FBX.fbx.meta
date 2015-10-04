@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: 3b60be1bae9502a49a93d5cb1bdb57cd
+timeCreated: 1443834045
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bone.002
+    100002: Bone.002_end
+    100004: Bone.003
+    100006: Bone.004
+    100008: Bone.005
+    100010: Bone.006
+    100012: Bone.007
+    100014: Bone.008
+    100016: Bone.009
+    100018: Bone.010
+    100020: Bone.011
+    100022: Bone.012
+    100024: Cord
+    100026: Cylinder
+    100028: IK1
+    100030: IK2
+    100032: outlets
+    100034: plughead1
+    100036: Point
+    100038: //RootNode
+    100040: socket mount
+    100042: Young Bone
+    100044: Empty
+    400000: Bone.002
+    400002: Bone.002_end
+    400004: Bone.003
+    400006: Bone.004
+    400008: Bone.005
+    400010: Bone.006
+    400012: Bone.007
+    400014: Bone.008
+    400016: Bone.009
+    400018: Bone.010
+    400020: Bone.011
+    400022: Bone.012
+    400024: Cord
+    400026: Cylinder
+    400028: IK1
+    400030: IK2
+    400032: outlets
+    400034: plughead1
+    400036: Point
+    400038: //RootNode
+    400040: socket mount
+    400042: Young Bone
+    400044: Empty
+    2300000: outlets
+    2300002: plughead1
+    2300004: socket mount
+    3300000: outlets
+    3300002: plughead1
+    3300004: socket mount
+    4300000: outlets
+    4300002: socket mount
+    4300004: plughead1
+    4300006: Cylinder
+    7400000: plughead1|CordAction
+    7400002: plughead1|Plug Me In
+    7400004: plughead1|Plug Me In.001
+    7400006: plughead1|Unplug
+    7400008: Cord|CordAction
+    7400010: Cord|Fuck Yeah Dude
+    7400012: Cord|Plug Me In
+    7400014: Cord|Plug Me In.001
+    7400016: Cord|Unplug
+    7400018: Scene
+    7400020: Fuck Yeah Dude
+    7400022: plughead1|Deal With This
+    7400024: plughead1|Deal With This.001
+    7400026: Cord|Deal With This
+    7400028: Cord|Deal With This.001
+    7400030: Cord|Action
+    7400032: Cord|Duuuude
+    7400034: Unplug.001
+    7400036: plughead1|Jams On Me
+    7400038: Cord|Jams On Me
+    7400040: plughead1|Action.001
+    7400042: Cord|Action.001
+    7400044: plughead1|Action
+    7400046: Plug Me In
+    7400048: Unplug
+    7400050: plughead1|zuo bong
+    7400052: Cord|zuo bong
+    7400054: zuo bong
+    9500000: //RootNode
+    13700000: Cylinder
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .100000001
+    animationPositionError: .100000001
+    animationScaleError: .100000001
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

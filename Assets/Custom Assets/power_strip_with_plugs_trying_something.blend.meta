@@ -1,60 +1,64 @@
 fileFormatVersion: 2
-guid: e7296745d5fe4fa40936419399bdec7d
-timeCreated: 1443716166
+guid: 14460cc1a106a3e4dab6e7c2e306c03a
+timeCreated: 1443832560
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: BezierCircle
-    100002: BezierCurve
-    100004: Cube
-    100006: Cube_001
-    100008: Cube_002
-    100010: Cube_003
-    100012: Cube_004
-    100014: outlets
-    100016: //RootNode
-    100018: plughead1
-    400000: BezierCircle
-    400002: BezierCurve
-    400004: Cube
-    400006: Cube_001
-    400008: Cube_002
-    400010: Cube_003
-    400012: Cube_004
-    400014: outlets
-    400016: //RootNode
-    400018: plughead1
-    2300000: BezierCircle
-    2300002: BezierCurve
-    2300004: Cube
-    2300006: Cube_001
-    2300008: Cube_002
-    2300010: Cube_003
-    2300012: Cube_004
-    2300014: outlets
-    2300016: plughead1
-    3300000: BezierCircle
-    3300002: BezierCurve
-    3300004: Cube
-    3300006: Cube_001
-    3300008: Cube_002
-    3300010: Cube_003
-    3300012: Cube_004
-    3300014: outlets
-    3300016: plughead1
-    4300000: Cube_002
-    4300002: outlets
-    4300004: Cube
-    4300006: BezierCircle
-    4300008: Cube_001
-    4300010: Cube_003
-    4300012: Cube_004
-    4300014: BezierCurve
-    4300016: plughead1
+    100000: Bone_002
+    100002: Bone_003
+    100004: Bone_004
+    100006: Bone_005
+    100008: Bone_006
+    100010: Bone_007
+    100012: Bone_008
+    100014: Bone_009
+    100016: Bone_010
+    100018: Bone_011
+    100020: Bone_012
+    100022: Cord
+    100024: Cylinder
+    100026: IK1
+    100028: IK2
+    100030: outlets
+    100032: plughead1
+    100034: //RootNode
+    100036: socket_mount
+    100038: Young_Bone
+    400000: Bone_002
+    400002: Bone_003
+    400004: Bone_004
+    400006: Bone_005
+    400008: Bone_006
+    400010: Bone_007
+    400012: Bone_008
+    400014: Bone_009
+    400016: Bone_010
+    400018: Bone_011
+    400020: Bone_012
+    400022: Cord
+    400024: Cylinder
+    400026: IK1
+    400028: IK2
+    400030: outlets
+    400032: plughead1
+    400034: //RootNode
+    400036: socket_mount
+    400038: Young_Bone
+    2300000: outlets
+    2300002: plughead1
+    2300004: socket_mount
+    3300000: outlets
+    3300002: plughead1
+    3300004: socket_mount
+    4300000: outlets
+    4300002: socket_mount
+    4300004: plughead1
+    4300006: Cylinder
     7400000: Default Take
+    7400002: Fuck_Yeah_Dude
     9500000: //RootNode
-    11100000: //RootNode
+    13700000: Cylinder
   materials:
     importMaterials: 1
     materialName: 0
@@ -69,9 +73,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: .100000001
+    animationPositionError: .100000001
+    animationScaleError: .100000001
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -113,7 +117,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
