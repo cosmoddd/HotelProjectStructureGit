@@ -1079,7 +1079,7 @@ ModelImporter:
       name: K and L
       takeName: Default Take
       firstFrame: 107
-      lastFrame: 125
+      lastFrame: 124
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1371,7 +1371,7 @@ ModelImporter:
       name: O and P
       takeName: Default Take
       firstFrame: 149
-      lastFrame: 182
+      lastFrame: 179
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
