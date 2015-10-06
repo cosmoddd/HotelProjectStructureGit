@@ -7,7 +7,7 @@ public class DialogFeeder : MonoBehaviour {
 	public TextAsset textFile;
     public PlayMakerFSM thisFSM;
     public string[] lines;
-    public string currentLine;
+    //public string currentLine;
     public int dialogLocator;
 
 
