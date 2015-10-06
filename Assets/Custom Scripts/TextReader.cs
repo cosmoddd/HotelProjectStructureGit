@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TextRead : MonoBehaviour
+public class TextReader : MonoBehaviour
 {
 
     public TextAsset textFile;
