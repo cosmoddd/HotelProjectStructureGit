@@ -156,7 +156,23 @@ ModelImporter:
     7400026: Monitor_BonesAction_003
     7400028: Monitor_BonesAction_006
     7400030: PoseLib
+    7400032: Light_BonesAction
+    7400034: Light_BonesAction_001
+    7400036: Light_BonesAction_003
+    7400038: Light_BonesAction_004
+    7400040: Light_BonesAction_005
+    7400042: Light_BonesAction_006
+    7400044: A and B
+    7400046: C and D
+    7400048: E and F
+    7400050: G and H
+    7400052: I and J
+    7400054: K and L
+    7400056: M and N
+    7400058: O and P
+    7400060: Q and R
     9500000: //RootNode
+    11100000: //RootNode
     13700000: Cylinder
     13700002: Desktop_Plughead
     13700004: Light_Plug
@@ -182,7 +198,1467 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 233
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: A and B
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: C and D
+      takeName: Default Take
+      firstFrame: 15
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: E and F
+      takeName: Default Take
+      firstFrame: 33
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: G and H
+      takeName: Default Take
+      firstFrame: 56
+      lastFrame: 74
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: I and J
+      takeName: Default Take
+      firstFrame: 74
+      lastFrame: 106
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: K and L
+      takeName: Default Take
+      firstFrame: 107
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: M and N
+      takeName: Default Take
+      firstFrame: 126
+      lastFrame: 148
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: O and P
+      takeName: Default Take
+      firstFrame: 149
+      lastFrame: 182
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Q and R
+      takeName: Default Take
+      firstFrame: 183
+      lastFrame: 222
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Desktop_Bones
+        weight: 1
+      - path: Desktop_Bones/Young_Bone
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4
+        weight: 1
+      - path: Desktop_Bones/Young_Bone/Bone_13/Bone_12/Bone_11/Bone_10/Bone_9/Bone_8/Bone_7/Bone_6/Bone_5/Bone_4/Bone_3
+        weight: 1
+      - path: Desktop_IK
+        weight: 1
+      - path: Desktop_Plughead
+        weight: 1
+      - path: ground
+        weight: 1
+      - path: Lamp_IK
+        weight: 1
+      - path: Light_Bones
+        weight: 1
+      - path: Light_Bones/Bone_0
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26
+        weight: 1
+      - path: Light_Bones/Bone_0/Bone_2/Bone_14/Bone_15/Bone_16/Bone_17/Bone_18/Bone_19/Bone_20/Bone_21/Bone_22/Bone_23/Bone_24/Bone_25/Bone_26/Bone_27
+        weight: 1
+      - path: Light_Plug
+        weight: 1
+      - path: Light_Plughead
+        weight: 1
+      - path: Monitor_Bones
+        weight: 1
+      - path: Monitor_Bones/Bone
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008
+        weight: 1
+      - path: Monitor_Bones/Bone/Bone_001/Bone_005/Bone_012/Bone_003/Bone_010/Bone_007/Bone_014/Bone_002/Bone_009/Bone_006/Bone_013/Bone_004/Bone_011/Bone_008/Bone_015
+        weight: 1
+      - path: Monitor_IK
+        weight: 1
+      - path: Monitor_Plug
+        weight: 1
+      - path: Monitor_Plughead
+        weight: 1
+      - path: Outlets
+        weight: 1
+      - path: Outlets_Socket_MOunt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -221,7 +1697,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
