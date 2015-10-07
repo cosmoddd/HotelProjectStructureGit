@@ -35,7 +35,7 @@ public class DialogFeeder : MonoBehaviour {
 		void TimeVacuum()
     {
         Debug.Log("hot pants in the evening sun");
-    }
+    }   
 
     void SetDialogLocator(int i)
     {
@@ -43,7 +43,7 @@ public class DialogFeeder : MonoBehaviour {
     }
 
 
-    void GetCurrentLine(string dottie)
+    void GetCurrentLine()
     {
         thisFSM.FsmVariables.FindFsmString("CurrentDialog").Value = lines[dialogLocator];
        // thisFSM.Fsm.Event()
