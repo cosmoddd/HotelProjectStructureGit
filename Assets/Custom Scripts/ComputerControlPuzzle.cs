@@ -25,8 +25,8 @@ public class ComputerControlPuzzle : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        desktopPower = false;
-        isDesktopPluggedIn = false;
+        isDesktopPluggedIn = true;
+        isMonitorPluggedIn = true;
 	
 	}
 	
