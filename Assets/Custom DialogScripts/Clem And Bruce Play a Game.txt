@@ -1,3 +1,7 @@
+//  dialog between Clem and Bruce at the opening part of the game.
+//  setting the scene for future dealings
+//  do not feed into the game until "BEGIN"
+BEGIN
 	Clem
 You’ve cornered me.  
 	Bruce
