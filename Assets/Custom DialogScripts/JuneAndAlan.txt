@@ -1,4 +1,4 @@
-//June and Alan Miranda stand at the edge of the lobby.\
+//June and Alan Miranda stand at the edge of the lobby
 BEGIN
 	Alan
 Do you think you’ll be getting a lot done on your project while you’re here?  

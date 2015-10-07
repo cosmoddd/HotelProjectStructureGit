@@ -27,7 +27,7 @@ public class DialogColorFadeMulti : MonoBehaviour
         objectColor.a = currentValue;  // the key for lerping colors
                                        //  mat.color = objectColor;  // assigning the color to the variable in question
         for (int i = 0; i < text.Length; i++)
-        { 
+        {
             text[i].ColorTopLeft.a = currentValue;
         }
         //text.ColorTopLeft.a = currentValue;

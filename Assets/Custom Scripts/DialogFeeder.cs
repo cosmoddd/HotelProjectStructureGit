@@ -22,8 +22,12 @@ public class DialogFeeder : MonoBehaviour {
 				// Add each line of the text file to
 				// the array using the new line
 				// as the delimiter
-				lines = ( textFile.text.Split( '\n' ) );
-			}
+				lines = (textFile.text.Split('\n'));
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    lines[i].Trim();
+                }
+            }
 		}
 	}
 		
