@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 96ee9d75317f72d4fbe78c96bf21ffeb
+timeCreated: 1444326577
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Desk
+    100002: Desk_001
+    100004: Desk_002
+    100006: Desk_003
+    100008: Desk_004
+    100010: Desk_005
+    100012: Desk_006
+    100014: Desk_007
+    100016: Desk_008
+    100018: //RootNode
+    100020: bottom_cabinet
+    100022: long_drawer
+    100024: mani_chself
+    100026: middle_drawer
+    100028: top_drawer
+    400000: Desk
+    400002: Desk_001
+    400004: Desk_002
+    400006: Desk_003
+    400008: Desk_004
+    400010: Desk_005
+    400012: Desk_006
+    400014: Desk_007
+    400016: Desk_008
+    400018: //RootNode
+    400020: bottom_cabinet
+    400022: long_drawer
+    400024: mani_chself
+    400026: middle_drawer
+    400028: top_drawer
+    2300000: Desk
+    2300002: Desk_001
+    2300004: Desk_002
+    2300006: Desk_003
+    2300008: Desk_004
+    2300010: Desk_005
+    2300012: Desk_006
+    2300014: Desk_007
+    2300016: Desk_008
+    2300018: bottom_cabinet
+    2300020: long_drawer
+    2300022: mani_chself
+    2300024: middle_drawer
+    2300026: top_drawer
+    3300000: Desk
+    3300002: Desk_001
+    3300004: Desk_002
+    3300006: Desk_003
+    3300008: Desk_004
+    3300010: Desk_005
+    3300012: Desk_006
+    3300014: Desk_007
+    3300016: Desk_008
+    3300018: bottom_cabinet
+    3300020: long_drawer
+    3300022: mani_chself
+    3300024: middle_drawer
+    3300026: top_drawer
+    4300000: Desk_005
+    4300002: Desk_004
+    4300004: Desk_003
+    4300006: Desk_002
+    4300008: Desk_001
+    4300010: Desk
+    4300012: Desk_006
+    4300014: Desk_007
+    4300016: Desk_008
+    4300018: mani_chself
+    4300020: top_drawer
+    4300022: long_drawer
+    4300024: middle_drawer
+    4300026: bottom_cabinet
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
