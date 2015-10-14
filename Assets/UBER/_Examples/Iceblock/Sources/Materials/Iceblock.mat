@@ -9,7 +9,7 @@ Material:
   m_Name: Iceblock
   m_Shader: {fileID: 4800000, guid: 8f9613a893761904b8187b63493ed36c, type: 3}
   m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _CHROMATIC_ABERRATION _DETAIL_TEXTURED _EMISSION_TEXTURED
-    _GLITTER _TRANSLUCENCY _WETNESS_NONE
+    _TRANSLUCENCY _WETNESS_NONE
   m_LightmapFlags: 1
   m_CustomRenderQueue: 3002
   stringTagMap:
@@ -213,11 +213,11 @@ Material:
       data:
         first:
           name: _BumpScale
-        second: 1.28999996
+        second: 1.10000002
       data:
         first:
           name: _OcclusionStrength
-        second: 1
+        second: .718999982
       data:
         first:
           name: _DetailNormalMapScale
@@ -277,7 +277,7 @@ Material:
       data:
         first:
           name: _DiffuseScatteringExponent
-        second: 6.92000008
+        second: 6.0999999
       data:
         first:
           name: _DiffuseScatteringOffset
@@ -285,7 +285,7 @@ Material:
       data:
         first:
           name: _GlossMin
-        second: 0
+        second: .0219999999
       data:
         first:
           name: _GlossMax
@@ -365,11 +365,11 @@ Material:
       data:
         first:
           name: _TranslucencyConstant
-        second: .200000003
+        second: .31099999
       data:
         first:
           name: _TranslucencyNormalOffset
-        second: .0399999991
+        second: .0909999982
       data:
         first:
           name: _TranslucencyExponent
@@ -377,7 +377,7 @@ Material:
       data:
         first:
           name: _TranslucencyOcclusion
-        second: .300000012
+        second: .381000012
       data:
         first:
           name: _TranslucencySuppressRealtimeShadows
@@ -497,11 +497,11 @@ Material:
       data:
         first:
           name: _RefractionBumpScale
-        second: .75999999
+        second: .639999986
       data:
         first:
           name: _RefractionChromaticAberration
-        second: .0120000001
+        second: .0208999999
       data:
         first:
           name: _Wetness
@@ -537,7 +537,7 @@ Material:
       data:
         first:
           name: _WetRipples
-        second: 0
+        second: 1
       data:
         first:
           name: _RippleStrength
@@ -601,7 +601,7 @@ Material:
       data:
         first:
           name: _WetDroplets
-        second: 0
+        second: 1
       data:
         first:
           name: _RainIntensity
@@ -729,7 +729,7 @@ Material:
       data:
         first:
           name: _Glitter
-        second: 1
+        second: 0
       data:
         first:
           name: _GlitterShown
@@ -798,7 +798,7 @@ Material:
       data:
         first:
           name: _TranslucencyColor
-        second: {r: .523466885, g: .602389038, b: .691176474, a: 1}
+        second: {r: .523472428, g: .602394044, b: .691180587, a: 1}
       data:
         first:
           name: _CutoffEdgeGlow
