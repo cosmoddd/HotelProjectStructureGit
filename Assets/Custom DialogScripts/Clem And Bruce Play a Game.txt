@@ -2,17 +2,15 @@
 //  setting the scene for future dealings
 //  do not feed into the game until "BEGIN"
 BEGIN
-	Clem
-You’ve cornered me.  
 	Bruce
-Indeed I have.  
-...
+You’ve cornered me.  
 	Clem
+Indeed I have.  
 You know you didn’t take enough pieces out of the bag when you had the chance.
 	Bruce
 Perhaps not.  I was trying something new.
 	Clem
-And that’s why I play you , Lawrence.  Always trying something new. 
+And that’s why I play you, Bruce.  Always trying something new. 
 	Bruce
 Fuck if don’t get a win tonight.  
 Nancy’s asleep, and the kitchen staff aren’t breathing down my neck for once.

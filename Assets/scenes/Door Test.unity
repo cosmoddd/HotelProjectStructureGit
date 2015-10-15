@@ -113,7 +113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
 --- !u!114 &29416443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,10 +375,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55216965}
   m_LocalRotation: {x: 0, y: -5.96046448e-08, z: 1, w: -1.94707155e-07}
-  m_LocalPosition: {x: 0, y: -.0571000017, z: 0}
-  m_LocalScale: {x: -1.83596706, y: -1.36603189, z: -1.36603189}
+  m_LocalPosition: {x: .69395566, y: -.169224828, z: -.069427222}
+  m_LocalScale: {x: -1, y: -1, z: -1}
   m_Children: []
-  m_Father: {fileID: 262872766}
+  m_Father: {fileID: 74178729}
   m_RootOrder: 0
 --- !u!23 &55216969
 MeshRenderer:
@@ -2050,6 +2050,7 @@ Transform:
   m_LocalPosition: {x: -.371999979, y: -.0784999952, z: .0522973128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 55216966}
   - {fileID: 262872766}
   - {fileID: 939155676}
   - {fileID: 1741868880}
@@ -3626,7 +3627,7 @@ Transform:
   m_LocalScale: {x: 16.593996, y: 9.15966129, z: 39.5504494}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
 --- !u!1 &262872765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,10 +3654,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .69395566, y: -.127424926, z: -.069427222}
   m_LocalScale: {x: .544672072, y: .732047319, z: .732047319}
-  m_Children:
-  - {fileID: 55216966}
+  m_Children: []
   m_Father: {fileID: 74178729}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!65 &262872768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3694,7 +3694,7 @@ GameObject:
   - 23: {fileID: 268665737}
   - 114: {fileID: 268665736}
   m_Layer: 0
-  m_Name: Door Handle Shape
+  m_Name: Door Handle Trigger (Outer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3729,13 +3729,13 @@ MonoBehaviour:
     startState: Waiting
     states:
     - name: Waiting
-      description: 
+      description: cant just 'mouse' into it.
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 112
-        width: 110
+        width: 144
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -3745,19 +3745,23 @@ MonoBehaviour:
           name: MOUSE OVER
           isSystemEvent: 1
           isGlobal: 0
-        toState: Wait for Click
+        toState: Button Already Down?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetProperty
+        - HutongGames.PlayMaker.Actions.GetButton
+        - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
-        actionEnabled: 00
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d23668dc
+        - 
+        - 
+        actionEnabled: 000000
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: d23668dca22109873334d172
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -3877,27 +3881,40 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 0
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 00
+        byteData: 000001427574746f6e20446f776e010001427574746f6e20446f776e46616c736501
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000
+        paramDataType: 240000000100000012000000110000000100000011000000170000001700000001000000
         paramName:
         - targetProperty
         - everyFrame
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000001000000
+        - buttonName
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 000000000000000000000000010000000e0000000f0000001c0000002100000021000000
+        paramByteDataSize: 0000000001000000000000000d000000010000000d000000050000000000000001000000
     - name: Wait for Click
       description: 
       colorIndex: 7
       position:
         serializedVersion: 2
         x: 160
-        y: 176
+        y: 272
         width: 110
         height: 48
       isBreakpoint: 0
@@ -3971,7 +3988,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 80
-        y: 272
+        y: 352
         width: 196
         height: 64
       isBreakpoint: 0
@@ -4075,7 +4092,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 448
-        y: 304
+        y: 384
         width: 162
         height: 80
       isBreakpoint: 0
@@ -4086,7 +4103,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: handle returns
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -4141,7 +4158,7 @@ MonoBehaviour:
         - 
         - Float Compare Opening Door
         - 
-        actionEnabled: 010100010101010101010101
+        actionEnabled: 010100010101010101010100
         actionIsOpen: 010100010101010101010101
         actionStartIndex: 00000000050000000a0000000e00000016000000190000001d000000270000003100000033000000380000003f000000
         actionHashCodes: e0750840e075084022e8952284242bb3a22109873334d1721d4debbb1d4debbbd23668dce075084053489ed101546a38
@@ -4383,7 +4400,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 880
-        y: 320
+        y: 400
         width: 197.5
         height: 32
       isBreakpoint: 0
@@ -4608,7 +4625,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 416
-        y: 144
+        y: 224
         width: 131
         height: 64
       isBreakpoint: 0
@@ -4619,7 +4636,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: Above 300?
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -4908,7 +4925,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 688
-        y: 240
+        y: 320
         width: 116
         height: 32
       isBreakpoint: 0
@@ -5002,7 +5019,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 688
-        y: 320
+        y: 400
         width: 128
         height: 48
       isBreakpoint: 0
@@ -5059,13 +5076,13 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000b0000000f00000014000000
         paramByteDataSize: 0b000000040000000500000001000000
-    - name: Above 300?
+    - name: Above 180?
       description: 
       colorIndex: 6
       position:
         serializedVersion: 2
         x: 688
-        y: 128
+        y: 208
         width: 100
         height: 48
       isBreakpoint: 0
@@ -5131,7 +5148,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 64
-        y: 384
+        y: 464
         width: 197
         height: 64
       isBreakpoint: 0
@@ -5142,7 +5159,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: Above 300?
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -5235,7 +5252,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 288
-        y: 512
+        y: 592
         width: 100
         height: 48
       isBreakpoint: 0
@@ -5298,7 +5315,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 448
-        y: 432
+        y: 512
         width: 175
         height: 80
       isBreakpoint: 0
@@ -5606,7 +5623,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 688
-        y: 432
+        y: 512
         width: 145
         height: 32
       isBreakpoint: 0
@@ -5655,7 +5672,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 880
-        y: 240
+        y: 320
         width: 100
         height: 32
       isBreakpoint: 0
@@ -5749,6 +5766,80 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000000000000d00000012000000170000001c00000020000000210000002200000023000000010000002400000031000000360000003b0000004000000044000000450000004600000047000000480000005300000053000000540000005f0000005f00000063000000
         paramByteDataSize: 000000000d0000000500000005000000050000000400000001000000010000000100000001000000000000000d00000005000000050000000500000004000000010000000100000001000000010000000b00000000000000010000000b000000000000000400000001000000
+    - name: Button Already Down?
+      description: 
+      colorIndex: 7
+      position:
+        serializedVersion: 2
+        x: 112
+        y: 192
+        width: 167
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: True
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Waiting
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: False
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Wait for Click
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetButton
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: a22109873334d172
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 0001427574746f6e20446f776e010001427574746f6e20446f776e5472756546616c736500
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 12000000110000000100000011000000170000001700000001000000
+        paramName:
+        - buttonName
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000000000000d0000000e0000001b0000001f00000024000000
+        paramByteDataSize: 000000000d000000010000000d000000040000000500000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -5904,6 +5995,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268665734}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &314895097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.20000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -.150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -.0670000017
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_Name
+      value: Cosdoor2 (Use)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &385311246
 GameObject:
   m_ObjectHideFlags: 0
@@ -7488,7 +7625,7 @@ GameObject:
   - 23: {fileID: 653774262}
   - 114: {fileID: 653774261}
   m_Layer: 0
-  m_Name: Door Handle Shape (1)
+  m_Name: Door Handle Trigger (Inner)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7535,13 +7672,13 @@ MonoBehaviour:
     startState: Waiting
     states:
     - name: Waiting
-      description: 
+      description: cant just 'mouse' into it.
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 160
-        y: 112
-        width: 110
+        x: 228
+        y: 212
+        width: 144
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -7551,19 +7688,23 @@ MonoBehaviour:
           name: MOUSE OVER
           isSystemEvent: 1
           isGlobal: 0
-        toState: Wait for Click
+        toState: Button Already Down?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.GetProperty
+        - HutongGames.PlayMaker.Actions.GetButton
+        - HutongGames.PlayMaker.Actions.BoolTest
         customNames:
         - 
-        actionEnabled: 00
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d23668dc
+        - 
+        - 
+        actionEnabled: 000000
+        actionIsOpen: 010101
+        actionStartIndex: 000000000200000005000000
+        actionHashCodes: d23668dca22109873334d172
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -7683,27 +7824,40 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 0
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 00
+        byteData: 000001427574746f6e20446f776e010001427574746f6e20446f776e46616c736501
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000
+        paramDataType: 240000000100000012000000110000000100000011000000170000001700000001000000
         paramName:
         - targetProperty
         - everyFrame
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000001000000
+        - buttonName
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 000000000000000000000000010000000e0000000f0000001c0000002100000021000000
+        paramByteDataSize: 0000000001000000000000000d000000010000000d000000050000000000000001000000
     - name: Wait for Click
       description: 
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 160
-        y: 176
+        x: 260
+        y: 372
         width: 110
         height: 48
       isBreakpoint: 0
@@ -7776,8 +7930,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 80
-        y: 272
+        x: 180
+        y: 452
         width: 196
         height: 64
       isBreakpoint: 0
@@ -7880,8 +8034,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 448
-        y: 304
+        x: 548
+        y: 484
         width: 162
         height: 80
       isBreakpoint: 0
@@ -7892,7 +8046,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: handle returns
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -7947,7 +8101,7 @@ MonoBehaviour:
         - 
         - Float Compare Opening Door
         - 
-        actionEnabled: 010100010101010101010101
+        actionEnabled: 010100010101010101010100
         actionIsOpen: 010100010101010101010101
         actionStartIndex: 00000000050000000a0000000e00000016000000190000001d000000270000003100000033000000380000003f000000
         actionHashCodes: e0750840e075084022e8952284242bb3a22109873334d1721d4debbb1d4debbbd23668dce075084053489ed101546a38
@@ -8188,8 +8342,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 880
-        y: 320
+        x: 980
+        y: 500
         width: 197.5
         height: 32
       isBreakpoint: 0
@@ -8413,8 +8567,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 416
-        y: 144
+        x: 516
+        y: 324
         width: 131
         height: 64
       isBreakpoint: 0
@@ -8425,7 +8579,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: Above 300?
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -8713,8 +8867,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 688
-        y: 240
+        x: 788
+        y: 420
         width: 116
         height: 32
       isBreakpoint: 0
@@ -8807,8 +8961,8 @@ MonoBehaviour:
       colorIndex: 6
       position:
         serializedVersion: 2
-        x: 688
-        y: 320
+        x: 788
+        y: 500
         width: 128
         height: 48
       isBreakpoint: 0
@@ -8865,13 +9019,13 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000b0000000f00000014000000
         paramByteDataSize: 0b000000040000000500000001000000
-    - name: Above 300?
+    - name: Above 180?
       description: 
       colorIndex: 6
       position:
         serializedVersion: 2
-        x: 688
-        y: 128
+        x: 788
+        y: 308
         width: 100
         height: 48
       isBreakpoint: 0
@@ -8936,8 +9090,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 64
-        y: 384
+        x: 164
+        y: 564
         width: 197
         height: 64
       isBreakpoint: 0
@@ -8948,7 +9102,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 0
-        toState: Above 300?
+        toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -9040,8 +9194,8 @@ MonoBehaviour:
       colorIndex: 6
       position:
         serializedVersion: 2
-        x: 288
-        y: 512
+        x: 388
+        y: 692
         width: 100
         height: 48
       isBreakpoint: 0
@@ -9103,8 +9257,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 448
-        y: 432
+        x: 548
+        y: 612
         width: 175
         height: 80
       isBreakpoint: 0
@@ -9411,8 +9565,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 688
-        y: 432
+        x: 788
+        y: 612
         width: 145
         height: 32
       isBreakpoint: 0
@@ -9460,8 +9614,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 880
-        y: 240
+        x: 980
+        y: 420
         width: 100
         height: 32
       isBreakpoint: 0
@@ -9555,6 +9709,80 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000000000000d00000012000000170000001c00000020000000210000002200000023000000010000002400000031000000360000003b0000004000000044000000450000004600000047000000480000005300000053000000540000005f0000005f00000063000000
         paramByteDataSize: 000000000d0000000500000005000000050000000400000001000000010000000100000001000000000000000d00000005000000050000000500000004000000010000000100000001000000010000000b00000000000000010000000b000000000000000400000001000000
+    - name: Button Already Down?
+      description: 
+      colorIndex: 7
+      position:
+        serializedVersion: 2
+        x: 212
+        y: 292
+        width: 167
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: True
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Waiting
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: False
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Wait for Click
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetButton
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000003000000
+        actionHashCodes: a22109873334d172
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 0001427574746f6e20446f776e010001427574746f6e20446f776e5472756546616c736500
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 12000000110000000100000011000000170000001700000001000000
+        paramName:
+        - buttonName
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000000000000d0000000e0000001b0000001f00000024000000
+        paramByteDataSize: 000000000d000000010000000d000000040000000500000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -10706,7 +10934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
 --- !u!1 &761373451
 GameObject:
   m_ObjectHideFlags: 0
@@ -10793,7 +11021,7 @@ Transform:
   - {fileID: 1777237635}
   - {fileID: 1337667495}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
 --- !u!1 &869843529
 GameObject:
   m_ObjectHideFlags: 0
@@ -10867,7 +11095,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1 &877651199
 GameObject:
   m_ObjectHideFlags: 0
@@ -10914,7 +11142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
 --- !u!1 &883457074 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100022, guid: 96ee9d75317f72d4fbe78c96bf21ffeb, type: 3}
@@ -12308,11 +12536,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921898391}
   m_LocalRotation: {x: .148864821, y: -.208116561, z: .0421649516, w: .965789318}
-  m_LocalPosition: {x: .579999983, y: -.0989999995, z: -1.08899999}
+  m_LocalPosition: {x: .150000006, y: .620000005, z: -2.01999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &939155675
 GameObject:
   m_ObjectHideFlags: 0
@@ -12342,7 +12570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 74178729}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!65 &939155678
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12404,6 +12632,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .992929995, y: .020000007, z: .45774284}
   m_Center: {x: .430716217, y: .355457425, z: 2.20725131}
+--- !u!1 &1246872759 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+  m_PrefabInternal: {fileID: 314895097}
+--- !u!65 &1246872763
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246872759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1246872764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246872759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03f10dda0d2c6d419276962b1242e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOver: 0
 --- !u!1 &1249607108 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100024, guid: 96ee9d75317f72d4fbe78c96bf21ffeb, type: 3}
@@ -12470,6 +12726,57 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1388992201 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+  m_PrefabInternal: {fileID: 1932962885}
+--- !u!59 &1388992203
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388992201}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -4.30000019, y: -.228499994, z: -.0491661429}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: -120
+    max: 0
+    bounciness: .769999981
+    bounceMinVelocity: .200000003
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+--- !u!54 &1388992204
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388992201}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1598165371
 Prefab:
   m_ObjectHideFlags: 0
@@ -12479,7 +12786,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400018, guid: 96ee9d75317f72d4fbe78c96bf21ffeb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.7199993
+      value: 20.7000008
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 96ee9d75317f72d4fbe78c96bf21ffeb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15369,7 +15676,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 74178729}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!23 &1741868881
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15485,6 +15792,48 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400018, guid: 96ee9d75317f72d4fbe78c96bf21ffeb, type: 3}
   m_PrefabInternal: {fileID: 1598165371}
+--- !u!1001 &1932962885
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.30000019
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -.150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -.0670000017
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+  m_IsPrefabParent: 0
 --- !u!1 &2012245627
 GameObject:
   m_ObjectHideFlags: 0
@@ -15544,7 +15893,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!1 &2020335830
 GameObject:
   m_ObjectHideFlags: 0
@@ -15629,12 +15978,39 @@ RectTransform:
   m_Children:
   - {fileID: 385311247}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2060264436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2060264437}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2060264437
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060264436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.95415115, y: -5.84114552, z: 1.48654318}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1001 &2103186419
 Prefab:
   m_ObjectHideFlags: 0
@@ -15693,3 +16069,66 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d4133d5d30b644bd87802a347eaccbe, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2116431345 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100020, guid: c160d476a3b480b4a8d5bfa964fe5d03, type: 3}
+  m_PrefabInternal: {fileID: 314895097}
+--- !u!65 &2116431347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116431345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .829873681, y: .0830217972, z: 2.21699286}
+  m_Center: {x: .410855681, y: .0434948467, z: .191480771}
+--- !u!59 &2116431348
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116431345}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -2.59153104, y: -.357285976, z: -.024976179}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 2.02999997
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: -120
+    max: 0
+    bounciness: .769999981
+    bounceMinVelocity: .200000003
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+--- !u!54 &2116431349
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2116431345}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
