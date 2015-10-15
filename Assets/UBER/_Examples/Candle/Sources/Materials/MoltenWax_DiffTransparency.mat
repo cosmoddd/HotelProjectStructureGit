@@ -206,20 +206,16 @@ Material:
         second: .5
       data:
         first:
-          name: _Parallax
-        second: .0199999996
-      data:
-        first:
-          name: _ZWrite
-        second: 0
-      data:
-        first:
           name: _Glossiness
         second: .802999973
       data:
         first:
           name: _BumpScale
         second: 1
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
       data:
         first:
           name: _OcclusionStrength
@@ -238,20 +234,16 @@ Material:
         second: 3
       data:
         first:
+          name: _ZWrite
+        second: 0
+      data:
+        first:
           name: _Metallic
         second: 0
       data:
         first:
           name: _EmissionScaleUI
         second: 0
-      data:
-        first:
-          name: _Phong
-        second: 0
-      data:
-        first:
-          name: _ShadowStrength
-        second: 1
       data:
         first:
           name: _Glossiness2
@@ -486,6 +478,10 @@ Material:
         second: 0
       data:
         first:
+          name: _ShadowStrength
+        second: 1
+      data:
+        first:
           name: _DistStepsShadows
         second: 64
       data:
@@ -648,6 +644,10 @@ Material:
         first:
           name: maxDist
         second: 10
+      data:
+        first:
+          name: _Phong
+        second: 0
       data:
         first:
           name: _Snow
@@ -927,10 +927,6 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _TranslucencyColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _CutoffEdgeGlow
         second: {r: 0, g: 0, b: 0, a: .0199999996}
       data:
@@ -940,7 +936,7 @@ Material:
       data:
         first:
           name: _DiffuseScatteringColor
-        second: {r: .720588207, g: .720588207, b: .720588207, a: 0}
+        second: {r: .720591962, g: .720591962, b: .720591962, a: 0}
       data:
         first:
           name: _DiffuseScatteringColor2
@@ -952,6 +948,10 @@ Material:
       data:
         first:
           name: _DetailSpecGloss
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TranslucencyColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:

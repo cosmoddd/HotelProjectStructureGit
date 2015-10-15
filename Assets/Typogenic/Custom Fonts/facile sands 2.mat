@@ -26,7 +26,7 @@ Material:
       data:
         first:
           name: _Smoothness
-        second: .850000024
+        second: .600000024
       data:
         first:
           name: _Thickness
@@ -34,7 +34,7 @@ Material:
       data:
         first:
           name: _OutlineThickness
-        second: .25
+        second: .174999997
       data:
         first:
           name: _GlowStart
