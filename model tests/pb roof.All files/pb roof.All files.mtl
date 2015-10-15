@@ -1,0 +1,55 @@
+
+newmtl Hungarian Roof
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hungarian_roof_Diffuse.jpg
+
+
+
+newmtl castle wall 3
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd castle_wall3_Diffuse.jpg
+
+
+
+newmtl castle wall 2
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd Castle_Rock_wall2Diffuse.jpg
+
+
+
+newmtl wood_planks_old_beat_1
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_planks_old_beat.sbsar
+
+
+
+newmtl wood_american_cherry
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_american_cherry.sbsar
+
+
