@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8187f23916d97b643be0dd16ee6c1ced
-timeCreated: 1433963648
+timeCreated: 1444874970
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -145,10 +145,6 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
@@ -157,8 +153,12 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
             name: _Parallax
-          second: .0732000023
+          second: .0489000008
         data:
           first:
             name: _ZWrite
@@ -185,11 +185,11 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
+            name: _Mode
           second: 0
         data:
           first:
-            name: _Mode
+            name: _EmissionScaleUI
           second: 0
       colors:
         data:
