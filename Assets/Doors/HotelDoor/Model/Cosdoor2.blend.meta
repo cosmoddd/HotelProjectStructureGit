@@ -16,6 +16,7 @@ ModelImporter:
     100016: DoorHandle_Outer
     100018: Empty
     100020: Hinge
+    100022: Handle_Rotator
     400000: Base
     400002: //RootNode
     400004: Door
@@ -27,6 +28,7 @@ ModelImporter:
     400016: DoorHandle_Outer
     400018: Empty
     400020: Hinge
+    400022: Handle_Rotator
     2300000: Base
     2300002: Doorhandle1
     2300004: Doorhandle2

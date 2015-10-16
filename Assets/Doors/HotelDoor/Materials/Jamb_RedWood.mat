@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Jamb_RedWood
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP _SPECGLOSSMAP
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -82,7 +82,7 @@ Material:
         first:
           name: _SpecGlossMap
         second:
-          m_Texture: {fileID: 2800000, guid: cb2bead681c43a24c86e40c4ea40fe57, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -109,11 +109,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .748000026
       data:
         first:
           name: _BumpScale
-        second: 1.79999995
+        second: 2.20000005
       data:
         first:
           name: _OcclusionStrength
@@ -150,7 +150,7 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        second: {r: .0588235259, g: .0588235259, b: .0588235259, a: 1}
       data:
         first:
           name: _EmissionColorUI
