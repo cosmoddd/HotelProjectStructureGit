@@ -815,7 +815,7 @@ namespace Voxeland
 			public Column ReadColumn (int x, int z) //return empty column if area is not initialized
 			{
 				int areaNum = (int)(z + areaSize*50)/areaSize*100 + (int)(x + areaSize*50)/areaSize;
-				if (!areas[areaNum].initialized) return emptyColumn;
+				if (areaNum<0 || areaNum > 10000 || !areas[areaNum].initialized) return emptyColumn;
 				else return areas[areaNum].GetColumn(x,z);
 			}
 

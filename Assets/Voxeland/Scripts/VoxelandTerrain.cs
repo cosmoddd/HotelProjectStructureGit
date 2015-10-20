@@ -203,7 +203,8 @@ namespace Voxeland
 			public bool generateLightmaps = false; //this should be always off exept baking with lightmaps
 			public bool rtpCompatible = false;
 			public bool playmodeEdit;
-			public bool continuous = false;
+			public enum ContinuousPaintingType {none,layer,unlimited}
+			public ContinuousPaintingType continuousType = ContinuousPaintingType.layer;
 
 			public bool  ambient = true;
 			public float ambientFade = 0.666f;
@@ -373,7 +374,7 @@ namespace Voxeland
 						if (aimCoord.exists && aimCoord != usedCoord && editMode != EditMode.none) 
 						{
 							if (selected>0)
-								SetBlocks(aimCoord, (byte)selected, brushSize, brushSphere, editMode);
+								SetBlocks(aimCoord, (byte)selected, brushSize, brushSphere, editMode, updateCollider:continuousType==ContinuousPaintingType.unlimited);
 							else //for grass (negative selected num)
 								SetGrass(aimCoord, (byte)(-selected), brushSize, brushSphere, editMode);
 				
@@ -702,7 +703,7 @@ namespace Voxeland
 				
 				#region Resetting Collision after mouse up
 
-					if (oldMouseButton>=0 && mouseButton<0)
+					if (oldMouseButton>=0 && mouseButton<0) 
 					{
 						for (int i=0; i<chunks.array.Length; i++)
 						{
@@ -853,9 +854,10 @@ namespace Voxeland
 			
 			public byte GetBlock (Coord coord) { return data.GetBlock(coord.x, coord.y, coord.z); }
 		
-			public void SetBlock (Coord coord, byte type, EditMode mode=EditMode.standard) { SetBlocks(coord, type, extend:0, spherify:false, mode:mode); } 
+			public void SetBlock (Coord coord, byte type, EditMode mode=EditMode.standard, bool updateCollider=true) 
+				{ SetBlocks(coord, type, extend:0, spherify:false, mode:mode, updateCollider:updateCollider); } 
 
-			public void SetBlocks (Coord coord, byte type=0, int extend=0, bool spherify=false, EditMode mode=EditMode.standard) //extend is half size (radius)
+			public void SetBlocks (Coord coord, byte type=0, int extend=0, bool spherify=false, EditMode mode=EditMode.standard, bool updateCollider=true)
 			{
 				//switching coord to opposite if add-mode with zero-extend
 				if (mode == EditMode.add && extend == 0) coord = coord.opposite;
@@ -928,7 +930,11 @@ namespace Voxeland
 				{
 					if (!chunks.CheckInRange(cx,cz)) continue;
 					Chunk chunk = chunks[cx,cz];
-					if (chunk!=null) chunk.EnqueueAll(immediateQueue);
+					if (chunk!=null) 
+					{
+						chunk.EnqueueAll(immediateQueue);
+						if (updateCollider) chunk.EnqueueUpdateCollider(immediateQueue);
+					}
 				}
 			}
 		
@@ -1070,7 +1076,7 @@ namespace Voxeland
 				editMode = EditMode.none;
 
 			//releasing mode if non-continious and mouse was already pressed
-			if (editMode!=EditMode.none && !continuous && oldMouseButton==0) editMode = EditMode.none;
+			if (editMode!=EditMode.none && continuousType==ContinuousPaintingType.none && oldMouseButton==0) editMode = EditMode.none;
 			
 			//resetting controls if Voxeland is not selected
 			if (!isSelected)

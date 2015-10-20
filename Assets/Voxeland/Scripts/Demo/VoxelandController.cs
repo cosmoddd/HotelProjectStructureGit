@@ -95,8 +95,8 @@ namespace VoxelandDemo
 			if (cameraController.lockCursor || !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) //IsPointerOverGameObject returns true if mouse hidden
 			{
 				//reading controls
-				bool leftMouse = Input.GetMouseButton(0);
-				bool middleMouse = Input.GetMouseButton(2);
+				bool leftMouse = Input.GetMouseButtonDown(0);
+				bool middleMouse = Input.GetMouseButtonDown(2);
 				bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
 				//getting edit mode

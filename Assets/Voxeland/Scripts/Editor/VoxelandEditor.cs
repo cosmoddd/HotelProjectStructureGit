@@ -594,10 +594,12 @@ namespace Voxeland
                 if (script.guiNewChunkSize < script.terrainMargins*2) script.guiNewChunkSize = script.terrainMargins*2;
                 
                 LayoutTools.QuickInt(ref script.terrainMargins, "Terrain Margins", "Chunk invisible faces overlap. Lowering this value will speed up chunk build, especially on small chunks, but will open gaps between chunks. Setting this value more than 2 does not have a sense.");
-                LayoutTools.QuickBool(ref script.playmodeEdit, "Playmode Edit", "Enable terrain editing in playmode. Adds a possibility to edit terrain in-game the way it is done in editor. It is recommended to use special Edit() controller instead (see Demo VoxelandController example script)", fieldSize:0.1f);
                 
-				LayoutTools.QuickBool(ref script.continuous, "Continuous Painting", "Add (remove) blocks until the mouse is pressed. Otherwise each block chenge should require one mouse click.", fieldSize:0.1f);
-
+				LayoutTools.NewLine(); 
+				script.continuousType = (VoxelandTerrain.ContinuousPaintingType)EditorGUI.EnumPopup(LayoutTools.AutoRect(), new GUIContent("Continuous Paint", "Add (remove) blocks until the mouse is pressed. Otherwise each block chenge should require one mouse click."), script.continuousType);
+				
+				LayoutTools.QuickBool(ref script.playmodeEdit, "Playmode Edit", "Enable terrain editing in playmode. Adds a possibility to edit terrain in-game the way it is done in editor. It is recommended to use special Edit() controller instead (see Demo VoxelandController example script)", fieldSize:0.1f);
+                
                 //LayoutTools.QuickBool(ref script.multiThreadEdit, "Multithread (experimental)", "Can cause Unity crash. Use it on your own risc.", fieldSize:0.1f);
                 //if (!script.multiThreadEdit && script.threadsId!=0) script.StopThreads(); //turning off all threads if multithreaded edit off
                 
@@ -824,7 +826,7 @@ namespace Voxeland
 				LayoutTools.lastPos.y -= 100; LayoutTools.lastPos.y -= 7;
 
 				LayoutTools.margin += 52; 
-				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("Voxeland v4.31")); 
+				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("Voxeland v4.32")); 
 				LayoutTools.NewLine(); EditorGUI.LabelField(LayoutTools.AutoRect(), new GUIContent("by Denis Pahunov"));
 				LayoutTools.NewLine(5);
 

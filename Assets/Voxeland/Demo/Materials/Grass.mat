@@ -111,7 +111,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .550000012
+        second: .552999973
       data:
         first:
           name: _Shininess
@@ -151,20 +151,6 @@ Material:
       data:
         first:
           name: _Metallic
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
->>>>>>> cb73841d2939e021a2984fd573bdceaafc24369d
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
->>>>>>> origin/RELIEF-TERRAIN
         second: 0
       data:
         first:
@@ -177,15 +163,11 @@ Material:
       data:
         first:
           name: _AmbientPower
-        second: .99000001
-      data:
-        first:
-          name: _Culling
-        second: 0
+        second: .421000004
       data:
         first:
           name: _WindSize
-        second: 50
+        second: 45.2000008
       data:
         first:
           name: _WindSpeedX
@@ -197,7 +179,11 @@ Material:
       data:
         first:
           name: _WindStrength
-        second: .330000013
+        second: .0700000003
+      data:
+        first:
+          name: _Culling
+        second: 0
       data:
         first:
           name: _BakeAmbient
@@ -234,7 +220,7 @@ Material:
       data:
         first:
           name: _Specular
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 0, g: 0, b: 0, a: .00300000003}
       data:
         first:
           name: _Ambient
