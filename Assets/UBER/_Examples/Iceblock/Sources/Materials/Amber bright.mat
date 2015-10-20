@@ -785,30 +785,6 @@ Material:
         second: 2
       data:
         first:
-          name: _TriplanarShown
-        second: 1
-      data:
-        first:
-          name: _TriplanarBlendSharpness
-        second: 10
-      data:
-        first:
-          name: _TriplanarNormalBlendSharpness
-        second: 0
-      data:
-        first:
-          name: _TriplanarHeightmapBlendingValue
-        second: .300000012
-      data:
-        first:
-          name: _TriplanarBlendAmbientOcclusion
-        second: .5
-      data:
-        first:
-          name: _TriplanarWorldMapping
-        second: 0
-      data:
-        first:
           name: _test1
         second: 1
       data:
@@ -927,11 +903,35 @@ Material:
         first:
           name: _test30
         second: 1
+      data:
+        first:
+          name: _TriplanarShown
+        second: 1
+      data:
+        first:
+          name: _TriplanarBlendSharpness
+        second: 10
+      data:
+        first:
+          name: _TriplanarNormalBlendSharpness
+        second: 0
+      data:
+        first:
+          name: _TriplanarHeightmapBlendingValue
+        second: .300000012
+      data:
+        first:
+          name: _TriplanarBlendAmbientOcclusion
+        second: .5
+      data:
+        first:
+          name: _TriplanarWorldMapping
+        second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 25, g: 25, b: 25, a: 1}
+        second: {r: 25.5349998, g: 25.5349998, b: 25.5349998, a: 1}
       data:
         first:
           name: _Color

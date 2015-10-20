@@ -215,7 +215,3 @@ Material:
         first:
           name: _HueVariation
         second: {r: 1, g: .5, b: 0, a: .100000001}
-      data:
-        first:
-          name: _InstanceData
-        second: {r: 0, g: 0, b: 0, a: 0}
