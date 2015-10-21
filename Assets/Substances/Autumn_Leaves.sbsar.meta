@@ -8,7 +8,7 @@ labels:
 - ground
 - autumn
 - grass
-timeCreated: 1445374603
+timeCreated: 1445454702
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -450,7 +450,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: .446999997
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
