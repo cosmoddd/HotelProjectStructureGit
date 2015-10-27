@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8187f23916d97b643be0dd16ee6c1ced
-timeCreated: 1445959637
+timeCreated: 1445969651
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -15,7 +15,7 @@ SubstanceImporter:
     inputs:
     - name: metal_roughness
       value:
-        scalar[0]: 2.50999999
+        scalar[0]: 2.76999998
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -50,21 +50,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .287
+        scalar[0]: 1
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .55400002
+        scalar[0]: .44600001
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_level
       value:
-        scalar[0]: .474000007
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
