@@ -17,6 +17,13 @@ ModelImporter:
     100018: Sphere_000
     100020: Sphere_001
     100022: Sphere_002
+    100024: Cube
+    100026: Cube_002
+    100028: Cube_003
+    100030: Cube_005
+    100032: Cube_006
+    100034: Cube_007
+    100036: Cube_008
     400000: BezierCurve
     400002: BezierCurve_001
     400004: BezierCurve_002
@@ -29,6 +36,13 @@ ModelImporter:
     400018: Sphere_000
     400020: Sphere_001
     400022: Sphere_002
+    400024: Cube
+    400026: Cube_002
+    400028: Cube_003
+    400030: Cube_005
+    400032: Cube_006
+    400034: Cube_007
+    400036: Cube_008
     2300000: BezierCurve
     2300002: BezierCurve_001
     2300004: BezierCurve_002
@@ -40,6 +54,13 @@ ModelImporter:
     2300016: Sphere_000
     2300018: Sphere_001
     2300020: Sphere_002
+    2300022: Cube
+    2300024: Cube_002
+    2300026: Cube_003
+    2300028: Cube_005
+    2300030: Cube_006
+    2300032: Cube_007
+    2300034: Cube_008
     3300000: BezierCurve
     3300002: BezierCurve_001
     3300004: BezierCurve_002
@@ -51,6 +72,13 @@ ModelImporter:
     3300016: Sphere_000
     3300018: Sphere_001
     3300020: Sphere_002
+    3300022: Cube
+    3300024: Cube_002
+    3300026: Cube_003
+    3300028: Cube_005
+    3300030: Cube_006
+    3300032: Cube_007
+    3300034: Cube_008
     4300000: Cube_004
     4300002: BezierCurve_003
     4300004: BezierCurve_002
@@ -62,6 +90,13 @@ ModelImporter:
     4300016: Sphere_000
     4300018: Cube_001
     4300020: Sphere_002
+    4300022: Cube_005
+    4300024: Cube
+    4300026: Cube_002
+    4300028: Cube_003
+    4300030: Cube_006
+    4300032: Cube_007
+    4300034: Cube_008
     7400000: Default Take
     9500000: //RootNode
   materials:

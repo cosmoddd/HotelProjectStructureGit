@@ -8,7 +8,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: leather1
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _METALLICGLOSSMAP
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -26,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 2faf057019d15234e89dfce925a9f149, type: 3}
+          m_Texture: {fileID: 2800000, guid: ab7239bf5610f5d41a81571d6b9b0931, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -109,11 +109,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .0549999997
+        second: .30399999
       data:
         first:
           name: _BumpScale
-        second: .409999996
+        second: -.569999993
       data:
         first:
           name: _OcclusionStrength

@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 106376}
   m_LocalRotation: {x: 0, y: .996610582, z: 0, w: .0822639242}
-  m_LocalPosition: {x: 52.6590004, y: 16.2492275, z: -26.6779995}
+  m_LocalPosition: {x: 86.6750031, y: -1.76250005, z: .6875}
   m_LocalScale: {x: .359289587, y: .359289318, z: .359289557}
   m_Children:
   - {fileID: 490542}
@@ -218,7 +218,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -242,7 +242,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -266,7 +266,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -290,7 +290,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -314,7 +314,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -338,7 +338,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 1670476335, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1

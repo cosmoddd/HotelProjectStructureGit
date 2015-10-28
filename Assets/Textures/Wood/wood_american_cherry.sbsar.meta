@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 guid: 7d6ab0d3d562c5547adba32aab62a3d9
-timeCreated: 1445952896
+timeCreated: 1446046249
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
   - serializedVersion: 16
-    name: wood_american_cherry
+    name: dining room talbe wood
     prototypeName: wood_american_cherry
     shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
@@ -29,7 +29,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: $randomseed
       value:
-        scalar[0]: 0
+        scalar[0]: 5573
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -57,14 +57,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: .629000008
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .528999984
+        scalar[0]: .838999987
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -85,21 +85,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .504000008
+        scalar[0]: .81400001
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .528999984
+        scalar[0]: .657999992
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .694999993
+        scalar[0]: .855000019
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -120,7 +120,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .889999986
+        scalar[0]: .850000024
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -265,27 +265,27 @@ SubstanceImporter:
             name: _EmissionColorUI
           second: {r: 1, g: 1, b: 1, a: 1}
     textureParameters:
-    - name: wood_american_cherry_diffuse
+    - name: dining room talbe wood_diffuse
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_normal
+    - name: dining room talbe wood_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_specular
+    - name: dining room talbe wood_specular
       alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_ambient_occlusion
+    - name: dining room talbe wood_ambient_occlusion
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_height
+    - name: dining room talbe wood_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
@@ -319,7 +319,7 @@ SubstanceImporter:
       textureFormat: 0
       loadingBehavior: 1
   - serializedVersion: 16
-    name: wood_american_cherry_1
+    name: wood_american_cherry_bannister
     prototypeName: wood_american_cherry
     shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
@@ -377,7 +377,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .5
+        scalar[0]: .883000016
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -391,21 +391,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .52700001
+        scalar[0]: .722000003
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .245000005
+        scalar[0]: .592000008
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .620999992
+        scalar[0]: .606999993
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -419,7 +419,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .470999986
+        scalar[0]: .658999979
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -434,6 +434,319 @@ SubstanceImporter:
     - name: base_roughness
       value:
         scalar[0]: .769999981
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 3, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 0
+      animationUpdateRate: 0
+    materialProperties:
+      serializedVersion: 2
+      texEnvs:
+        data:
+          first:
+            name: _MainTex
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _BumpMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: .200000003}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: .200000003}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: .200000003}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _SpecGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 3, y: .200000003}
+            offset: {x: 0, y: 0}
+      floats:
+        data:
+          first:
+            name: _SrcBlend
+          second: 1
+        data:
+          first:
+            name: _DstBlend
+          second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
+            name: _Parallax
+          second: .0353999995
+        data:
+          first:
+            name: _ZWrite
+          second: 1
+        data:
+          first:
+            name: _Glossiness
+          second: .5
+        data:
+          first:
+            name: _BumpScale
+          second: 3.44000006
+        data:
+          first:
+            name: _OcclusionStrength
+          second: 1
+        data:
+          first:
+            name: _DetailNormalMapScale
+          second: 1
+        data:
+          first:
+            name: _UVSec
+          second: 0
+        data:
+          first:
+            name: _Mode
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
+          second: 0
+      colors:
+        data:
+          first:
+            name: _EmissionColor
+          second: {r: 0, g: 0, b: 0, a: 0}
+        data:
+          first:
+            name: _Color
+          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+        data:
+          first:
+            name: _SpecColor
+          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        data:
+          first:
+            name: _EmissionColorUI
+          second: {r: 1, g: 1, b: 1, a: 1}
+    textureParameters:
+    - name: wood_american_cherry_bannister_diffuse
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: wood_american_cherry_bannister_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: wood_american_cherry_bannister_specular
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: wood_american_cherry_bannister_ambient_occlusion
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: wood_american_cherry_bannister_height
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 3570767838
+    - shaderProp:
+        name: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 3665086194
+    - shaderProp:
+        name: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 3665085710
+    - shaderProp:
+        name: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 3665085704
+    - shaderProp:
+        name: _SpecGlossMap
+      material: {instanceID: 0}
+      baseUID: 3570767836
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  - serializedVersion: 16
+    name: rich cherry
+    prototypeName: wood_american_cherry
+    shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
+    lightmapFlags: 5
+    inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $pixelsize
+      value:
+        scalar[0]: 1
+        scalar[1]: 1
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $randomseed
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: luminosity
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: contrast
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: hue_shift
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: saturation
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: normal_intensity
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: normal_format
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: ao_spreading
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: height_range
+      value:
+        scalar[0]: .150000006
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: height_position
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: knots
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: fibers
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: color
+      value:
+        scalar[0]: .55686301
+        scalar[1]: .266667008
+        scalar[2]: .129411995
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: base_roughness
+      value:
+        scalar[0]: .498039007
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -539,7 +852,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 3.44000006
+          second: 1
         data:
           first:
             name: _OcclusionStrength
@@ -556,49 +869,41 @@ SubstanceImporter:
           first:
             name: _Mode
           second: 0
-        data:
-          first:
-            name: _EmissionScaleUI
-          second: 0
       colors:
         data:
           first:
             name: _EmissionColor
-          second: {r: 0, g: 0, b: 0, a: 0}
+          second: {r: 0, g: 0, b: 0, a: 1}
         data:
           first:
             name: _Color
-          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+          second: {r: 1, g: 1, b: 1, a: 1}
         data:
           first:
             name: _SpecColor
           second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-        data:
-          first:
-            name: _EmissionColorUI
-          second: {r: 1, g: 1, b: 1, a: 1}
     textureParameters:
-    - name: wood_american_cherry_1_diffuse
+    - name: rich cherry_diffuse
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_1_normal
+    - name: rich cherry_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_1_specular
+    - name: rich cherry_specular
       alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_1_ambient_occlusion
+    - name: rich cherry_ambient_occlusion
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_1_height
+    - name: rich cherry_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
@@ -963,10 +1268,10 @@ SubstanceImporter:
       textureFormat: 0
       loadingBehavior: 1
   - serializedVersion: 16
-    name: wood_american_cherry_chair
+    name: wood_american_cherry_1
     prototypeName: wood_american_cherry
     shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
     renderQueue: -1
     lightmapFlags: 5
     inputs:
@@ -1000,7 +1305,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: 0
+        scalar[0]: .382999986
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1014,7 +1319,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: .465999991
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1035,49 +1340,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .5
+        scalar[0]: .52700001
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .150000006
+        scalar[0]: .245000005
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: .620999992
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .5
+        scalar[0]: .654999971
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: .470999986
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .55686301
-        scalar[1]: .266667008
-        scalar[2]: .129411995
+        scalar[0]: .632352948
+        scalar[1]: .354568183
+        scalar[2]: .223183379
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .498039007
+        scalar[0]: .769999981
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1183,311 +1488,6 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 1
-        data:
-          first:
-            name: _OcclusionStrength
-          second: 1
-        data:
-          first:
-            name: _DetailNormalMapScale
-          second: 1
-        data:
-          first:
-            name: _UVSec
-          second: 0
-        data:
-          first:
-            name: _Mode
-          second: 0
-      colors:
-        data:
-          first:
-            name: _EmissionColor
-          second: {r: 0, g: 0, b: 0, a: 1}
-        data:
-          first:
-            name: _Color
-          second: {r: 1, g: 1, b: 1, a: 1}
-        data:
-          first:
-            name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-    textureParameters:
-    - name: wood_american_cherry_chair_diffuse
-      alphaSource: 6
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: wood_american_cherry_chair_normal
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: wood_american_cherry_chair_specular
-      alphaSource: 7
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: wood_american_cherry_chair_ambient_occlusion
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    - name: wood_american_cherry_chair_height
-      alphaSource: 0
-      filterMode: 1
-      aniso: 1
-      wrapMode: 0
-    textureAssignments:
-    - shaderProp:
-        name: _MainTex
-      material: {instanceID: 0}
-      baseUID: 3570767838
-    - shaderProp:
-        name: _BumpMap
-      material: {instanceID: 0}
-      baseUID: 3665086194
-    - shaderProp:
-        name: _ParallaxMap
-      material: {instanceID: 0}
-      baseUID: 3665085710
-    - shaderProp:
-        name: _OcclusionMap
-      material: {instanceID: 0}
-      baseUID: 3665085704
-    - shaderProp:
-        name: _SpecGlossMap
-      material: {instanceID: 0}
-      baseUID: 3570767836
-    buildTargetSettings:
-    - serializedVersion: 2
-      buildTarget: 
-      textureWidth: 512
-      textureHeight: 512
-      textureFormat: 0
-      loadingBehavior: 1
-  - serializedVersion: 16
-    name: wood_american_cherry_bannister
-    prototypeName: wood_american_cherry
-    shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
-    renderQueue: -1
-    lightmapFlags: 5
-    inputs:
-    - name: $outputsize
-      value:
-        scalar[0]: 8
-        scalar[1]: 8
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: $pixelsize
-      value:
-        scalar[0]: 1
-        scalar[1]: 1
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: $randomseed
-      value:
-        scalar[0]: 0
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: luminosity
-      value:
-        scalar[0]: .5
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: contrast
-      value:
-        scalar[0]: .382999986
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: hue_shift
-      value:
-        scalar[0]: 0
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: saturation
-      value:
-        scalar[0]: .465999991
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: normal_intensity
-      value:
-        scalar[0]: .883000016
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: normal_format
-      value:
-        scalar[0]: 0
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: ao_spreading
-      value:
-        scalar[0]: .722000003
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: height_range
-      value:
-        scalar[0]: .592000008
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: height_position
-      value:
-        scalar[0]: .606999993
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: knots
-      value:
-        scalar[0]: .654999971
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: fibers
-      value:
-        scalar[0]: .658999979
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: color
-      value:
-        scalar[0]: .632352948
-        scalar[1]: .354568183
-        scalar[2]: .223183379
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    - name: base_roughness
-      value:
-        scalar[0]: .769999981
-        scalar[1]: 0
-        scalar[2]: 0
-        scalar[3]: 0
-        texture: {instanceID: 0}
-    materialInformation:
-      serializedVersion: 5
-      offset: {x: 0, y: 0}
-      scale: {x: 3, y: 1}
-      generateMipmaps: 1
-      generateAllOutputs: 0
-      animationUpdateRate: 0
-    materialProperties:
-      serializedVersion: 2
-      texEnvs:
-        data:
-          first:
-            name: _MainTex
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _BumpMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _ParallaxMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _OcclusionMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _EmissionMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _DetailMask
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _DetailAlbedoMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _SpecGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
-            offset: {x: 0, y: 0}
-      floats:
-        data:
-          first:
-            name: _SrcBlend
-          second: 1
-        data:
-          first:
-            name: _DstBlend
-          second: 0
-        data:
-          first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
-            name: _Parallax
-          second: .0353999995
-        data:
-          first:
-            name: _ZWrite
-          second: 1
-        data:
-          first:
-            name: _Glossiness
-          second: .5
-        data:
-          first:
-            name: _BumpScale
           second: 3.44000006
         data:
           first:
@@ -1527,27 +1527,340 @@ SubstanceImporter:
             name: _EmissionColorUI
           second: {r: 1, g: 1, b: 1, a: 1}
     textureParameters:
-    - name: wood_american_cherry_bannister_diffuse
+    - name: wood_american_cherry_1_diffuse
       alphaSource: 6
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_bannister_normal
+    - name: wood_american_cherry_1_normal
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_bannister_specular
+    - name: wood_american_cherry_1_specular
       alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_bannister_ambient_occlusion
+    - name: wood_american_cherry_1_ambient_occlusion
       alphaSource: 0
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    - name: wood_american_cherry_bannister_height
+    - name: wood_american_cherry_1_height
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    textureAssignments:
+    - shaderProp:
+        name: _MainTex
+      material: {instanceID: 0}
+      baseUID: 3570767838
+    - shaderProp:
+        name: _BumpMap
+      material: {instanceID: 0}
+      baseUID: 3665086194
+    - shaderProp:
+        name: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 3665085710
+    - shaderProp:
+        name: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 3665085704
+    - shaderProp:
+        name: _SpecGlossMap
+      material: {instanceID: 0}
+      baseUID: 3570767836
+    buildTargetSettings:
+    - serializedVersion: 2
+      buildTarget: 
+      textureWidth: 512
+      textureHeight: 512
+      textureFormat: 0
+      loadingBehavior: 1
+  - serializedVersion: 16
+    name: Deep Cherry Wood
+    prototypeName: wood_american_cherry
+    shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
+    renderQueue: -1
+    lightmapFlags: 5
+    inputs:
+    - name: $outputsize
+      value:
+        scalar[0]: 8
+        scalar[1]: 8
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $pixelsize
+      value:
+        scalar[0]: 1
+        scalar[1]: 1
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: $randomseed
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: luminosity
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: contrast
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: hue_shift
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: saturation
+      value:
+        scalar[0]: .5
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: normal_intensity
+      value:
+        scalar[0]: .528999984
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: normal_format
+      value:
+        scalar[0]: 0
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: ao_spreading
+      value:
+        scalar[0]: .528999984
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: height_range
+      value:
+        scalar[0]: .504000008
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: height_position
+      value:
+        scalar[0]: .528999984
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: knots
+      value:
+        scalar[0]: .694999993
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: fibers
+      value:
+        scalar[0]: .874000013
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: color
+      value:
+        scalar[0]: .286764681
+        scalar[1]: .109258495
+        scalar[2]: .0253027733
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: base_roughness
+      value:
+        scalar[0]: .889999986
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    materialInformation:
+      serializedVersion: 5
+      offset: {x: 0, y: 0}
+      scale: {x: 1, y: 1}
+      generateMipmaps: 1
+      generateAllOutputs: 0
+      animationUpdateRate: 0
+    materialProperties:
+      serializedVersion: 2
+      texEnvs:
+        data:
+          first:
+            name: _MainTex
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _BumpMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _SpecGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+      floats:
+        data:
+          first:
+            name: _SrcBlend
+          second: 1
+        data:
+          first:
+            name: _DstBlend
+          second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
+        data:
+          first:
+            name: _Parallax
+          second: .0449000001
+        data:
+          first:
+            name: _ZWrite
+          second: 1
+        data:
+          first:
+            name: _Glossiness
+          second: .5
+        data:
+          first:
+            name: _BumpScale
+          second: 1
+        data:
+          first:
+            name: _OcclusionStrength
+          second: .688000023
+        data:
+          first:
+            name: _DetailNormalMapScale
+          second: 1
+        data:
+          first:
+            name: _UVSec
+          second: 0
+        data:
+          first:
+            name: _Mode
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
+          second: 0
+      colors:
+        data:
+          first:
+            name: _EmissionColor
+          second: {r: 0, g: 0, b: 0, a: 0}
+        data:
+          first:
+            name: _Color
+          second: {r: .875, g: .875, b: .875, a: 1}
+        data:
+          first:
+            name: _SpecColor
+          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+        data:
+          first:
+            name: _EmissionColorUI
+          second: {r: 1, g: 1, b: 1, a: 1}
+    textureParameters:
+    - name: Deep Cherry Wood_diffuse
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Deep Cherry Wood_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Deep Cherry Wood_specular
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Deep Cherry Wood_ambient_occlusion
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Deep Cherry Wood_height
       alphaSource: 0
       filterMode: 1
       aniso: 1
