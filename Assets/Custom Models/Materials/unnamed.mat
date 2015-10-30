@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: unnamed
-  m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _OCCLUSION_FROM_ALBEDO_ALPHA _VERTEXCOLOR
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _OCCLUSION_FROM_ALBEDO_ALPHA _VERTEXCOLOR
     _WETNESS_NONE
-  m_LightmapFlags: 1
+  m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
@@ -220,7 +220,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .160999998
+        second: 0
       data:
         first:
           name: _BumpScale
@@ -244,11 +244,15 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .725000024
+        second: 0
       data:
         first:
           name: _EmissionScaleUI
         second: 0
+      data:
+        first:
+          name: _IntensityVC
+        second: 1
       data:
         first:
           name: _Phong
@@ -789,19 +793,15 @@ Material:
         first:
           name: _ShadowCull
         second: 2
-      data:
-        first:
-          name: _IntensityVC
-        second: 1
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: .499000013, g: .499000013, b: .499000013, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _SpecColor

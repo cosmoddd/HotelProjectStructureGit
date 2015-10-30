@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -109,7 +109,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .263999999
+        second: .330000013
       data:
         first:
           name: _BumpScale
@@ -133,7 +133,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .709999979
+        second: .910000026
       data:
         first:
           name: _EmissionScaleUI
@@ -146,7 +146,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .625, g: .620404422, b: .620404422, a: 1}
       data:
         first:
           name: _SpecColor
