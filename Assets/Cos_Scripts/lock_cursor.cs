@@ -3,14 +3,15 @@ using System.Collections;
 
 public class lock_cursor : MonoBehaviour {
 
-CursorLockMode wantedMode;
+public CursorLockMode wantedMode;
 	
 	// Apply requested cursor state
 	void SetCursorState ()
 	{
 		Cursor.lockState = wantedMode;
-		// Hide cursor when locking
-		Cursor.visible = (CursorLockMode.Locked != wantedMode);
+        // Hide cursor when locking
+        Cursor.visible = false;// (CursorLockMode.Locked != wantedMode);
+
 	}
 	
 	void OnGUI ()
