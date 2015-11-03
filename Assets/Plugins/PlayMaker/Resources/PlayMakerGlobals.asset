@@ -42,3 +42,6 @@ MonoBehaviour:
   - Open
   - Turn Handle
   - Stop Turning
+  - Mouse Button Up
+  - Walk Away
+  - Return
