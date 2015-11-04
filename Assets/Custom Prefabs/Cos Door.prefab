@@ -1036,7 +1036,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Waiting
         linkStyle: 0
         linkConstraint: 0
@@ -1140,7 +1140,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -2054,7 +2054,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -3071,7 +3071,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -3276,7 +3276,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: handle returns
         linkStyle: 0
         linkConstraint: 0
@@ -3978,7 +3978,7 @@ MonoBehaviour:
       isGlobal: 0
     - name: Mouse Button Up
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: Stop Moving
       isSystemEvent: 0
       isGlobal: 0
@@ -4355,7 +4355,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Waiting
         linkStyle: 0
         linkConstraint: 0
@@ -4459,7 +4459,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -4992,7 +4992,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -5515,7 +5515,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: Above 180?
         linkStyle: 0
         linkConstraint: 0
@@ -5682,7 +5682,7 @@ MonoBehaviour:
       - fsmEvent:
           name: Mouse Button Up
           isSystemEvent: 0
-          isGlobal: 0
+          isGlobal: 1
         toState: handle returns
         linkStyle: 0
         linkConstraint: 0
@@ -6118,7 +6118,7 @@ MonoBehaviour:
       isGlobal: 0
     - name: Mouse Button Up
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: Stop Moving
       isSystemEvent: 0
       isGlobal: 0
