@@ -25,6 +25,10 @@ ModelImporter:
     100034: top_drawer_rear
     100036: top_drawer_right
     100038: top_drawer_top
+    100040: middle_drawer_bottom
+    100042: middle_drawer_front
+    100044: middle_drawer_left
+    100046: middle_drawer_right
     400000: Desk
     400002: Desk_001
     400004: Desk_002
@@ -45,6 +49,10 @@ ModelImporter:
     400034: top_drawer_rear
     400036: top_drawer_right
     400038: top_drawer_top
+    400040: middle_drawer_bottom
+    400042: middle_drawer_front
+    400044: middle_drawer_left
+    400046: middle_drawer_right
     2300000: Desk
     2300002: Desk_001
     2300004: Desk_002
@@ -64,6 +72,10 @@ ModelImporter:
     2300032: top_drawer_rear
     2300034: top_drawer_right
     2300036: top_drawer_top
+    2300038: middle_drawer_bottom
+    2300040: middle_drawer_front
+    2300042: middle_drawer_left
+    2300044: middle_drawer_right
     3300000: Desk
     3300002: Desk_001
     3300004: Desk_002
@@ -83,6 +95,10 @@ ModelImporter:
     3300032: top_drawer_rear
     3300034: top_drawer_right
     3300036: top_drawer_top
+    3300038: middle_drawer_bottom
+    3300040: middle_drawer_front
+    3300042: middle_drawer_left
+    3300044: middle_drawer_right
     4300000: Desk_005
     4300002: Desk_004
     4300004: Desk_003
@@ -102,6 +118,10 @@ ModelImporter:
     4300032: top_drawer_right
     4300034: top_drawer_bottom
     4300036: top_drawer_left
+    4300038: middle_drawer_bottom
+    4300040: middle_drawer_front
+    4300042: middle_drawer_left
+    4300044: middle_drawer_right
     7400000: Default Take
     9500000: //RootNode
   materials:
