@@ -20,13 +20,16 @@ public class ComputerControlPuzzle : MonoBehaviour {
     public bool monitorPower;
 
     public bool roomForDesktop;
+    public bool roomForLamp;
+    public bool roomForMonitor;
 
 
     // Use this for initialization
     void Start () {
 
-        isDesktopPluggedIn = true;
+        isDesktopPluggedIn = false;
         isMonitorPluggedIn = true;
+        isLampPluggedIn = true;
 	
 	}
 	
@@ -48,6 +51,18 @@ public class ComputerControlPuzzle : MonoBehaviour {
             roomForDesktop = false;
         }
         else roomForDesktop = true;
+
+        if (isLampPluggedIn && isDesktopPluggedIn == true)
+        {
+            roomForMonitor = false;
+        }
+        else roomForDesktop = true;
+
+        if (isMonitorPluggedIn && isDesktopPluggedIn == true)
+        {
+            roomForLamp = false;
+        }
+        else roomForLamp = true;
     }
 
     void MonitorPower()
