@@ -36,29 +36,27 @@ public class ComputerControlPuzzle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        PowerCheck();
         DesktopPower();
         LampPower();
         MonitorPower();
-        PowerCheck();
-
 	}
 
     void PowerCheck()
     {
-        if (isLampPluggedIn && isMonitorPluggedIn == true)
+        if (isLampPluggedIn == true && isMonitorPluggedIn == true)
         {
             roomForDesktop = false;
         }
         else roomForDesktop = true;
 
-        if (isLampPluggedIn && isDesktopPluggedIn == true)
+        if (isLampPluggedIn == true && isDesktopPluggedIn == true)
         {
             roomForMonitor = false;
         }
-        else roomForDesktop = true;
+        else roomForMonitor = true;
 
-        if (isMonitorPluggedIn && isDesktopPluggedIn == true)
+        if (isMonitorPluggedIn == true && isDesktopPluggedIn == true)
         {
             roomForLamp = false;
         }
@@ -67,15 +65,19 @@ public class ComputerControlPuzzle : MonoBehaviour {
 
     void MonitorPower()
     {
-        if (monitorPlug.GetComponent<MouseOver>().mouseOver)
+        if (monitorPlug.GetComponent<MouseOver>().mouseOver == true)
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if (monitorPower == true)
+                if (roomForMonitor == true)
                 {
-                    monitorPower = false;
+                    if (monitorPower == true)
+                    {
+                        monitorPower = false;
+                    }
+                    isMonitorPluggedIn = PlugIn(isMonitorPluggedIn);
                 }
-                isMonitorPluggedIn = PlugIn(isMonitorPluggedIn);
+
             }
         }
 
@@ -96,11 +98,14 @@ public class ComputerControlPuzzle : MonoBehaviour {
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if (lampPower == true)
+                if (roomForLamp == true)
                 {
-                    lampPower = false;
+                    if (lampPower == true)
+                    {
+                        lampPower = false;
+                    }
+                    isLampPluggedIn = PlugIn(isLampPluggedIn);
                 }
-                isLampPluggedIn = PlugIn(isLampPluggedIn);
             }
         }
 
@@ -121,11 +126,14 @@ public class ComputerControlPuzzle : MonoBehaviour {
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if (desktopPower == true)
+                if (roomForDesktop == true)
                 {
-                    desktopPower = false;
+                    if (desktopPower == true)
+                    {
+                        desktopPower = false;
+                    }
+                    isDesktopPluggedIn = PlugIn(isDesktopPluggedIn);
                 }
-                isDesktopPluggedIn = PlugIn(isDesktopPluggedIn);
             }
         }
 

@@ -127,7 +127,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 462540}
   - 65: {fileID: 6531678}
-  - 114: {fileID: 11412872}
   - 114: {fileID: 11443960}
   m_Layer: 0
   m_Name: Hinge
@@ -262,8 +261,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189082}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: -.386999995, y: -.207285985, z: .0399999991}
+  m_LocalRotation: {x: .707079947, y: .00617032684, z: .00617032778, w: -.707079828}
+  m_LocalPosition: {x: -.38700816, y: -.207286194, z: .0399996564}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 418562}
@@ -528,8 +527,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.17000008, y: 2.69000006, z: 1.97000003}
-  m_Center: {x: .109999999, y: .0500000007, z: -.304612547}
+  m_Size: {x: 2.2756145, y: 2.69000006, z: 3.32144094}
+  m_Center: {x: .162808672, y: .0500004031, z: .371045083}
 --- !u!65 &6528588
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1009,7 +1008,7 @@ MonoBehaviour:
           name: next
           isSystemEvent: 0
           isGlobal: 0
-        toState: Closed or Open?
+        toState: Push Open
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -1025,7 +1024,6 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.FloatOperator
         - HutongGames.PlayMaker.Actions.FloatOperator
-        - HutongGames.PlayMaker.Actions.FloatAdd
         - HutongGames.PlayMaker.Actions.AxisEvent
         - HutongGames.PlayMaker.Actions.GetButton
         - HutongGames.PlayMaker.Actions.BoolTest
@@ -1051,7 +1049,6 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
         - Float Compare Opening Door
         - 
         - 
@@ -1060,10 +1057,10 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010100010101010101010100010101010101
-        actionIsOpen: 010100010101010101010101010101010101
-        actionStartIndex: 00000000050000000a0000000e00000016000000190000001d000000270000003100000033000000380000003f00000043000000470000004b0000004d0000004f00000051000000
-        actionHashCodes: e0750840e075084022e8952284242bb3a22109873334d1721d4debbb1d4debbbd23668dce075084053489ed101546a386e5036b6eec9d968d23668dcd23668dcd23668dc4753a3ff
+        actionEnabled: 0101010101010101010100010101010101
+        actionIsOpen: 0101010101010101010101010101010101
+        actionStartIndex: 00000000050000000a000000120000001500000019000000230000002d0000002f000000340000003b0000003f0000004300000047000000490000004b0000004d000000
+        actionHashCodes: e0750840e075084084242bb3a22109873334d1721d4debbb1d4debbbd23668dce075084053489ed101546a386e5036b6eec9d968d23668dcd23668dcd23668dc4753a3ff
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
@@ -1698,12 +1695,12 @@ MonoBehaviour:
           typeName: 
           value: {fileID: 0}
         fsmVarParams: []
-        byteData: 00000000014d6f7573652044656c746120597b142e3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630000000000000000014e6577205a20526f746174696f6e0100000000015a20526f746174696f6e0ad7233c0001004178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e010000000001000001000000000143757272656e7420446f6f72205a610bb63b000200000000000000015a2043616c6301000000000143757272656e7420446f6f72205a00007042000000f041006e65787401000000000143757272656e7420446f6f72205a000000000000007442000100000000010000005475726e2048616e646c6500000000000000000000000000
+        byteData: 00000000014d6f7573652044656c746120597b142e3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630000000000000000014e6577205a20526f746174696f6e014178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e010000000001000001000000000143757272656e7420446f6f72205a610bb63b000200000000000000015a2043616c6301000000000143757272656e7420446f6f72205a00007042000000f041006e65787401000000000143757272656e7420446f6f72205a000000000000007442000100000000010000005475726e2048616e646c6500000000000000000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f000000070000000f000000010000000f0000000f0000000100000001000000120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000010000000100000024000000010000000f0000000f000000070000000f000000010000000f0000000f0000000f000000170000001700000017000000010000000f0000000f0000000f00000001000000140000000700000007000000150000001f000000170000000f00000001000000240000000100000024000000010000002400000001000000210000001100000011000000
+        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f000000070000000f00000001000000120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000010000000100000024000000010000000f0000000f000000070000000f000000010000000f0000000f0000000f000000170000001700000017000000010000000f0000000f0000000f00000001000000140000000700000007000000150000001f000000170000000f00000001000000240000000100000024000000010000002400000001000000210000001100000011000000
         paramName:
         - float1
         - float2
@@ -1715,10 +1712,6 @@ MonoBehaviour:
         - operation
         - storeResult
         - everyFrame
-        - floatVariable
-        - add
-        - everyFrame
-        - perSecond
         - horizontalAxis
         - verticalAxis
         - leftEvent
@@ -1789,8 +1782,8 @@ MonoBehaviour:
         - cursorTexture
         - hideCursor
         - lockCursor
-        paramDataPos: 0000000012000000270000002b0000003c0000003d0000004c0000005d00000061000000740000007500000084000000890000008a00000000000000010000008b0000008b0000008b000000920000009200000092000000020000009d000000aa000000ab000000b8000000b8000000c700000000000000c8000000d5000000da000000df000000f2000000f6000000f7000000f8000000f900000001000000fa000000070100000c010000110100002401000028010000290100002a0100002b010000000000002c0100002d0100004001000045010000490100005401000055010000680100006d01000072010000760100007601000076010000770100008a0100008f0100009401000002000000950100009901000000000000000000009d010000a8010000ad01000001000000ae01000002000000af01000003000000b001000000000000b1010000b3010000
-        paramByteDataSize: 12000000150000000400000011000000010000000f000000110000000400000013000000010000000f000000050000000100000001000000000000000000000000000000000000000700000000000000000000000b000000000000000d000000010000000d000000000000000f00000001000000000000000d0000000500000005000000130000000400000001000000010000000100000001000000000000000d000000050000000500000013000000040000000100000001000000010000000100000000000000010000001300000005000000040000000b00000001000000130000000500000005000000040000000000000000000000010000001300000005000000050000000100000000000000040000000400000000000000000000000b0000000500000001000000000000000100000000000000010000000000000001000000000000000200000002000000
+        paramDataPos: 0000000012000000270000002b0000003c0000003d0000004c0000005d000000610000007400000000000000010000007500000075000000750000007c0000007c0000007c00000002000000870000009400000095000000a2000000a2000000b100000000000000b2000000bf000000c4000000c9000000dc000000e0000000e1000000e2000000e300000001000000e4000000f1000000f6000000fb0000000e010000120100001301000014010000150100000000000016010000170100002a0100002f010000330100003e0100003f01000052010000570100005c0100006001000060010000600100006101000074010000790100007e010000020000007f01000083010000000000000000000087010000920100009701000001000000980100000200000099010000030000009a010000000000009b0100009d010000
+        paramByteDataSize: 12000000150000000400000011000000010000000f00000011000000040000001300000001000000000000000000000000000000000000000700000000000000000000000b000000000000000d000000010000000d000000000000000f00000001000000000000000d0000000500000005000000130000000400000001000000010000000100000001000000000000000d000000050000000500000013000000040000000100000001000000010000000100000000000000010000001300000005000000040000000b00000001000000130000000500000005000000040000000000000000000000010000001300000005000000050000000100000000000000040000000400000000000000000000000b0000000500000001000000000000000100000000000000010000000000000001000000000000000200000002000000
     - name: Push Open
       description: Play Door Opening Sound, Push Door Open
       colorIndex: 3
@@ -1830,7 +1823,7 @@ MonoBehaviour:
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams:
-        - target: 1
+        - target: 2
           excludeSelf:
             useVariable: 0
             name: 
@@ -1853,7 +1846,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 
+            value: Door Interactivity
           sendToChildren:
             useVariable: 0
             name: 
@@ -1958,7 +1951,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101010101010100010101010101010101
-        actionIsOpen: 0101010101010100010000010101010101
+        actionIsOpen: 0000000101010100010000010101010101
         actionStartIndex: 00000000020000000400000006000000090000000e00000013000000170000001b00000023000000260000002a000000340000003e00000040000000470000004c000000
         actionHashCodes: d23668dcd23668dcd23668dc4753a3ffe0750840e075084001546a3822e8952284242bb3a22109873334d1721d4debbb1d4debbbd23668dc53489ed1e0750840eec9d968
         unityObjectParams: []
@@ -2486,7 +2479,7 @@ MonoBehaviour:
           typeName: 
           value: {fileID: 0}
         fsmVarParams: []
-        byteData: 0000000000000000000000014d6f7573652044656c746120597b142e3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630100000000000000014e6577205a20526f746174696f6e0100000000014e6577205a20526f746174696f6e000040c00000004040000100000000015a20526f746174696f6e0ad7233c0001004178697320446f776e53746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e010000000001000001000000000143757272656e7420446f6f72205a0000b44300000020410053746f70204d6f76696e6701000000000143757272656e7420446f6f72205a610bb63b000200000000000000015a2043616c63015475726e2048616e646c65000000000000
+        byteData: 0000000000000000000000014d6f7573652044656c746120590000003f015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630100000000000000014e6577205a20526f746174696f6e0100000000014e6577205a20526f746174696f6e000040c00000004040000100000000015a20526f746174696f6e0ad7233c0001004178697320446f776e53746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e010000000001000001000000000143757272656e7420446f6f72205a0000b44300000020410053746f70204d6f76696e6701000000000143757272656e7420446f6f72205a610bb63b000200000000000000015a2043616c63015475726e2048616e646c65000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -2669,69 +2662,6 @@ MonoBehaviour:
         - realTime
         paramDataPos: 00000000000000000d00000012000000170000001c00000020000000210000002200000023000000010000002400000031000000360000003b000000400000004400000045000000460000004700000048000000530000005b000000
         paramByteDataSize: 000000000d0000000500000005000000050000000400000001000000010000000100000001000000000000000d00000005000000050000000500000004000000010000000100000001000000010000000b0000000800000001000000
-    - name: Closed or Open?
-      description: 
-      colorIndex: 6
-      position:
-        serializedVersion: 2
-        x: 720
-        y: 416
-        width: 128
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: True
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: handle returns
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: False
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Push Open
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.BoolTest
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 3334d172
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 0001446f6f72204f70656e5472756546616c736500
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 11000000170000001700000001000000
-        paramName:
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        paramDataPos: 000000000b0000000f00000014000000
-        paramByteDataSize: 0b000000040000000500000001000000
     - name: Above 180?
       description: 
       colorIndex: 6
@@ -4466,7 +4396,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: .170000002
+        value: .5
       intVariables: []
       boolVariables:
       - useVariable: 1
@@ -4497,7 +4427,7 @@ MonoBehaviour:
       objectVariables: []
       materialVariables: []
       textureVariables: []
-    description: "todo: \nsound\nturn disables mouselook\n"
+    description: "todo: \nsound\n\n"
     docUrl: 
     showStateLabel: 1
     maxLoopCount: 0
@@ -4505,1865 +4435,6 @@ MonoBehaviour:
     version: 0
     ExposedEvents: []
     RestartOnEnable: 1
-    EnableDebugFlow: 0
-    StepFrame: 0
-    activeStateName: 
-  fsmTemplate: {fileID: 0}
---- !u!114 &11412872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1384774831, guid: de72a6d2da64d114d95e3c5a01cfaec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fsm:
-    usedInTemplate: {fileID: 0}
-    name: Door Control
-    startState: Closed
-    states:
-    - name: Closed
-      description: 
-      colorIndex: 7
-      position:
-        serializedVersion: 2
-        x: 196
-        y: 116
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Turn Handle
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: State 1
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Door Open
-      description: "Enable Attached \nCursor Control FSM"
-      colorIndex: 3
-      position:
-        serializedVersion: 2
-        x: 368
-        y: 320
-        width: 140.5
-        height: 64
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Close
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Close Door
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Change Direction
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Change Direction
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Walk Away
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Freeze
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.GetProperty
-        - HutongGames.PlayMaker.Actions.FloatCompare
-        - HutongGames.PlayMaker.Actions.FloatCompare
-        - HutongGames.PlayMaker.Actions.EnableFSM
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000020000000900000010000000
-        actionHashCodes: d23668dc53489ed153489ed1c3addc63
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 462540}
-          TargetTypeName: UnityEngine.Transform
-          PropertyName: localRotation.eulerAngles.y
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 1
-            name: Door Angle
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Single
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 0
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Door Interactivity
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 010000000001446f6f7220416e676c650000b443000000803f00436c6f7365010000000001446f6f7220416e676c6500000000000000803f00436c6f73650101000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 24000000010000000f0000000f0000000f000000170000001700000017000000010000000f0000000f0000000f0000001700000017000000170000000100000014000000120000001100000011000000
-        paramName:
-        - targetProperty
-        - everyFrame
-        - float1
-        - float2
-        - tolerance
-        - equal
-        - lessThan
-        - greaterThan
-        - everyFrame
-        - float1
-        - float2
-        - tolerance
-        - equal
-        - lessThan
-        - greaterThan
-        - everyFrame
-        - gameObject
-        - fsmName
-        - enable
-        - resetOnExit
-        paramDataPos: 00000000000000000100000010000000150000001a0000001f0000001f0000001f000000200000002f00000034000000390000003e0000003e0000003e00000000000000000000003f00000041000000
-        paramByteDataSize: 00000000010000000f0000000500000005000000050000000000000000000000010000000f00000005000000050000000500000000000000000000000100000000000000000000000200000002000000
-    - name: Close Door
-      description: Disable Attached Cursor Control FSM
-      colorIndex: 3
-      position:
-        serializedVersion: 2
-        x: 624
-        y: 112
-        width: 177.5
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Button
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Re-Enable Mouse Cursor
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SetFsmBool
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetAudioClip
-        - HutongGames.PlayMaker.Actions.AudioPlay
-        - HutongGames.PlayMaker.Actions.EnableFSM
-        - HutongGames.PlayMaker.Actions.SetFsmBool
-        - HutongGames.PlayMaker.Actions.GetButton
-        - HutongGames.PlayMaker.Actions.BoolTest
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 010101010101010101
-        actionIsOpen: 010101010101010101
-        actionStartIndex: 000000000500000007000000090000000b0000000f00000013000000180000001b000000
-        actionHashCodes: a51886f0d23668dcd23668dcf129d550ef9258dec3addc63a51886f0a22109873334d172
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 194294}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 155210}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 6574354}
-          TargetTypeName: UnityEngine.BoxCollider
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 1
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 6528588}
-          TargetTypeName: UnityEngine.BoxCollider
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 1
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: FSM
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Door Open
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Door Interactivity
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: FSM
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Door Open
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Fire1
-        fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.AudioClip
-          value: {fileID: 8300000, guid: 3ca37ad37194d3a4c87a29ef9f5d03aa, type: 3}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.Object
-          value: {fileID: 0}
-        fsmVarParams: []
-        byteData: 00000000000000803f00000000000000000001427574746f6e446f776e010001427574746f6e446f776e427574746f6e01
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1400000012000000120000001100000001000000240000000100000024000000010000001400000018000000140000000f000000180000001700000014000000120000001100000011000000140000001200000012000000110000000100000012000000110000000100000011000000170000001700000001000000
-        paramName:
-        - gameObject
-        - fsmName
-        - variableName
-        - setValue
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - gameObject
-        - audioClip
-        - gameObject
-        - volume
-        - oneShotClip
-        - finishedEvent
-        - gameObject
-        - fsmName
-        - enable
-        - resetOnExit
-        - gameObject
-        - fsmName
-        - variableName
-        - setValue
-        - everyFrame
-        - buttonName
-        - storeResult
-        - everyFrame
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        paramDataPos: 00000000000000000100000000000000020000000000000003000000010000000400000001000000000000000200000005000000010000000a00000003000000020000000a0000000c0000000400000003000000040000000e0000001000000005000000110000001d0000001e0000002a0000002a00000030000000
-        paramByteDataSize: 000000000000000000000000020000000100000000000000010000000000000001000000000000000000000000000000050000000000000000000000000000000000000002000000020000000000000000000000000000000200000001000000000000000c000000010000000c000000000000000600000001000000
-    - name: Wait
-      description: 
-      colorIndex: 2
-      position:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Opening Audio
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.PlayRandomSound
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000b0000000d000000
-        actionHashCodes: a5b7c85ad23668dcd23668dc
-        unityObjectParams:
-        - {fileID: 8300000, guid: 04335b326bcdbc24fa51a4ec7ce95ae9, type: 3}
-        - {fileID: 8300000, guid: f7f5bf4aca3fb8144bf380ad918fb362, type: 3}
-        - {fileID: 8300000, guid: 7b87e32d2bcf41344a61070e80d4ae78, type: 3}
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 6574354}
-          TargetTypeName: UnityEngine.BoxCollider
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 6528588}
-          TargetTypeName: UnityEngine.BoxCollider
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 000000000000000000000000010000803f000000803f000000803f000000803f000000
-        arrayParamSizes: 0300000003000000
-        arrayParamTypes:
-        - UnityEngine.AudioClip
-        - HutongGames.PlayMaker.FsmFloat
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 140000001c0000000c0000000500000005000000050000000c0000000f0000000f0000000f0000000f00000024000000010000002400000001000000
-        paramName:
-        - gameObject
-        - position
-        - audioClips
-        - 
-        - 
-        - 
-        - weights
-        - 
-        - 
-        - 
-        - volume
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000000000000000000000000000100000002000000010000000d00000012000000170000001c00000000000000210000000100000022000000
-        paramByteDataSize: 000000000d00000000000000000000000000000000000000000000000500000005000000050000000500000000000000010000000000000001000000
-    - name: State 1
-      description: 
-      colorIndex: 2
-      position:
-        serializedVersion: 2
-        x: 64
-        y: 224
-        width: 104
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Open
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Wait
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: Stop Turning
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Stop Sound
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.AudioPlay
-        - HutongGames.PlayMaker.Actions.SetAudioClip
-        customNames:
-        - 
-        - 
-        actionEnabled: 0100
-        actionIsOpen: 0101
-        actionStartIndex: 0000000004000000
-        actionHashCodes: ef9258def129d550
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        - ownerOption: 0
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams:
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.Object
-          value: {fileID: 0}
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.AudioClip
-          value: {fileID: 0}
-        fsmVarParams: []
-        byteData: 0000803f00
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 140000000f00000018000000170000001400000018000000
-        paramName:
-        - gameObject
-        - volume
-        - oneShotClip
-        - finishedEvent
-        - gameObject
-        - audioClip
-        paramDataPos: 000000000000000000000000050000000100000001000000
-        paramByteDataSize: 000000000500000000000000000000000000000000000000
-    - name: Stop Sound
-      description: 
-      colorIndex: 2
-      position:
-        serializedVersion: 2
-        x: 256
-        y: 224
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Closed
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.AudioStop
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 62b382d9
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 14000000
-        paramName:
-        - gameObject
-        paramDataPos: 00000000
-        paramByteDataSize: 00000000
-    - name: Change Direction
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 656
-        y: 336
-        width: 133
-        height: 16
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions: []
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Re-Enable Mouse Cursor
-      description: 
-      colorIndex: 3
-      position:
-        serializedVersion: 2
-        x: 384
-        y: 112
-        width: 181
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Closed
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetMouseCursor
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 01010101
-        actionIsOpen: 01010101
-        actionStartIndex: 00000000020000000500000007000000
-        actionHashCodes: d23668dc4753a3ffd23668dcd23668dc
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: MouseLook
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 1
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: MouseLook
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 1
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: lock_cursor
-          PropertyName: wantedMode
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: Locked
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.CursorLockMode
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: 
-          value: {fileID: 2800000, guid: 569f144335c4aa64ba879729916c38ca, type: 3}
-        fsmVarParams: []
-        byteData: 00000000000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 240000000100000021000000110000001100000024000000010000002400000001000000
-        paramName:
-        - targetProperty
-        - everyFrame
-        - cursorTexture
-        - hideCursor
-        - lockCursor
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000000000000000000010000000300000001000000050000000200000006000000
-        paramByteDataSize: 000000000100000000000000020000000200000000000000010000000000000001000000
-    - name: Freeze
-      description: 
-      colorIndex: 1
-      position:
-        serializedVersion: 2
-        x: 384
-        y: 480
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Return
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Unfreeze
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Unfreeze
-      description: 
-      colorIndex: 1
-      position:
-        serializedVersion: 2
-        x: 608
-        y: 416
-        width: 100
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Door Open
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    - name: Opening Audio
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 64
-        y: 400
-        width: 116
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: FINISHED
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Door Open
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SetAudioClip
-        - HutongGames.PlayMaker.Actions.AudioPlay
-        - HutongGames.PlayMaker.Actions.Wait
-        customNames:
-        - 
-        - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000006000000
-        actionHashCodes: f129d550ef9258de3708ec1a
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 131116}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.AudioClip
-          value: {fileID: 8300000, guid: 087fb559f5b2822419a72a32e1b69b7b, type: 3}
-        - useVariable: 1
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: UnityEngine.Object
-          value: {fileID: 0}
-        fsmVarParams: []
-        byteData: 0000803f000000003f0046494e495348454400
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 1400000018000000140000000f00000018000000170000000f0000001700000001000000
-        paramName:
-        - gameObject
-        - audioClip
-        - gameObject
-        - volume
-        - oneShotClip
-        - finishedEvent
-        - time
-        - finishEvent
-        - realTime
-        paramDataPos: 000000000000000001000000000000000100000005000000050000000a00000012000000
-        paramByteDataSize: 000000000000000000000000050000000000000000000000050000000800000001000000
-    events:
-    - name: FINISHED
-      isSystemEvent: 1
-      isGlobal: 0
-    - name: Button
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Change Direction
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Close
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: Open
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: Return
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: Stop Turning
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: Turn Handle
-      isSystemEvent: 0
-      isGlobal: 1
-    - name: Walk Away
-      isSystemEvent: 0
-      isGlobal: 1
-    globalTransitions: []
-    variables:
-      floatVariables:
-      - useVariable: 1
-        name: Door Angle
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: Fixed Door Angle
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      intVariables: []
-      boolVariables:
-      - useVariable: 1
-        name: ButtonDown
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
-      stringVariables: []
-      vector2Variables: []
-      vector3Variables: []
-      colorVariables: []
-      rectVariables: []
-      quaternionVariables: []
-      gameObjectVariables: []
-      objectVariables: []
-      materialVariables: []
-      textureVariables: []
-    description: Controls Door Movement and Sounds
-    docUrl: 
-    showStateLabel: 1
-    maxLoopCount: 0
-    watermark: 
-    version: 0
-    ExposedEvents: []
-    RestartOnEnable: 0
     EnableDebugFlow: 0
     StepFrame: 0
     activeStateName: 
@@ -8465,7 +6536,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: .170000002
+        value: .300000012
       intVariables: []
       boolVariables:
       - useVariable: 1
@@ -8541,7 +6612,7 @@ MonoBehaviour:
           name: TRIGGER ENTER
           isSystemEvent: 1
           isGlobal: 0
-        toState: Disengage 2
+        toState: Re-Engage
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -8696,15 +6767,13 @@ MonoBehaviour:
         actionNames:
         - HutongGames.PlayMaker.Actions.SendEvent
         - HutongGames.PlayMaker.Actions.SendEvent
-        - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - 
         - 
-        - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000400000008000000
-        actionHashCodes: eec9d968eec9d968eec9d968
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: eec9d968eec9d968
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -8767,38 +6836,6 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: Door Control
-          sendToChildren:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          fsmComponent: {fileID: 0}
-        - target: 2
-          excludeSelf:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          gameObject:
-            ownerOption: 1
-            gameObject:
-              useVariable: 0
-              name: 
-              tooltip: 
-              showInInspector: 0
-              networkSync: 0
-              value: {fileID: 189082}
-          fsmName:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
             value: Door Interactivity
           sendToChildren:
             useVariable: 0
@@ -8813,12 +6850,12 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 4d6f75736520427574746f6e20557000000000000057616c6b20417761790000000000004d6f75736520427574746f6e205570000000000000
+        byteData: 4d6f75736520427574746f6e2055700000000000004d6f75736520427574746f6e205570000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f000000010000001f000000170000000f000000010000001f000000170000000f00000001000000
+        paramDataType: 1f000000170000000f000000010000001f000000170000000f00000001000000
         paramName:
         - eventTarget
         - sendEvent
@@ -8828,20 +6865,16 @@ MonoBehaviour:
         - sendEvent
         - delay
         - everyFrame
-        - eventTarget
-        - sendEvent
-        - delay
-        - everyFrame
-        paramDataPos: 00000000000000000f0000001400000001000000150000001e0000002300000002000000240000003300000038000000
-        paramByteDataSize: 000000000f000000050000000100000000000000090000000500000001000000000000000f0000000500000001000000
-    - name: Disengage 2
+        paramDataPos: 00000000000000000f0000001400000001000000150000002400000029000000
+        paramByteDataSize: 000000000f0000000500000001000000000000000f0000000500000001000000
+    - name: Re-Engage
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
         x: 224
         y: 160
-        width: 102
+        width: 100
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -8856,71 +6889,33 @@ MonoBehaviour:
         linkConstraint: 0
         colorIndex: 0
       actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.SendEvent
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: eec9d968
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
-        fsmEventTargetParams:
-        - target: 2
-          excludeSelf:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          gameObject:
-            ownerOption: 1
-            gameObject:
-              useVariable: 0
-              name: 
-              tooltip: 
-              showInInspector: 0
-              networkSync: 0
-              value: {fileID: 189082}
-          fsmName:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: Door Control
-          sendToChildren:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          fsmComponent: {fileID: 0}
+        fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 52657475726e000000000000
+        byteData: 
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1f000000170000000f00000001000000
-        paramName:
-        - eventTarget
-        - sendEvent
-        - delay
-        - everyFrame
-        paramDataPos: 0000000000000000060000000b000000
-        paramByteDataSize: 00000000060000000500000001000000
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -8964,7 +6959,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189082}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: de72a6d2da64d114d95e3c5a01cfaec5, type: 3}
   m_Name: 
@@ -8972,15 +6967,15 @@ MonoBehaviour:
   fsm:
     usedInTemplate: {fileID: 0}
     name: Door Interactivity
-    startState: Waiting
+    startState: Waiting for Handle
     states:
     - name: Waiting
       description: cant just 'mouse' into it.
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 304
-        y: 112
+        x: 192
+        y: 208
         width: 144
         height: 32
       isBreakpoint: 0
@@ -9154,15 +7149,15 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000000000000000000010000000e0000000f0000001c0000002100000021000000
         paramByteDataSize: 0000000001000000000000000d000000010000000d000000050000000000000001000000
-    - name: Change Cursor - Wait for Click
+    - name: Hovered - Change Cursor - Wait for Click
       description: reveal cursor
-      colorIndex: 2
+      colorIndex: 7
       position:
         serializedVersion: 2
-        x: 304
-        y: 272
-        width: 221
-        height: 64
+        x: 64
+        y: 384
+        width: 291
+        height: 48
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
@@ -9179,15 +7174,7 @@ MonoBehaviour:
           name: MOUSE EXIT
           isSystemEvent: 1
           isGlobal: 0
-        toState: Clear Cursor
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: TRIGGER ENTER
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: State 1
+        toState: Starting Cursor
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -9248,455 +7235,13 @@ MonoBehaviour:
         - lockCursor
         paramDataPos: 00000000000000000d0000000e0000001b0000001f0000001f000000000000002000000022000000
         paramByteDataSize: 000000000d000000010000000d000000040000000000000001000000000000000200000002000000
-    - name: Clicked, Moving
-      description: 
-      colorIndex: 2
-      position:
-        serializedVersion: 2
-        x: 64
-        y: 480
-        width: 131
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: Mouse Button Up
-          isSystemEvent: 0
-          isGlobal: 1
-        toState: Re-Enable Camera
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.AxisEvent
-        - HutongGames.PlayMaker.Actions.GetButton
-        - HutongGames.PlayMaker.Actions.BoolTest
-        - HutongGames.PlayMaker.Actions.SetMouseCursor
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.SetProperty
-        customNames:
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        - 
-        actionEnabled: 00010101010101
-        actionIsOpen: 01010101010101
-        actionStartIndex: 00000000080000000b0000000f000000120000001400000016000000
-        actionHashCodes: 84242bb3a22109873334d1724753a3ffd23668dcd23668dcd23668dc
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams:
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: MouseLook
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: MouseLook
-          PropertyName: enabled
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: System.Boolean
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        - TargetObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.Object
-            value: {fileID: 0}
-          TargetTypeName: lock_cursor
-          PropertyName: wantedMode
-          BoolParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          FloatParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          IntParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: 0
-          GameObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 0}
-          StringParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: None
-          Vector2Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0}
-          Vector3Parameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0}
-          RectParamater:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value:
-              serializedVersion: 2
-              x: 0
-              y: 0
-              width: 0
-              height: 0
-          QuaternionParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {x: 0, y: 0, z: 0, w: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: UnityEngine.CursorLockMode
-            value: {fileID: 0}
-          MaterialParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          TextureParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
-            value: {fileID: 0}
-          ColorParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {r: 0, g: 0, b: 0, a: 1}
-          setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Mouse X
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Mouse Y
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Fire1
-        fsmObjectParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          typeName: 
-          value: {fileID: 0}
-        fsmVarParams: []
-        byteData: 417869732055704178697320446f776e0001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700100000000000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000210000001100000011000000240000000100000024000000010000002400000001000000
-        paramName:
-        - horizontalAxis
-        - verticalAxis
-        - leftEvent
-        - rightEvent
-        - upEvent
-        - downEvent
-        - anyDirection
-        - noDirection
-        - buttonName
-        - storeResult
-        - everyFrame
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        - cursorTexture
-        - hideCursor
-        - lockCursor
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000100000000000000000000000000000007000000100000001000000002000000100000001d0000001e0000002b0000002b0000003a000000000000003b0000003d000000000000003f00000001000000400000000200000041000000
-        paramByteDataSize: 0000000000000000000000000000000007000000090000000000000000000000000000000d000000010000000d000000000000000f00000001000000000000000200000002000000000000000100000000000000010000000000000001000000
     - name: Button Already Down?
       description: 
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 304
-        y: 192
+        x: 176
+        y: 288
         width: 167
         height: 48
       isBreakpoint: 0
@@ -9715,7 +7260,7 @@ MonoBehaviour:
           name: False
           isSystemEvent: 0
           isGlobal: 0
-        toState: Change Cursor - Wait for Click
+        toState: Hovered - Change Cursor - Wait for Click
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -9764,14 +7309,14 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000000000000d0000000e0000001b0000001f00000024000000
         paramByteDataSize: 000000000d000000010000000d000000040000000500000001000000
-    - name: Clear Cursor
+    - name: Starting Cursor
       description: 
       colorIndex: 2
       position:
         serializedVersion: 2
-        x: 544
-        y: 112
-        width: 103
+        x: 176
+        y: 768
+        width: 121
         height: 32
       isBreakpoint: 0
       isSequence: 0
@@ -9827,11 +7372,11 @@ MonoBehaviour:
         paramByteDataSize: 000000000200000002000000
     - name: Re-Enable Camera
       description: 
-      colorIndex: 1
+      colorIndex: 2
       position:
         serializedVersion: 2
-        x: 304
-        y: 496
+        x: 176
+        y: 608
         width: 142
         height: 32
       isBreakpoint: 0
@@ -9842,7 +7387,7 @@ MonoBehaviour:
           name: FINISHED
           isSystemEvent: 1
           isGlobal: 0
-        toState: Clear Cursor
+        toState: Mouse Over Test
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -9851,14 +7396,18 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 000000000200000004000000
-        actionHashCodes: d23668dcd23668dcd23668dc
+        - 
+        - 
+        actionEnabled: 0101010000
+        actionIsOpen: 0101010101
+        actionStartIndex: 0000000002000000040000000600000008000000
+        actionHashCodes: d23668dcd23668dcd23668dcd23668dcd23668dc
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -10197,100 +7746,256 @@ MonoBehaviour:
             networkSync: 0
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 000000
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 240000000100000024000000010000002400000001000000
-        paramName:
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        paramDataPos: 000000000000000001000000010000000200000002000000
-        paramByteDataSize: 000000000100000000000000010000000000000001000000
-    - name: State 1
-      description: 
-      colorIndex: 0
-      position:
-        serializedVersion: 2
-        x: 96
-        y: 272
-        width: 133
-        height: 32
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: COLLISION EXIT
-          isSystemEvent: 1
-          isGlobal: 0
-        toState: Change Cursor - Wait for Click
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.AddForce
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: e319600b
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams:
-        - ownerOption: 0
-          gameObject:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: sensitivityX
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 5
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: sensitivityY
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 5
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 0000000000000000000000000100000000000000000000000001000000000100000000010000f04100000000000000000000
+        byteData: 0000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 140000001c0000001c0000000f0000000f0000000f000000070000000700000001000000
+        paramDataType: 24000000010000002400000001000000240000000100000024000000010000002400000001000000
         paramName:
-        - gameObject
-        - atPosition
-        - vector
-        - x
-        - y
-        - z
-        - space
-        - forceMode
+        - targetProperty
         - everyFrame
-        paramDataPos: 00000000000000000d0000001a0000001f00000024000000290000002d00000031000000
-        paramByteDataSize: 000000000d0000000d000000050000000500000005000000040000000400000001000000
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        paramDataPos: 00000000000000000100000001000000020000000200000003000000030000000400000004000000
+        paramByteDataSize: 00000000010000000000000001000000000000000100000000000000010000000000000001000000
     - name: Clicked but not Moving Yet
       description: 
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 304
-        y: 384
+        x: 160
+        y: 480
         width: 196
         height: 64
       isBreakpoint: 0
@@ -10393,8 +8098,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 640
-        y: 272
+        x: 528
+        y: 384
         width: 131
         height: 64
       isBreakpoint: 0
@@ -10405,7 +8110,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 1
-        toState: 
+        toState: Re-Enable Camera
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -10427,24 +8132,19 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.GetProperty
+        - HutongGames.PlayMaker.Actions.FloatOperator
+        - HutongGames.PlayMaker.Actions.FloatOperator
+        - HutongGames.PlayMaker.Actions.FloatClamp
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetMouseCursor
-        - HutongGames.PlayMaker.Actions.FloatOperator
-        - HutongGames.PlayMaker.Actions.FloatOperator
-        - HutongGames.PlayMaker.Actions.FloatClamp
-        - HutongGames.PlayMaker.Actions.FloatAdd
+        - HutongGames.PlayMaker.Actions.SetRotation
         - HutongGames.PlayMaker.Actions.AxisEvent
         - HutongGames.PlayMaker.Actions.GetButton
         - HutongGames.PlayMaker.Actions.BoolTest
-        - HutongGames.PlayMaker.Actions.Rotate
-        - HutongGames.PlayMaker.Actions.FloatCompare
-        - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
-        - 
-        - 
-        - 
         - 
         - Torque of Speed
         - 
@@ -10456,58 +8156,137 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 0101010101010100010101010101
-        actionIsOpen: 0101010101010100010101010101
-        actionStartIndex: 00000000020000000400000006000000090000000e00000013000000170000001b00000023000000260000002a000000340000003b000000
-        actionHashCodes: d23668dcd23668dcd23668dc4753a3ffe0750840e075084001546a3822e8952284242bb3a22109873334d1721d4debbb53489ed1eec9d968
+        - 
+        actionEnabled: 010101010101000101010101
+        actionIsOpen: 010101010101010101010101
+        actionStartIndex: 0000000002000000070000000c0000001000000012000000140000001600000019000000220000002a0000002d000000
+        actionHashCodes: d23668dce0750840e075084001546a38d23668dcd23668dcd23668dc4753a3ff5d0b71a484242bb3a22109873334d172
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
-        - ownerOption: 1
+        - ownerOption: 0
           gameObject:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 189082}
+            value: {fileID: 0}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
-        fsmEventTargetParams:
-        - target: 1
-          excludeSelf:
+        fsmEventTargetParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 462540}
+          TargetTypeName: UnityEngine.Transform
+          PropertyName: localRotation.eulerAngles.y
+          BoolParameter:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
             value: 0
-          gameObject:
-            ownerOption: 1
-            gameObject:
-              useVariable: 0
-              name: 
-              tooltip: 
-              showInInspector: 0
-              networkSync: 0
-              value: {fileID: 189082}
-          fsmName:
+          FloatParameter:
+            useVariable: 1
+            name: Previous Door Y
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 330
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
             value: 
-          sendToChildren:
+          Vector2Parameter:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 0
-          fsmComponent: {fileID: 0}
-        fsmPropertyParams:
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 0
         - TargetObject:
             useVariable: 0
             name: 
@@ -10867,22 +8646,15 @@ MonoBehaviour:
           typeName: 
           value: {fileID: 0}
         fsmVarParams: []
-        byteData: 0000000000000000000000014d6f7573652044656c746120597b142e3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630100000000000000014e6577205a20526f746174696f6e0100000000014e6577205a20526f746174696f6e000040c00000004040000100000000015a20526f746174696f6e0ad7233c0001004178697320446f776e53746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000143757272656e7420446f6f72205a0000b44300000020410053746f70204d6f76696e67015475726e2048616e646c65000000000000
+        byteData: 0100000000014d6f7573652044656c74612059295c8f3d015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c63010000a5430150726576696f757320446f6f72205900000000015a2053706565642043616c63010000000000a5430143757272656e7420446f6f722059010000a5430143757272656e7420446f6f72205900006643000080b34300010000000000000000000000000000000000000000000000010000000000000000000000000100000000010000a5430143757272656e7420446f6f72205900000000010100000001004178697320446f776e53746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000240000000100000024000000010000002100000011000000110000000f0000000f000000070000000f000000010000000f0000000f000000070000000f000000010000000f0000000f0000000f000000010000000f0000000f0000000100000001000000120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000001000000010000000f0000000f0000000f000000170000001700000017000000010000001f000000170000000f00000001000000
+        paramDataType: 24000000010000000f0000000f000000070000000f000000010000000f0000000f000000070000000f000000010000000f0000000f0000000f0000000100000024000000010000002400000001000000240000000100000021000000110000001100000014000000230000001c0000000f0000000f0000000f000000070000000100000001000000120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000
         paramName:
         - targetProperty
         - everyFrame
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
-        - cursorTexture
-        - hideCursor
-        - lockCursor
         - float1
         - float2
         - operation
@@ -10897,10 +8669,24 @@ MonoBehaviour:
         - minValue
         - maxValue
         - everyFrame
-        - floatVariable
-        - add
+        - targetProperty
         - everyFrame
-        - perSecond
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - cursorTexture
+        - hideCursor
+        - lockCursor
+        - gameObject
+        - quaternion
+        - vector
+        - xAngle
+        - yAngle
+        - zAngle
+        - space
+        - everyFrame
+        - lateUpdate
         - horizontalAxis
         - verticalAxis
         - leftEvent
@@ -10916,36 +8702,15 @@ MonoBehaviour:
         - isTrue
         - isFalse
         - everyFrame
-        - gameObject
-        - vector
-        - xAngle
-        - yAngle
-        - zAngle
-        - space
-        - perSecond
-        - everyFrame
-        - lateUpdate
-        - fixedUpdate
-        - float1
-        - float2
-        - tolerance
-        - equal
-        - lessThan
-        - greaterThan
-        - everyFrame
-        - eventTarget
-        - sendEvent
-        - delay
-        - everyFrame
-        paramDataPos: 00000000000000000100000001000000020000000200000000000000030000000500000007000000190000002e0000003200000043000000440000005300000064000000680000007b0000007c0000008f00000094000000990000009a000000a9000000ae000000af0000000000000001000000b0000000b0000000b0000000b0000000b9000000b900000002000000c4000000d1000000d2000000df000000df000000ee00000000000000ef000000fc0000000101000006010000190100001d0100001e0100001f010000200100002101000034010000390100003e010000490100004901000049010000000000004a010000550100005a010000
-        paramByteDataSize: 00000000010000000000000001000000000000000100000000000000020000000200000012000000150000000400000011000000010000000f00000011000000040000001300000001000000130000000500000005000000010000000f000000050000000100000001000000000000000000000000000000000000000000000009000000000000000b000000000000000d000000010000000d000000000000000f00000001000000000000000d00000005000000050000001300000004000000010000000100000001000000010000001300000005000000050000000b000000000000000000000001000000000000000b0000000500000001000000
+        paramDataPos: 00000000000000000100000013000000280000002c0000003d0000003e0000005200000063000000670000007a0000007b0000008e00000093000000980000000100000099000000020000009a000000030000009b000000000000009c0000009e00000000000000a0000000b1000000be000000c3000000d6000000db000000df000000e00000000000000001000000e1000000e1000000e1000000e1000000ea000000ea00000002000000f5000000020100000301000010010000100100001f010000
+        paramByteDataSize: 0000000001000000120000001500000004000000110000000100000014000000110000000400000013000000010000001300000005000000050000000100000000000000010000000000000001000000000000000100000000000000020000000200000000000000110000000d000000050000001300000005000000040000000100000001000000000000000000000000000000000000000000000009000000000000000b000000000000000d000000010000000d000000000000000f00000001000000
     - name: Unlocked Axis DOWN
       description: Door Is Unlocked
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 640
-        y: 384
+        x: 528
+        y: 512
         width: 162
         height: 80
       isBreakpoint: 0
@@ -10956,7 +8721,7 @@ MonoBehaviour:
           name: Mouse Button Up
           isSystemEvent: 0
           isGlobal: 1
-        toState: 
+        toState: Re-Enable Camera
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -10972,7 +8737,7 @@ MonoBehaviour:
           name: next
           isSystemEvent: 0
           isGlobal: 0
-        toState: 
+        toState: Closed
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -10986,21 +8751,21 @@ MonoBehaviour:
         colorIndex: 0
       actionData:
         actionNames:
+        - HutongGames.PlayMaker.Actions.GetProperty
         - HutongGames.PlayMaker.Actions.FloatOperator
         - HutongGames.PlayMaker.Actions.FloatOperator
-        - HutongGames.PlayMaker.Actions.FloatAdd
+        - HutongGames.PlayMaker.Actions.FloatClamp
+        - HutongGames.PlayMaker.Actions.FloatCompare
         - HutongGames.PlayMaker.Actions.AxisEvent
         - HutongGames.PlayMaker.Actions.GetButton
         - HutongGames.PlayMaker.Actions.BoolTest
-        - HutongGames.PlayMaker.Actions.Rotate
-        - HutongGames.PlayMaker.Actions.Rotate
-        - HutongGames.PlayMaker.Actions.FloatClamp
-        - HutongGames.PlayMaker.Actions.SendMessage
+        - HutongGames.PlayMaker.Actions.SetRotation
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetMouseCursor
         customNames:
+        - 
         - Torque of Speed
         - 
         - 
@@ -11013,43 +8778,36 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
-        - 
-        actionEnabled: 0101000101010101000101010101
-        actionIsOpen: 0101000101010101010100000000
-        actionStartIndex: 00000000050000000a0000000e00000016000000190000001d000000270000003100000035000000390000003b0000003d0000003f000000
-        actionHashCodes: e0750840e075084022e8952284242bb3a22109873334d1721d4debbb1d4debbb01546a386e5036b6d23668dcd23668dcd23668dc4753a3ff
+        actionEnabled: 01010101010101010101010001
+        actionIsOpen: 01010101010101010101010101
+        actionStartIndex: 0000000002000000070000000c00000010000000170000001f00000022000000260000002f000000310000003300000035000000
+        actionHashCodes: d23668dce0750840e075084001546a3853489ed184242bb3a22109873334d1725d0b71a4d23668dcd23668dcd23668dc4753a3ff
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams:
-        - ownerOption: 1
+        - ownerOption: 0
           gameObject:
             useVariable: 0
             name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 131116}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 167608}
-        - ownerOption: 1
-          gameObject:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            value: {fileID: 197978}
+            value: {fileID: 0}
         animationCurveParams: []
-        functionCallParams:
-        - FunctionName: 
-          parameterType: None
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 462540}
+          TargetTypeName: UnityEngine.Transform
+          PropertyName: localRotation.eulerAngles.y
           BoolParameter:
             useVariable: 0
             name: 
@@ -11058,12 +8816,12 @@ MonoBehaviour:
             networkSync: 0
             value: 0
           FloatParameter:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Previous Door Y
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 0
+            value: 330
           IntParameter:
             useVariable: 0
             name: 
@@ -11077,14 +8835,6 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: {fileID: 0}
-          ObjectParameter:
-            useVariable: 0
-            name: 
-            tooltip: 
-            showInInspector: 0
-            networkSync: 0
-            typeName: 
             value: {fileID: 0}
           StringParameter:
             useVariable: 0
@@ -11126,6 +8876,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
             name: 
@@ -11149,6 +8907,472 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 0
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: lock_cursor
+          PropertyName: wantedMode
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: None
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.CursorLockMode
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Mouse X
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Mouse Y
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
+        fsmObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          typeName: 
+          value: {fileID: 0}
+        fsmVarParams: []
+        byteData: 0100000000014d6f7573652044656c74612059295c8f3d015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c63010000a5430150726576696f757320446f6f72205900000000015a2053706565642043616c63000000000000a5430143757272656e7420446f6f722059010000a5430143757272656e7420446f6f72205900006643000080b34300010000a5430143757272656e7420446f6f7220590080b3430000000000006e6578746e657874014178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700100000000000000000000000000000000010000000000000000000000000100000000010000a5430143757272656e7420446f6f722059000000000101000000010000000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 24000000010000000f0000000f000000070000000f000000010000000f0000000f000000070000000f000000010000000f0000000f0000000f000000010000000f0000000f0000000f0000001700000017000000170000000100000012000000120000001700000017000000170000001700000017000000170000001200000011000000010000001100000017000000170000000100000014000000230000001c0000000f0000000f0000000f000000070000000100000001000000240000000100000024000000010000002400000001000000210000001100000011000000
+        paramName:
+        - targetProperty
+        - everyFrame
+        - float1
+        - float2
+        - operation
+        - storeResult
+        - everyFrame
+        - float1
+        - float2
+        - operation
+        - storeResult
+        - everyFrame
+        - floatVariable
+        - minValue
+        - maxValue
+        - everyFrame
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        - horizontalAxis
+        - verticalAxis
+        - leftEvent
+        - rightEvent
+        - upEvent
+        - downEvent
+        - anyDirection
+        - noDirection
+        - buttonName
+        - storeResult
+        - everyFrame
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        - gameObject
+        - quaternion
+        - vector
+        - xAngle
+        - yAngle
+        - zAngle
+        - space
+        - everyFrame
+        - lateUpdate
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - cursorTexture
+        - hideCursor
+        - lockCursor
+        paramDataPos: 00000000000000000100000013000000280000002c0000003d0000003e0000005200000063000000670000007a0000007b0000008e000000930000009800000099000000ac000000b1000000b6000000ba000000ba000000be0000000000000001000000bf000000bf000000bf000000c6000000c6000000c600000002000000d1000000de000000df000000ec000000ec000000fb00000000000000fc0000000d0100001a0100001f01000032010000370100003b0100003c010000010000003d010000020000003e010000030000003f010000000000004001000042010000
+        paramByteDataSize: 0000000001000000120000001500000004000000110000000100000014000000110000000400000013000000010000001300000005000000050000000100000013000000050000000500000004000000000000000400000001000000000000000000000000000000000000000700000000000000000000000b000000000000000d000000010000000d000000000000000f0000000100000000000000110000000d000000050000001300000005000000040000000100000001000000000000000100000000000000010000000000000001000000000000000200000002000000
+    - name: reenable camera
+      description: 
+      colorIndex: 2
+      position:
+        serializedVersion: 2
+        x: 528
+        y: 208
+        width: 131
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Waiting for Handle
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010000
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000020000000400000006000000
+        actionHashCodes: d23668dcd23668dcd23668dcd23668dc
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams:
@@ -11168,7 +9392,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 0
+            value: 1
           FloatParameter:
             useVariable: 0
             name: 
@@ -11278,7 +9502,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: 0
+            value: 1
           FloatParameter:
             useVariable: 0
             name: 
@@ -11380,6 +9604,359 @@ MonoBehaviour:
             networkSync: 0
             typeName: UnityEngine.Object
             value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: sensitivityX
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 5
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
+          TargetTypeName: MouseLook
+          PropertyName: sensitivityY
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 5
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 2400000001000000240000000100000024000000010000002400000001000000
+        paramName:
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        paramDataPos: 0000000000000000010000000100000002000000020000000300000003000000
+        paramByteDataSize: 0000000001000000000000000100000000000000010000000000000001000000
+    - name: Mouse Over Test
+      description: 
+      colorIndex: 2
+      position:
+        serializedVersion: 2
+        x: 176
+        y: 688
+        width: 131
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: MOUSE OVER
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Waiting
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Starting Cursor
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3708ec1a
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: cdcc4c3d0046494e495348454400
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000001700000001000000
+        paramName:
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000050000000d000000
+        paramByteDataSize: 050000000800000001000000
+    - name: Closed
+      description: 
+      colorIndex: 2
+      position:
+        serializedVersion: 2
+        x: 752
+        y: 208
+        width: 131
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Mouse Button Up
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: reenable camera
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetButton
+        - HutongGames.PlayMaker.Actions.BoolTest
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetMouseCursor
+        - HutongGames.PlayMaker.Actions.SetFloatValue
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 01010101010101
+        actionStartIndex: 000000000300000007000000090000000c0000000f00000011000000
+        actionHashCodes: a22109873334d172d23668dc4753a3ff79fc1dedd23668dcd23668dc
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 0}
           TargetTypeName: lock_cursor
           PropertyName: wantedMode
           BoolParameter:
@@ -11416,7 +9993,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: None
+            value: Locked
           Vector2Parameter:
             useVariable: 0
             name: 
@@ -11482,20 +10059,228 @@ MonoBehaviour:
             networkSync: 0
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 6574354}
+          TargetTypeName: UnityEngine.BoxCollider
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 1
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 6528588}
+          TargetTypeName: UnityEngine.BoxCollider
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 1
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Mouse X
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Mouse Y
         - useVariable: 0
           name: 
           tooltip: 
@@ -11509,37 +10294,15 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           typeName: 
-          value: {fileID: 0}
+          value: {fileID: 2800000, guid: 569f144335c4aa64ba879729916c38ca, type: 3}
         fsmVarParams: []
-        byteData: 00000000014d6f7573652044656c746120597b142e3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a20526f746174696f6e00000000015a2053706565642043616c630000000000000000014e6577205a20526f746174696f6e0100000000015a20526f746174696f6e0ad7233c0001004178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000000000000000000010000000001000000000100000000014e6577205a20526f746174696f6e0100000000010000000000000143757272656e7420446f6f72205a0000000000000074420001000000000100000000000000000000
+        byteData: 0001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700100000000000000a5430143757272656e7420446f6f7220590080b34300000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 0f0000000f000000070000000f000000010000000f0000000f000000070000000f000000010000000f0000000f0000000100000001000000120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000001000000010000000f0000000f0000000f0000000100000014000000070000000700000015000000240000000100000024000000010000002400000001000000210000001100000011000000
+        paramDataType: 1200000011000000010000001100000017000000170000000100000024000000010000002100000011000000110000000f0000000f0000000100000024000000010000002400000001000000
         paramName:
-        - float1
-        - float2
-        - operation
-        - storeResult
-        - everyFrame
-        - float1
-        - float2
-        - operation
-        - storeResult
-        - everyFrame
-        - floatVariable
-        - add
-        - everyFrame
-        - perSecond
-        - horizontalAxis
-        - verticalAxis
-        - leftEvent
-        - rightEvent
-        - upEvent
-        - downEvent
-        - anyDirection
-        - noDirection
         - buttonName
         - storeResult
         - everyFrame
@@ -11547,45 +10310,491 @@ MonoBehaviour:
         - isTrue
         - isFalse
         - everyFrame
-        - gameObject
-        - vector
-        - xAngle
-        - yAngle
-        - zAngle
-        - space
-        - perSecond
-        - everyFrame
-        - lateUpdate
-        - fixedUpdate
-        - gameObject
-        - vector
-        - xAngle
-        - yAngle
-        - zAngle
-        - space
-        - perSecond
-        - everyFrame
-        - lateUpdate
-        - fixedUpdate
-        - floatVariable
-        - minValue
-        - maxValue
-        - everyFrame
-        - gameObject
-        - delivery
-        - options
-        - functionCall
-        - targetProperty
-        - everyFrame
-        - targetProperty
-        - everyFrame
         - targetProperty
         - everyFrame
         - cursorTexture
         - hideCursor
         - lockCursor
-        paramDataPos: 0000000012000000270000002b0000003c0000003d0000004c0000005d00000061000000740000007500000084000000890000008a00000000000000010000008b0000008b0000008b000000920000009200000092000000020000009d000000aa000000ab000000b8000000b8000000c700000000000000c8000000d5000000da000000df000000f2000000f6000000f7000000f8000000f900000001000000fa000000070100000c010000110100002401000028010000290100002a0100002b0100002c0100003f0100004401000049010000020000004a0100004e01000000000000000000005201000001000000530100000200000054010000000000005501000057010000
-        paramByteDataSize: 12000000150000000400000011000000010000000f000000110000000400000013000000010000000f000000050000000100000001000000000000000000000000000000000000000700000000000000000000000b000000000000000d000000010000000d000000000000000f00000001000000000000000d0000000500000005000000130000000400000001000000010000000100000001000000000000000d00000005000000050000001300000004000000010000000100000001000000010000001300000005000000050000000100000000000000040000000400000000000000000000000100000000000000010000000000000001000000000000000200000002000000
+        - floatVariable
+        - floatValue
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        paramDataPos: 00000000000000000d0000000e0000001b0000001b0000002a000000000000002b000000000000002c0000002e0000003000000043000000480000000100000049000000020000004a000000
+        paramByteDataSize: 000000000d000000010000000d000000000000000f00000001000000000000000100000000000000020000000200000013000000050000000100000000000000010000000000000001000000
+    - name: Waiting for Handle
+      description: 
+      colorIndex: 4
+      position:
+        serializedVersion: 2
+        x: 528
+        y: 112
+        width: 144
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Open
+          isSystemEvent: 0
+          isGlobal: 1
+        toState: Ease Open
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetProperty
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: d23668dc
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 462540}
+          TargetTypeName: UnityEngine.Transform
+          PropertyName: localRotation.eulerAngles.y
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 1
+            name: Previous Door Y
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 330
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 0
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 2400000001000000
+        paramName:
+        - targetProperty
+        - everyFrame
+        paramDataPos: 0000000000000000
+        paramByteDataSize: 0000000001000000
+    - name: Ease Open
+      description: 
+      colorIndex: 4
+      position:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Waiting
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetRotation
+        - HutongGames.PlayMaker.Actions.EaseFloat
+        - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
+        customNames:
+        - 
+        - 
+        - 
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000090000001300000015000000
+        actionHashCodes: 5d0b71a4b5f4916bd23668dcd23668dc
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 0
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams:
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 6574354}
+          TargetTypeName: UnityEngine.BoxCollider
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        - TargetObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: UnityEngine.Object
+            value: {fileID: 6528588}
+          TargetTypeName: UnityEngine.BoxCollider
+          PropertyName: enabled
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Boolean
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00000000000000000000000000000000010000000000000000000000000100000000010000a5430150726576696f757320446f6f72205900000000010100000001000000a5430150726576696f757320446f6f72205900008c43000000a5430150726576696f757320446f6f72205900004040000000000001000000000115000000000046494e4953484544000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000230000001c0000000f0000000f0000000f0000000700000001000000010000000f0000000f0000000f0000000f0000000f0000000f0000000700000011000000170000000100000024000000010000002400000001000000
+        paramName:
+        - gameObject
+        - quaternion
+        - vector
+        - xAngle
+        - yAngle
+        - zAngle
+        - space
+        - everyFrame
+        - lateUpdate
+        - fromValue
+        - toValue
+        - floatVariable
+        - time
+        - speed
+        - delay
+        - easeType
+        - reverse
+        - finishEvent
+        - realTime
+        - targetProperty
+        - everyFrame
+        - targetProperty
+        - everyFrame
+        paramDataPos: 0000000000000000110000001e00000023000000370000003c000000400000004100000042000000560000005b0000006f00000074000000790000007e00000082000000840000008c000000000000008d000000010000008e000000
+        paramByteDataSize: 00000000110000000d0000000500000014000000050000000400000001000000010000001400000005000000140000000500000005000000050000000400000002000000080000000100000000000000010000000000000001000000
     events:
     - name: COLLISION ENTER
       isSystemEvent: 1
@@ -11620,24 +10829,27 @@ MonoBehaviour:
     - name: Mouse Button Up
       isSystemEvent: 0
       isGlobal: 1
+    - name: Open
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Stop Moving
+      isSystemEvent: 0
+      isGlobal: 0
     - name: True
       isSystemEvent: 0
       isGlobal: 0
     - name: next
       isSystemEvent: 0
       isGlobal: 0
-    - name: Stop Moving
-      isSystemEvent: 0
-      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables:
       - useVariable: 1
-        name: Current Door Z
+        name: Current Door Y
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 0
+        value: 330
       - useVariable: 1
         name: New Z Rotation
         tooltip: 
@@ -11645,17 +10857,11 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
-        name: Z Calc
+        name: Previous Door Y
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 0
-      - useVariable: 1
-        name: Z Rotation
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+        value: 330
       - useVariable: 1
         name: Z Speed Calc
         tooltip: 
@@ -11665,9 +10871,9 @@ MonoBehaviour:
       - useVariable: 1
         name: Z Speed Modifier
         tooltip: 
-        showInInspector: 0
+        showInInspector: 1
         networkSync: 0
-        value: .170000002
+        value: .5
       intVariables: []
       boolVariables:
       - useVariable: 1
