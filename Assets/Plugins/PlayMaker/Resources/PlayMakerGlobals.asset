@@ -14,6 +14,12 @@ MonoBehaviour:
   variables:
     floatVariables:
     - useVariable: 1
+      name: Door Open Time
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 2.5
+    - useVariable: 1
       name: Mouse Delta X
       tooltip: 
       showInInspector: 0
