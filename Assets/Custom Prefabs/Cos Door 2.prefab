@@ -50,23 +50,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &150058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 481112}
-  - 33: {fileID: 3302290}
-  - 23: {fileID: 2332376}
-  m_Layer: 0
-  m_Name: Jamb
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &155210
 GameObject:
   m_ObjectHideFlags: 1
@@ -268,18 +251,6 @@ Transform:
   - {fileID: 418562}
   m_Father: {fileID: 497412}
   m_RootOrder: 1
---- !u!4 &481112
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150058}
-  m_LocalRotation: {x: 5.96046519e-08, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: .00700000022, y: -.00700000022, z: .0713337585}
-  m_LocalScale: {x: .00109315931, y: .000994219212, z: .00100000005}
-  m_Children: []
-  m_Father: {fileID: 497412}
-  m_RootOrder: 2
 --- !u!4 &486014
 Transform:
   m_ObjectHideFlags: 1
@@ -328,7 +299,6 @@ Transform:
   m_Children:
   - {fileID: 416148}
   - {fileID: 462540}
-  - {fileID: 481112}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2308810
@@ -403,30 +373,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!23 &2332376
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150058}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 1cd7242618427004bb855378e563bde0, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2363574
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -475,13 +421,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3302290
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150058}
-  m_Mesh: {fileID: 4300000, guid: 4c7e4323bd49a014a96017ff2857ed74, type: 2}
 --- !u!33 &3314778
 MeshFilter:
   m_ObjectHideFlags: 1
