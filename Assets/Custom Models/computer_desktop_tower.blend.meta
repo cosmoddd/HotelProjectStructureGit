@@ -9,19 +9,29 @@ ModelImporter:
     100002: //RootNode
     100004: Main_Desktop_Box
     100006: Power_Button
+    100008: power_symbol
+    100010: Power_Button_001
     400000: Bower_Cord
     400002: //RootNode
     400004: Main_Desktop_Box
     400006: Power_Button
+    400008: power_symbol
+    400010: Power_Button_001
     2300000: Bower_Cord
     2300002: Main_Desktop_Box
     2300004: Power_Button
+    2300006: power_symbol
+    2300008: Power_Button_001
     3300000: Bower_Cord
     3300002: Main_Desktop_Box
     3300004: Power_Button
+    3300006: power_symbol
+    3300008: Power_Button_001
     4300000: Bower_Cord
     4300002: Power_Button
     4300004: Main_Desktop_Box
+    4300006: power_symbol
+    4300008: Power_Button_001
     7400000: Default Take
     9500000: //RootNode
   materials:
