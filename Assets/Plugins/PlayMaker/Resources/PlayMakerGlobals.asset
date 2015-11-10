@@ -58,3 +58,7 @@ MonoBehaviour:
   - Walk Away
   - Return
   - Plug Pulled
+  - Plug Put Back
+  - Desktop Plug Pulled
+  - Desktop Plug Plugged
+  - Wifi Plugged
