@@ -50,6 +50,8 @@ ModelImporter:
     100084: //RootNode
     100086: Router_Legs
     100088: Sphere
+    100090: Eyeball
+    100092: Eyeball_Control
     400000: Antennae
     400002: Cube
     400004: Cube_001
@@ -95,6 +97,8 @@ ModelImporter:
     400084: //RootNode
     400086: Router_Legs
     400088: Sphere
+    400090: Eyeball
+    400092: Eyeball_Control
     2300000: Antennae
     2300002: Cube
     2300004: Cube_001
@@ -139,6 +143,7 @@ ModelImporter:
     2300082: Light_Sphere_3
     2300084: Router_Legs
     2300086: Sphere
+    2300088: Eyeball
     3300000: Antennae
     3300002: Cube
     3300004: Cube_001
@@ -183,6 +188,7 @@ ModelImporter:
     3300082: Light_Sphere_3
     3300084: Router_Legs
     3300086: Sphere
+    3300088: Eyeball
     4300000: Cylinder
     4300002: Light_Right_Bottom_6
     4300004: Light_Right_Bottom_5
@@ -227,6 +233,7 @@ ModelImporter:
     4300082: Light_Sphere_1
     4300084: Router_Legs
     4300086: Sphere
+    4300088: Eyeball
     7400000: Default Take
     9500000: //RootNode
   materials:
