@@ -233,7 +233,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 540
-        y: 332
+        y: 348
         width: 115
         height: 32
       isBreakpoint: 0
@@ -525,8 +525,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 68
-        y: 100
+        x: 64
+        y: 112
         width: 100
         height: 32
       isBreakpoint: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 540
-        y: 172
+        y: 188
         width: 115
         height: 48
       isBreakpoint: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 540
-        y: 252
+        y: 268
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1196,7 +1196,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 316
-        y: 316
+        y: 332
         width: 113
         height: 32
       isBreakpoint: 0
@@ -1489,7 +1489,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 320
-        y: 256
+        y: 272
         width: 100
         height: 32
       isBreakpoint: 0
@@ -1773,7 +1773,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 540
-        y: 412
+        y: 428
         width: 123
         height: 32
       isBreakpoint: 0
@@ -2057,7 +2057,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 320
-        y: 176
+        y: 192
         width: 117
         height: 48
       isBreakpoint: 0
@@ -2134,7 +2134,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 320
-        y: 416
+        y: 432
         width: 136
         height: 32
       isBreakpoint: 0
@@ -2418,7 +2418,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 176
         width: 136
         height: 32
       isBreakpoint: 0
@@ -2702,7 +2702,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 68
-        y: 228
+        y: 244
         width: 132
         height: 48
       isBreakpoint: 0
@@ -2779,7 +2779,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 68
-        y: 308
+        y: 324
         width: 101
         height: 32
       isBreakpoint: 0

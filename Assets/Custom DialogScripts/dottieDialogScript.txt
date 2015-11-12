@@ -16,7 +16,19 @@ I'll need a reservation confirmation number from you before I can give you a roo
 You would have gotten it in an email.  If you need to access your email, there’s  terminal behind you.
 	// Broken Terminal Check
 	// Broken Terminal True
-The terminal is broken, eh?   Well, Sandro can help you with that.  
+The terminal is broken, eh?   Well, Sandro can help you with that.
+	// WiFi Check
+	// Wifi Off True
+Trouble with the wireless internet?  
+The router is upstairs, in the library above us.
+You want to use it?  Go ahead and plug it in.
+	// Wifi Working
+I think you got the wireless internet functional.
+I wish Sandro would tend to these things.
+But they don't pay him enough.
+Or maybe he's got his mind on other things.
+Like getting into High End Ruminations. 
+Ha! They'll never let him in.  
 		//Loop 1 End
 	// Reservation Confirmed
 Ah, yes.  I have your room assignment and...
@@ -36,7 +48,7 @@ Yeah, the Norwood Suite.
 Are you joking?  The Norwood Suite is not available.  Absolutely no way.
 	//Sandro
 But it’s still vacant, right?
-	//Dottie	
+	//Dottie
 Of course it’s vacant.  
 It’s the Norwood Suite.  
 No one is permitted to stay there.
@@ -82,4 +94,7 @@ You keep telling yourself that.
 Report to me in the morning.  
 As for you… anything out of place and it goes on your card, got it?  
 Good.  Goodnight!
+	//End of intro dialog.
+	//Beginning of Looped Dialog 1
+
 
