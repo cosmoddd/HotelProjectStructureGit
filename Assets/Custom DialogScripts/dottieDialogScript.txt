@@ -4,9 +4,9 @@ Sandro! Would you please stop doing that?!
 Guests don’t leave books like this in the library.
 Oh, Oh wait, you’re not Sandro.  Please excuse me.  
 These glasses are for reading, not face recognition.  
-A late arrival.   No matter.  
+A late arrival.   No matter.
+		// Loop 1 Begin
 Can I see a reservation confirmation number?  	
-	// Reservation Check
 	// Reservation False
 Hmmm...
 Ok, well, unfortunately I can’t give you a room key without a reservation confirmation.
@@ -15,8 +15,9 @@ And security is tight due to the ongoing conference.
 I'll need a reservation confirmation number from you before I can give you a room.  
 You would have gotten it in an email.  If you need to access your email, there’s  terminal behind you.
 	// Broken Terminal Check
-	// Terminal Broken
+	// Broken Terminal True
 The terminal is broken, eh?   Well, Sandro can help you with that.  
+		//Loop 1 End
 	// Reservation Confirmed
 Ah, yes.  I have your room assignment and...
 Oh boy, there must be a mistake.  
@@ -64,9 +65,10 @@ A lot of his old stuff is still in there.
 Anything out of place and you’ll be on the hook for a while.  
 In fact I’m going to need a card for registration and payment when you check out.  
 Can I have that?  
+	//Credit Card Check
 	//Credit Card check false
 Hmmm.. this debit card doesn’t seem to want to go through.  Try something else...
-	//Loop back to 56 --- Credit Card Check true  ===v
+	//Credit Card Check true
 Very fine.  Now, here’s the key.  
 Consider this an incredibly rare privilege.   
 I don’t think half our staff have even seen inside the Norwood Suite,
