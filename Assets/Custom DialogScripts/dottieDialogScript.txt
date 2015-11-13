@@ -27,8 +27,8 @@ I think you got the wireless internet functional.
 I wish Sandro would tend to these things.
 But they don't pay him enough.
 Or maybe he's got his mind on other things.
-Like getting into High End Ruminations. 
-Ha! They'll never let him in.  
+Like let in to High End Ruminations. 
+Ha! They'll never accept him.
 		//Loop 1 End
 	// Reservation Confirmed
 Ah, yes.  I have your room assignment and...
@@ -70,18 +70,12 @@ No, and let’s not discuss that in front of our customers.
 	//Sandro
 Technically, our friend here is no longer a customer - you’re turning him away! 
 	//Dottie
-You know what?  Here.  Take the key.  
+You know what?  Here...
+Take the key.
 But by 8am, you need to be out of there.  
 The Norwood Suite was Peter Norwood’s bedroom when this was still his estate.
 A lot of his old stuff is still in there.  
 Anything out of place and you’ll be on the hook for a while.  
-In fact I’m going to need a card for registration and payment when you check out.  
-Can I have that?  
-	//Credit Card Check
-	//Credit Card check false
-Hmmm.. this debit card doesn’t seem to want to go through.  Try something else...
-	//Credit Card Check true
-Very fine.  Now, here’s the key.  
 Consider this an incredibly rare privilege.   
 I don’t think half our staff have even seen inside the Norwood Suite,
 But oh boy am I in the rarest of generous moods today.  
@@ -94,7 +88,10 @@ You keep telling yourself that.
 Report to me in the morning.  
 As for you… anything out of place and it goes on your card, got it?  
 Good.  Goodnight!
-	//End of intro dialog.
-	//Beginning of Looped Dialog 1
-
+// End of intro dialog.
+// Loop 2
+Norwood was a cool guy, so they say.
+Some peopel don't realize how good they have it.
+Ha.
+// End
 

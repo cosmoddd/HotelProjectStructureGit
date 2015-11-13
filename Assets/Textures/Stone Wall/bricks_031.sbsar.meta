@@ -10,7 +10,7 @@ labels:
 - tileable
 - stone
 - concrete
-timeCreated: 1433966668
+timeCreated: 1447430555
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -19,7 +19,7 @@ SubstanceImporter:
     name: bricks_031
     prototypeName: bricks_031
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 5
     inputs:
@@ -260,16 +260,16 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
           first:
             name: _DstBlend
           second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
         data:
           first:
             name: _Parallax
@@ -281,7 +281,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: .179000005
         data:
           first:
             name: _BumpScale
@@ -300,15 +300,15 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
-          second: 0
-        data:
-          first:
             name: _Mode
           second: 0
         data:
           first:
             name: _Metallic
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
           second: 0
       colors:
         data:
