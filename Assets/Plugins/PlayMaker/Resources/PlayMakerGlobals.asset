@@ -72,3 +72,7 @@ MonoBehaviour:
   - End
   - Jump To Dialog
   - Recieve Item
+  - Hinge Pull Inward
+  - Hinge Pull Outward
+  - Stop Moving Indirect
+  - Stop Moving

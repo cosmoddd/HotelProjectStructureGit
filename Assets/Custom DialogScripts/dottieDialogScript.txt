@@ -6,7 +6,7 @@ Oh, Oh wait, you’re not Sandro.  Please excuse me.
 These glasses are for reading, not face recognition.  
 A late arrival.   No matter.
 		// Loop 1 Begin
-Can I see a reservation confirmation number?  	
+Can I see a reservation confirmation number?
 	// Reservation False
 Hmmm...
 Ok, well, unfortunately I can’t give you a room key without a reservation confirmation.

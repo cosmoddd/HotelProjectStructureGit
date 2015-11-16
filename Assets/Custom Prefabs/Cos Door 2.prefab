@@ -6314,6 +6314,18 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
+        name: Hinge Max
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 60
+      - useVariable: 1
+        name: Hinge Min
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
         name: New Z Rotation
         tooltip: 
         showInInspector: 0
