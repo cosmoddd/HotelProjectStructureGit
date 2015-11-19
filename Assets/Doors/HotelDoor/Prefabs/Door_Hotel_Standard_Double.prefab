@@ -15358,7 +15358,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101000101010101010101
-        actionIsOpen: 000001010101000100000101010101
+        actionIsOpen: 010101010101000100000101010101
         actionStartIndex: 000000000200000004000000070000000c000000110000001500000019000000210000002400000028000000320000003c0000003e00000045000000
         actionHashCodes: d23668dcd23668dc4753a3ffe0750840e075084001546a3822e8952284242bb3a22109873334d1721d4debbb1d4debbbd23668dc53489ed1eec9d968
         unityObjectParams: []
@@ -15426,7 +15426,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: MouseLook
-          PropertyName: enabled
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -15501,7 +15501,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Boolean
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
@@ -15536,7 +15536,7 @@ MonoBehaviour:
             typeName: UnityEngine.Object
             value: {fileID: 0}
           TargetTypeName: MouseLook
-          PropertyName: enabled
+          PropertyName: 
           BoolParameter:
             useVariable: 0
             name: 
@@ -15611,7 +15611,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            typeName: System.Boolean
+            typeName: 
             value: {fileID: 0}
           MaterialParameter:
             useVariable: 0
