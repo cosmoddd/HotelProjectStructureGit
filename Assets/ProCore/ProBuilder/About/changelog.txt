@@ -1,3 +1,35 @@
+-- ProBuilder 2.4.8f1 (r3764)
+
+# Features
+	- Enable Set Pivot, Delete, and Vertex Painter in ProBuilder Basic.
+	- New Standard Shader with vertex color support (thanks to Unity Forum user @defaxer).
+
+# Bug Fixes
+	- Add tooltips for every action in the ProBuilder toolbar.
+	- Fix consistent horizontal scrollbar showing in ProBuilder window.
+	- Smooth edges of curved  stair sides, and align step UVs to match rotation.
+	- Use white text color in Dimensions Overlay when Unity Personal skin is used.
+	- Ensure DLLs retain GUID between releases, enabling simpler upgrades.
+	- Fix poor UV editor precision when working with small distances.
+	- Fix ~10px vertical offset image when rendering UV template in Unity 5.
+	- Fix slightly offset image when rendering UV template from docked UV Editor window.
+
+# Changes
+	- Increase minimum allowed zoom in UV editor.
+	- Make warning shown when connecting edges or vertices fails a bit more descriptive.
+	- Don't show tangents and bitangents when Show Normals is enabled in the smoothing editor.
+	- Prototype becomes ProBuilder Basic.
+
+-- ProBuilder 2.4.7f0 (r3664)
+
+# Changes
+	- New upgrade procedure skips complicated Upgrade Kit in favor of a slightly more manual but more reliable approach.  See FAQ or ProBuilder Documentation for more information.
+
+# Bug Fixes
+	- Fix possible null reference error when working with prefabs that have been duplicated.
+	- Additional error checking when stripping pb_Objects from scene added.
+	- When ProBuilder-izing objects, ask user whether or not to traverse children.
+
 -- ProBuilder 2.4.6f0 (r3616)
 
 # Features

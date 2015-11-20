@@ -525,7 +525,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.37035096
+  m_Intensity: 2
   m_Range: 13.7933655
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -792,7 +792,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.37035096
+  m_Intensity: 2
   m_Range: 13.7933655
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087da0994c624e648b5e6d14875dce0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probuilderPrefab: {fileID: 152258, guid: f12e50e358680b44dae953604007dd86, type: 2}
+  probuilderPrefab: {fileID: 177392, guid: 28879e13c8367aa49abf100bbed44c69, type: 2}
 --- !u!1 &1265575937
 GameObject:
   m_ObjectHideFlags: 0
