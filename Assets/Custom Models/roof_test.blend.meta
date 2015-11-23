@@ -22,6 +22,7 @@ ModelImporter:
     100028: Roof_Outer
     100030: sides
     100032: sides_2
+    100034: Front_Facade
     400000: castle_wall_2
     400002: castle_wall_3
     400004: Hungarian_Roof
@@ -39,6 +40,7 @@ ModelImporter:
     400028: Roof_Outer
     400030: sides
     400032: sides_2
+    400034: Front_Facade
     2300000: castle_wall_2
     2300002: castle_wall_3
     2300004: Hungarian_Roof
@@ -55,6 +57,7 @@ ModelImporter:
     2300026: Roof_Outer
     2300028: sides
     2300030: sides_2
+    2300032: Front_Facade
     3300000: castle_wall_2
     3300002: castle_wall_3
     3300004: Hungarian_Roof
@@ -71,6 +74,7 @@ ModelImporter:
     3300026: Roof_Outer
     3300028: sides
     3300030: sides_2
+    3300032: Front_Facade
     4300000: Hungarian_Roof
     4300002: wood_planks_old_beat_1
     4300004: castle_wall_2
@@ -87,6 +91,7 @@ ModelImporter:
     4300026: Roof_Outer
     4300028: sides
     4300030: sides_2
+    4300032: Front_Facade
     7400000: Default Take
     9500000: //RootNode
   materials:

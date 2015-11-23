@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: UserMaterials
   m_EditorClassIdentifier: 
   array:
-  - {fileID: 2100000, guid: 4a5fca26894798a4c82792649a047611, type: 2}
-  - {fileID: -568758441, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
-  - {fileID: 332725409, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
-  - {fileID: -920230270, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
+  - {fileID: 2100000, guid: dc3c42075a5f9024a9796d86bcc2fa53, type: 2}
+  - {fileID: 2100000, guid: 78365e82e2a737b4792e413e23e93a48, type: 2}
+  - {fileID: 2100000, guid: 71b4e72485ebe50488a2b3483279b78e, type: 2}
+  - {fileID: 2100000, guid: c85b99f9690c0cc4bbac58ba795b48e6, type: 2}
+  - {fileID: 2100000, guid: 6e568f9beb7c0a54e872b2ecfa32322e, type: 2}
+  - {fileID: 2100000, guid: 454175d14d2c6fa4487465f3907f6a21, type: 2}
+  - {fileID: 2100000, guid: 120df24b89e6d3b40901c9b19696bab4, type: 2}
+  - {fileID: 2100000, guid: c09edeb9b6a7e374596468c51355800a, type: 2}
+  - {fileID: 2100000, guid: 2d170e5069fd3294bb62fcf451cb55e1, type: 2}
   - {fileID: -713604758, guid: 7d6ab0d3d562c5547adba32aab62a3d9, type: 3}
-  - {fileID: 1378775992, guid: 6a2bb68aee361b749818f3ba4e9c09fc, type: 3}
-  - {fileID: 2100000, guid: d975ed5781032ad468dfb396e211f164, type: 2}
-  - {fileID: 2100000, guid: 819dbdca068280246954e0617b24291c, type: 2}
-  - {fileID: 0}
-  - {fileID: 2100000, guid: ba7bd5967787f50458e7e49b4b3a71a4, type: 2}
