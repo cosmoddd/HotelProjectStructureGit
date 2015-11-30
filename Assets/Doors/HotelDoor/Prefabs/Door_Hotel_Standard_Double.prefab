@@ -1150,7 +1150,8 @@ AudioSource:
   m_GameObject: {fileID: 153992}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24324162, guid: 30dd2d44dab924442afb9102e3ffd29d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1220,7 +1221,8 @@ AudioSource:
   m_GameObject: {fileID: 132454}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24324162, guid: 30dd2d44dab924442afb9102e3ffd29d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1310,7 +1312,8 @@ AudioSource:
   m_GameObject: {fileID: 118518}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24324162, guid: 30dd2d44dab924442afb9102e3ffd29d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1380,7 +1383,8 @@ AudioSource:
   m_GameObject: {fileID: 132962}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24324162, guid: 30dd2d44dab924442afb9102e3ffd29d,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1694,7 +1698,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
-        - 
+        - Enable FPS Controls
         - Enable Location Collider Front
         - Enable Location Collider Rear
         - 
@@ -2066,7 +2070,7 @@ MonoBehaviour:
         - 
         - 
         - 
-        - 
+        - Sound Control
         actionEnabled: 01010101
         actionIsOpen: 01010101
         actionStartIndex: 00000000080000000b0000000f000000

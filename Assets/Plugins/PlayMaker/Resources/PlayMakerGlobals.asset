@@ -80,3 +80,5 @@ MonoBehaviour:
   - Send 2
   - Disable Controls
   - Enable Controls
+  - Disable X Axis Controls
+  - Unpause
