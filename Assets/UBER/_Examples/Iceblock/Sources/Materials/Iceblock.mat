@@ -285,7 +285,7 @@ Material:
       data:
         first:
           name: _GlossMin
-        second: .0219999999
+        second: .145999998
       data:
         first:
           name: _GlossMax
@@ -365,7 +365,7 @@ Material:
       data:
         first:
           name: _TranslucencyConstant
-        second: .31099999
+        second: .303000003
       data:
         first:
           name: _TranslucencyNormalOffset
@@ -805,10 +805,6 @@ Material:
         second: {r: 0, g: 0, b: 0, a: .0199999996}
       data:
         first:
-          name: _SpecColor2
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-      data:
-        first:
           name: _DiffuseScatteringColor
         second: {r: .321801513, g: .470588207, b: .424639374, a: 0}
       data:
@@ -891,3 +887,7 @@ Material:
         first:
           name: bumpMap2TexelSize
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor2
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}

@@ -1,44 +1,104 @@
 //
 	BEGIN
-Sandro! Would you please stop doing that?!
-Guests don’t leave books like this in the library.
-Oh, Oh wait, you’re not Sandro.  Please excuse me.  
-These glasses are for reading, not face recognition.  
-A late arrival.   No matter.
+	//Sandro looks at Dottie
+	//Sandro
+Hey, Dottie, looks like we have a late-night arrival.
+Dottie!
+	//Dottie looks at Sandro
+	//Dottie
+Sandro!
+You don't have to shout at me!
+	//Sandro
+I do.  Your hearing aids aren't in.
+	//Dottie
+I left them in my room.  No matter.  
+	//Dottie looks at You
+	//Sandro looks at You
+A late arrival.   This is unexpected.
+	//Sandro
+Yes, most of the conference attendees were expected to arrive earlier today.
+	//Dottie looks at Sandro
+	//Dottie
+Maybe our friend here isn't from the conference.
+	//Sandro
+The City officials rented the entire place out this weekend.
+I'd be surprised if they left any rooms available.
+	//Dottie looks at You
+	//Dottie
+I pegged you for a Holbein Club attendee...
+But they're having a private event.
+	//Sandro
+Yeah, it's everyone in masks down there.
+	//Dottie
+Well, I guess as long as you have a reservation, it's not my business what brings you here.
+	//Sandro looks at Dottie
+	//Sandro
+Some people might still consider the Norwood Hotel a destination.
+	//Dottie
+On their way to the grave.
 		// Loop 1 Begin
+	//Dottie looks at You
+	//Dottie
 Can I see a reservation confirmation number?
 	// Reservation False
 Hmmm...
 Ok, well, unfortunately I can’t give you a room key without a reservation confirmation.
-Our system is antiquated up here
-And security is tight due to the ongoing conference.  
-I'll need a reservation confirmation number from you before I can give you a room.  
-You would have gotten it in an email.  If you need to access your email, there’s  terminal behind you.
+Our system is antiquated up here.
+	//Sandro
+Security is pretty tight due to the ongoing conference.
+We've required that all guests provide a specific code proving they booked a night here.
+	//Dottie
+You would have gotten it in an email.  
+If you need to access your email, we've provided a computer terminal behind you.
+	//Sandro looks at Dottie
+	//Sandro
+When was the last time you checked your email, Dottie?
+	//Dottie looks at Sandro
+Do you even use email?
+	//Dottie
+...
 	// Broken Terminal Check
 	// Broken Terminal True
+	//Dottie looks at You
+	//Dottie
 The terminal is broken, eh?   Well, Sandro can help you with that.
+	//Sandro
+I can?
+What is there to help with?
+	//Sandro looks at You
+You seem perfectly capable of figuring out what to do.  
 	// WiFi Check
 	// Wifi Off True
+	//Dottie looks at You
+	//Dottie
 Trouble with the wireless internet?  
 The router is upstairs, in the library above us.
-You want to use it?  Go ahead and plug it in.
+You want to use it?  Go ahead and turn it on.
 	// Wifi Working
 I think you got the wireless internet functional.
-I wish Sandro would tend to these things.
-But they don't pay him enough.
-Or maybe he's got his mind on other things.
-Like let in to High End Ruminations. 
-Ha! They'll never accept him.
+Sandro, I wish you would handle this stuff.
+	//Sandro
+They don't pay me enough to turn on the appliances.
+	//Dottie looks at You
+	//Dottie
+Sandro's been rejected from the Holbein Club one too many times.
+I think it's starting to affect his morale.
+	//Sandro
+I just need to hypnotize Manfred into letting me in.
 		//Loop 1 End
 	// Reservation Confirmed
 Ah, yes.  I have your room assignment and...
 Oh boy, there must be a mistake.  
 Hmmm..  
-211 is Andre’s room.  Andre has been staying here twenty years.  
-Who in there right mind would think to make it available?  Oh dearie.  
+211 is Andre’s room.  
+	//Sandro looks at Dottie
+	//Sandro
+Hasn't Andre been there for, what, 20 years?
+	//Dottie
+This is a total clerical error.  His room is definitely NOT available.
 All of our other rooms seem to be full up for the big conference this weekend.  
 I feel so terrible, I don’t know what to do… wait.  
-		// Sandro enters the picture.
+	// Sandro 
 What about 316?
 	//Dottie
 316?  
