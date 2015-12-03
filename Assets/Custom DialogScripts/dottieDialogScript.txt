@@ -9,9 +9,9 @@ Dottie!
 Sandro!
 You don't have to shout at me!
 	//Sandro
-I do.  Your hearing aids aren't in.
+Your hearing aids aren't in.
 	//Dottie
-I left them in my room.  No matter.  
+I left them in my room. Sue me.  
 	//Dottie looks at You
 	//Sandro looks at You
 A late arrival.   This is unexpected.
@@ -83,29 +83,36 @@ They don't pay me enough to turn on the appliances.
 	//Dottie
 Sandro's been rejected from the Holbein Club one too many times.
 I think it's starting to affect his morale.
+	//Sandro looks at You
 	//Sandro
-I just need to hypnotize Manfred into letting me in.
+I just need to convince Manfred I'm not going to make a scene down there.
 		//Loop 1 End
 	// Reservation Confirmed
 Ah, yes.  I have your room assignment and...
+	//Sandro looks at Dottie
+	//Sandro
+What's wrong?
+	//Dottie
 Oh boy, there must be a mistake.  
 Hmmm..  
 211 is Andre’s room.  
 	//Sandro looks at Dottie
 	//Sandro
 Hasn't Andre been there for, what, 20 years?
+	//Sandro looks at You
 	//Dottie
 This is a total clerical error.  His room is definitely NOT available.
 All of our other rooms seem to be full up for the big conference this weekend.  
-I feel so terrible, I don’t know what to do… wait.  
-	// Sandro 
+I feel so terrible, but I've got nothing.  
+	//Sandro looks at Dottie
+	//Sandro
 What about 316?
 	//Dottie
 316?  
 	//Sandro
 Yeah, the Norwood Suite.  
 	//Dottie
-Are you joking?  The Norwood Suite is not available.  Absolutely no way.
+Are you kidding?  Absolutely no way.
 	//Sandro
 But it’s still vacant, right?
 	//Dottie
@@ -120,27 +127,33 @@ And last I heard, Nadia still cuts our checks.
 That she does.
 	//Dottie
 And she has said under no uncertain terms that the Norwood Suite is off-limits.  
-Really, I’m sorry, but there is very little I can do here besides offer you a refund and a case of Blue Moose.  
+Really, I’m sorry, but there is very little I can do here besides offer you a refund.
+And this case of Blue Moose.
 	//Sandro
-Dottie, it’s late.  And Blue Moose?  
+Really, Dottie?
 Do you want to risk another bad write-up in Traveller’s Quarterly.  
-You were singled out last time.  
+	//Dottie looks at Sandro
 	//Dottie
 No, and let’s not discuss that in front of our customers.
 	//Sandro
 Technically, our friend here is no longer a customer - you’re turning him away! 
+	//Dottie looks at You
 	//Dottie
 You know what?  Here...
 Take the key.
 But by 8am, you need to be out of there.  
 The Norwood Suite was Peter Norwood’s bedroom when this was still his estate.
 A lot of his old stuff is still in there.  
-Anything out of place and you’ll be on the hook for a while.  
-Consider this an incredibly rare privilege.   
+Anything out of place and you’ll be on the hook for a fortune you can't begin to fathom.  
+Consider this an incredibly rare privilege.
+	//Sandro looks at You
+	//Sandro
 I don’t think half our staff have even seen inside the Norwood Suite,
-But oh boy am I in the rarest of generous moods today.  
+	//Dottie looks at Sandro
+	//Dottie
 And Sandro, you’re responsible for making that room look like no one has been in there in twenty years.
 Because that is indeed the case.  Right, Sandro? 
+	//Sandro looks at Dottie
 	//Sandro
 I’m a professional, Dottie.  
 	//Dottie
@@ -151,7 +164,7 @@ Good.  Goodnight!
 // End of intro dialog.
 // Loop 2
 Norwood was a cool guy, so they say.
-Some peopel don't realize how good they have it.
+Some people don't realize how good they have it.
 Ha.
 // End
 
