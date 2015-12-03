@@ -158,7 +158,9 @@ Because that is indeed the case.  Right, Sandro?
 I’m a professional, Dottie.  
 	//Dottie
 You keep telling yourself that.  
-Report to me in the morning.  
+Report to me in the morning.
+	//Dottie looks at You
+	//Sandro looks at You
 As for you… anything out of place and it goes on your card, got it?  
 Good.  Goodnight!
 // End of intro dialog.

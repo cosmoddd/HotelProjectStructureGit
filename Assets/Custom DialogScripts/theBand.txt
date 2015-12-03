@@ -68,5 +68,6 @@ I mean, people tell me the baths are still the place to go.
 Yeah I think you should just hang out down here most of the day tomorrow.  
 	Mike
 I’ll be in the woods.  But i guess for now… we need to check in?
+	Everyone
 ...
-
+END

@@ -21,6 +21,7 @@ I’ve got you back in your corner, though.
 Baron Up Left.  Round takes three. 
 And now you're roll the red dice.  
 Come on, Clem, you need to try something new, too, eh?  
+BREAK
 	Clem
 My gaming league in the city is a bad influence on me.  All they do is optimize and play the same angles til they’re raw.  
 	Bruce
@@ -84,8 +85,9 @@ Are you noticing something on the board that I’m not?
 Maybe, maybe not.  
 	Clem
 Oh, Clem…
-	Break
+BREAK
 	Clem
 Did your parents ever dissuade you from playing games like this? 
 	Bruce
 I mean, i was raised in a very puritanical hosuehold.  
+END
