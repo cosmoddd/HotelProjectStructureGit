@@ -1,0 +1,7 @@
+//  dialog of the bouncer
+// 
+BEGIN
+	Bouncer
+Got a mask?
+Get lost.
+END
