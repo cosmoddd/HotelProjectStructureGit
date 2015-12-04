@@ -6,7 +6,7 @@ labels:
 - architecture
 - texture
 - 'substance '
-timeCreated: 1433973259
+timeCreated: 1449254705
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -15,7 +15,7 @@ SubstanceImporter:
     name: bricks_024
     prototypeName: bricks_024
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     lightmapFlags: 5
     inputs:
@@ -49,9 +49,9 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Brick_Color
       value:
-        scalar[0]: .705882311
-        scalar[1]: .705882311
-        scalar[2]: .705882311
+        scalar[0]: .397058845
+        scalar[1]: .397058845
+        scalar[2]: .397058845
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Color_Variation
@@ -70,9 +70,9 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Stone_Color
       value:
-        scalar[0]: .786764741
-        scalar[1]: .764944851
-        scalar[2]: .694204211
+        scalar[0]: .235294104
+        scalar[1]: .235294104
+        scalar[2]: .235294104
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Weathering
@@ -84,7 +84,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Depth
       value:
-        scalar[0]: -.0659999996
+        scalar[0]: -.0900000036
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -98,14 +98,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Normal
       value:
-        scalar[0]: .537999988
+        scalar[0]: .749000013
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Emboss
       value:
-        scalar[0]: .5
+        scalar[0]: .75
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -153,14 +153,14 @@ SubstanceImporter:
             name: _MainTex
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: .5, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
             name: _BumpMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: .5, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -174,7 +174,7 @@ SubstanceImporter:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
+            scale: {x: .5, y: .5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -214,16 +214,16 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
           first:
             name: _DstBlend
           second: 0
+        data:
+          first:
+            name: _Cutoff
+          second: .5
         data:
           first:
             name: _Parallax
@@ -235,11 +235,11 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0
         data:
           first:
             name: _BumpScale
-          second: 1
+          second: .99000001
         data:
           first:
             name: _OcclusionStrength
@@ -254,15 +254,15 @@ SubstanceImporter:
           second: 0
         data:
           first:
-            name: _EmissionScaleUI
-          second: 0
-        data:
-          first:
             name: _Mode
           second: 0
         data:
           first:
             name: _Metallic
+          second: 0
+        data:
+          first:
+            name: _EmissionScaleUI
           second: 0
       colors:
         data:

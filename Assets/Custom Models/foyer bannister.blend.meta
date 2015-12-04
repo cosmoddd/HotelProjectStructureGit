@@ -41,6 +41,7 @@ ModelImporter:
     100066: BezierCurve_007
     100068: curve_control_004
     100070: other_side_of_stair_offset_005
+    100072: Cylinder_001
     400000: BezierCurve
     400002: Deep_Cherry_Wood
     400004: Empty
@@ -77,6 +78,7 @@ ModelImporter:
     400066: BezierCurve_007
     400068: curve_control_004
     400070: other_side_of_stair_offset_005
+    400072: Cylinder_001
     2300000: BezierCurve
     2300002: Deep_Cherry_Wood
     2300004: parquet_pattern
@@ -96,6 +98,7 @@ ModelImporter:
     2300032: BezierCurve_006
     2300034: NurbsPath_002
     2300036: BezierCurve_007
+    2300038: Cylinder_001
     3300000: BezierCurve
     3300002: Deep_Cherry_Wood
     3300004: parquet_pattern
@@ -115,6 +118,7 @@ ModelImporter:
     3300032: BezierCurve_006
     3300034: NurbsPath_002
     3300036: BezierCurve_007
+    3300038: Cylinder_001
     4300000: BezierCurve
     4300002: Deep_Cherry_Wood
     4300004: parquet_pattern
@@ -134,6 +138,7 @@ ModelImporter:
     4300032: NurbsPath_002
     4300034: BezierCurve_006
     4300036: BezierCurve_007
+    4300038: Cylinder_001
     7400000: Default Take
     9500000: //RootNode
   materials:

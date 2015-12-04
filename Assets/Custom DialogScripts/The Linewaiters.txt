@@ -1,0 +1,22 @@
+//  dialog between two linewaiters.  It's hard out there..
+// 
+BEGIN
+	Linewaiter 1
+You’ve can't won't shouldn't manny ' big cornered me.
+	Linewaiter 2
+Indeed I have.  
+	Linewaiter 1
+You know you didn’t take enough pieces out of the bag when you had the chance.
+	Linewaiter 2
+Perhaps not.  I was trying something new.
+	Linewaiter 1
+And that’s why I play you, Bruce.  Always trying something new. 
+	Linewaiter 2
+Fuck if don’t get a win tonight.
+	Linewaiter 1
+Nancy’s asleep, and the kitchen staff aren’t breathing down my neck for once.
+	Linewaiter 2
+Let me try something new.  
+	Linewaiter 1
+I’ve got you back in your corner, though. 
+END

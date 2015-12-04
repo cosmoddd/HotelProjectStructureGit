@@ -2,15 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: bamboo
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -25,7 +26,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 1722c0408db1f4e68aa6e926afd8ad7d, type: 3}
+          m_Texture: {fileID: 2800000, guid: cf3e1be176dd12542bb1a031d0b0eaa9, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -39,7 +40,7 @@ Material:
         first:
           name: _ParallaxMap
         second:
-          m_Texture: {fileID: 2800000, guid: 1722c0408db1f4e68aa6e926afd8ad7d, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -80,10 +81,6 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Cutoff
-        second: .5
-      data:
-        first:
           name: _SrcBlend
         second: 1
       data:
@@ -92,8 +89,12 @@ Material:
         second: 0
       data:
         first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
           name: _Parallax
-        second: .0362999998
+        second: .00499999989
       data:
         first:
           name: _ZWrite
@@ -101,11 +102,11 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .573000014
+        second: .352999985
       data:
         first:
           name: _BumpScale
-        second: .479999989
+        second: .25
       data:
         first:
           name: _OcclusionStrength
@@ -120,16 +121,16 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: .460999995
+        second: .389999986
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
     m_Colors:
       data:
         first:

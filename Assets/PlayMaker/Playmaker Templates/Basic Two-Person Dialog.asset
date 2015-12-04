@@ -72,12 +72,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Dialog Source
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: DialogColorFadeMulti
             value: {fileID: 0}
           TargetTypeName: DialogColorFadeMulti
           PropertyName: target
@@ -182,12 +182,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 1
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -225,7 +225,7 @@ MonoBehaviour:
             tooltip: 
             showInInspector: 0
             networkSync: 0
-            value: '  '
+            value: 
           Vector2Parameter:
             useVariable: 0
             name: 
@@ -292,12 +292,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 2
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -333,7 +333,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -507,7 +507,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -630,7 +630,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -696,7 +696,7 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 000000000143757272656e744469616c6f67506f736974696f6e01000000000000000000010000000000000001000000
+        byteData: 010000000143757272656e744469616c6f67506f736974696f6e01000000000000000000010000000000000001000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -924,7 +924,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -1047,7 +1047,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -1167,18 +1167,16 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
         - HutongGames.PlayMaker.Actions.SetProperty
-        - HutongGames.PlayMaker.Actions.GetButtonDown
         - HutongGames.PlayMaker.Actions.Wait
         customNames:
         - 
         - 
         - 
         - 
-        - 
-        actionEnabled: 0101010001
-        actionIsOpen: 0101010101
-        actionStartIndex: 0000000002000000040000000600000009000000
-        actionHashCodes: d23668dcd23668dcd23668dcb30867823708ec1a
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000020000000400000006000000
+        actionHashCodes: d23668dcd23668dcd23668dc3708ec1a
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1188,12 +1186,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Dialog Source
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: DialogColorFadeMulti
             value: {fileID: 0}
           TargetTypeName: DialogColorFadeMulti
           PropertyName: target
@@ -1298,12 +1296,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 2
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -1336,8 +1334,8 @@ MonoBehaviour:
             networkSync: 0
             value: {fileID: 0}
           StringParameter:
-            useVariable: 1
-            name: CurrentDialog
+            useVariable: 0
+            name: 
             tooltip: 
             showInInspector: 0
             networkSync: 0
@@ -1408,12 +1406,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 1
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -1446,12 +1444,12 @@ MonoBehaviour:
             networkSync: 0
             value: {fileID: 0}
           StringParameter:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            value: '  '
+            value: 
           Vector2Parameter:
             useVariable: 0
             name: 
@@ -1518,21 +1516,15 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         layoutOptionParams: []
-        fsmStringParams:
-        - useVariable: 0
-          name: 
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: Fire1
+        fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 0000006e65787400010000003f0174696d656e65787400
+        byteData: 0000000000003f0174696d656e65787400
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000240000000100000024000000010000001200000017000000110000000f0000001700000001000000
+        paramDataType: 2400000001000000240000000100000024000000010000000f0000001700000001000000
         paramName:
         - targetProperty
         - everyFrame
@@ -1540,14 +1532,11 @@ MonoBehaviour:
         - everyFrame
         - targetProperty
         - everyFrame
-        - buttonName
-        - sendEvent
-        - storeResult
         - time
         - finishEvent
         - realTime
-        paramDataPos: 000000000000000001000000010000000200000002000000000000000300000007000000090000001200000016000000
-        paramByteDataSize: 000000000100000000000000010000000000000001000000000000000400000002000000090000000400000001000000
+        paramDataPos: 000000000000000001000000010000000200000002000000030000000c00000010000000
+        paramByteDataSize: 000000000100000000000000010000000000000001000000090000000400000001000000
     - name: Next Line 2
       description: 
       colorIndex: 2
@@ -1623,7 +1612,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -1746,7 +1735,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -1907,7 +1896,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -2030,7 +2019,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -2324,7 +2313,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -2447,7 +2436,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -2608,7 +2597,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -2731,7 +2720,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -2979,7 +2968,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialogPosition
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 1
           GameObjectParameter:
@@ -3102,7 +3091,7 @@ MonoBehaviour:
             useVariable: 1
             name: CurrentDialog
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
             value: 
           Vector2Parameter:
@@ -3257,12 +3246,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Dialog Source
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: DialogColorFadeMulti
             value: {fileID: 0}
           TargetTypeName: DialogColorFadeMulti
           PropertyName: target
@@ -3370,7 +3359,7 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 000000000143757272656e744469616c6f67506f736974696f6e01000000000000
+        byteData: 010000000143757272656e744469616c6f67506f736974696f6e01000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -3408,12 +3397,14 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.SetProperty
+        - HutongGames.PlayMaker.Actions.SetProperty
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: d23668dc
+        - 
+        actionEnabled: 0001
+        actionIsOpen: 0101
+        actionStartIndex: 0000000002000000
+        actionHashCodes: d23668dcd23668dc
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -3532,21 +3523,133 @@ MonoBehaviour:
             networkSync: 0
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
+        - TargetObject:
+            useVariable: 1
+            name: Dialog Source
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            typeName: DialogColorFadeMulti
+            value: {fileID: 0}
+          TargetTypeName: DialogColorFadeMulti
+          PropertyName: target
+          BoolParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          FloatParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          IntParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          GameObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+          StringParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          Vector2Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0}
+          Vector3Parameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0}
+          RectParamater:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value:
+              serializedVersion: 2
+              x: 0
+              y: 0
+              width: 0
+              height: 0
+          QuaternionParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {x: 0, y: 0, z: 0, w: 0}
+          ObjectParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: System.Single
+            value: {fileID: 0}
+          MaterialParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          TextureParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            typeName: 
+            value: {fileID: 0}
+          ColorParameter:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {r: 0, g: 0, b: 0, a: 1}
+          setProperty: 1
         layoutOptionParams: []
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 00
+        byteData: 0000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 2400000001000000
+        paramDataType: 24000000010000002400000001000000
         paramName:
         - targetProperty
         - everyFrame
-        paramDataPos: 0000000000000000
-        paramByteDataSize: 0000000001000000
+        - targetProperty
+        - everyFrame
+        paramDataPos: 00000000000000000100000001000000
+        paramByteDataSize: 00000000010000000000000001000000
     - name: State 7
       description: 
       colorIndex: 6
@@ -3586,12 +3689,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Dialog Source
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: DialogColorFadeMulti
             value: {fileID: 0}
           TargetTypeName: DialogColorFadeMulti
           PropertyName: target
@@ -3761,12 +3864,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 2
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -3871,12 +3974,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 1
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -4232,12 +4335,12 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams:
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 2
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -4342,12 +4445,12 @@ MonoBehaviour:
             value: {r: 0, g: 0, b: 0, a: 1}
           setProperty: 1
         - TargetObject:
-            useVariable: 0
-            name: 
+            useVariable: 1
+            name: Person Speaking 1
             tooltip: 
-            showInInspector: 0
+            showInInspector: 1
             networkSync: 0
-            typeName: UnityEngine.Object
+            typeName: TypogenicText
             value: {fileID: 0}
           TargetTypeName: TypogenicText
           PropertyName: Text
@@ -4728,6 +4831,18 @@ MonoBehaviour:
     variables:
       floatVariables:
       - useVariable: 1
+        name: Break Wait
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
+        name: End Wait
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
         name: time
         tooltip: 
         showInInspector: 1
@@ -4737,33 +4852,27 @@ MonoBehaviour:
       - useVariable: 1
         name: CurrentDialogPosition
         tooltip: 
-        showInInspector: 0
+        showInInspector: 1
         networkSync: 0
         value: 1
-      - useVariable: 1
-        name: Loop Point
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 5
-      boolVariables:
-      - useVariable: 1
-        name: Broken Terminal
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 1
-      - useVariable: 1
-        name: Credit Card Check
-        tooltip: 
-        showInInspector: 0
-        networkSync: 0
-        value: 0
+      boolVariables: []
       stringVariables:
       - useVariable: 1
         name: CurrentDialog
         tooltip: 
-        showInInspector: 0
+        showInInspector: 1
+        networkSync: 0
+        value: 
+      - useVariable: 1
+        name: String Switch Word 1
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 
+      - useVariable: 1
+        name: String Switch Word 2
+        tooltip: 
+        showInInspector: 1
         networkSync: 0
         value: 
       vector2Variables: []
@@ -4772,7 +4881,28 @@ MonoBehaviour:
       rectVariables: []
       quaternionVariables: []
       gameObjectVariables: []
-      objectVariables: []
+      objectVariables:
+      - useVariable: 1
+        name: Dialog Source
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: DialogColorFadeMulti
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Person Speaking 1
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: TypogenicText
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Person Speaking 2
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        typeName: TypogenicText
+        value: {fileID: 0}
       materialVariables: []
       textureVariables: []
     description: 
