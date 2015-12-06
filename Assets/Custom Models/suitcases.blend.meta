@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: fcd515819f2892245a4dc488a2e1b61f
+timeCreated: 1449355183
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Axes
+    100002: Axes-2
+    100004: CoinsInf
+    100006: CoinsSup
+    100008: CoqueSup
+    100010: Couvercle
+    100012: Loquets
+    100014: Pochette-1
+    100016: Pochette-2
+    100018: Pochette-2_001
+    100020: Poignee
+    100022: Poignee-2
+    100024: Sol
+    100026: //RootNode
+    100028: Valise-1
+    100030: Valise-2
+    400000: Axes
+    400002: Axes-2
+    400004: CoinsInf
+    400006: CoinsSup
+    400008: CoqueSup
+    400010: Couvercle
+    400012: Loquets
+    400014: Pochette-1
+    400016: Pochette-2
+    400018: Pochette-2_001
+    400020: Poignee
+    400022: Poignee-2
+    400024: Sol
+    400026: //RootNode
+    400028: Valise-1
+    400030: Valise-2
+    2300000: Axes
+    2300002: Axes-2
+    2300004: CoinsInf
+    2300006: CoinsSup
+    2300008: CoqueSup
+    2300010: Couvercle
+    2300012: Loquets
+    2300014: Pochette-1
+    2300016: Pochette-2
+    2300018: Pochette-2_001
+    2300020: Poignee
+    2300022: Poignee-2
+    2300024: Sol
+    2300026: Valise-1
+    2300028: Valise-2
+    3300000: Axes
+    3300002: Axes-2
+    3300004: CoinsInf
+    3300006: CoinsSup
+    3300008: CoqueSup
+    3300010: Couvercle
+    3300012: Loquets
+    3300014: Pochette-1
+    3300016: Pochette-2
+    3300018: Pochette-2_001
+    3300020: Poignee
+    3300022: Poignee-2
+    3300024: Sol
+    3300026: Valise-1
+    3300028: Valise-2
+    4300000: Valise-2
+    4300002: Pochette-2_001
+    4300004: Pochette-2
+    4300006: Couvercle
+    4300008: Loquets
+    4300010: CoinsSup
+    4300012: CoinsInf
+    4300014: Axes-2
+    4300016: Poignee-2
+    4300018: Sol
+    4300020: Valise-1
+    4300022: Axes
+    4300024: Poignee
+    4300026: CoqueSup
+    4300028: Pochette-1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

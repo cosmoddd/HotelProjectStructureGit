@@ -385,7 +385,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105916}
   m_LocalRotation: {x: -.707079947, y: .00617032684, z: -.00617032778, w: -.707079828}
-  m_LocalPosition: {x: 323.312347, y: 17.8335533, z: -136.511505}
+  m_LocalPosition: {x: 323.314758, y: 17.8334942, z: -136.511505}
   m_LocalScale: {x: 1074.23279, y: 999.999939, z: 999.999939}
   m_Children:
   - {fileID: 402558}
@@ -464,7 +464,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150224}
   m_LocalRotation: {x: .00872616004, y: -.999961913, z: -1.421672e-09, w: 1.62914475e-07}
-  m_LocalPosition: {x: .239558667, y: -.100000359, z: .0945821479}
+  m_LocalPosition: {x: .239560828, y: -.100000359, z: .0945821479}
   m_LocalScale: {x: -.850000024, y: 1.01250005, z: .640246928}
   m_Children:
   - {fileID: 438168}
@@ -629,7 +629,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127576}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.2250023, y: 14.375, z: 9.01249981}
+  m_LocalPosition: {x: 90.5250015, y: 14.375, z: 9.01249981}
   m_LocalScale: {x: 1.76250005, y: 1.09345996, z: 1.7180872}
   m_Children:
   - {fileID: 443200}
@@ -9468,8 +9468,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 196
-        y: 1108
+        x: 100
+        y: 180
         width: 144
         height: 32
       isBreakpoint: 0
@@ -9534,8 +9534,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 196
-        y: 1268
+        x: 100
+        y: 340
         width: 123
         height: 48
       isBreakpoint: 0
@@ -9620,8 +9620,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 148
-        y: 1348
+        x: 52
+        y: 420
         width: 209
         height: 64
       isBreakpoint: 0
@@ -9648,7 +9648,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -9724,8 +9724,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 516
-        y: 1380
+        x: 420
+        y: 452
         width: 175
         height: 80
       isBreakpoint: 0
@@ -10228,8 +10228,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 1012
-        y: 1348
+        x: 916
+        y: 420
         width: 204
         height: 32
       isBreakpoint: 0
@@ -10360,8 +10360,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 516
-        y: 1268
+        x: 420
+        y: 340
         width: 131
         height: 64
       isBreakpoint: 0
@@ -10388,7 +10388,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -10856,8 +10856,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 800
-        y: 1312
+        x: 704
+        y: 384
         width: 129
         height: 32
       isBreakpoint: 0
@@ -11077,8 +11077,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 148
-        y: 1460
+        x: 52
+        y: 532
         width: 210
         height: 64
       isBreakpoint: 0
@@ -11105,7 +11105,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -11214,76 +11214,13 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000100000000000000000000000000000007000000100000001000000002000000100000001d0000001e0000002b0000002b0000003a000000000000003b000000470000004c000000
         paramByteDataSize: 0000000000000000000000000000000007000000090000000000000000000000000000000d000000010000000d000000000000000f00000001000000000000000c0000000500000001000000
-    - name: Locked 2
-      description: Is the Door LOcked?
-      colorIndex: 6
-      position:
-        serializedVersion: 2
-        x: 276
-        y: 1604
-        width: 117.5
-        height: 48
-      isBreakpoint: 0
-      isSequence: 0
-      hideUnused: 0
-      transitions:
-      - fsmEvent:
-          name: False
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Unlocked Axis DOWN 3
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      - fsmEvent:
-          name: True
-          isSystemEvent: 0
-          isGlobal: 0
-        toState: Unlocked Axis DOWN 4
-        linkStyle: 0
-        linkConstraint: 0
-        colorIndex: 0
-      actionData:
-        actionNames:
-        - HutongGames.PlayMaker.Actions.BoolTest
-        customNames:
-        - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 3334d172
-        unityObjectParams: []
-        fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
-        animationCurveParams: []
-        functionCallParams: []
-        fsmTemplateControlParams: []
-        fsmEventTargetParams: []
-        fsmPropertyParams: []
-        layoutOptionParams: []
-        fsmStringParams: []
-        fsmObjectParams: []
-        fsmVarParams: []
-        byteData: 00014c6f636b65645472756546616c736500
-        arrayParamSizes: 
-        arrayParamTypes: []
-        customTypeSizes: 
-        customTypeNames: []
-        paramDataType: 11000000170000001700000001000000
-        paramName:
-        - boolVariable
-        - isTrue
-        - isFalse
-        - everyFrame
-        paramDataPos: 00000000080000000c00000011000000
-        paramByteDataSize: 08000000040000000500000001000000
     - name: Unlocked Axis DOWN 4
       description: Door is Locked
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 516
-        y: 1508
+        x: 432
+        y: 928
         width: 175
         height: 80
       isBreakpoint: 0
@@ -11786,8 +11723,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 804
-        y: 1540
+        x: 708
+        y: 612
         width: 158
         height: 48
       isBreakpoint: 0
@@ -11882,8 +11819,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 180
-        y: 1188
+        x: 84
+        y: 260
         width: 180
         height: 48
       isBreakpoint: 0
@@ -11956,8 +11893,8 @@ MonoBehaviour:
       colorIndex: 5
       position:
         serializedVersion: 2
-        x: 788
-        y: 1140
+        x: 692
+        y: 212
         width: 257
         height: 32
       isBreakpoint: 0
@@ -12043,8 +11980,8 @@ MonoBehaviour:
       colorIndex: 5
       position:
         serializedVersion: 2
-        x: 468
-        y: 1092
+        x: 372
+        y: 164
         width: 149
         height: 32
       isBreakpoint: 0
@@ -12104,8 +12041,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 788
-        y: 1236
+        x: 692
+        y: 308
         width: 155
         height: 32
       isBreakpoint: 0
@@ -12419,8 +12356,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 192
-        y: 1040
+        x: 96
+        y: 112
         width: 162
         height: 32
       isBreakpoint: 0
@@ -12729,6 +12666,376 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000010000000000000000000000010000000200000003000000020000000100000003000000
         paramByteDataSize: 00000000000000000100000000000000010000000000000000000000010000000000000001000000
+    - name: Locked?
+      description: Locked?
+      colorIndex: 6
+      position:
+        serializedVersion: 2
+        x: 128
+        y: 688
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: False
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Unlocked Axis DOWN 3
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: True
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Get Key Status
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3334d172
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00014c6f636b65645472756546616c736500
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000170000001700000001000000
+        paramName:
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000080000000c00000011000000
+        paramByteDataSize: 08000000040000000500000001000000
+    - name: Key?
+      description: 
+      colorIndex: 6
+      position:
+        serializedVersion: 2
+        x: 128
+        y: 864
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: True
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Set Unlock Variables for GUI
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: False
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Unlocked Axis DOWN 4
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3334d172
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 01014861734b65795472756546616c736500
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000170000001700000001000000
+        paramName:
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000080000000c00000011000000
+        paramByteDataSize: 08000000040000000500000001000000
+    - name: Get Key Status
+      description: 
+      colorIndex: 6
+      position:
+        serializedVersion: 2
+        x: 112
+        y: 784
+        width: 118
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Key?
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetFsmBool
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a51886f0
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Inventory Control
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Inventory
+        - useVariable: 1
+          name: Key Name
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: NorwoodSuiteKey
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 01014861734b657900
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000012000000120000001100000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - storeValue
+        - everyFrame
+        paramDataPos: 0000000000000000010000000000000008000000
+        paramByteDataSize: 0000000000000000000000000800000001000000
+    - name: Unlock Door
+      description: Unlock Door, Send Message
+      colorIndex: 3
+      position:
+        serializedVersion: 2
+        x: 400
+        y: 752
+        width: 152
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Unlocked Axis DOWN 3
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.SetFsmBool
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000300000008000000
+        actionHashCodes: 29b4727ba51886f0eec9d968
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 132454}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 1
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 0
+              name: 
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Control Door Handle
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Locked
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00014c6f636b6564000000000000426567696e000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000110000000100000014000000120000001200000011000000010000001f000000170000000f00000001000000
+        paramName:
+        - boolVariable
+        - boolValue
+        - everyFrame
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 00000000080000000a0000000000000000000000010000000b0000000d000000000000000e0000001300000018000000
+        paramByteDataSize: 080000000200000001000000000000000000000000000000020000000100000000000000050000000500000001000000
+    - name: Set Unlock Variables for GUI
+      description: 
+      colorIndex: 3
+      position:
+        serializedVersion: 2
+        x: 400
+        y: 656
+        width: 210
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Unlock Door
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -12814,12 +13121,24 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
-        name: Locked
+        name: HasKey
         tooltip: 
-        showInInspector: 0
+        showInInspector: 1
         networkSync: 0
         value: 0
-      stringVariables: []
+      - useVariable: 1
+        name: Locked
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      stringVariables:
+      - useVariable: 1
+        name: Key Name
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: NorwoodSuiteKey2
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -12876,7 +13195,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 100
+        x: 196
         y: 180
         width: 144
         height: 32
@@ -12942,7 +13261,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 100
+        x: 196
         y: 340
         width: 123
         height: 48
@@ -13028,8 +13347,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 52
-        y: 420
+        x: 80
+        y: 464
         width: 209
         height: 64
       isBreakpoint: 0
@@ -13056,7 +13375,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -13065,21 +13384,55 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.AxisEvent
         - HutongGames.PlayMaker.Actions.GetButton
         - HutongGames.PlayMaker.Actions.BoolTest
+        - HutongGames.PlayMaker.Actions.SendEvent
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 010101
-        actionStartIndex: 00000000080000000b000000
-        actionHashCodes: 84242bb3a22109873334d172
+        - Disable Controls
+        actionEnabled: 01010101
+        actionIsOpen: 01010101
+        actionStartIndex: 00000000080000000b0000000f000000
+        actionHashCodes: 84242bb3a22109873334d172eec9d968
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
-        fsmEventTargetParams: []
+        fsmEventTargetParams:
+        - target: 1
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 1
+              name: Player Character Controller
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
         fsmPropertyParams: []
         layoutOptionParams: []
         fsmStringParams:
@@ -13103,12 +13456,12 @@ MonoBehaviour:
           value: Fire1
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 417869732055704178697320446f776e0001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e20557001
+        byteData: 417869732055704178697320446f776e0001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700144697361626c6520436f6e74726f6c73000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 120000001200000017000000170000001700000017000000170000001700000012000000110000000100000011000000170000001700000001000000
+        paramDataType: 1200000012000000170000001700000017000000170000001700000017000000120000001100000001000000110000001700000017000000010000001f000000170000000f00000001000000
         paramName:
         - horizontalAxis
         - verticalAxis
@@ -13125,15 +13478,19 @@ MonoBehaviour:
         - isTrue
         - isFalse
         - everyFrame
-        paramDataPos: 000000000100000000000000000000000000000007000000100000001000000002000000100000001d0000001e0000002b0000002b0000003a000000
-        paramByteDataSize: 0000000000000000000000000000000007000000090000000000000000000000000000000d000000010000000d000000000000000f00000001000000
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 000000000100000000000000000000000000000007000000100000001000000002000000100000001d0000001e0000002b0000002b0000003a000000000000003b0000004b00000050000000
+        paramByteDataSize: 0000000000000000000000000000000007000000090000000000000000000000000000000d000000010000000d000000000000000f0000000100000000000000100000000500000001000000
     - name: Unlocked Axis DOWN 3
       description: Door Is Unlocked
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 420
-        y: 452
+        x: 448
+        y: 464
         width: 175
         height: 80
       isBreakpoint: 0
@@ -13636,7 +13993,7 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 916
+        x: 1012
         y: 420
         width: 204
         height: 32
@@ -13768,8 +14125,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 420
-        y: 340
+        x: 448
+        y: 352
         width: 131
         height: 64
       isBreakpoint: 0
@@ -13796,7 +14153,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -14264,7 +14621,7 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 704
+        x: 800
         y: 384
         width: 129
         height: 32
@@ -14485,8 +14842,8 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 52
-        y: 532
+        x: 64
+        y: 576
         width: 210
         height: 64
       isBreakpoint: 0
@@ -14513,7 +14870,7 @@ MonoBehaviour:
           name: Axis Down
           isSystemEvent: 0
           isGlobal: 0
-        toState: Locked 2
+        toState: Locked?
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -14622,14 +14979,14 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 000000000100000000000000000000000000000007000000100000001000000002000000100000001d0000001e0000002b0000002b0000003a000000000000003b000000470000004c000000
         paramByteDataSize: 0000000000000000000000000000000007000000090000000000000000000000000000000d000000010000000d000000000000000f00000001000000000000000c0000000500000001000000
-    - name: Locked 2
-      description: Is the Door LOcked?
+    - name: Locked?
+      description: Locked?
       colorIndex: 6
       position:
         serializedVersion: 2
-        x: 180
-        y: 676
-        width: 117.5
+        x: 176
+        y: 736
+        width: 100
         height: 48
       isBreakpoint: 0
       isSequence: 0
@@ -14647,7 +15004,7 @@ MonoBehaviour:
           name: True
           isSystemEvent: 0
           isGlobal: 0
-        toState: Unlocked Axis DOWN 4
+        toState: Get Key Status
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -14690,8 +15047,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 420
-        y: 580
+        x: 448
+        y: 864
         width: 175
         height: 80
       isBreakpoint: 0
@@ -15194,8 +15551,8 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 708
-        y: 612
+        x: 784
+        y: 864
         width: 158
         height: 48
       isBreakpoint: 0
@@ -15290,7 +15647,7 @@ MonoBehaviour:
       colorIndex: 7
       position:
         serializedVersion: 2
-        x: 84
+        x: 180
         y: 260
         width: 180
         height: 48
@@ -15364,7 +15721,7 @@ MonoBehaviour:
       colorIndex: 5
       position:
         serializedVersion: 2
-        x: 692
+        x: 788
         y: 212
         width: 257
         height: 32
@@ -15451,7 +15808,7 @@ MonoBehaviour:
       colorIndex: 5
       position:
         serializedVersion: 2
-        x: 372
+        x: 468
         y: 164
         width: 149
         height: 32
@@ -15512,7 +15869,7 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 692
+        x: 788
         y: 308
         width: 155
         height: 32
@@ -15827,7 +16184,7 @@ MonoBehaviour:
       colorIndex: 3
       position:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 112
         width: 162
         height: 32
@@ -16137,6 +16494,313 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000010000000000000000000000010000000200000003000000020000000100000003000000
         paramByteDataSize: 00000000000000000100000000000000010000000000000000000000010000000000000001000000
+    - name: Unlock Door (both handles)
+      description: Unlock Door, Send Message to this and the Other Handle
+      colorIndex: 3
+      position:
+        serializedVersion: 2
+        x: 448
+        y: 736
+        width: 298
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Unlocked Axis DOWN 3
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.SetFsmBool
+        - HutongGames.PlayMaker.Actions.SetBoolValue
+        - HutongGames.PlayMaker.Actions.SendEvent
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010101
+        actionStartIndex: 000000000500000008000000
+        actionHashCodes: a51886f029b4727beec9d968
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 118518}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams:
+        - target: 1
+          excludeSelf:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          gameObject:
+            ownerOption: 1
+            gameObject:
+              useVariable: 0
+              name: 
+              tooltip: 
+              showInInspector: 0
+              networkSync: 0
+              value: {fileID: 0}
+          fsmName:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 
+          sendToChildren:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: 0
+          fsmComponent: {fileID: 0}
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Control Door Handle
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Locked
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 00000001014c6f636b6564000000426567696e000000000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 14000000120000001200000011000000010000001100000011000000010000001f000000170000000f00000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - setValue
+        - everyFrame
+        - boolVariable
+        - boolValue
+        - everyFrame
+        - eventTarget
+        - sendEvent
+        - delay
+        - everyFrame
+        paramDataPos: 0000000000000000010000000000000002000000030000000b0000000d000000000000000e0000001300000018000000
+        paramByteDataSize: 000000000000000000000000020000000100000008000000020000000100000000000000050000000500000001000000
+    - name: Key?
+      description: 
+      colorIndex: 6
+      position:
+        serializedVersion: 2
+        x: 176
+        y: 912
+        width: 100
+        height: 48
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: True
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Set Unlock Variables for GUI
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: False
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Unlocked Axis DOWN 4
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.BoolTest
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 3334d172
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 01014861734b65795472756546616c736500
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 11000000170000001700000001000000
+        paramName:
+        - boolVariable
+        - isTrue
+        - isFalse
+        - everyFrame
+        paramDataPos: 00000000080000000c00000011000000
+        paramByteDataSize: 08000000040000000500000001000000
+    - name: Get Key Status
+      description: 
+      colorIndex: 6
+      position:
+        serializedVersion: 2
+        x: 160
+        y: 832
+        width: 118
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Key?
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetFsmBool
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: a51886f0
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Inventory Control
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Inventory
+        - useVariable: 1
+          name: Key Name
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: NorwoodSuiteKey
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 01014861734b657900
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 1400000012000000120000001100000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - variableName
+        - storeValue
+        - everyFrame
+        paramDataPos: 0000000000000000010000000000000008000000
+        paramByteDataSize: 0000000000000000000000000800000001000000
+    - name: Set Unlock Variables for GUI
+      description: 
+      colorIndex: 3
+      position:
+        serializedVersion: 2
+        x: 448
+        y: 656
+        width: 210
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: Unlock Door (both handles)
+        linkStyle: 0
+        linkConstraint: 0
+        colorIndex: 0
+      actionData:
+        actionNames: []
+        customNames: []
+        actionEnabled: 
+        actionIsOpen: 
+        actionStartIndex: 
+        actionHashCodes: 
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        byteData: 
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 
+        paramName: []
+        paramDataPos: 
+        paramByteDataSize: 
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -16234,12 +16898,30 @@ MonoBehaviour:
         networkSync: 0
         value: 0
       - useVariable: 1
+        name: HasKey
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 0
+      - useVariable: 1
         name: Locked
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: 1
+      stringVariables:
+      - useVariable: 1
+        name: Key Name
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: NorwoodSuiteKey
+      - useVariable: 1
+        name: Key Name Full
         tooltip: 
         showInInspector: 0
         networkSync: 0
-        value: 0
-      stringVariables: []
+        value: 
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
@@ -16262,7 +16944,14 @@ MonoBehaviour:
         typeName: UnityEngine.GameObject
         value: {fileID: 0}
       materialVariables: []
-      textureVariables: []
+      textureVariables:
+      - useVariable: 1
+        name: Item Image
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        typeName: UnityEngine.Object
+        value: {fileID: 0}
     description: "todo: \nsound\n\n"
     docUrl: 
     showStateLabel: 1
