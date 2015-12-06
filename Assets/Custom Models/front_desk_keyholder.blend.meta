@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 62413c1f846a66e48a0ac31eaea25b61
+timeCreated: 1449430759
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube_001
+    100004: Cube_002
+    100006: //RootNode
+    100008: Mirror_Axis
+    100010: Cube_003
+    100012: Cube_004
+    100014: Cube_005
+    100016: BezierCurve
+    100018: Cube_006
+    100020: Cube_007
+    100022: spin_axis
+    100024: SurfSphere
+    100026: Cylinder
+    100028: Circle
+    100030: Circle_001
+    100032: Circle_002
+    100034: Circle_003
+    100036: Circle_004
+    100038: Circle_005
+    100040: Torus_000
+    100042: Torus_001
+    100044: Torus_002
+    100046: Torus_003
+    100048: Torus_004
+    100050: Torus_005
+    100052: key
+    100054: key_001
+    100056: key_002
+    100058: key_003
+    100060: key_004
+    100062: key_005
+    400000: Cube
+    400002: Cube_001
+    400004: Cube_002
+    400006: //RootNode
+    400008: Mirror_Axis
+    400010: Cube_003
+    400012: Cube_004
+    400014: Cube_005
+    400016: BezierCurve
+    400018: Cube_006
+    400020: Cube_007
+    400022: spin_axis
+    400024: SurfSphere
+    400026: Cylinder
+    400028: Circle
+    400030: Circle_001
+    400032: Circle_002
+    400034: Circle_003
+    400036: Circle_004
+    400038: Circle_005
+    400040: Torus_000
+    400042: Torus_001
+    400044: Torus_002
+    400046: Torus_003
+    400048: Torus_004
+    400050: Torus_005
+    400052: key
+    400054: key_001
+    400056: key_002
+    400058: key_003
+    400060: key_004
+    400062: key_005
+    2300000: Cube
+    2300002: Cube_001
+    2300004: Cube_002
+    2300006: Cube_003
+    2300008: Cube_004
+    2300010: Cube_005
+    2300012: BezierCurve
+    2300014: Cube_006
+    2300016: Cube_007
+    2300018: SurfSphere
+    2300020: Cylinder
+    2300022: Circle
+    2300024: Circle_001
+    2300026: Circle_002
+    2300028: Circle_003
+    2300030: Circle_004
+    2300032: Circle_005
+    2300034: Torus_000
+    2300036: Torus_001
+    2300038: Torus_002
+    2300040: Torus_003
+    2300042: Torus_004
+    2300044: Torus_005
+    2300046: key
+    2300048: key_001
+    2300050: key_002
+    2300052: key_003
+    2300054: key_004
+    2300056: key_005
+    3300000: Cube
+    3300002: Cube_001
+    3300004: Cube_002
+    3300006: Cube_003
+    3300008: Cube_004
+    3300010: Cube_005
+    3300012: BezierCurve
+    3300014: Cube_006
+    3300016: Cube_007
+    3300018: SurfSphere
+    3300020: Cylinder
+    3300022: Circle
+    3300024: Circle_001
+    3300026: Circle_002
+    3300028: Circle_003
+    3300030: Circle_004
+    3300032: Circle_005
+    3300034: Torus_000
+    3300036: Torus_001
+    3300038: Torus_002
+    3300040: Torus_003
+    3300042: Torus_004
+    3300044: Torus_005
+    3300046: key
+    3300048: key_001
+    3300050: key_002
+    3300052: key_003
+    3300054: key_004
+    3300056: key_005
+    4300000: Cube
+    4300002: Cube_001
+    4300004: Cube_002
+    4300006: Cube_005
+    4300008: Cube_003
+    4300010: Cube_004
+    4300012: BezierCurve
+    4300014: Cube_007
+    4300016: Cube_006
+    4300018: SurfSphere
+    4300020: Cylinder
+    4300022: Torus_005
+    4300024: Circle_005
+    4300026: Circle_001
+    4300028: Torus_000
+    4300030: Torus_003
+    4300032: Circle
+    4300034: Circle_002
+    4300036: Torus_001
+    4300038: Circle_003
+    4300040: Torus_002
+    4300042: Circle_004
+    4300044: Torus_004
+    4300046: key_005
+    4300048: key_004
+    4300050: key
+    4300052: key_003
+    4300054: key_001
+    4300056: key_002
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
