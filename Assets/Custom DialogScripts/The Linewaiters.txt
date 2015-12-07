@@ -2,21 +2,37 @@
 // 
 BEGIN
 	Linewaiter 1
-I can't believe what is happening here.
-	Linewaiter 2
-Indeed I have.  
+How long has it been, now?
+ 	Linewaiter 2
+Two hours.  
 	Linewaiter 1
-You know you didn’t take enough pieces out of the bag when you had the chance.
+You think we're actually going to get in at this point?
 	Linewaiter 2
-Perhaps not.  I was trying something new.
+Probably not.  I thought I had the look down.
 	Linewaiter 1
-And that’s why I play you, Bruce.  Always trying something new. 
+I have a sinking feeling there's some special dress code tonight.
 	Linewaiter 2
-Fuck if don’t get a win tonight.
+Would have been nice if they had told us.
 	Linewaiter 1
-Nancy’s asleep, and the kitchen staff aren’t breathing down my neck for once.
+They never say anything.  It's a gamble every time you come.
 	Linewaiter 2
-Let me try something new.  
+Didn't your sister get in once?
 	Linewaiter 1
-I’ve got you back in your corner, though. 
+Three months ago.  She was with a group of people wearing panchos.
+	Linewaiter 2
+I tried the pancho approach, too, once.  No luck.
+	Linewaiter 1
+Kate said she had a transcendent night that night.
+	Linewaiter 2
+Whatever that means.
+	Linewaiter 1
+I'm just saying, it's still worth making the journey, to me anyway.
+	Linewaiter 2
+Yeah, I keep thinking I'm going to quit trying to get in...
+But then I hear from people who went that it was this life-altering experience.
+	Linewaiter 1
+One day, Tommy.  Look where we are.  Right at the precipice.
+We're so close.
+	Linewaiter 2
+Yeah...
 END

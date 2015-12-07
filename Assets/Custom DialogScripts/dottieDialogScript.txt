@@ -16,37 +16,37 @@ I left them in my room. Sue me.
 	//Sandro looks at You
 A late arrival.   This is unexpected.
 	//Sandro
-Yes, most of the conference attendees were expected to arrive earlier today.
+Most of the conference attendees arrived earlier today.
 	//Dottie looks at Sandro
 	//Dottie
 Maybe our friend here isn't from the conference.
 	//Sandro
-The City officials rented the entire place out this weekend.
-I'd be surprised if they left any rooms available.
+This is a special weekend.
+Very few outsiders.
 	//Dottie looks at You
 	//Dottie
 I pegged you for a Holbein Club attendee...
-But they're having a private event.
+But a private event is going on down there.
 	//Sandro
-Yeah, it's everyone in masks down there.
+Yeah, it's some sort of masks-only thing.
 	//Dottie
-Well, I guess as long as you have a reservation, it's not my business what brings you here.
+Well, as you have a reservation, it's not my business what brings you here.
 	//Sandro looks at Dottie
 	//Sandro
 Some people might still consider the Norwood Hotel a destination.
 	//Dottie
-On their way to the grave.
+This place?  Ha.
 		// Loop 1 Begin
 	//Dottie looks at You
 	//Dottie
 Can I see a reservation confirmation number?
 	// Reservation False
 Hmmm...
-Ok, well, unfortunately I can’t give you a room key without a reservation confirmation.
-Our system is antiquated up here.
+Unfortunately I can’t give you a room key without a reservation confirmation.
+Our system is antiquated like that.
 	//Sandro
-Security is pretty tight due to the ongoing conference.
-We've required that all guests provide a specific code proving they booked a night here.
+Protocol is strict due to the ongoing conference.
+We've required that all guests provide a specific code that confirms their stay here.
 	//Dottie
 You would have gotten it in an email.  
 If you need to access your email, we've provided a computer terminal behind you.
@@ -61,7 +61,8 @@ Do you even use email?
 	// Broken Terminal True
 	//Dottie looks at You
 	//Dottie
-The terminal is broken, eh?   Well, Sandro can help you with that.
+The terminal is non-functional, eh?
+Well, Sandro can help you with that.
 	//Sandro
 I can?
 What is there to help with?
@@ -71,9 +72,13 @@ You seem perfectly capable of figuring out what to do.
 	// Wifi Off True
 	//Dottie looks at You
 	//Dottie
-Trouble with the wireless internet?  
-The router is upstairs, in the library above us.
-You want to use it?  Go ahead and turn it on.
+Trouble with the wireless internet?
+Our wireless router is a little finicky. 
+You might have to reset it.
+I need to tell Nadia we need a new router.
+	//Sandro looks at Dottie
+	//Sandro
+Good luck with that. 
 	// Wifi Working
 I think you got the wireless internet functional.
 Sandro, I wish you would handle this stuff.

@@ -1,57 +1,80 @@
 //June and Alan Miranda stand at the edge of the lobby
 BEGIN
 	Alan
-Do you think you’ll be getting a lot done on your project while you’re here?  
+You think you’ll be getting a lot of writing while you’re here?  
 	June
-I mean, I’ll try.  It’s late so I’m going to be off to a late start tomorrow. 
+I’ll try.  
+It’s late so I’m going to be off to a late start tomorrow. 
 	Alan
-I don’t know, sometimes if we have a deadline or something urging us on, we tend to wake up early anyway.  
+Sometimes if we have a deadline, we tend to wake up early anyway.  
 	June
-Yeah, Dad.  That’s a problem.  Then you lose sleep and that messes with your health overall.  
+Yeah, Dad.  That’s a problem.  
+You lose sleep and that messes with your metabolism.  
 	Alan
-It never really messed with mine, June.  Honestly, sometimes that sort of urgency is all you need to achieve something remarkable.  
+Well, it never messed with mine, June.  
+A little urgency never hurt with the productivity.  
 	June
-Well, I hope this is a remarkable weekend for you, Dad.
+You don't need to tell me, dad.
+These writing jobs are client work, not my own stuff.  
 	Alan
-June, I’m afraid this weekend is probably going to be one of the more stressful weekends I’ve had in a long time.  
+I thought you were coming here to finish your string quartet?
+	June
+Me too.  But then the agency called tonight.
+They need five versions of "Happy Mouth" by Sunday. 
+	Alan
+What do they want with that awful song?
+	June
+It's for Saturn Noodles Birthday-Cake Ramen campaign.
+	Alan
+Oh, ok.
+Well, it's a shame you can't work on your string quartet.
+	June
+Yep. I'm pretty upset they dumped this on me.
+But money is money and I can't really say no.
+I hope your conference goes well for you, though. 
+	Alan
+I've actually been dreading this weekend.  
 	June
 How can you say that?  Isn’t this, like, your home court, environmental science?
 	Alan
-The developers know this about me and they’ve been preparing.  Far more than I can afford to.  The acquisition of this property is an inevitability to them.
+The developers know me too well and they’ve been preparing.  
+Far more than I can afford to.  
+The acquisition of the Norwood Properties is an inevitability to them.
 	June
 So it’s just you standing in their way, eh?
 	Alan
-A romantic notion, June, but no.  A lot of regulative red-tape is standing in their way, and I represent just one thin, easy-to-slice layer of it.  
+A lot of regulative red-tape is standing in their way.
+And usually developers can pay to slice their way through it.
+But I think I have a bit of an ace up my sleeve.  
 	June
-And you came anyway.  To make your case.
-	Alan
-Let’s just say I have a bit of an ace up my sleeve.
+Isn’t that what you always say?
+	Alan.
+Yeah, but I'm worried this time it could have reprcussions.
 	June
-Ugh, isn’t that what you always say?
+Like what?
 	Alan
-June, I won’t lie, this meeting is probably going to be a chore.  No one should light a candle for me or the Norwood estate.  But like i said, I think I might have found something that could turn the tables of this whole thing.  
+You know I can't tell you.
 	June
-Can you tell me what it is?
+But you really think you can stop Title 3?  
 	Alan
-You know I can’t, honey.  
+I don't know.  But I do know it's going to get messy in the attempt.
+And those developers are prepared to get messy, too.
 	June
-Hmmph.  I’m getting a drink.  Do you want one?
+You want to take a walk outside?
 	Alan
-Get me two Blue Mooses.  Extra strong.  I need to get up to the room and go over some charts, at least for the next few hours.
+I'm gonna need to go over some charts, at least for the next few hours.
 	June
-Do you want to just have a quick sit at the bar, get your mind off the work for a few minutes?
+Do you want to check out the pool, get your mind off the work for a few minutes?
 	Alan
-Not yet, June. Let me get through tomorrow, then we can stroll through the woods and relax.
+Not yet, June. Let me get through tomorrow, then we can hang out by the pool and relax.
 	June
 Aren’t you usually in a debrief til after dinner?
 	Alan
 Yeah, thanks for reminding me.  Well, maybe after that.
 	June
-In the moonlight?  24 hours from now… sounds great, Dad.  
+24 hours from now… OK.  
 	Alan
-Remember, two cans of Blue Moose chilled.  Extra strong for your dad. 
+Don't you have your "Happy Mouth" arrangements to work on, anyway?
 	June
-Another one.  So three, please.
-	Alan
-Yes, let’s see how Norwood’s storied staff handles such a brutal order.
+Ugh...
 	END
