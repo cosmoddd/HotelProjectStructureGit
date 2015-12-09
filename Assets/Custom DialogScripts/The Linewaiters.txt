@@ -3,8 +3,8 @@
 BEGIN
 	Linewaiter 1
 How long has it been, now?
- 	Linewaiter 2
-Two hours.  
+	Linewaiter 2
+Two hours.
 	Linewaiter 1
 You think we're actually going to get in at this point?
 	Linewaiter 2
@@ -22,16 +22,16 @@ Three months ago.  She was with a group of people wearing panchos.
 	Linewaiter 2
 I tried the pancho approach, too, once.  No luck.
 	Linewaiter 1
-Kate said she had a transcendent night that night.
+Kate said she had a transcendent night.
 	Linewaiter 2
 Whatever that means.
 	Linewaiter 1
-I'm just saying, it's still worth making the journey, to me anyway.
+I'm just saying, it's still worth making the journey.
 	Linewaiter 2
 Yeah, I keep thinking I'm going to quit trying to get in...
-But then I hear from people who went that it was this life-altering experience.
+But then I hear from people who went that it was this defining experience.
 	Linewaiter 1
-One day, Tommy.  Look where we are.  Right at the precipice.
+One day, Tommy. 
 We're so close.
 	Linewaiter 2
 Yeah...
