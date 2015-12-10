@@ -13,7 +13,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!1 &117862
 GameObject:
@@ -30,7 +30,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 16
   m_IsActive: 1
 --- !u!1 &125458
 GameObject:
@@ -42,12 +42,13 @@ GameObject:
   - 4: {fileID: 488498}
   - 33: {fileID: 3388532}
   - 23: {fileID: 2366004}
+  - 65: {fileID: 6522972}
   m_Layer: 0
   m_Name: Cube_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 16
   m_IsActive: 1
 --- !u!1 &153704
 GameObject:
@@ -64,7 +65,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 16
   m_IsActive: 1
 --- !u!4 &406486
 Transform:
@@ -96,9 +97,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104432}
-  m_LocalRotation: {x: 0, y: .993319631, z: 0, w: .115395561}
-  m_LocalPosition: {x: 16.8000011, y: 8.10000038, z: -17.5}
-  m_LocalScale: {x: .0920000002, y: .0920000002, z: .0920000002}
+  m_LocalRotation: {x: 0, y: -.00133364368, z: 0, w: .999999166}
+  m_LocalPosition: {x: 44.7287865, y: 2.0999999, z: 5.0189476}
+  m_LocalScale: {x: .0920000151, y: .0920000002, z: .0920000002}
   m_Children:
   - {fileID: 431030}
   - {fileID: 488498}
@@ -210,6 +211,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125458}
   m_Mesh: {fileID: 4300002, guid: daffd3633b25c1c44bb068fb0057f318, type: 3}
+--- !u!65 &6522972
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.39999962, y: 6.96704292, z: 7.08801126}
+  m_Center: {x: .900001943, y: 1.51645255, z: 2.54403758}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

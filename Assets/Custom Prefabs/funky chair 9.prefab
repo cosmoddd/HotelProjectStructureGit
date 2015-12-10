@@ -11,12 +11,13 @@ GameObject:
   - 33: {fileID: 3329422}
   - 23: {fileID: 2339874}
   - 95: {fileID: 9576424}
+  - 65: {fileID: 6566238}
   m_Layer: 0
   m_Name: funky chair 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!4 &489114
 Transform:
@@ -24,8 +25,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117662}
-  m_LocalRotation: {x: -.59424603, y: -.383238375, z: -.383238345, w: .594246089}
-  m_LocalPosition: {x: 73.625, y: .650000036, z: -1.92500007}
+  m_LocalRotation: {x: -.0210067276, y: -.70679462, z: -.706794798, w: .0210068319}
+  m_LocalPosition: {x: 64.6999969, y: .650000036, z: .530000031}
   m_LocalScale: {x: .0599999987, y: .0599999987, z: .0599999987}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,6 +62,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117662}
   m_Mesh: {fileID: 4300000, guid: fba947dc2b2798849a372fc953d4fa27, type: 3}
+--- !u!65 &6566238
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.6000013, y: 12.600009, z: 12.1290894}
+  m_Center: {x: -5.00006437, y: 5.00000811, z: -4.58446741}
 --- !u!95 &9576424
 Animator:
   serializedVersion: 3

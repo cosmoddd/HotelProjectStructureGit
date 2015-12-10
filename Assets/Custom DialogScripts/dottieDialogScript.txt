@@ -100,7 +100,7 @@ What's wrong?
 	//Dottie
 Oh boy, there must be a mistake.  
 Hmmm..  
-211 is Andre’s room.  
+21 is Andre’s room.  
 	//Sandro looks at Dottie
 	//Sandro
 Hasn't Andre been there for, what, 20 years?
@@ -111,9 +111,9 @@ All of our other rooms seem to be full up for the big conference this weekend.
 I feel so terrible, but I've got nothing.  
 	//Sandro looks at Dottie
 	//Sandro
-What about 316?
+What about 34?
 	//Dottie
-316?  
+34?  
 	//Sandro
 Yeah, the Norwood Suite.  
 	//Dottie
@@ -170,7 +170,7 @@ As for you… anything out of place and it goes on your card, got it?
 Good.  Goodnight!
 // End of intro dialog.
 // Loop 2
-Norwood was a cool guy, so they say.
+Never thought I'd be telling anyone to go to Room 34.
 Some people don't realize how good they have it.
 Ha.
 // End

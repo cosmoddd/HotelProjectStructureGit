@@ -134,7 +134,7 @@ GameObject:
   - 114: {fileID: 11403574}
   m_Layer: 0
   m_Name: Single Hinge
-  m_TagString: Untagged
+  m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,8 +147,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 418562}
-  - 65: {fileID: 6577854}
-  - 114: {fileID: 11495724}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -293,8 +291,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0446328074, y: -.00143845112, z: .141068712}
-  m_LocalScale: {x: .128423154, y: .0379439443, z: .212500006}
+  m_LocalPosition: {x: -.0529999994, y: -.00143845112, z: .141000003}
+  m_LocalScale: {x: .146002159, y: .150000006, z: .212500006}
   m_Children: []
   m_Father: {fileID: 416148}
   m_RootOrder: 0
@@ -329,7 +327,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197978}
   m_LocalRotation: {x: 0, y: -.706480324, z: 0, w: .707732737}
-  m_LocalPosition: {x: 20.0125008, y: 9.3125, z: 1}
+  m_LocalPosition: {x: 20.0125008, y: 14.3249998, z: .574999988}
   m_LocalScale: {x: 1.4457972, y: 1.04340661, z: 1.10000002}
   m_Children:
   - {fileID: 416148}
@@ -579,18 +577,6 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6577854
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194284}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1843,7 +1829,7 @@ MonoBehaviour:
         fsmStringParams: []
         fsmObjectParams: []
         fsmVarParams: []
-        byteData: 01000000000400000001496e74204d61780000000001496e7400
+        byteData: 01000000000400000001496e74204d61780000000001496e7401
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -3846,8 +3832,8 @@ MonoBehaviour:
       colorIndex: 1
       position:
         serializedVersion: 2
-        x: 512
-        y: 416
+        x: 496
+        y: 432
         width: 131
         height: 80
       isBreakpoint: 0
@@ -4482,7 +4468,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 496
-        y: 608
+        y: 688
         width: 162
         height: 80
       isBreakpoint: 0
@@ -5031,7 +5017,7 @@ MonoBehaviour:
           typeName: 
           value: {fileID: 0}
         fsmVarParams: []
-        byteData: 000044697361626c6520436f6e74726f6c730000000000000100000000014d6f7573652044656c746120590000003f015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a2053706565642043616c630000803f01576869636820536964650200000000000000015a2053706565642043616c63010000a5430150726576696f757320446f6f72205900000000015a2053706565642043616c63000000000000a5430143757272656e7420446f6f722059010000a5430143757272656e7420446f6f72205900006643000080b34300010000a5430143757272656e7420446f6f7220590080b3430000000000006e6578746e657874014178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700100000000000000000000000000000000010000000000000000000000000100000000010000a5430143757272656e7420446f6f722059000000000101000000010044697361626c6520436f6e74726f6c7300000000000000000000426567696e000000000000
+        byteData: 000044697361626c6520436f6e74726f6c730000000000000100000000014d6f7573652044656c74612059cdcc4c3e015a205370656564204d6f6469666965720200000000000000015a2053706565642043616c630100000000015a2053706565642043616c630000803f01576869636820536964650200000000000000015a2053706565642043616c63010000a5430150726576696f757320446f6f72205900000000015a2053706565642043616c63000000000000a5430143757272656e7420446f6f722059010000a5430143757272656e7420446f6f72205900006643000080b34300010000a5430143757272656e7420446f6f7220590080b3430000000000006e6578746e657874014178697320557053746f70204d6f76696e670001427574746f6e20446f776e010001427574746f6e20446f776e4d6f75736520427574746f6e2055700100000000000000000000000000000000010000000000000000000000000100000000010000a5430143757272656e7420446f6f722059000000000101000000010044697361626c6520436f6e74726f6c7300000000000000000000426567696e000000000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -5511,8 +5497,8 @@ MonoBehaviour:
       colorIndex: 4
       position:
         serializedVersion: 2
-        x: 496
-        y: 176
+        x: 480
+        y: 192
         width: 144
         height: 32
       isBreakpoint: 0
@@ -6662,7 +6648,16 @@ MonoBehaviour:
     - name: Axis Up
       isSystemEvent: 0
       isGlobal: 0
+    - name: Back
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Door Collide
+      isSystemEvent: 0
+      isGlobal: 1
     - name: False
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Front
       isSystemEvent: 0
       isGlobal: 0
     - name: Mouse Button Up
@@ -6678,12 +6673,6 @@ MonoBehaviour:
       isSystemEvent: 0
       isGlobal: 0
     - name: next
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Front
-      isSystemEvent: 0
-      isGlobal: 0
-    - name: Back
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -10441,18 +10430,6 @@ MonoBehaviour:
     StepFrame: 0
     activeStateName: 
   fsmTemplate: {fileID: 0}
---- !u!114 &11495724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194284}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c03f10dda0d2c6d419276962b1242e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseOver: 0
 --- !u!164 &16467262
 AudioReverbFilter:
   m_ObjectHideFlags: 1

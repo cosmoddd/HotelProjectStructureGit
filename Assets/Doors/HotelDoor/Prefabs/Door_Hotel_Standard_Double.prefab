@@ -65,7 +65,7 @@ GameObject:
   - 114: {fileID: 11459502}
   - 82: {fileID: 8270002}
   m_Layer: 0
-  m_Name: dDoor R Handle Trigger (Outer)
+  m_Name: Handle Trigger Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,7 +118,7 @@ GameObject:
   - 114: {fileID: 11464648}
   - 82: {fileID: 8207594}
   m_Layer: 0
-  m_Name: dDoor L Handle Trigger (Outer)1
+  m_Name: Handle Trigger Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ Transform:
   m_GameObject: {fileID: 118518}
   m_LocalRotation: {x: 0, y: 0, z: .00872616004, w: -.999961913}
   m_LocalPosition: {x: -.048499357, y: -1.0348063e-07, z: .127999574}
-  m_LocalScale: {x: .128423154, y: .0474252924, z: .19001098}
+  m_LocalScale: {x: .128423154, y: .150000006, z: .19001098}
   m_Children: []
   m_Father: {fileID: 441804}
   m_RootOrder: 0
@@ -563,7 +563,7 @@ Transform:
   m_GameObject: {fileID: 132454}
   m_LocalRotation: {x: -.0028725788, y: .00661086291, z: -.00492118811, w: .999961913}
   m_LocalPosition: {x: -.0397000015, y: .00300000003, z: .114}
-  m_LocalScale: {x: .134587318, y: .0379439481, z: .174999997}
+  m_LocalScale: {x: .134587318, y: .150000006, z: .174999997}
   m_Children: []
   m_Father: {fileID: 443200}
   m_RootOrder: 0
@@ -13138,7 +13138,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: NorwoodSuiteKey2
+        value: NorwoodSuiteKey
       vector2Variables: []
       vector3Variables: []
       colorVariables: []
