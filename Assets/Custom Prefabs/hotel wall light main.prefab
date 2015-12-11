@@ -130,7 +130,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Intensity
-      value: 1.14999998
+      value: 1.07000005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Shadows.m_Type
@@ -138,7 +138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Range
-      value: 4.96999979
+      value: 2.44000006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
