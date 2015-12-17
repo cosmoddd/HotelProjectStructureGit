@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d41887b1546f5c44ab54e7e65aad3bc, type: 3}
+  m_Name: window frames
+  m_EditorClassIdentifier: 
+  combinedMaterialInfo:
+  - atlases:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    texPropertyNames:
+    - _MainTex
+    - _BumpMap
+    - _ParallaxMap
+    - _MetallicGlossMap
+    - _OcclusionMap
+    - _EmissionMap
+    - _DetailMask
+  materials:
+  - {fileID: 2100000, guid: 68d10627d9624ef4aae212d84d23ece3, type: 2}
+  - {fileID: 2100000, guid: 6581edd66cb01934981421ef22cf3de5, type: 2}
+  prefabUVRects:
+  - serializedVersion: 2
+    x: .250732422
+    y: .250732422
+    width: .25
+    height: .25
+  - serializedVersion: 2
+    x: .000244140625
+    y: .000244140625
+    width: .25
+    height: .25
+  resultMaterial: {fileID: 2100000, guid: 825576524230c0242812c62bae9cc321, type: 2}
+  resultMaterials: []
+  doMultiMaterial: 0
+  fixOutOfBoundsUVs: 1

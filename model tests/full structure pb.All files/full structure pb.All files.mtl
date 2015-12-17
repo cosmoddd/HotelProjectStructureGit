@@ -1,0 +1,66 @@
+
+newmtl castle wall 3
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd castle_wall3_Diffuse.jpg
+
+
+
+newmtl wood_planks_old_beat
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_planks_old_beat.sbsar
+
+
+
+newmtl metal_flat_unpainted
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd metal_flat_unpainted.sbsar
+
+
+
+newmtl Hungarian Roof
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hungarian_roof_Diffuse.jpg
+
+
+
+newmtl castle wall
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd castle_ROCK_WALL_Diffuse.jpg
+
+
+
+newmtl hallway_wallpaper seamless
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_steamless.jpg
+
+

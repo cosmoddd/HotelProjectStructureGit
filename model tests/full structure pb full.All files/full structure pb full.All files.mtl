@@ -1,0 +1,352 @@
+
+newmtl Default_Prototype
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd GridBox_Default.png
+
+
+
+newmtl Ceiling_strange
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd Ceiling_Diffuse.jpg
+
+
+
+newmtl castle wall
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd castle_ROCK_WALL_Diffuse.jpg
+
+
+
+newmtl blue glow dance entrance
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+
+
+
+
+newmtl hallway_wallpaper seamless
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_steamless.jpg
+
+
+
+newmtl Deep Cherry Wood
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_american_cherry.sbsar
+
+
+
+newmtl wood_planks_old_beat
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_planks_old_beat.sbsar
+
+
+
+newmtl parquetfloor
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd parquet1Bitmap2Material2_Diffuse.jpg
+
+
+
+newmtl Hungarian Roof
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hungarian_roof_Diffuse.jpg
+
+
+
+newmtl parquet pattern
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd parquet_pattern_Diffuse.jpg
+
+
+
+newmtl hallway_wallpaper seamless 3
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_seamless3.jpg
+
+
+
+newmtl metal_flat_unpainted
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd metal_flat_unpainted.sbsar
+
+
+
+newmtl concert hall wallpaper
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd concert hall.jpg
+
+
+
+newmtl wood_american_cherry_bannister
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_american_cherry.sbsar
+
+
+
+newmtl hugeFloor
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hugeFloor.jpg
+
+
+
+newmtl standard wood
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd parquet3.jpg
+
+
+
+newmtl wood_american_cherry_2 lighter
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_american_cherry.sbsar
+
+
+
+newmtl hallway_wallpaper seamless 5
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_seamless5 inverse.jpg
+
+
+
+newmtl 3dTiles
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd 3dtiles_Diffuse_blue.jpg
+
+
+
+newmtl hallway_wallpaper seamless 1
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_seamless_21.jpg
+
+
+
+newmtl moodyLockerRoom
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd moody locker room.jpg
+
+
+
+newmtl wood_planks_old_beat_1
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wood_planks_old_beat.sbsar
+
+
+
+newmtl hallway_wallpaper seamless 6
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd wallpaper seamless 6.jpg
+
+
+
+newmtl hallway_wallpaper seamless 4
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd hallway_wallpaper_seamless4 monochrome.jpg
+
+
+
+newmtl bigParquet
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd bigparquet2Bitmap2Material2_Diffuse.jpg
+
+
+
+newmtl castle wall 2
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd Castle_Rock_wall2Diffuse.jpg
+
+
+
+newmtl oldMarble
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd marble_Bitmap2Material2_Diffuse.jpg
+
+
+
+newmtl dining hall
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd dining hall wallpaper.jpg
+
+
+
+newmtl castle wall 3
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd castle_wall3_Diffuse.jpg
+
+
+
+newmtl classyTile
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd classy tile texture.jpg
+
+
+
+newmtl marbleKitchen
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd kitchen2Bitmap2Material2_Diffuse 1.jpg
+
+
+
+newmtl bathHouse
+Ka  1.0 1.0 1.0
+Kd  1.0 1.0 1.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.0
+illum 2
+map_Kd bathhouseBitmap2Material2_Diffuse.jpg
+
+
