@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d6ab0d3d562c5547adba32aab62a3d9
-timeCreated: 1447976434
+timeCreated: 1450446636
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -2318,9 +2318,9 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .632352948
-        scalar[1]: .354568183
-        scalar[2]: .223183379
+        scalar[0]: .595588207
+        scalar[1]: .351792485
+        scalar[2]: .236483559
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
