@@ -38,7 +38,7 @@ public class DialogFeeder : MonoBehaviour {
 			
 		}
 		
-		void TimeVacuum()
+	void TimeVacuum()
     {
         Debug.Log("hot pants in the evening sun");
     }   
@@ -53,5 +53,24 @@ public class DialogFeeder : MonoBehaviour {
     {
         thisFSM.FsmVariables.FindFsmString("CurrentDialog").Value = lines[dialogLocator];
        // thisFSM.Fsm.Event()
+    }
+
+    void LoadNewText()   // loads a whole nother text file
+    {
+        // Make sure there this a text
+        // file assigned before continuing
+        if (textFile != null)
+        {
+            // Add each line of the text file to
+            // the array using the new line
+            // as the delimiter
+            lines = (textFile.text.Split('\n'));
+            /*
+            for (int i = 0; i < lines.Length; i++)
+            {
+                lines[i].Trim();
+            }
+            */
+        }
     }
 }
