@@ -3,8 +3,15 @@ guid: b5e4b0b03b3b4b34785de96a86abe6f4
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Mesh
     4300002: 'Mesh '
+    6400000: //RootNode
+    7400000: modo_Anim
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,8 +68,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
