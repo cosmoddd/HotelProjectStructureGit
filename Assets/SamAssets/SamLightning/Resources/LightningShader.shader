@@ -57,7 +57,7 @@
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				float3 time = float3(_Time.x * _TimeScale * 7, _Tilt, v.vertex.y)*_Freq;
 				half distmodifier = -pow((2*o.uv.y - 1f),2)+1;
-				v.vertex.x += lerp(0, (snoise(time)-.5f) * _Amplitude + _Tilt, distmodifier);
+				v.vertex.x += lerp(0, (snoise(time)-.5f) * _Amplitude + _Tilt*150, distmodifier);
 				o.vertex = lerp(mul(UNITY_MATRIX_MVP, v.vertex), cutoffVert, step(_CutoffDist, v.vertex.y));
 
 				return o;
