@@ -2,29 +2,28 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: GrassMaterial
-  m_Shader: {fileID: 4800000, guid: 3bf110e890fd75d42b4aa6b12570640a, type: 3}
-  m_ShaderKeywords: GRASS_HEIGHT_SMOOTHING GRASS_WIDTH_SMOOTHING SIMPLE_GRASS UNIFORM_DENSITY
+  m_Shader: {fileID: 4800000, guid: 1902925be899f6c4794040c4a1c39b50, type: 3}
+  m_ShaderKeywords: GRASS_WIDTH_SMOOTHING SIMPLE_GRASS
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
-  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
       data:
         first:
-          name: _Displacement
+          name: _ColorMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ColorMap
+          name: _Displacement
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -68,31 +67,31 @@ Material:
       data:
         first:
           name: _EdgeLength
-        second: 22.8999996
+        second: 20
       data:
         first:
           name: _MaxTessellation
-        second: 3.32999992
+        second: 6
       data:
         first:
           name: _LODStart
-        second: 10.1999998
+        second: 20
       data:
         first:
           name: _LODEnd
-        second: 50
+        second: 100
       data:
         first:
           name: _LODMax
-        second: 1.60000002
+        second: 5
       data:
         first:
           name: _GrassFadeStart
-        second: 10
+        second: 50
       data:
         first:
           name: _GrassFadeEnd
-        second: 60
+        second: 100
       data:
         first:
           name: _Disorder
@@ -100,27 +99,27 @@ Material:
       data:
         first:
           name: _WindRotation
-        second: .930000007
+        second: 0
       data:
         first:
           name: _Smoothness00
-        second: 1
+        second: .5
       data:
         first:
           name: _Softness00
-        second: .0199999996
+        second: .5
       data:
         first:
           name: _Width00
-        second: .0399999991
+        second: .0500000007
       data:
         first:
           name: _MinHeight00
-        second: .230000004
+        second: .800000012
       data:
         first:
           name: _MaxHeight00
-        second: .189999998
+        second: 1
       data:
         first:
           name: _Smoothness01
@@ -185,7 +184,7 @@ Material:
       data:
         first:
           name: _GrassBottomColor
-        second: {r: .492647052, g: .286169976, b: .286169976, a: 0}
+        second: {r: .349999994, g: .349999994, b: .349999994, a: 1}
       data:
         first:
           name: _DensityValues
@@ -193,19 +192,19 @@ Material:
       data:
         first:
           name: _WindParams
-        second: {r: .300000012, g: 1.20000005, b: .150000006, a: .300000012}
+        second: {r: .300000012, g: 1.20000005, b: .150000006, a: 1.29999995}
       data:
         first:
           name: _Color00
-        second: {r: .561238229, g: .720591962, b: .499447823, a: .828000009}
+        second: {r: .5, g: .699999988, b: .300000012, a: 1}
       data:
         first:
           name: _SecColor00
-        second: {r: .784573436, g: .786767721, b: .637557745, a: .972000003}
+        second: {r: .200000003, g: .5, b: .150000006, a: 1}
       data:
         first:
           name: _SpecColor00
-        second: {r: .735294104, g: .735294104, b: .735294104, a: 1}
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
       data:
         first:
           name: _Color01

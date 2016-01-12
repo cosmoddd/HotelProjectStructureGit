@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace HutongGames.PlayMakerEditor
 {
-    [CustomActionEditor(typeof (SetCameraFOV))]
+    [CustomActionEditor(typeof(HutongGames.PlayMaker.Actions.SetCameraFOV))]
     public class SetCameraFOVActionEditor : CustomActionEditor
     {
         private GameObject cachedGameObject;

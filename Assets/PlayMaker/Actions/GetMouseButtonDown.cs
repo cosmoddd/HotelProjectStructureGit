@@ -9,10 +9,15 @@ namespace HutongGames.PlayMaker.Actions
 	public class GetMouseButtonDown : FsmStateAction
 	{
 		[RequiredField]
+        [Tooltip("The mouse button to test.")]
 		public MouseButton button;
+
+        [Tooltip("Event to send if the mouse button is down.")]
 		public FsmEvent sendEvent;
+
 		[UIHint(UIHint.Variable)]
-		public FsmBool storeResult;
+		[Tooltip("Store the button state in a Bool Variable.")]
+        public FsmBool storeResult;
 		
 		public override void Reset()
 		{
@@ -21,12 +26,23 @@ namespace HutongGames.PlayMaker.Actions
 			storeResult = null;
 		}
 
-		public override void OnUpdate()
+        public override void OnEnter()
+        {
+            DoGetMouseButtonDown();
+        }
+
+        public override void OnUpdate()
+        {
+            DoGetMouseButtonDown();
+        }
+
+		void DoGetMouseButtonDown()
 		{
 			bool buttonDown = Input.GetMouseButtonDown((int)button);
-			
-			if (buttonDown)
-				Fsm.Event(sendEvent);
+		    if (buttonDown)
+			{
+			    Fsm.Event(sendEvent);
+			}
 			
 			storeResult.Value = buttonDown;
 		}

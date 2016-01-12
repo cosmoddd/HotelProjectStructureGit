@@ -45,7 +45,7 @@
 		_Softness01	 ("Softness", Range(0,1))	= 0.5
 		_Width01	 ("Width", float)			= 0.1
 		_MinHeight01 ("Min Height", float)		= 0.2
-		_MaxHeight01("Max Height", float)		= 1.5
+		_MaxHeight01 ("Max Height", float)		= 1.5
 
 		_GrassTex02	 ("Grass Texture", 2D)		= "white" {}
 		_Color02	 ("Color", Color)			= (0.5, 0.7, 0.3, 1)
@@ -55,7 +55,7 @@
 		_Softness02	 ("Softness", Range(0,1))	= 0.5
 		_Width02	 ("Width", float)			= 0.1
 		_MinHeight02 ("Min Height", float)		= 0.2
-		_MaxHeight02("Max Height", float)		= 1.5
+		_MaxHeight02 ("Max Height", float)		= 1.5
 
 		_GrassTex03	 ("Grass Texture", 2D)		= "white" {}
 		_Color03	 ("Color", Color)			= (0.5, 0.7, 0.3, 1)
@@ -65,12 +65,14 @@
 		_Softness03	 ("Softness", Range(0,1))	= 0.5
 		_Width03	 ("Width", float)			= 0.1
 		_MinHeight03 ("Min Height", float)		= 0.2
-		_MaxHeight03("Max Height", float)		= 1.5
+		_MaxHeight03 ("Max Height", float)		= 1.5
+
+		//_GrassRenderTextureArea("RenderTextureArea", Vector) = (0,0,0,0)
     }
 
 	SubShader
 	{
-		Tags{ "RenderType" = "Opaque" }
+		Tags{ "Queue" = "AlphaTest" "RenderType" = "StixGamesGrass" }
 		LOD 1000
 
 		Pass 
@@ -86,7 +88,6 @@
 			#pragma domain domain
 			#pragma geometry geom
 			#pragma fragment frag
-			#pragma target 5.0
 			#pragma multi_compile_fog
 			#pragma multi_compile_fwdbase
 
@@ -97,6 +98,9 @@
 			#pragma shader_feature __ GRASS_HEIGHT_SMOOTHING
 			#pragma shader_feature __ GRASS_WIDTH_SMOOTHING
 			#pragma shader_feature __ GRASS_OBJECT_MODE
+			#pragma shader_feature __ GRASS_TOP_VIEW_COMPENSATION
+			#pragma shader_feature __ GRASS_FOLLOW_SURFACE_NORMAL
+			#pragma multi_compile  __ GRASS_RENDERTEXTURE_DISPLACEMENT
 			// ================= Shader_feature block end  =================
 
 			#define UNITY_PASS_FORWARDBASE
@@ -106,6 +110,7 @@
 			#include "AutoLight.cginc"
 			#include "UnityShaderVariables.cginc"
 
+			#include "GrassConfig.cginc"
 			#include "GrassDefinitionsAndFunctions.cginc"
 
 			#include "GrassVertex.cginc"
@@ -119,7 +124,7 @@
 		Pass 
 		{
 			Name "FORWARD"
-			Tags {"LightMode" = "ForwardAdd"}
+			Tags { "LightMode" = "ForwardAdd" }
 			ZWrite Off Blend One One
 			ColorMask RGB
 			Cull Off
@@ -130,7 +135,6 @@
 			#pragma domain domain
 			#pragma geometry geom
 			#pragma fragment frag
-			#pragma target 5.0
 			#pragma multi_compile_fog
 			#pragma multi_compile_fwdadd_fullshadows
 
@@ -141,6 +145,9 @@
 			#pragma shader_feature __ GRASS_HEIGHT_SMOOTHING
 			#pragma shader_feature __ GRASS_WIDTH_SMOOTHING
 			#pragma shader_feature __ GRASS_OBJECT_MODE
+			#pragma shader_feature __ GRASS_TOP_VIEW_COMPENSATION
+			#pragma shader_feature __ GRASS_FOLLOW_SURFACE_NORMAL
+			#pragma multi_compile  __ GRASS_RENDERTEXTURE_DISPLACEMENT
 			// ================= Shader_feature block end  =================
 
 			#define UNITY_PASS_FORWARDADD
@@ -150,6 +157,7 @@
 			#include "AutoLight.cginc"
 			#include "UnityShaderVariables.cginc"
 
+			#include "GrassConfig.cginc"
 			#include "GrassDefinitionsAndFunctions.cginc"
 
 			#include "GrassVertex.cginc"
@@ -163,7 +171,7 @@
 		Pass 
 		{
 			Name "ShadowCaster"
-			Tags { "LightMode" = "ShadowCaster" }
+			Tags {"LightMode" = "ShadowCaster" }
 			ZWrite On ZTest LEqual
 			Cull Off
 			Offset 1, 0
@@ -174,7 +182,6 @@
 			#pragma domain domain
 			#pragma geometry geom
 			#pragma fragment frag
-			#pragma target 5.0
 			#pragma multi_compile_shadowcaster
 
 			// ================= Shader_feature block start =================
@@ -184,6 +191,9 @@
 			#pragma shader_feature __ GRASS_HEIGHT_SMOOTHING
 			#pragma shader_feature __ GRASS_WIDTH_SMOOTHING
 			#pragma shader_feature __ GRASS_OBJECT_MODE
+			#pragma shader_feature __ GRASS_TOP_VIEW_COMPENSATION
+			#pragma shader_feature __ GRASS_FOLLOW_SURFACE_NORMAL
+			#pragma multi_compile  __ GRASS_RENDERTEXTURE_DISPLACEMENT
 			// ================= Shader_feature block end  =================
 
 			#define UNITY_PASS_SHADOWCASTER
@@ -195,6 +205,7 @@
 			#include "AutoLight.cginc"
 			#include "UnityShaderVariables.cginc"
 
+			#include "GrassConfig.cginc"
 			#include "GrassDefinitionsAndFunctions.cginc"
 
 			#include "GrassVertex.cginc"

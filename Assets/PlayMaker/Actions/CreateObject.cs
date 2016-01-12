@@ -49,7 +49,7 @@ namespace HutongGames.PlayMaker.Actions
 			if (go != null)
 			{
 				var spawnPosition = Vector3.zero;
-				var spawnRotation = Vector3.up;
+				var spawnRotation = Vector3.zero;
 				
 				if (spawnPoint.Value != null)
 				{
@@ -75,8 +75,8 @@ namespace HutongGames.PlayMaker.Actions
 					}
                 }
 
-#if !(UNITY_FLASH || UNITY_NACL || UNITY_METRO || UNITY_WP8 || UNITY_WIIU || UNITY_PSM || UNITY_WEBGL)
-				GameObject newObject;
+#if !(UNITY_FLASH || UNITY_NACL || UNITY_METRO || UNITY_WP8 || UNITY_WIIU || UNITY_PSM || UNITY_WEBGL || UNITY_PS3 || UNITY_PS4 || UNITY_XBOXONE)
+                GameObject newObject;
 
 				if (!networkInstantiate.Value)
 				{

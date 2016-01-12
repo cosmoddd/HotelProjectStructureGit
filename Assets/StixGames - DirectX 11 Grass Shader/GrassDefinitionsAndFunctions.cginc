@@ -1,10 +1,6 @@
 #ifndef GRASS_DEFINITIONS
 #define GRASS_DEFINITIONS
 
-// ======================== Constants ============================
-
-#define MAX_VERTEX_COUNT 14
-
 // ================= PRECOMPILER HELPERS ============
 #if defined(UNITY_PASS_SHADOWCASTER)
 	#define SHADOWPASS
@@ -28,9 +24,15 @@ fixed4 _GrassBottomColor;
 fixed4 _WindParams;
 fixed _WindRotation;
 
-#define GRASS_DISPLACEMENT
 #ifdef GRASS_DISPLACEMENT
 sampler2D _Displacement;
+
+#ifdef GRASS_RENDERTEXTURE_DISPLACEMENT
+sampler2D _GrassRenderTextureDisplacement;
+
+//This is the area the displacement camera is currently rendering. xy is left bottom, wz is width and height.
+float4 _GrassRenderTextureArea;
+#endif
 #endif
 
 //Density for the geom shader. "density" is the sampled texture from _Density.
@@ -112,6 +114,10 @@ struct appdata
 {
 	float4 vertex : POSITION;
 
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		float3 normal : NORMAL;
+	#endif
+
 	#ifdef GRASS_OBJECT_MODE
 		float3 objectSpacePos : COLOR;
 	#endif
@@ -120,12 +126,16 @@ struct appdata
 	//The number of segments the grass will later have
 	fixed lod : TEXCOORD1;
 	float3 cameraPos : TEXCOORD2;
-	fixed3 lightDir : NORMAL;
+	fixed3 lightDir : TEXCOORD3;
 };
 
 struct tess_appdata 
 {
 	float4 vertex : POS;
+
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		float3 normal : NORMAL;
+	#endif
 
 	#ifdef GRASS_OBJECT_MODE
 		float3 objectSpacePos : COLOR;
@@ -134,7 +144,7 @@ struct tess_appdata
 	float2 uv : TEXCOORD0;
 	fixed lod : TEXCOORD1;
 	float3 cameraPos : TEXCOORD2;
-	fixed3 lightDir : NORMAL;
+	fixed3 lightDir : TEXCOORD3;
 };
 
 struct HS_CONSTANT_OUTPUT
@@ -148,14 +158,18 @@ struct GS_INPUT
 {
 	float4 position : SV_POSITION;
 
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		float3 normal : NORMAL;
+	#endif
+
 	#ifdef GRASS_OBJECT_MODE
-		float3 objectSpacePos : TEXCOORD3;
+		float3 objectSpacePos : TEXCOORD4;
 	#endif
 
 	float2 uv : TEXCOORD0;
 	fixed lod : TEXCOORD1;
 	float3 cameraPos : TEXCOORD2;
-	fixed3 lightDir : NORMAL;
+	fixed3 lightDir : TEXCOORD3;
 	fixed smoothing : COLOR;
 };
 
@@ -181,17 +195,21 @@ struct FS_INPUT
 {
 	float3 worldPos : TEXCOORD8;
 
-	#ifndef SHADOWPASS
-		float4  pos : SV_POSITION;
-		fixed4 color : COLOR;
-
+	//This part is included for normalDepth rendering, but not shadowmap rendering
+	#if !defined(SHADOWPASS) || defined(RENDER_NORMAL_DEPTH)
 		fixed3 normal : NORMAL;
-		fixed3 reflectionNormal : NORMAL1;
 
 		#if !defined(SIMPLE_GRASS) && !defined(SIMPLE_GRASS_DENSITY)
 			fixed2 uv : TEXCOORD1;
 			int texIndex : COLOR3;
 		#endif
+	#endif
+
+	#ifndef SHADOWPASS
+		float4  pos : SV_POSITION;
+		fixed4 color : COLOR;
+
+		fixed3 reflectionNormal : NORMAL1;
 
 		fixed3  lightDir : TEXCOORD2;
 		fixed3  viewDir : TEXCOORD3;
@@ -214,26 +232,26 @@ struct FS_INPUT
 
 // ========================== HELPER FUNCTIONS ==============================
 //Random value from 2D value between 0 and 1
-float rand(float2 co){
+inline float rand(float2 co){
 	return frac(sin(dot(co.xy, float2(12.9898,78.233))) * 43758.5453);
 }
 
-fixed windStrength(float3 pos)
+inline fixed windStrength(float3 pos)
 {
 	return pos.x + _Time.w*_WindParams.y + 5*cos(0.01f*pos.z + _Time.y*_WindParams.y * 0.2f) + 4*sin(0.05f*pos.z - _Time.y*_WindParams.y*0.15f) + 4*sin(0.2f*pos.z + _Time.y*_WindParams.y * 0.2f) + 2*cos(0.6f*pos.z - _Time.y*_WindParams.y*0.4f);
 }
 
-fixed windRippleStrength(float3 pos)
+inline fixed windRippleStrength(float3 pos)
 {
 	return sin(100*pos.x + _Time.y*_WindParams.w*3 + pos.z)*cos(10*pos.x + _Time.y*_WindParams.w*2 + pos.z*0.5f);
 }
 
-fixed2 windRipple(float3 pos)
+inline fixed2 windRipple(float3 pos)
 {
 	return _WindParams.z * fixed2(windRippleStrength(pos), windRippleStrength(pos + float3(452, 0, 987)));
 }
 
-fixed2 wind(float3 pos, fixed2 offset)
+inline fixed2 wind(float3 pos, fixed2 offset)
 {
 	float3 realPos = float3(pos.x * cos(_WindRotation) - pos.z * sin(_WindRotation), pos.y, pos.x * sin(_WindRotation) + pos.z * cos(_WindRotation));
 
@@ -246,21 +264,21 @@ fixed2 wind(float3 pos, fixed2 offset)
 }
 
 //Get the grass normal from the up direction (or bended up direction) of the grass
-void getNormals(fixed3 dir, fixed3 lightDir, fixed3 groundRight, out fixed3 lightingNormal, out fixed3 reflectionNormal)
+inline void getNormals(fixed3 dir, fixed3 lightDir, fixed3 groundRight, out fixed3 lightingNormal, out fixed3 reflectionNormal)
 {
 	fixed3 grassSegmentRight = cross(dir, lightDir);
 	lightingNormal = normalize(cross(grassSegmentRight, dir));
 	reflectionNormal = normalize(cross(groundRight, dir));
 }
 
-fixed nextPow2(fixed input)
+inline fixed nextPow2(fixed input)
 {
 	return pow(2, (ceil(log2(input))));
 }
 
 //Seriously expensive operation. You shouldn't use this too much. Unfortunately it's needed for the camera/renderer position.
 //From http://answers.unity3d.com/questions/218333/shader-inversefloat4x4-function.html
-float4x4 inverse(float4x4 input)
+inline float4x4 inverse(float4x4 input)
 {
 #define minor(a,b,c) determinant(float3x3(input.a, input.b, input.c))
 	//determinant(float3x3(input._22_23_23, input._32_33_34, input._42_43_44))
@@ -290,7 +308,7 @@ float4x4 inverse(float4x4 input)
 	return transpose(cofactors) / determinant(input);
 }
 
-float3 getCameraPos()
+inline float3 getCameraPos()
 {
 	#ifdef UNITY_PASS_SHADOWCASTER
 		return mul(inverse(UNITY_MATRIX_V), float4(0, 0, 0, 1)).xyz;

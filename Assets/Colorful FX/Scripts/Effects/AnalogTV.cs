@@ -29,8 +29,11 @@ namespace Colorful
 		[Range(0, 4096), Tooltip("The number of scanlines to draw.")]
 		public int ScanlinesCount = 768;
 
-		[Tooltip("Vertical scanline offset. Gives a cool screen scanning effect when animated.")]
+		[Tooltip("Scanline offset. Gives a cool screen scanning effect when animated.")]
 		public float ScanlinesOffset = 0f;
+
+		[Tooltip("Uses vertical scanlines.")]
+		public bool VerticalScanlines = false;
 
 		[Range(-2f, 2f), Tooltip("Spherical distortion factor.")]
 		public float Distortion = 0.2f;
@@ -57,7 +60,11 @@ namespace Colorful
 		{
 			Material.SetVector("_Params1", new Vector4(NoiseIntensity, ScanlinesIntensity, ScanlinesCount, ScanlinesOffset));
 			Material.SetVector("_Params2", new Vector4(Phase, Distortion, CubicDistortion, Scale));
-			Graphics.Blit(source, destination, Material, ConvertToGrayscale ? 1 : 0);
+
+			int pass = VerticalScanlines ? 2 : 0;
+			pass += ConvertToGrayscale ? 1 : 0;
+
+			Graphics.Blit(source, destination, Material, pass);
 		}
 	}
 }

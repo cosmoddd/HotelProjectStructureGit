@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: b73ab7385d7770c44b05db8e98bbf449
+timeCreated: 1452616862
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BezierCurve
+    100002: BezierCurve_001
+    100004: BezierCurve_002
+    100006: BezierCurve_003
+    100008: BezierCurve_004
+    100010: BezierCurve_005
+    100012: BezierCurve_006
+    100014: BezierCurve_007
+    100016: BezierCurve_008
+    100018: BezierCurve_009
+    100020: big_railing_001
+    100022: big_railing_mirror
+    100024: catwalk_mirror_axi
+    100026: Cube_009
+    100028: Cube_012
+    100030: Cube_013
+    100032: Cube_014
+    100034: Cylinder
+    100036: Cylinder_001
+    100038: Cylinder_002
+    100040: Cylinder_003
+    100042: Cylinder_004
+    100044: Cylinder_005
+    100046: Cylinder_006
+    100048: //RootNode
+    100050: mirror_axis
+    100052: mirror_axis_001
+    400000: BezierCurve
+    400002: BezierCurve_001
+    400004: BezierCurve_002
+    400006: BezierCurve_003
+    400008: BezierCurve_004
+    400010: BezierCurve_005
+    400012: BezierCurve_006
+    400014: BezierCurve_007
+    400016: BezierCurve_008
+    400018: BezierCurve_009
+    400020: big_railing_001
+    400022: big_railing_mirror
+    400024: catwalk_mirror_axi
+    400026: Cube_009
+    400028: Cube_012
+    400030: Cube_013
+    400032: Cube_014
+    400034: Cylinder
+    400036: Cylinder_001
+    400038: Cylinder_002
+    400040: Cylinder_003
+    400042: Cylinder_004
+    400044: Cylinder_005
+    400046: Cylinder_006
+    400048: //RootNode
+    400050: mirror_axis
+    400052: mirror_axis_001
+    2300000: BezierCurve
+    2300002: BezierCurve_001
+    2300004: BezierCurve_002
+    2300006: BezierCurve_003
+    2300008: BezierCurve_004
+    2300010: BezierCurve_005
+    2300012: BezierCurve_006
+    2300014: BezierCurve_007
+    2300016: BezierCurve_008
+    2300018: BezierCurve_009
+    2300020: big_railing_001
+    2300022: Cube_009
+    2300024: Cube_012
+    2300026: Cube_013
+    2300028: Cube_014
+    2300030: Cylinder
+    2300032: Cylinder_001
+    2300034: Cylinder_002
+    2300036: Cylinder_003
+    2300038: Cylinder_004
+    2300040: Cylinder_005
+    2300042: Cylinder_006
+    3300000: BezierCurve
+    3300002: BezierCurve_001
+    3300004: BezierCurve_002
+    3300006: BezierCurve_003
+    3300008: BezierCurve_004
+    3300010: BezierCurve_005
+    3300012: BezierCurve_006
+    3300014: BezierCurve_007
+    3300016: BezierCurve_008
+    3300018: BezierCurve_009
+    3300020: big_railing_001
+    3300022: Cube_009
+    3300024: Cube_012
+    3300026: Cube_013
+    3300028: Cube_014
+    3300030: Cylinder
+    3300032: Cylinder_001
+    3300034: Cylinder_002
+    3300036: Cylinder_003
+    3300038: Cylinder_004
+    3300040: Cylinder_005
+    3300042: Cylinder_006
+    4300000: Cylinder_006
+    4300002: Cylinder_003
+    4300004: Cube_009
+    4300006: BezierCurve_009
+    4300008: Cylinder
+    4300010: BezierCurve_003
+    4300012: BezierCurve_002
+    4300014: BezierCurve
+    4300016: BezierCurve_001
+    4300018: BezierCurve_004
+    4300020: BezierCurve_005
+    4300022: BezierCurve_006
+    4300024: BezierCurve_007
+    4300026: Cylinder_001
+    4300028: Cylinder_002
+    4300030: Cube_012
+    4300032: Cube_013
+    4300034: Cube_014
+    4300036: big_railing_001
+    4300038: BezierCurve_008
+    4300040: Cylinder_004
+    4300042: Cylinder_005
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

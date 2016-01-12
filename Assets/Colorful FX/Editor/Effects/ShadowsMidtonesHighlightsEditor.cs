@@ -111,7 +111,7 @@ namespace Colorful.Editors
 				float alpha = color.a;
 				diameter = Mathf.Clamp(diameter, kMinSize, kMaxSize);
 				Vector3 hsv;
-				EditorGUIUtility.RGBToHSV(color, out hsv.x, out hsv.y, out hsv.z);
+				Color.RGBToHSV(color, out hsv.x, out hsv.y, out hsv.z);
 
 				if (diameter != m_Diameter)
 				{
@@ -156,7 +156,7 @@ namespace Colorful.Editors
 					}
 					EditorGUILayout.EndHorizontal();
 
-					color = EditorGUIUtility.HSVToRGB(hsv.x, hsv.y, hsv.z);
+					color = Color.HSVToRGB(hsv.x, hsv.y, hsv.z);
 					color.a = GUILayout.HorizontalSlider(alpha, 0f, 1f);
 				}
 				EditorGUILayout.EndVertical();
@@ -243,7 +243,7 @@ namespace Colorful.Editors
 						float saturation = d;
 						float hue = Mathf.Atan2(dx, dy);
 						hue = 1f - ((hue > 0) ? hue : CLib.PI2 + hue) / CLib.PI2;
-						Color color = EditorGUIUtility.HSVToRGB(hue, saturation, 1f);
+						Color color = Color.HSVToRGB(hue, saturation, 1f);
 
 						// Quick & dirty antialiasing
 						color.a = (saturation > 0.99) ? (1f - saturation) * 100f : 1f;

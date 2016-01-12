@@ -66,8 +66,7 @@ namespace HutongGames.PlayMaker.Actions
                 sourceFsm = ActionHelpers.GetGameObjectFsm(go, fsmName.Value);
                 sourceVariable = sourceFsm.FsmVariables.GetVariable(storeValue.variableName);
                 targetVariable = Fsm.Variables.GetVariable(storeValue.variableName);
-
-                storeValue.Type = FsmUtility.GetVariableType(targetVariable);
+                storeValue.Type = targetVariable.VariableType;
 
                 if (!string.IsNullOrEmpty(storeValue.variableName) && sourceVariable == null)
                 {
@@ -86,9 +85,15 @@ namespace HutongGames.PlayMaker.Actions
             }
 
             InitFsmVar();
-
             storeValue.GetValueFrom(sourceVariable);
             storeValue.ApplyValueTo(targetVariable);
         }
+
+#if UNITY_EDITOR
+        public override string AutoName()
+        {
+            return ("Get FSM Variable: " + ActionHelpers.GetValueLabel(storeValue.NamedVar));
+        }
+#endif
     }
 }

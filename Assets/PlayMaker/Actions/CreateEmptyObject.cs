@@ -31,7 +31,7 @@ namespace HutongGames.PlayMaker.Actions
 			var go = gameObject.Value;
 
 			Vector3 spawnPosition = Vector3.zero;
-			Vector3 spawnRotation = Vector3.up;
+			Vector3 spawnRotation = Vector3.zero;
 			
 			if (spawnPoint.Value != null)
 			{

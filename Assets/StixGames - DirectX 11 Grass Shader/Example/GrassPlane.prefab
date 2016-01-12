@@ -10,9 +10,8 @@ GameObject:
   - 4: {fileID: 407678}
   - 33: {fileID: 3333096}
   - 23: {fileID: 2348376}
-  - 114: {fileID: 11415922}
   - 64: {fileID: 6473844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +28,7 @@ GameObject:
   - 4: {fileID: 422334}
   - 33: {fileID: 3314248}
   - 23: {fileID: 2387676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,20 +134,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: c98877f0409919e4f94d1c18c8a9eca9, type: 3}
---- !u!114 &11415922
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 112644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38615cf30be85af488c32eaca03c1b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 128
-  addColorHeight: 0
-  addDisplacement: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

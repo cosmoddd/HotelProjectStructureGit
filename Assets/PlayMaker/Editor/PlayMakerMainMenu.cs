@@ -118,6 +118,18 @@ static class PlayMakerMainMenu
 		FsmEditor.OpenFsmLogWindow();
 	}
 
+    [MenuItem(MenuRoot + "Editor Windows/Timeline Log", true)]
+    public static bool ValidateOpenTimelineWindow()
+    {
+        return FsmEditorWindow.IsOpen();
+    }
+
+    [MenuItem(MenuRoot + "Editor Windows/Timeline Log", false, 16)]
+    public static void OpenTimelineWindow()
+    {
+        FsmEditor.OpenTimelineWindow();
+    }
+
 	[MenuItem(MenuRoot + "Editor Windows/Editor Log", true)]
 	public static bool ValidateOpenReportWindow()
 	{
@@ -129,6 +141,20 @@ static class PlayMakerMainMenu
 	{
 		FsmEditor.OpenReportWindow();
 	}
+
+/* Enable when window is implemeneted
+    [MenuItem(MenuRoot + "Editor Windows/Search", true)]
+    public static bool ValidateOpenSearchWindow()
+    {
+        return FsmEditorWindow.IsOpen();
+    }
+
+    [MenuItem(MenuRoot + "Editor Windows/Search", false, 19)]
+    public static void OpenSearchWindow()
+    {
+        FsmEditor.OpenSearchWindow();
+    }
+*/
 
 	#endregion
 
@@ -162,6 +188,13 @@ static class PlayMakerMainMenu
 		PlayMakerGUI.Instance.enabled = true;
 	}
 
+    /* Uncomment to make asset
+    [MenuItem("Assets/Create/PlayMakerPrefs")]
+    public static void CreateAsset()
+    {
+        ScriptableObjectUtility.CreateAsset<PlayMakerPrefs>();
+    }*/
+
 	#endregion
 
 	#region TOOLS
@@ -170,20 +203,14 @@ static class PlayMakerMainMenu
 	public static void LoadAllPrefabsInProject()
 	{
 		var paths = FsmEditorUtility.LoadAllPrefabsInProject();
-		var output = "";
 
-		foreach (var path in paths)
-		{
-			output += path + "\n";
-		}
-
-		if (output == "")
+		if (paths.Count == 0)
 		{
 			EditorUtility.DisplayDialog("Loading PlayMaker Prefabs", "No PlayMaker Prefabs Found!", "OK");
 		}
 		else
 		{
-			EditorUtility.DisplayDialog("Loaded PlayMaker Prefabs", output, "OK");
+			EditorUtility.DisplayDialog("Loaded PlayMaker Prefabs", "Prefabs found: " + paths.Count +"\nCheck console for details...", "OK");
 		}
 	}
 
@@ -212,12 +239,13 @@ static class PlayMakerMainMenu
 		EditorWindow.GetWindow<PlayMakerDocHelpers>(true);
 	}
 
+#if UNITY_5_0 || UNITY_5
     [MenuItem(MenuRoot + "Tools/Run AutoUpdater", false, 30)]
     public static void RunAutoUpdater()
     {
-        PlayMakerAutoUpdater.RunAutoUpdate();
+        PlayMakerAutoUpdater.OpenAutoUpdater();
     }
-
+#endif
 
 	#endregion
 
@@ -283,35 +311,46 @@ static class PlayMakerMainMenu
 	{
 		AssetStore.Open("1z");
 	}*/
-
-
-
+    
+    /* Moved to WelcomeWindow.cs
     [MenuItem(MenuRoot + "Upgrade Guide", false, 46)]
     public static void OpenUpgradeGuide()
     {
-        PlayMakerUpgradeGuide.Open();
-    }
+        EditorWindow.GetWindow<PlayMakerUpgradeGuide>(true);
+    }*/
 
-    [MenuItem(MenuRoot + "About PlayMaker...", false, 47)]
-    public static void OpenAboutWindow()
-    {
-        EditorWindow.GetWindow<AboutWindow>(true);
+	[MenuItem(MenuRoot + "About PlayMaker...", false, 47)]
+	public static void OpenAboutWindow()
+	{
+		EditorWindow.GetWindow<AboutWindow>(true);
     }
 
 
     #region ADDONS
 
+    
+    [MenuItem(MenuRoot + "Addons/Addons Online")]
+    public static void OpenAddonsWiki()
+    {
+        Application.OpenURL("https://hutonggames.fogbugz.com/default.asp?W714");
+    }
+
+#if !UNITY_5
+
+    /* No longer needed...
     [MenuItem(MenuRoot + "Addons/BlackBerry Add-on")]
     public static void GetBlackBerryAddon()
     {
         UnityEditorInternal.AssetStore.Open("content/10530");
-    }
+    }*/
 
     [MenuItem(MenuRoot + "Addons/Windows Phone 8 Add-on")]
     public static void GetWindowsPhone8Addon()
     {
         UnityEditorInternal.AssetStore.Open("content/10602");
     }
+
+#endif
 
     #endregion
 }

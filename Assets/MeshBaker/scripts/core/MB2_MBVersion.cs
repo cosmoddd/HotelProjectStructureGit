@@ -16,10 +16,12 @@ namespace DigitalOpus.MB.Core{
 		void SetActiveRecursively(GameObject go, bool isActive);
 		UnityEngine.Object[] FindSceneObjectsOfType(Type t);
 		bool IsRunningAndMeshNotReadWriteable(Mesh m);
-		Vector2[] GetMeshUV1s(Mesh m, MB2_LogLevel LOG_LEVEL);
-		void MeshClear(Mesh m, bool t);
-		void MeshAssignUV1(Mesh m, Vector2[] uv1s);
-		Vector4 GetLightmapTilingOffset(Renderer r);
+        //Vector2[] GetMeshUV1s(Mesh m, MB2_LogLevel LOG_LEVEL);
+        Vector2[] GetMeshUV3orUV4(Mesh m, bool get3, MB2_LogLevel LOG_LEVEL);
+        void MeshClear(Mesh m, bool t);
+		void MeshAssignUV3(Mesh m, Vector2[] uv3s);
+        void MeshAssignUV4(Mesh m, Vector2[] uv4s);
+        Vector4 GetLightmapTilingOffset(Renderer r);
 		Transform[] GetBones(Renderer r);
 	}
 
@@ -77,22 +79,34 @@ namespace DigitalOpus.MB.Core{
 			return _MBVersion.IsRunningAndMeshNotReadWriteable(m);
 		}
 
+        /*
 		public static Vector2[] GetMeshUV1s(Mesh m, MB2_LogLevel LOG_LEVEL){
 			if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
 			return _MBVersion.GetMeshUV1s(m,LOG_LEVEL);
 		}
+        */
 
-		public static void MeshClear(Mesh m, bool t){
+        public static Vector2[] GetMeshUV3orUV4(Mesh m, bool get3, MB2_LogLevel LOG_LEVEL) {
+            if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
+            return _MBVersion.GetMeshUV3orUV4(m,get3,LOG_LEVEL);
+        }
+
+        public static void MeshClear(Mesh m, bool t){
 			if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
 			_MBVersion.MeshClear(m,t);
 		}
 
-		public static void MeshAssignUV1(Mesh m, Vector2[] uv1s){
+		public static void MeshAssignUV3(Mesh m, Vector2[] uv3s){
 			if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
-			_MBVersion.MeshAssignUV1(m,uv1s);
+			_MBVersion.MeshAssignUV3(m,uv3s);
 		}
 
-		public static Vector4 GetLightmapTilingOffset(Renderer r){
+        public static void MeshAssignUV4(Mesh m, Vector2[] uv4s) {
+            if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
+            _MBVersion.MeshAssignUV4(m, uv4s);
+        }
+
+        public static Vector4 GetLightmapTilingOffset(Renderer r){
 			if (_MBVersion == null) _MBVersion = _CreateMBVersionConcrete();
 			return _MBVersion.GetLightmapTilingOffset(r);
 		}

@@ -192,14 +192,15 @@ public class MB3_MultiMeshCombiner: MB3_MeshCombiner {
 					  bool normals,
 					  bool tangents,
 					  bool uvs,
-					  bool colors,
-					  bool uv1,
 					  bool uv2,
+					  bool uv3,
+                      bool uv4,
+					  bool colors,
 					  bool bones=false,
 					  MB3_MeshCombiner.GenerateUV2Delegate uv2GenerationMethod=null){
 		for (int i = 0; i < meshCombiners.Count; i++){
 			if (meshCombiners[i].isDirty){
-				meshCombiners[i].combinedMesh.Apply(triangles,vertices,normals,tangents,uvs,colors,uv1,uv2,bones,uv2GenerationMethod);
+				meshCombiners[i].combinedMesh.Apply(triangles,vertices,normals,tangents,uvs,uv2,uv3,uv4,colors,bones,uv2GenerationMethod);
 				meshCombiners[i].isDirty = false;
 			}
 		}
@@ -225,7 +226,7 @@ public class MB3_MultiMeshCombiner: MB3_MeshCombiner {
 		
 	public override void UpdateGameObjects(GameObject[] gos, bool recalcBounds = true,
 								 		bool updateVertices = true, bool updateNormals = true, bool updateTangents = true,
-									    bool updateUV = false, bool updateUV1 = false, bool updateUV2 = false,
+									    bool updateUV = false, bool updateUV2 = false, bool updateUV3 = false, bool updateUV4 = false,
 										bool updateColors = false, bool updateSkinningInfo = false){	
 		if (gos == null){
 			Debug.LogError("list of game objects cannot be null");
@@ -251,7 +252,7 @@ public class MB3_MultiMeshCombiner: MB3_MeshCombiner {
 			if (meshCombiners[i].gosToUpdate.Count > 0){
 				meshCombiners[i].isDirty = true;
 				GameObject[] gosToUpdate = meshCombiners[i].gosToUpdate.ToArray();
-				meshCombiners[i].combinedMesh.UpdateGameObjects(gosToUpdate, recalcBounds,updateVertices, updateNormals, updateTangents, updateUV, updateUV1, updateUV2, updateColors, updateSkinningInfo);
+				meshCombiners[i].combinedMesh.UpdateGameObjects(gosToUpdate, recalcBounds,updateVertices, updateNormals, updateTangents, updateUV, updateUV2, updateUV3, updateUV4, updateColors, updateSkinningInfo);
 			}
 		}
 	}
@@ -274,6 +275,19 @@ public class MB3_MultiMeshCombiner: MB3_MeshCombiner {
 	public override bool AddDeleteGameObjectsByID(GameObject[] gos, int[] deleteGOinstanceIDs, bool disableRendererInSource=true){
 		//Profile.Start//Profile("MB2_MultiMeshCombiner.AddDeleteGameObjects1");
 		//PART 1 ==== Validate
+		if (_usingTemporaryTextureBakeResult && gos != null && gos.Length > 0){
+			MB_Utility.Destroy(_textureBakeResults);
+			_textureBakeResults = null;
+			_usingTemporaryTextureBakeResult = false;
+		}
+		
+		//if all objects use the same material we can create a temporary _textureBakeResults 
+		if (_textureBakeResults == null && gos != null && gos.Length > 0 && gos[0] != null){
+				if (!_CheckIfAllObjsToAddUseSameMaterialsAndCreateTemporaryTextrueBakeResult(gos)){
+					return false;
+				}
+		}
+
 		if (!_validate(gos, deleteGOinstanceIDs)){
 			return false;	
 		}
@@ -488,7 +502,14 @@ public class MB3_MultiMeshCombiner: MB3_MeshCombiner {
 		targ.doTan = doTan;
 		targ.doCol = doCol;	
 		targ.doUV = doUV;
-		targ.doUV1 = doUV1;		
+		targ.doUV3 = doUV3;
+        targ.doUV4 = doUV4;		
 	}
+
+    public override void CheckIntegrity() {
+            for (int i = 0; i < meshCombiners.Count; i++) {
+                meshCombiners[i].combinedMesh.CheckIntegrity();
+            }
+    }
 }
 }

@@ -67,8 +67,8 @@ namespace StixGames
 			{
 				texCoord = hit.textureCoord;
 
-				forward = GetTexCoordDifference(pos, texCoord, Vector3.forward * offset, maxDistance, layerMask);
-				right = GetTexCoordDifference(pos, texCoord, Vector3.right * offset, maxDistance, layerMask);
+				forward = GetTexCoordDifference(hit.transform, pos, texCoord, Vector3.forward * offset, maxDistance, layerMask);
+				right = GetTexCoordDifference(hit.transform, pos, texCoord, Vector3.right * offset, maxDistance, layerMask);
 				return hit.transform;
 			}
 
@@ -78,19 +78,19 @@ namespace StixGames
 			return null;
 		}
 
-		private static Vector2 GetTexCoordDifference(Vector3 pos, Vector2 texCoords, Vector3 offset, float maxDistance, LayerMask layerMask)
+		private static Vector2 GetTexCoordDifference(Transform targetObject, Vector3 pos, Vector2 texCoords, Vector3 offset, float maxDistance, LayerMask layerMask)
 		{
 			Ray ray = new Ray(pos + offset, Vector3.down);
 			RaycastHit hit;
 
 			//Send ray in dir to check for 
-			if (Physics.Raycast(ray, out hit, maxDistance, layerMask))
+			if (Physics.Raycast(ray, out hit, maxDistance, layerMask) && hit.transform == targetObject)
 			{
 				return (hit.textureCoord - texCoords) / offset.magnitude;
 			}
 
 			ray.direction = -ray.direction;
-			if (Physics.Raycast(ray, out hit, maxDistance, layerMask))
+			if (Physics.Raycast(ray, out hit, maxDistance, layerMask) && hit.transform == targetObject)
 			{
 				return (texCoords - hit.textureCoord) / offset.magnitude;
 			}

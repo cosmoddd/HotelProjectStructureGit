@@ -1,5 +1,6 @@
 #ifndef GRASS_TESSELLATION
 #define GRASS_TESSELLATION
+
 // ==================================== Tessellation Amount Functions ===================================
 float CalcTessFactor (float3 wpos0, float3 wpos1)
 {
@@ -11,7 +12,7 @@ float CalcTessFactor (float3 wpos0, float3 wpos1)
 	return min(max(len * _ScreenParams.y / (_EdgeLength * dist), 1.0), pow(2,_MaxTessellation));
 }
 
-fixed EdgeLengthBasedTessCull (float3 v0, float3 v1, float3 v2)
+fixed EdgeLengthBasedTessCull (float4 v0, float4 v1, float4 v2)
 {
 	fixed4 tess;
 
@@ -33,7 +34,7 @@ fixed EdgeLengthBasedTessCull (float3 v0, float3 v1, float3 v2)
 HS_CONSTANT_OUTPUT HSConstant(InputPatch<appdata, 3> ip, uint pid : SV_PrimitiveID )
 {
 	HS_CONSTANT_OUTPUT o;
-	fixed rTess = EdgeLengthBasedTessCull(ip[0].vertex.xyz, ip[1].vertex.xyz, ip[2].vertex.xyz);
+	fixed rTess = EdgeLengthBasedTessCull(ip[0].vertex, ip[1].vertex, ip[2].vertex);
 	fixed tess = nextPow2(rTess);
 	o.edges[0] = tess; 
 	o.edges[1] = tess; 
@@ -178,6 +179,12 @@ GS_INPUT domain( HS_CONSTANT_OUTPUT input, float3 tLoc : SV_DomainLocation, cons
 	output.lod = max(max(patch[0].lod, patch[1].lod), patch[2].lod);
 	output.lightDir = patch[0].lightDir;
 	output.cameraPos = patch[0].cameraPos;
+
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		output.normal = tLoc.x * patch[0].normal +
+						tLoc.y * patch[1].normal +
+						tLoc.z * patch[2].normal;
+	#endif
 
 	return output;  
 }

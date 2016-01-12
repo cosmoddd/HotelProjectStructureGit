@@ -2,16 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: AlienMaterial
-  m_Shader: {fileID: 4800000, guid: 3bf110e890fd75d42b4aa6b12570640a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1902925be899f6c4794040c4a1c39b50, type: 3}
   m_ShaderKeywords: GRASS_WIDTH_SMOOTHING SIMPLE_GRASS
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
-  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -80,16 +79,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Displacement
+          name: _ColorMap
         second:
-          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ColorMap
+          name: _Displacement
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: e80c3c84ea861404d8a427db8b7abf04, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -130,16 +129,16 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
           name: _SrcBlend
         second: 1
       data:
         first:
           name: _DstBlend
         second: 0
-      data:
-        first:
-          name: _Cutoff
-        second: .5
       data:
         first:
           name: _Parallax

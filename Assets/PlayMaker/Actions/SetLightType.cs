@@ -11,7 +11,9 @@ namespace HutongGames.PlayMaker.Actions
 		[RequiredField]
 		[CheckForComponent(typeof(Light))]
 		public FsmOwnerDefault gameObject;
-		public LightType lightType;
+		
+        [ObjectType(typeof(LightType))]
+        public FsmEnum lightType;
 
 		public override void Reset()
 		{
@@ -30,7 +32,7 @@ namespace HutongGames.PlayMaker.Actions
 			var go = Fsm.GetOwnerDefaultTarget(gameObject);
 		    if (UpdateCache(go))
 		    {
-		        light.type = lightType;
+                light.type = (LightType)lightType.Value;
 		    }
 		}
 	}

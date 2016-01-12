@@ -24,7 +24,7 @@ namespace HutongGames.PlayMaker.Actions
 			storeCollider = null;
 		}
 
-		public override void Awake()
+		public override void OnPreprocess()
 		{
 			switch (trigger)
 			{

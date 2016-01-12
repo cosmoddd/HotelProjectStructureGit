@@ -36,7 +36,7 @@ namespace HutongGames.PlayMaker.Actions
 		        return;
 		    }
 
-            if (animName == null || string.IsNullOrEmpty(animName.Value))
+            if (FsmString.IsNullOrEmpty(animName))
             {
                 animation.Stop();
             }

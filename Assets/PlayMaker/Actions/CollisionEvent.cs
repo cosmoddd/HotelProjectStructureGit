@@ -36,21 +36,22 @@ namespace HutongGames.PlayMaker.Actions
 			storeForce = null;
 		}
 
-		public override void Awake()
-		{
-			switch (collision)
-			{
-				case CollisionType.OnCollisionEnter:
-					Fsm.HandleCollisionEnter = true;
-					break;
-				case CollisionType.OnCollisionStay:
-					Fsm.HandleCollisionStay = true;
-					break;
-				case CollisionType.OnCollisionExit:
-					Fsm.HandleCollisionExit = true;
-					break;
-			}
-		}
+	    public override void OnPreprocess()
+	    {
+            switch (collision)
+            {
+                case CollisionType.OnCollisionEnter:
+                    Fsm.HandleCollisionEnter = true;
+                    break;
+                case CollisionType.OnCollisionStay:
+                    Fsm.HandleCollisionStay = true;
+                    break;
+                case CollisionType.OnCollisionExit:
+                    Fsm.HandleCollisionExit = true;
+                    break;
+            }
+
+	    }
 
 		void StoreCollisionInfo(Collision collisionInfo)
 		{

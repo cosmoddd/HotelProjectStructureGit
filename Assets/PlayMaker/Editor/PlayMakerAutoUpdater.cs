@@ -1,16 +1,31 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+using System.Security.Permissions;
 using UnityEngine;
 using UnityEditor;
+
+#if UNITY_5_0 || UNITY_5
 
 namespace HutongGames.PlayMakerEditor
 {
     /// <summary>
     /// Try to fix common update problems automatically
+    /// Update Tasks:
+    /// -- Move Playmaker.dll from Assets\PlayMaker to Assets\Plugins\PlayMaker
+    /// -- Set plugin import settings
     /// </summary>
     [InitializeOnLoad]
     public class PlayMakerAutoUpdater
     {
-        private const string version = "1.7.8.3";
+        public const string PlaymakerGUID = "e743331561ef77147ae48cda9bcb8209";
+        public const string PlaymakerPluginDirectory = "Assets/Plugins/PlayMaker";
+        public const string PlaymakerPluginPath = PlaymakerPluginDirectory + "/PlayMaker.dll";
+        public const string PlaymakerMetroPluginPath = PlaymakerPluginDirectory + "/Metro/PlayMaker.dll";
+
+        // list of updates the updater would like to perform
+        static List<string> updateList = new List<string>();
+
+        // list of changes the updater made
         static List<string> changeList = new List<string>();
 
         private static readonly BuildTarget[] standardPlatforms =
@@ -41,14 +56,15 @@ namespace HutongGames.PlayMakerEditor
             }
         }
 
+        // TODO: Use PlayMakerPrefs for project specific prefs instead of EditorPrefs
         static bool ShouldUpdate()
         {
             if (string.IsNullOrEmpty(Application.dataPath)) return false;
-            if (EditorPrefs.GetString("LastAutoUpdate", "") != GetUpdateSignature())  
+            if (EditorPrefs.GetString("PlayMaker.LastAutoUpdate", "") != GetUpdateSignature())
             {
                 // save auto update settings
                 // so we don't get caught in infinite loop when re-importing
-                EditorPrefs.SetString("LastAutoUpdate", GetUpdateSignature());
+                EditorPrefs.SetString("PlayMaker.LastAutoUpdate", GetUpdateSignature());
                 return true;
             }
             return false;
@@ -58,7 +74,7 @@ namespace HutongGames.PlayMakerEditor
         // NOTE: might be a better way to do this. Currently doesn't catch project changes like imports...
         static string GetUpdateSignature()
         {
-            return Application.unityVersion + "__" + Application.dataPath + "__" + version;
+            return Application.unityVersion + "__" + Application.dataPath + "__" + VersionInfo.AssemblyVersion;
         }
 
         // Check pre-requisites for auto updating
@@ -66,16 +82,30 @@ namespace HutongGames.PlayMakerEditor
         static bool CheckRequirements()
         {
             // If project doesn't have this folder user hasn't updated Playmaker for Unity5
-            if (!AssetDatabase.IsValidFolder("Assets/Plugins/PlayMaker"))
+            if (!EditorApp.IsSourceCodeVersion && !AssetDatabase.IsValidFolder(PlaymakerPluginDirectory))
             {
                 EditorUtility.DisplayDialog("PlayMaker AutoUpdater",
-                    "Please import Playmaker 1.7.8 for Unity 5."+
-                    "\n\nTo get the latest version, update in the Unity Asset Store "+
-                    "or download from Hutong Games Store."+
-                    "\n\nNOTE: You can run the AutoUpdater from PlayMaker > Tools > Run AutoUpdater", "OK");
+                    "Please import Playmaker for Unity 5." +
+                    "\n\nTo get the latest version, update in the Unity Asset Store " +
+                    "or download from Hutong Games Store.", "OK");
+                Debug.Log("PlayMaker AutoUpdater: Please import Playmaker for Unity 5.");
+                EditorPrefs.DeleteKey("PlayMaker.LastAutoUpdate");
                 return false;
             }
             return true;
+        }
+
+        // Called from menu, so we want No Updates Needed dialog.
+        public static void OpenAutoUpdater()
+        {
+            if (NeedsUpdate())
+            {
+                RunAutoUpdate();
+            }
+            else
+            {
+                EditorUtility.DisplayDialog("PlayMaker", "AutoUpdater:\n\nNo updates needed...", "OK");
+            }
         }
 
         public static void RunAutoUpdate()
@@ -85,60 +115,130 @@ namespace HutongGames.PlayMakerEditor
 
             if (!CheckRequirements())
             {
-                Debug.Log("PlayMaker AutoUpdate: Failed to update.");
+                //Debug.Log("PlayMaker AutoUpdate: Could not auto-update.");
                 return;
             }
 
             if (NeedsUpdate())
             {
-                if (EditorUtility.DisplayDialog("PlayMaker",
-                    "PlayMaker AutoUpdater would like to move PlayMaker.dll " +
-                    "from Assets/PlayMaker to Assets/Plugins/PlayMaker" +
-                    "\n\nNOTE: You can run the AutoUpdater from PlayMaker > Tools > Run AutoUpdater",
-                    "OK", "Cancel"))
+                var updateMessage = "NOTE: ALWAYS BACKUP your project before updating PlayMaker or Unity!\n\nPlayMaker AutoUpdater would like to make these changes to the project:\n\n";
+                foreach (var update in updateList)
+                {
+                    updateMessage += "- " + update + "\n";
+                }
+                updateMessage += "\n\nNOTE: You can run the AutoUpdater later from PlayMaker > Tools > Run AutoUpdater";
+                if (EditorUtility.DisplayDialog("PlayMaker", updateMessage, "OK", "Cancel"))
                 {
                     DoUpdate();
                 }
             }
+
+            // Fail silently so we don't spam user with "No Update Needed" dialogs
         }
 
         static bool NeedsUpdate()
         {
-            return AssetImporter.GetAtPath("Assets/PlayMaker/PlayMaker.dll") != null;
+            updateList.Clear();
+
+            if (PlaymakerDllsNeedMoving())
+            {
+                updateList.Add("Move Playmaker dlls to Plugin folders.");
+            }
+
+            if (DuplicatePlaymakerDllExists())
+            {
+                updateList.Add("Fix duplicate Playmaker dlls from previous install.");
+            }
+
+            return updateList.Count > 0;
+        }
+
+        /// <summary>
+        /// Check if PlayMaker.dll is not it Assets/Plugins/PlayMaker
+        /// </summary>
+        static bool PlaymakerDllsNeedMoving()
+        {
+            var playmakerPath = AssetDatabase.GUIDToAssetPath(PlaymakerGUID);
+            if (string.IsNullOrEmpty(playmakerPath))
+                return false;
+            var playmakerDirectory = Path.GetDirectoryName(playmakerPath);
+            return playmakerDirectory != PlaymakerPluginDirectory;
+        }
+
+        /// <summary>
+        /// Unity5.0-5.2 could make duplicate files on import.
+        /// E.g., PlayMaker.dll could be imported as PlayMaker 1.dll
+        /// This checks for this duplicate dll.
+        /// </summary>
+        /// <returns></returns>
+        static bool DuplicatePlaymakerDllExists()
+        {
+            var playmakerPath = AssetDatabase.GUIDToAssetPath(PlaymakerGUID);
+            if (string.IsNullOrEmpty(playmakerPath))
+                return false;
+            var playmakerFilename = Path.GetFileName(playmakerPath);
+            return playmakerFilename != "PlayMaker.dll"; // E.g. PlayMaker 1.dll
         }
 
         static void DoUpdate()
         {
-            MovePlayMakerDll();
+            FixDuplicatePlaymakerDlls();
 
-            // plugin settings need to be set (note doing this before move doesn't seem to take)
-            if (!FixPlayMakerDllSettings("Assets/Plugins/PlayMaker/PlayMaker.dll"))
-            {
-                Debug.LogWarning("Failed to change Assets/Plugins/PlayMaker/PlayMaker.dll settings.");
-            }
+            MovePlayMakerPlugin();
+            FixPlayMakerPluginSettings(PlaymakerPluginPath); //(note doing this before move doesn't seem to take)
+
+            MovePlayMakerMetroPlugin();
+            FixPlayMakerMetroPluginSettings(PlaymakerMetroPluginPath);
 
             ReportChanges();
         }
 
-        static bool FixPlayMakerDllSettings(string pluginPath)
+        static PluginImporter GetPluginImporter(string pluginPath)
         {
             var pluginImporter = (PluginImporter)AssetImporter.GetAtPath(pluginPath);
             if (pluginImporter != null)
             {
-                FixPlayMakerDllSettings(pluginImporter);
-                return true;
+                return pluginImporter;
             }
 
-            return false;
+            Debug.LogWarning("Couldn't find plugin: " + pluginPath);
+            return null;
         }
-        
-        static void FixPlayMakerDllSettings(PluginImporter pluginImporter)
+
+        static void FixPlayMakerPluginSettings(string pluginPath)
+        {
+            var pluginImporter = GetPluginImporter(pluginPath);
+            if (pluginImporter != null)
+            {
+                FixPlayMakerPluginSettings(pluginImporter);
+            }
+        }
+
+        static void FixPlayMakerPluginSettings(PluginImporter pluginImporter)
         {
             LogChange("Fixed Plugin Settings: " + pluginImporter.assetPath);
 
             pluginImporter.SetCompatibleWithAnyPlatform(false);
             pluginImporter.SetCompatibleWithEditor(true);
             SetCompatiblePlatforms(pluginImporter, standardPlatforms);
+            AssetDatabase.Refresh();
+        }
+
+        static void FixPlayMakerMetroPluginSettings(string pluginPath)
+        {
+            var pluginImporter = GetPluginImporter(pluginPath);
+            if (pluginImporter != null)
+            {
+                FixPlayMakerMetroPluginSettings(pluginImporter);
+            }
+        }
+
+        static void FixPlayMakerMetroPluginSettings(PluginImporter pluginImporter)
+        {
+            LogChange("Fixed Plugin Settings: " + pluginImporter.assetPath);
+
+            pluginImporter.SetCompatibleWithAnyPlatform(false);
+            pluginImporter.SetCompatibleWithPlatform(BuildTarget.WSAPlayer, true);
             AssetDatabase.Refresh();
         }
 
@@ -150,14 +250,39 @@ namespace HutongGames.PlayMakerEditor
             }
         }
 
-        static void MovePlayMakerDll()
+        static void MovePlayMakerPlugin()
         {
-            LogChange("Moved PlayMaker.dll from Assets/PlayMaker to Assets/PlayMaker/Plugins");
+            var playmakerPath = AssetDatabase.GUIDToAssetPath(PlaymakerGUID);
+            MoveAsset(playmakerPath, PlaymakerPluginPath);
+        }
 
-            AssetDatabase.DeleteAsset("Assets/Plugins/PlayMaker/PlayMaker.dll");
+        static void MovePlayMakerMetroPlugin()
+        {
+            MoveAsset("Assets/Plugins/Metro/PlayMaker.dll", PlaymakerMetroPluginPath);
+        }
+
+        static void MoveAsset(string from, string to)
+        {
+            if (from == to || string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID(from)))
+                return;
+
+            LogChange("Moving " + from + " to: " + to);
+            AssetDatabase.DeleteAsset(to);
             AssetDatabase.Refresh();
-            AssetDatabase.MoveAsset("Assets/PlayMaker/PlayMaker.dll", "Assets/Plugins/PlayMaker/PlayMaker.dll");
+            var error = AssetDatabase.MoveAsset(from, to);
+            if (!string.IsNullOrEmpty(error))
+            {
+                LogChange(error);
+            }
             AssetDatabase.Refresh();
+        }
+
+        static void FixDuplicatePlaymakerDlls()
+        {
+            if (!DuplicatePlaymakerDllExists()) return;
+
+            var playmakerPath = AssetDatabase.GUIDToAssetPath("e743331561ef77147ae48cda9bcb8209");
+            MoveAsset(playmakerPath, PlaymakerPluginPath);
         }
 
         static void LogChange(string change)
@@ -185,3 +310,5 @@ namespace HutongGames.PlayMakerEditor
 
     }
 }
+
+#endif

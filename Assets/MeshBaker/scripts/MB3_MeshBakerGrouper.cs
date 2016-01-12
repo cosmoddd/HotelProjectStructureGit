@@ -148,7 +148,9 @@ public class MB3_MeshBakerGrouperCore{
 							objs = new List<Renderer>();
 							cell2objs.Add (gridVectorStr,objs);
 						}
-						objs.Add (mrs[j]);
+						if (!objs.Contains(mrs[j])){
+						  objs.Add (mrs[j]);
+					  }
 					}
 				}
 			}
@@ -199,7 +201,9 @@ public class MB3_MeshBakerGrouperCore{
 							objs = new List<Renderer>();
 							cell2objs.Add (segStr,objs);
 						}
-						objs.Add (mrs[j]);
+						if (!objs.Contains(mrs[j])){
+						  objs.Add (mrs[j]);
+					  }
 					}
 				}
 			}

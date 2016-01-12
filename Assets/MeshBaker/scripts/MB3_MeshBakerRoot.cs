@@ -50,7 +50,7 @@ public abstract class MB3_MeshBakerRoot : MonoBehaviour {
 			}
 			for (int j = i + 1; j < objsToMesh.Count; j++){
 				if (objsToMesh[i] == objsToMesh[j]){
-					Debug.LogError("The list of objects to combine contains duplicates.");
+					Debug.LogError("The list of objects to combine contains duplicates at " + i + " and " + j);
 					return false;	
 				}
 			}

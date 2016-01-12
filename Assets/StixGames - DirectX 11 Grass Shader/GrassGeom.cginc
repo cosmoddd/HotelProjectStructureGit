@@ -1,12 +1,16 @@
 ﻿#ifndef GRASS_GEOM
 #define GRASS_GEOM
 
-FS_INPUT geomToFrag(GS_OUTPUT v)
+inline FS_INPUT geomToFrag(GS_OUTPUT v)
 {
 	float3 worldPos = v.vertex.xyz;
 
 	//This is necessary for shadow calculation
 	v.vertex = mul(_World2Object, v.vertex);
+
+	#ifdef GRASS_CURVED_WORLD
+		V_CW_TransformPoint(v.vertex);
+	#endif
 
 	#ifdef UNITY_COMPILER_HLSL
 	FS_INPUT o = (FS_INPUT) 0;
@@ -38,6 +42,7 @@ FS_INPUT geomToFrag(GS_OUTPUT v)
 	#elif defined(UNITY_PASS_SHADOWCASTER)
 		TRANSFER_SHADOW_CASTER(o)
 	#endif
+
 	return o;
 }
 
@@ -65,9 +70,15 @@ void geom (point GS_INPUT p[1], inout TriangleStream<FS_INPUT> triStream)
 	#endif
 
 	//Calculate viewDir and groundRight vector
-	fixed3 up = fixed3(0, 1, 0);
-	fixed3 viewDir = normalize(rendererPos - oPos);
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		fixed3 up = normalize(p[0].normal);
+	#else
+		fixed3 up = fixed3(0, 1, 0);
+	#endif
 	
+	fixed3 viewDir = normalize(rendererPos - oPos);
+	fixed3 cameraForward = UNITY_MATRIX_V[2].xyz;
+
 	//I'll keep this in case I ever want to orient the grass in another direction.
 	fixed3 orientationDir = viewDir;
 
@@ -203,13 +214,19 @@ void geom (point GS_INPUT p[1], inout TriangleStream<FS_INPUT> triStream)
 		}
 	#endif
 
-	fixed3 groundRight = normalize(cross(up, orientationDir));
-
 	//Init position offset
 	fixed randX = rand(randCalcPos.xz + 1000) * _Disorder * 2 - _Disorder;
 	fixed randZ = rand(randCalcPos.xz - 1000) * _Disorder * 2 - _Disorder;
-				
-	fixed2 windDir = wind(randCalcPos, fixed2(randX, randZ));
+	
+	//If grass is looked at from the top, it should still look like grass
+	#ifdef GRASS_TOP_VIEW_COMPENSATION
+		fixed topViewCompensation = 1 + pow(dot(viewDir, up), 20) * 0.8;
+		width *= topViewCompensation;
+		
+		fixed2 windDir = wind(randCalcPos, fixed2(randX, randZ) * (topViewCompensation));
+	#else
+		fixed2 windDir = wind(randCalcPos, fixed2(randX, randZ));
+	#endif
 
 	//Grass height modifier
 	fixed4 tex = tex2Dlod(_ColorMap, uv);
@@ -222,13 +239,13 @@ void geom (point GS_INPUT p[1], inout TriangleStream<FS_INPUT> triStream)
 		grassHeightMod *= p[0].smoothing;
 	#endif
 
-	//Calculate real height
-	fixed realHeight = (rand(randCalcPos.xz) * (maxHeight - minHeight) + minHeight) * grassHeightMod;
-
 	//Smooth width
 	#ifdef GRASS_WIDTH_SMOOTHING
 		width *= p[0].smoothing;
 	#endif
+
+	//Calculate real height
+	fixed realHeight = (rand(randCalcPos.xz) * (maxHeight - minHeight) + minHeight) * grassHeightMod;
 
 	//Color
 	#ifndef SHADOWPASS
@@ -241,6 +258,8 @@ void geom (point GS_INPUT p[1], inout TriangleStream<FS_INPUT> triStream)
 
 	GS_OUTPUT pIn;
 	float3 lastLeftPos = oPos;
+
+	fixed3 groundRight = normalize(cross(up, orientationDir));
 
 	//Define first vertices most values only have to be defined on the first vertex and will be used for the others as well
 	pIn.vertex = float4(lastLeftPos,1);
@@ -272,10 +291,16 @@ void geom (point GS_INPUT p[1], inout TriangleStream<FS_INPUT> triStream)
 	fixed stiffnessFactor = realHeight * softness;
 
 	#ifdef GRASS_DISPLACEMENT
-	fixed4 displacement = tex2Dlod(_Displacement, uv);
+	fixed4 displacement;
+	#ifndef GRASS_RENDERTEXTURE_DISPLACEMENT
+		displacement = tex2Dlod(_Displacement, uv);
 
-	//Convert from texture to vector
-	displacement.xy = (displacement.xy * 2.0) - fixed2(1, 1);
+		//Convert from texture to vector
+		displacement.xy = (displacement.xy * 2.0) - fixed2(1, 1);
+	#else
+		float2 coords = (oPos.xz - _GrassRenderTextureArea.xy) / _GrassRenderTextureArea.zw;
+		displacement = tex2Dlod(_GrassRenderTextureDisplacement, float4(coords, 0, 0));
+	#endif
 	#endif
 
 	for(fixed i = 1; i <= lod; i++)

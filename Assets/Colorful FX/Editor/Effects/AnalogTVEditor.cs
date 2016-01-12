@@ -17,6 +17,7 @@ namespace Colorful.Editors
 		SerializedProperty p_ScanlinesIntensity;
 		SerializedProperty p_ScanlinesCount;
 		SerializedProperty p_ScanlinesOffset;
+		SerializedProperty p_VerticalScanlines;
 		SerializedProperty p_Distortion;
 		SerializedProperty p_CubicDistortion;
 		SerializedProperty p_Scale;
@@ -30,6 +31,7 @@ namespace Colorful.Editors
 			p_ScanlinesIntensity = serializedObject.FindProperty("ScanlinesIntensity");
 			p_ScanlinesCount = serializedObject.FindProperty("ScanlinesCount");
 			p_ScanlinesOffset = serializedObject.FindProperty("ScanlinesOffset");
+			p_VerticalScanlines = serializedObject.FindProperty("VerticalScanlines");
 			p_Distortion = serializedObject.FindProperty("Distortion");
 			p_CubicDistortion = serializedObject.FindProperty("CubicDistortion");
 			p_Scale = serializedObject.FindProperty("Scale");
@@ -55,6 +57,7 @@ namespace Colorful.Editors
 				EditorGUILayout.PropertyField(p_ScanlinesIntensity);
 				EditorGUILayout.PropertyField(p_ScanlinesCount);
 				EditorGUILayout.PropertyField(p_ScanlinesOffset);
+				EditorGUILayout.PropertyField(p_VerticalScanlines);
 			}
 			EditorGUI.indentLevel--;
 

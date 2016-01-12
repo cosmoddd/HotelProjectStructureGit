@@ -1,4 +1,25 @@
 ======================
+Version 3.12.2 Dec. 9, 2015
+
+- Fixed bug with the Mesh Baker Grouper. It was adding multiple objects multiple times which created errors when baking.
+- Added button to the batch prefab baker to automate creation of result prefabs.
+
+======================
+Version 3.12.1 Nov. 20, 2015
+
+- removed two references to UnityEditor in the runtime scripts and a variable not used warning.
+
+======================
+Version 3.12.0 Nov. 20, 2015
+
+- Mesh Combiner API now handles combining objects with no Texture Bake Result if all objects use the same material
+- Bones are not duplicated in bones array if bones are shared.
+- Updated TextureCombinerFast shaders. These ones work much better
+- Fixed bug with TextureCombinerFast normal maps being converted to Unity format twice
+- Added UV3 and UV4 channels for Unity 5
+- Added a script for applying same bone weights to the seams of skinned meshs to make customization of character meshes easier
+
+======================
 Version 3.11.1
 
 - Fixed bug using Mesh Baker without first baking textures that caused materials to be Instanced.

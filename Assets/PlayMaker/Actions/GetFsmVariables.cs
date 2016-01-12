@@ -55,7 +55,7 @@ namespace HutongGames.PlayMaker.Actions
                     sourceFsm = ActionHelpers.GetGameObjectFsm(go, fsmName.Value);
                     sourceVariables[i] = sourceFsm.FsmVariables.GetVariable(variableName);
                     targetVariables[i] = Fsm.Variables.GetVariable(variableName);
-                    getVariables[i].Type = FsmUtility.GetVariableType(targetVariables[i]);
+                    getVariables[i].Type = targetVariables[i].VariableType;
 
                     if (!string.IsNullOrEmpty(variableName) && sourceVariables[i] == null)
                     {

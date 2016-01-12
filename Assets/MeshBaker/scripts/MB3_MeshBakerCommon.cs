@@ -155,13 +155,14 @@ public abstract class MB3_MeshBakerCommon : MB3_MeshBakerRoot {
 					  bool normals,
 					  bool tangents,
 					  bool uvs,
-					  bool colors,
-					  bool uv1,
 					  bool uv2,
+					  bool uv3,
+                      bool uv4,
+					  bool colors,
 					  bool bones=false,
 					  MB3_MeshCombiner.GenerateUV2Delegate uv2GenerationMethod=null){
 		meshCombiner.name = name + "-mesh";
-		meshCombiner.Apply(triangles,vertices,normals,tangents,uvs,colors,uv1,uv2,bones,uv2GenerationMethod);
+		meshCombiner.Apply(triangles,vertices,normals,tangents,uvs,uv2,uv3,uv4,colors,bones,uv2GenerationMethod);
 	}	
 	
 	public virtual bool CombinedMeshContains(GameObject go){

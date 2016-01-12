@@ -41,11 +41,12 @@ namespace DigitalOpus.MB.Core{
 			doTanGUIContent = new GUIContent("Include Tangents"),
 			doColGUIContent = new GUIContent("Include Colors"),
 			doUVGUIContent = new GUIContent("Include UV"),
-			doUV1GUIContent = new GUIContent("Include UV1");
-		
-		private SerializedObject meshBaker;
+			doUV3GUIContent = new GUIContent("Include UV3"),
+            doUV4GUIContent = new GUIContent("Include UV4");
+
+        private SerializedObject meshBaker;
 		private SerializedProperty  lightmappingOption, combiner, outputOptions, textureBakeResults, useObjsToMeshFromTexBaker, renderType, fixOutOfBoundsUVs, objsToMesh, mesh;
-		private SerializedProperty doNorm, doTan, doUV, doUV1, doCol, clearBuffersAfterBake;
+		private SerializedProperty doNorm, doTan, doUV, doUV3, doUV4, doCol, clearBuffersAfterBake;
 		bool showInstructions = false;
 		bool showContainsReport = true;
 		
@@ -61,8 +62,9 @@ namespace DigitalOpus.MB.Core{
 			doNorm = combiner.FindPropertyRelative("_doNorm");
 			doTan = combiner.FindPropertyRelative("_doTan");
 			doUV = combiner.FindPropertyRelative("_doUV");
-			doUV1 = combiner.FindPropertyRelative("_doUV1");
-			doCol = combiner.FindPropertyRelative("_doCol");
+			doUV3 = combiner.FindPropertyRelative("_doUV3");
+            doUV4 = combiner.FindPropertyRelative("_doUV4");
+            doCol = combiner.FindPropertyRelative("_doCol");
 			clearBuffersAfterBake = meshBaker.FindProperty("clearBuffersAfterBake");
 			mesh = combiner.FindPropertyRelative("_mesh");
 		}	
@@ -137,10 +139,16 @@ namespace DigitalOpus.MB.Core{
 			EditorGUILayout.EndHorizontal();
 			EditorGUILayout.BeginHorizontal();
 			EditorGUILayout.PropertyField(doUV,doUVGUIContent);
-			EditorGUILayout.PropertyField(doUV1,doUV1GUIContent);
-			EditorGUILayout.EndHorizontal();
-			EditorGUILayout.PropertyField(doCol,doColGUIContent);	
-			
+			EditorGUILayout.PropertyField(doUV3,doUV3GUIContent);
+            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.PropertyField(doUV4, doUV4GUIContent);
+            EditorGUILayout.PropertyField(doCol,doColGUIContent);
+
+            if (mom.meshCombiner.lightmapOption == MB2_LightmapOptions.preserve_current_lightmapping) {
+                if (MBVersion.GetMajorVersion() == 5) {
+                    EditorGUILayout.HelpBox("The best choice for Unity 5 is to Ignore_UV2 or Generate_New_UV2 layout. Unity's baked GI will create the UV2 layout it wants. See manual for more information.", MessageType.Warning);
+                }
+            }
 			if (mom.meshCombiner.lightmapOption == MB2_LightmapOptions.generate_new_UV2_layout){
 				EditorGUILayout.HelpBox("Generating new lightmap UVs can split vertices which can push the number of vertices over the 64k limit.",MessageType.Warning);
 			}

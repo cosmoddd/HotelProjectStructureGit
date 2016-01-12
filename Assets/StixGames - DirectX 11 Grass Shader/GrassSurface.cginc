@@ -1,7 +1,7 @@
 #ifndef GRASS_SURFACE
 #define GRASS_SURFACE
 
-void surf(FS_INPUT i, inout SurfaceOutputStandardSpecular o)
+inline void surf(FS_INPUT i, inout SurfaceOutputStandardSpecular o)
 {
 	fixed4 color = 0.0;
 

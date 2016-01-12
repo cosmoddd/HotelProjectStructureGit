@@ -9,18 +9,20 @@ namespace DigitalOpus.MB.Core{
 
 	public class MBVersionConcrete:MBVersionInterface{
 		public string version(){
-			return "3.11.1";	
+			return "3.12.2";	
 		}
 		
 		public int GetMajorVersion(){
-			#if UNITY_3_0 || UNITY_3_0_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5	
+#if UNITY_3_0 || UNITY_3_0_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5
 			return 3;
-			#else
+#elif UNITY_4_0 || UNITY_4_0_1 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3 || UNITY_4_4 || UNITY_4_5 || UNITY_4_6
 			return 4;
-			#endif	
-		}
-		
-		public int GetMinorVersion(){
+#else
+            return 5;
+#endif
+        }
+
+        public int GetMinorVersion(){
 			#if UNITY_3_0 || UNITY_3_0_0 
 			return 0;
 			#elif UNITY_3_1 
@@ -114,39 +116,64 @@ namespace DigitalOpus.MB.Core{
 			return uv;
 		}
 
-		public void MeshClear(Mesh m, bool t){
-			#if UNITY_3_5
+        public Vector2[] GetMeshUV3orUV4(Mesh m, bool get3, MB2_LogLevel LOG_LEVEL) {
+            Vector2[] uvs;
+#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
+			if (LOG_LEVEL >= MB2_LogLevel.warn) MB2_Log.LogDebug("UV3 and UV4 do not exist in Unity 4");
+            uvs = m.uv;
+#else
+            if (get3) uvs = m.uv3;
+            else uvs = m.uv4;
+#endif
+            if (uvs.Length == 0) {
+                if (LOG_LEVEL >= MB2_LogLevel.debug) MB2_Log.LogDebug("Mesh " + m + " has no uv" + (get3 ? "3" : "4") + ". Generating");
+                uvs = new Vector2[m.vertexCount];
+                for (int i = 0; i < uvs.Length; i++) { uvs[i] = _HALF_UV; }
+            }
+            return uvs;
+        }
+
+        public void MeshClear(Mesh m, bool t){
+#if UNITY_3_5
 				m.Clear();
-			#else
+#else
 				m.Clear(t);
-			#endif
+#endif
 		}
 
-		public void MeshAssignUV1(Mesh m, Vector2[] uv1s){
-			#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
-			m.uv1 = uv1s;
-			#else
-			Debug.LogWarning("UV1 was checked but UV1 does not exist in Unity 5+");
-			#endif
-		}
+		public void MeshAssignUV3(Mesh m, Vector2[] uv3s){
+#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
+			Debug.LogWarning("UV3 was checked but UV3 does not exist in Unity 4");
+#else
+            m.uv3 = uv3s;
+#endif
+        }
 
-		public Vector4 GetLightmapTilingOffset(Renderer r){
-			#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
+        public void MeshAssignUV4(Mesh m, Vector2[] uv4s) {
+#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
+			Debug.LogWarning("UV4 was checked but UV4 does not exist in Unity 4");
+#else
+            m.uv4 = uv4s;
+#endif
+        }
+
+        public Vector4 GetLightmapTilingOffset(Renderer r){
+#if (UNITY_4_6 || UNITY_4_5 || UNITY_4_3 || UNITY_4_2 || UNITY_4_1 || UNITY_4_0_1 || UNITY_4_0 || UNITY_3_5)
 			  return r.lightmapTilingOffset ;
-			#else
-			return r.realtimeLightmapScaleOffset; //r.lightmapScaleOffset ;
-			#endif
+#else
+			return r.lightmapScaleOffset; //r.lightmapScaleOffset ;
+#endif
 		}
 
 		public Transform[] GetBones(Renderer r){
 			if (r is SkinnedMeshRenderer){
 				Transform[] bone = ((SkinnedMeshRenderer)r).bones;
-				#if UNITY_EDITOR
+#if UNITY_EDITOR
 				if (bone.Length == 0){
 					Mesh m = ((SkinnedMeshRenderer)r).sharedMesh;
 					if (m.bindposes.Length != bone.Length) Debug.LogError("SkinnedMesh (" + r.gameObject + ") in the list of objects to combine has no bones. Check that 'optimize game object' is not checked in the 'Rig' tab of the asset importer. Mesh Baker cannot combine optimized skinned meshes because the bones are not available.");
 				}
-				#endif
+#endif
 				return bone;	
 			} else if (r is MeshRenderer){
 				Transform[] bone = new Transform[1];

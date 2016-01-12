@@ -36,12 +36,12 @@ half rot10(half value)
 	return rot(value, 0.0, 1.0);
 }
 
-float simpleNoise(half2 uv)
+float simpleNoise(float2 uv)
 {
 	return frac(sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453);
 }
 
-float simpleNoise_fracLess(half2 uv)
+float simpleNoise_fracLess(float2 uv)
 {
 	return sin(dot(uv, float2(12.9898, 78.233))) * 43758.5453;
 }

@@ -26,26 +26,26 @@ Shader "Hidden/Colorful/Glitch"
 				#pragma target 3.0
 
 				sampler2D _MainTex;
-				half3 _Params; // x: speed, y: density, z: maxDisplace
+				float3 _Params; // x: speed, y: density, z: maxDisplace
 
-				inline half rand(half2 seed)
+				inline float rand(float2 seed)
 				{
-					return frac(sin(dot(seed * floor(_Time.y * _Params.x), half2(127.1, 311.7))) * 43758.5453123);
+					return frac(sin(dot(seed * floor(_Time.y * _Params.x), float2(127.1, 311.7))) * 43758.5453123);
 				}
 
-				inline half rand(half seed)
+				inline float rand(float seed)
 				{
-					return rand(half2(seed, 1.0));
+					return rand(float2(seed, 1.0));
 				}
 
 				half4 frag(v2f_img i) : SV_Target
 				{
-					half2 rblock = rand(floor(i.uv * _Params.y));
-					half displaceNoise = pow(rblock.x, 8.0) * pow(rblock.x, 3.0) - pow(rand(7.2341), 17.0) * _Params.z;
+					float2 rblock = rand(floor(i.uv * _Params.y));
+					float displaceNoise = pow(rblock.x, 8.0) * pow(rblock.x, 3.0) - pow(rand(7.2341), 17.0) * _Params.z;
 
-					half r = tex2D(_MainTex, i.uv).r;
-					half g = tex2D(_MainTex, i.uv + half2(displaceNoise * 0.05 * rand(7.0), 0.0)).g;
-					half b = tex2D(_MainTex, i.uv - half2(displaceNoise * 0.05 * rand(13.0), 0.0)).b;
+					float r = tex2D(_MainTex, i.uv).r;
+					float g = tex2D(_MainTex, i.uv + half2(displaceNoise * 0.05 * rand(7.0), 0.0)).g;
+					float b = tex2D(_MainTex, i.uv - half2(displaceNoise * 0.05 * rand(13.0), 0.0)).b;
 
 					return half4(r, g, b, 1.0);
 				}

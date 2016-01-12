@@ -1,17 +1,20 @@
 // (c) Copyright HutongGames, LLC 2010-2013. All rights reserved.
 
-using HutongGames.PlayMakerEditor;
 using UnityEditor;
 using UnityEngine;
 
-// You can't open an EditorWindow class in a C# Dll (as far as I can tell)
-// So we use a wrapper script to create the window and hook the editor up
-// TODO: move this to dll when Unity supports it...
+/* NOTE: Wrapper no longer needed in Unity 4.x
+ * BUT changing it breaks saved layouts
+ * SO wrap in namespace instead (which is also now supported in 4.x)
+ */
+
+// EditorWindow classes can't be called from a dll 
+// so create a thin wrapper class as a workaround
 
 namespace HutongGames.PlayMakerEditor
 {
     [System.Serializable]
-    class FsmEditorWindow : HutongGames.PlayMakerEditor.BaseEditorWindow
+    class FsmEditorWindow : BaseEditorWindow
     {
         /// <summary>
         /// Open the Fsm Editor and optionally show the Welcome Screen
@@ -20,9 +23,18 @@ namespace HutongGames.PlayMakerEditor
         {
             GetWindow<FsmEditorWindow>();
 
-            if (EditorPrefs.GetBool(EditorPrefStrings.ShowWelcomeScreen, true))
+            if (!EditorApp.IsSourceCodeVersion)
             {
-                GetWindow<PlayMakerWelcomeWindow>(true);
+                if (EditorPrefs.GetBool(EditorPrefStrings.ShowWelcomeScreen, true))
+                {
+                    GetWindow<PlayMakerWelcomeWindow>(true);
+                }
+
+                /* Moved to WelcomeWindow.cs
+                if (EditorPrefs.GetBool(EditorPrefStrings.ShowUpgradeGuide, true))
+                {
+                    GetWindow<PlayMakerUpgradeGuide>(true);
+                }*/
             }
         }
 
@@ -66,6 +78,7 @@ namespace HutongGames.PlayMakerEditor
     [SerializeField] private FsmStateWindow stateSelectorWindow;
     [SerializeField] private FsmActionWindow actionWindow;
     [SerializeField] private FsmErrorWindow errorWindow;
+    [SerializeField] private TimelineWindow timelineWindow;
     [SerializeField] private FsmLogWindow logWindow;
     [SerializeField] private ContextToolWindow toolWindow;
     [SerializeField] private GlobalEventsWindow globalEventsWindow;
@@ -119,9 +132,11 @@ namespace HutongGames.PlayMakerEditor
             {
                 switch (Event.current.commandName)
                 {
+                    /* replaced with Undo.undoRedoPerformed callback added in Unity 4.3
                     case "UndoRedoPerformed":
                         FsmEditor.UndoRedoPerformed();
                         break;
+                    */
 
                     case "Cut":
                         FsmEditor.Cut();
@@ -174,6 +189,10 @@ namespace HutongGames.PlayMakerEditor
 
                     case "OpenErrorWindow":
                         errorWindow = GetWindow<FsmErrorWindow>();
+                        break;
+
+                    case "OpenTimelineWindow":
+                        timelineWindow = GetWindow<FsmTimelineWindow>();
                         break;
 
                     case "OpenFsmLogWindow":
@@ -243,6 +262,11 @@ namespace HutongGames.PlayMakerEditor
                 errorWindow.InitWindowTitle();
             }
 
+            if (timelineWindow != null)
+            {
+                timelineWindow.InitWindowTitle();
+            }
+
             if (logWindow != null)
             {
                 logWindow.InitWindowTitle();
@@ -294,6 +318,11 @@ namespace HutongGames.PlayMakerEditor
             if (errorWindow != null)
             {
                 errorWindow.Repaint();
+            }
+
+            if (timelineWindow != null)
+            {
+                timelineWindow.Repaint();
             }
 
             if (logWindow != null)
@@ -414,6 +443,11 @@ namespace HutongGames.PlayMakerEditor
                 errorWindow.SafeClose();
             }
 
+            if (timelineWindow != null)
+            {
+                timelineWindow.SafeClose();
+            }
+
             if (logWindow != null)
             {
                 logWindow.SafeClose();
@@ -437,4 +471,7 @@ namespace HutongGames.PlayMakerEditor
 
         // ReSharper restore UnusedMember.Local
     }
+
+
+
 }

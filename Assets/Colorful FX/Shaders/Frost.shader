@@ -24,29 +24,29 @@ Shader "Hidden/Colorful/Frost"
 
 		half4 frag(v2f_img i) : SV_Target
 		{
-			half2 uv = i.uv;
+			float2 uv = i.uv;
 			half4 color = tex2D(_MainTex, uv);
 			
 			float n = simpleNoise(uv);
 
-			float dx = -0.005 + mod(n, 0.008);
-			float dy = -0.006 + mod(n, 0.01);
+			float dx = -0.005 + (n - 0.008 * floor(n / 0.008));
+			float dy = -0.006 + (n - 0.01 * floor(n / 0.01));
 
-			half4 frosted = tex2D(_MainTex, uv + half2(dx, dy) * _Scale);
+			half4 frosted = tex2D(_MainTex, uv + float2(dx, dy) * _Scale);
 			return frosted;
 		}
 
 		half4 frag_vignette(v2f_img i) : SV_Target
 		{
-			half2 uv = i.uv;
+			float2 uv = i.uv;
 			half4 color = tex2D(_MainTex, uv);
 
 			float n = simpleNoise(uv);
+			
+			float dx = -0.005 + (n - 0.008 * floor(n / 0.008));
+			float dy = -0.006 + (n - 0.01 * floor(n / 0.01));
 
-			float dx = -0.005 + mod(n, 0.008);
-			float dy = -0.006 + mod(n, 0.01);
-
-			half4 frosted = tex2D(_MainTex, uv + half2(dx, dy) * _Scale);
+			half4 frosted = tex2D(_MainTex, uv + float2(dx, dy) * _Scale);
 
 			half4 vignette = half4(1.0, 1.0, 1.0, 1.0);
 			half d = distance(i.uv, half2(0.5, 0.5));

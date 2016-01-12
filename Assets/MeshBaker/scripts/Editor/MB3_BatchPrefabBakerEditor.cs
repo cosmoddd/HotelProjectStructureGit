@@ -29,6 +29,7 @@ public class MB3_BatchPrefabBakerEditor : Editor {
 	}
 	
 	SerializedObject prefabBaker=null;
+	SerializedProperty resultPrefabCreationFolder;
 
 	[MenuItem("GameObject/Create Other/Mesh Baker/Batch Prefab Baker")]
 	public static void CreateNewBatchPrefabBaker(){
@@ -61,6 +62,7 @@ public class MB3_BatchPrefabBakerEditor : Editor {
 	
 	void OnEnable() {
 		prefabBaker = new SerializedObject(target);
+		resultPrefabCreationFolder = prefabBaker.FindProperty("resultPrefabCreationFolder");
 	}
 
 	void OnDisable() {
@@ -70,22 +72,34 @@ public class MB3_BatchPrefabBakerEditor : Editor {
 	public override void OnInspectorGUI(){
 		prefabBaker.Update();
 		
-		EditorGUILayout.HelpBox("== BETA (please report problems) ==\n\n" + 
-								"This tool speeds up the process of preparing prefabs " +
+		EditorGUILayout.HelpBox("This tool speeds up the process of preparing prefabs " +
 								" for static and dynamic batching. It creates duplicate prefab assets and meshes " +
 								"that share a combined material. Source assets are not touched.\n\n" +
-								"1) bake materials to be used by prefabs\n" +
-								"2) enter the number of prefabs to bake in the 'Prefab Rows Size' field\n" +
-								"3) drag source prefab assets to the 'Source Prefab' slots. These should be project assets not scene objects. Renderers" +
+								"1) Bake materials to be used by prefabs using the MB3_Texture baker attached to this object.\n" +
+								"2) Enter the number of prefabs to bake in the 'Prefab Rows' size field.\n" +
+								"3) Drag source prefab assets to the 'Source Prefab' slots. These should be project assets not scene objects. Renderers" +
 								" do not need to be in the root of the prefab. There can be more than one" +
 								" renderer in each prefab.\n" +
-								"4) create some prefab assets of empty game objects and " +
-								"drag them to the 'Result Prefab' slots.\n" +
-								"5) click 'Batch Bake Prefabs'\n" +
-								"6) Check the console for messages and errors",MessageType.Info);
+								"4) Choose or create a folder for storing the result prefabs.\n" +
+		                        "5) Click 'Create Result Prefabs If Not Exist'.\n" +
+		                        "6) Set the bake options in the MB3_MeshBaker script attached to this game object.\n" +
+								"7) Click 'Batch Bake Prefabs'\n" +
+								"8) Check the console for messages and errors",MessageType.Info);
 		
 		DrawDefaultInspector();
-	
+
+		EditorGUILayout.Separator();
+		EditorGUILayout.LabelField("Result Prefab Creation Folder",EditorStyles.boldLabel);
+		EditorGUILayout.LabelField("Folder: " + resultPrefabCreationFolder.stringValue);
+		if (GUILayout.Button ("Browse")){
+			resultPrefabCreationFolder.stringValue = EditorUtility.OpenFolderPanel("Folder Where New Prefabs Will Be Created", resultPrefabCreationFolder.stringValue, "");
+		}
+		if (GUILayout.Button ("Create Result Prefabs If Not Exist")){
+			_createResultPrefabs();
+		}
+
+		EditorGUILayout.Separator();
+		EditorGUILayout.LabelField("Batch Bake Prefabs",EditorStyles.boldLabel);
 		if (GUILayout.Button("Batch Bake Prefabs")){
 			_bakePrefabs();	
 		}
@@ -93,13 +107,69 @@ public class MB3_BatchPrefabBakerEditor : Editor {
 		prefabBaker.ApplyModifiedProperties();		
 		prefabBaker.SetIsDifferentCacheDirty();	
 	}
-	
+
+	public void _createResultPrefabs(){
+		MB3_BatchPrefabBaker pb = (MB3_BatchPrefabBaker) target;
+		string fp = resultPrefabCreationFolder.stringValue;
+		if (fp == null || fp.Trim().Equals("")){
+			Debug.LogError("Result Prefab Creation Folder was not set It must be a folder in this Unity project.");
+			return;
+		}
+		if (!Directory.Exists(fp)){
+			Debug.LogError("Result Prefab Creation Folder does not exist.");
+		}
+		if (!fp.Contains(Application.dataPath)){
+			Debug.LogError("Result Prefab Creation Folder was not a folder inside the 'Assets' folder. It must be a folder inside " +
+			               " the assets folder.");
+			return;
+		}
+		for (int i = 0; i < pb.prefabRows.Length; i++){
+			if (pb.prefabRows[i] == null || pb.prefabRows[i].sourcePrefab == null){
+				Debug.LogError("Source Prefab on row " + i + " is not set.");
+				return;
+			}
+			for (int j = i+1; j < pb.prefabRows.Length; j++){
+				if (pb.prefabRows[i].sourcePrefab == pb.prefabRows[j].sourcePrefab){
+					Debug.LogError("Rows " + i + " and " + j + " contain the same source prefab");
+					return;
+				}
+			}
+			for (int j = 0; j < pb.prefabRows.Length; j++){
+				if (pb.prefabRows[i].sourcePrefab == pb.prefabRows[j].resultPrefab){
+					Debug.LogError("Row " + i + " source prefab is the same as row " + j + " result prefab");
+					return;
+				}
+			}
+			if (PrefabUtility.GetPrefabType(pb.prefabRows[i].sourcePrefab) != PrefabType.ModelPrefab &&
+			    PrefabUtility.GetPrefabType(pb.prefabRows[i].sourcePrefab) != PrefabType.Prefab){
+				Debug.LogError ("Row " + i + " source prefab is not a prefab asset");
+				return;
+			}
+		}
+		int createdCount = 0;
+		for (int i = 0; i < pb.prefabRows.Length; i++){
+			if (pb.prefabRows[i].resultPrefab == null){
+				string resultName = Path.GetFileNameWithoutExtension(AssetDatabase.GetAssetPath(pb.prefabRows[i].sourcePrefab));
+				GameObject ngo = new GameObject("resultName");
+				string resultPath = AssetDatabase.GenerateUniqueAssetPath("Assets" + resultPrefabCreationFolder.stringValue.Substring(Application.dataPath.Length) + Path.DirectorySeparatorChar + resultName + ".prefab");
+				GameObject go = PrefabUtility.CreatePrefab(resultPath,ngo);
+				pb.prefabRows[i].resultPrefab = go;
+				createdCount++;
+				DestroyImmediate(ngo);
+			} else {
+				Debug.Log (String.Format("Skipping row {0} since result prefab was already set.",i));
+			}
+		}
+		Debug.Log ("Created " + createdCount + " prefabs.");
+	}
+
 	public void _bakePrefabs(){
 		Debug.Log("Batch baking prefabs");
 		MB3_BatchPrefabBaker pb = (MB3_BatchPrefabBaker) target;
 		MB3_MeshBaker mb = pb.GetComponent<MB3_MeshBaker>();
 		if (mb == null){
-			Debug.LogError("Prefab baker needs to be attached to a Game Object with an MB3_MeshBaker component.");
+			Debug.LogError("Prefab baker needs to be attached to a Game Object with an MB3_MeshBaker component. The" +
+			               " settings of this component are used when baking the prefabs.");
 			return;
 		}
 		
@@ -337,7 +407,7 @@ public class MB3_BatchPrefabBakerEditor : Editor {
 		}
 		path_root2child.Insert (0, srcRoot);
 //		Debug.Log ("path to root for " + srcChild + " " + path_root2child.Count);
-		
+		 
 		//try to find a matching path in the target prefab
 		t = targRoot;
 		for (int i = 1; i < path_root2child.Count; i++){

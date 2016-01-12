@@ -9,6 +9,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+/*
+Notes on Normal Maps in Unity3d
+
+Unity stores normal maps in a non standard format for some platforms. Think of the standard format as being english, unity's as being
+french. The raw image files in the project folder are in english, the AssetImporter converts them to french. Texture2D.GetPixels returns 
+french. This is a problem when we build an atlas from Texture2D objects and save the result in the project folder.
+Unity wants us to flag this file as a normal map but if we do it is effectively translated twice.
+
+Solutions:
+
+    1) convert the normal map to english just before saving to project. Then set the normal flag and let the Importer do translation.
+    This was rejected because Unity doesn't translate for all platforms. I would need to check with every version of Unity which platforms
+    use which format.
+
+    2) Uncheck "normal map" on importer before bake and re-check after bake. This is the solution I am using.
+*/
 namespace DigitalOpus.MB.Core{	
 
 	[System.Serializable]
@@ -433,12 +449,14 @@ namespace DigitalOpus.MB.Core{
 										//TRIED to copy texture using tex2.SetPixels(tex1.GetPixels()) but bug in 3.5 means DTX1 and 5 compressed textures come out skewed
 										//MB2_Log.Log(MB2_LogLevel.warn,obj.name + " in the list of objects to mesh uses Texture "+tx.name+" uses format " + f + " that is not in: ARGB32, RGBA32, BGRA32, RGB24, Alpha8 or DXT. These formats cannot be resized. MeshBaker will create duplicates.");
 										//tx = createTextureCopy(tx);
-										if (Application.isPlaying){
+										if (Application.isPlaying && _packingAlgorithm != MB2_PackingAlgorithmEnum.MeshBakerTexturePacker_Fast) {
 											Debug.LogError("Object " + obj.name + " in the list of objects to mesh uses Texture "+tx.name+" uses format " + f + " that is not in: ARGB32, RGBA32, BGRA32, RGB24, Alpha8 or DXT. These textures cannot be resized at runtime. Try changing texture format. If format says 'compressed' try changing it to 'truecolor'" );																						
 											return false;
 										} else {
-											//Debug.LogWarning("Object " + obj.name + " in the list of objects to mesh uses Texture "+tx.name+" uses format " + f + " that is not in: ARGB32, RGBA32, BGRA32, RGB24, Alpha8 or DXT. These textures cannot be resized. Try changing texture format. If format says 'compressed' try changing it to 'truecolor'");													
-											if (textureEditorMethods != null && _packingAlgorithm != MB2_PackingAlgorithmEnum.MeshBakerTexturePacker_Fast){
+                                            //only want to do this if we are saving the atlases to project
+											if (textureEditorMethods != null &&
+                                                (_packingAlgorithm != MB2_PackingAlgorithmEnum.MeshBakerTexturePacker_Fast ||
+                                                isNormalMap)){
 												textureEditorMethods.AddTextureFormat(tx, isNormalMap);
 											}
 											tx = (Texture2D) mat.GetTexture(texPropertyNames[j].name);
@@ -454,7 +472,9 @@ namespace DigitalOpus.MB.Core{
 							}
 							offset = mat.GetTextureOffset(texPropertyNames[j].name);
 							scale = mat.GetTextureScale(texPropertyNames[j].name);
-						}
+						} else {
+                            colorIfNoTexture = tintColor;
+                        }
 						if (mar[matIdx].hasOutOfBoundsUVs){
 							obUVscale = new Vector2(mar[matIdx].uvRect.width,mar[matIdx].uvRect.height);
 							obUVoffset = new Vector2(mar[matIdx].uvRect.x,mar[matIdx].uvRect.y);
@@ -803,6 +823,7 @@ namespace DigitalOpus.MB.Core{
 							atlasRenderTexture.textureSets = distinctMaterialTextures;
 							atlasRenderTexture.indexOfTexSetToRender = i;
 							atlasRenderTexture.isNormalMap = texPropertyNames[i].isNormalMap;
+                            atlasRenderTexture.fixOutOfBoundsUVs = _fixOutOfBoundsUVs;
 							// call render on it
 							atlas = atlasRenderTexture.OnRenderAtlas(this);
 
@@ -1353,7 +1374,28 @@ namespace DigitalOpus.MB.Core{
 			return new Color(1f,1f,1f,0f);
 		}
 
-		string PrintList(List<GameObject> gos){
+        /* 
+        Unity uses a non-standard format for storing normals for some platforms. Imagine the standard format is English, Unity's is French
+        When the normal-map checkbox is ticked on the asset importer the normal map is translated into french. When we build the normal atlas
+        we are reading the french. When we save and click the normal map tickbox we are translating french -> french. A double transladion that
+        breaks the normal map. To fix this we need to "unconvert" the normal map to english when saving the atlas as a texture so that unity importer
+        can do its thing properly. 
+        */
+        Color32 ConvertNormalFormatFromUnity_ToStandard(Color32 c) {
+            Vector3 n = Vector3.zero;
+            n.x = c.a * 2f - 1f;
+            n.y = c.g * 2f - 1f;
+            n.z = Mathf.Sqrt(1 - n.x * n.x - n.y * n.y);
+            //now repack in the regular format
+            Color32 cc = new Color32();
+            cc.a = 1;
+            cc.r = (byte)((n.x + 1f) * .5f);
+            cc.g = (byte)((n.y + 1f) * .5f);
+            cc.b = (byte)((n.z + 1f) * .5f);
+            return cc;
+        }
+
+        string PrintList(List<GameObject> gos){
 			StringBuilder sb = new StringBuilder();
 			for(int i = 0; i < gos.Count; i++){
 				sb.Append( gos[i] + ",");

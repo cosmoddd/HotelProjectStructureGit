@@ -10,9 +10,8 @@ GameObject:
   - 4: {fileID: 483662}
   - 33: {fileID: 3331034}
   - 23: {fileID: 2358638}
-  - 114: {fileID: 11404412}
   - 64: {fileID: 6491454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AlienPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +28,7 @@ GameObject:
   - 4: {fileID: 410054}
   - 33: {fileID: 3311210}
   - 23: {fileID: 2303546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,20 +134,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: c98877f0409919e4f94d1c18c8a9eca9, type: 3}
---- !u!114 &11404412
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38615cf30be85af488c32eaca03c1b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: 128
-  addColorHeight: 0
-  addDisplacement: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

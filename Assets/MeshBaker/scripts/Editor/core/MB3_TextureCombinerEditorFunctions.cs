@@ -155,7 +155,8 @@ namespace DigitalOpus.MB.Core{
 				string relativePath = folderPath + baseName +"-" + texPropertyName.name + "-atlas" + atlasNum + ".png";                      				
 				SetTextureSize((Texture2D) (AssetDatabase.LoadAssetAtPath(relativePath, typeof(Texture2D))),size);
 				SetMaterialTextureProperty(resMat, texPropertyName, relativePath);
-			}
+
+            }
 		}
 		
 		public void SetMaterialTextureProperty(Material target, ShaderTextureProperty texPropName, string texturePath){

@@ -21,6 +21,9 @@ namespace StixGames
 		public Vector3 rayDirection = Vector3.down;
 		public float maxDistance = 1.2f;
 
+        public bool blendChanges;
+        public float blendSpeed = 5;
+
 	    public LayerMask grassLayer;
 
         private Vector3 lastPosition;
@@ -67,13 +70,13 @@ namespace StixGames
 			//Calculate the pixel area where the texture will be changed
 			int targetX = (int) (mid.x - pixelRadius);
 			int targetY = (int) (mid.y - pixelRadius);
-			int rectX = Mathf.Clamp((targetX), 0, tex.width);
-			int rectY = Mathf.Clamp((targetY), 0, tex.height);
+			int rectX = Mathf.Clamp(targetX, 0, tex.width);
+			int rectY = Mathf.Clamp(targetY, 0, tex.height);
 			int width = Mathf.Min(targetX + pixelRadius * 2, tex.width) - targetX;
 			int height = Mathf.Min(targetY + pixelRadius * 2, tex.height) - targetY;
 
-			mid -= new Vector2(targetX, targetY);
-
+		    mid -= new Vector2(rectX, rectY);
+            
 			//Get pixels
 			Color[] pixels = tex.GetPixels(rectX, rectY, width, height);
 
@@ -117,7 +120,10 @@ namespace StixGames
 						//To color space
 						dir = GrassManipulationUtility.VectorToColorSpace(dir);
 
-						pixels[x + y * width] = new Color(dir.x, dir.y, pressure, 1);
+					    Color newColor = new Color(dir.x, dir.y, pressure, 1);
+
+                        //Adds the new color to the pixel array
+                        pixels[x + y * width] = blendChanges ? Color.Lerp(pixels[x+y*width], newColor, Time.deltaTime * blendSpeed) : newColor;
 					}
 				}
 			}

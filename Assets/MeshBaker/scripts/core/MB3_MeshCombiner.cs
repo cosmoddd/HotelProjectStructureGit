@@ -23,7 +23,7 @@ namespace DigitalOpus.MB.Core{
 		[SerializeField] protected MB2_LogLevel _LOG_LEVEL = MB2_LogLevel.info;
 		public virtual MB2_LogLevel LOG_LEVEL{
 			get{return _LOG_LEVEL;}
-			set{_LOG_LEVEL = value;}
+			set{ _LOG_LEVEL = value; }
 		}
 		
 		[SerializeField] protected MB2_ValidationLevel _validationLevel = MB2_ValidationLevel.robust;
@@ -102,19 +102,31 @@ namespace DigitalOpus.MB.Core{
 			get{return _doUV;} 
 			set{_doUV = value;}
 		}
-		
-		[SerializeField] protected bool _doUV1;
-		public virtual bool doUV1 { 
-			get{return _doUV1;} 
-			set{_doUV1 = value;}
-		}
-		
-		
-		public virtual bool doUV2(){
+
+        //only included for backward compatibility. Does nothing
+        public virtual bool doUV1 {
+            get { return false; }
+            set { }
+        }
+
+        public virtual bool doUV2(){
 			return _lightmapOption == MB2_LightmapOptions.copy_UV2_unchanged || _lightmapOption == MB2_LightmapOptions.preserve_current_lightmapping;
 		}
 
-		public abstract int GetLightmapIndex();
+        [SerializeField] protected bool _doUV3;
+        public virtual bool doUV3 {
+            get { return _doUV3; }
+            set { _doUV3 = value; }
+        }
+
+        [SerializeField] protected bool _doUV4;
+        public virtual bool doUV4 {
+            get { return _doUV4; }
+            set { _doUV4 = value; }
+        }
+
+		protected bool _usingTemporaryTextureBakeResult;
+        public abstract int GetLightmapIndex();
 		public abstract void ClearBuffers();
 		public abstract void ClearMesh();
 		public abstract void DestroyMesh();
@@ -138,63 +150,67 @@ namespace DigitalOpus.MB.Core{
 		/// Uv2 generation method. This is normally editor class method Unwrapping.GenerateSecondaryUVSet
 		/// </param>
 		public abstract void Apply(GenerateUV2Delegate uv2GenerationMethod);
-		
-		/// <summary>
-		/// Apply the specified triangles, vertices, normals, tangents, uvs, colors, uv1, uv2, bones and uv2GenerationMethod.
-		/// </summary>
-		/// <param name='triangles'>
-		/// Triangles.
-		/// </param>
-		/// <param name='vertices'>
-		/// Vertices.
-		/// </param>
-		/// <param name='normals'>
-		/// Normals.
-		/// </param>
-		/// <param name='tangents'>
-		/// Tangents.
-		/// </param>
-		/// <param name='uvs'>
-		/// Uvs.
-		/// </param>
-		/// <param name='colors'>
-		/// Colors.
-		/// </param>
-		/// <param name='uv1'>
-		/// Uv1.
-		/// </param>
-		/// <param name='uv2'>
-		/// Uv2.
-		/// </param>
-		/// <param name='bones'>
-		/// Bones.
-		/// </param>
-		/// <param name='uv2GenerationMethod'>
-		/// Uv2 generation method. This is normally method Unwrapping.GenerateSecondaryUVSet. This should be null when calling Apply at runtime.
-		/// </param>		
-		public abstract void Apply(bool triangles,
+
+        /// <summary>
+        /// Apply the specified triangles, vertices, normals, tangents, uvs, colors, uv1, uv2, bones and uv2GenerationMethod.
+        /// </summary>
+        /// <param name='triangles'>
+        /// Triangles.
+        /// </param>
+        /// <param name='vertices'>
+        /// Vertices.
+        /// </param>
+        /// <param name='normals'>
+        /// Normals.
+        /// </param>
+        /// <param name='tangents'>
+        /// Tangents.
+        /// </param>
+        /// <param name='uvs'>
+        /// Uvs.
+        /// </param>
+        /// <param name='colors'>
+        /// Colors.
+        /// </param>
+        /// <param name='uv3'>
+        /// Uv3.
+        /// </param>
+        /// <param name='uv4'>
+        /// Uv4.
+        /// </param>
+        /// <param name='uv2'>
+        /// Uv2.
+        /// </param>
+        /// <param name='bones'>
+        /// Bones.
+        /// </param>
+        /// <param name='uv2GenerationMethod'>
+        /// Uv2 generation method. This is normally method Unwrapping.GenerateSecondaryUVSet. This should be null when calling Apply at runtime.
+        /// </param>		
+        public abstract void Apply(bool triangles,
 						  bool vertices,
 						  bool normals,
 						  bool tangents,
 						  bool uvs,
-						  bool colors,
-						  bool uv1,
-						  bool uv2,
+                          bool uv2,
+                          bool uv3,
+                          bool uv4,
+                          bool colors,
 						  bool bones=false,
 						  GenerateUV2Delegate uv2GenerationMethod = null);
 
-		/// <summary>
-		/// Updates the data in the combined mesh for meshes that are already in the combined mesh.
-		/// This is faster than adding and removing a mesh and has a much lower memory footprint.
-		/// This method can only be used if the meshes being updated have the same layout(number of 
-		/// vertices, triangles, submeshes).
-		/// This is faster than removing and re-adding
-		/// For efficiency update as few channels as possible.
-		/// Apply must be called to apply the changes to the combined mesh
-		/// </summary>		
-		public abstract void UpdateGameObjects(GameObject[] gos, bool recalcBounds = true,
-										bool updateVertices = true, bool updateNormals = true, bool updateTangents = true,
-									    bool updateUV = false, bool updateUV1 = false, bool updateUV2 = false,
+        /// <summary>
+        /// Updates the data in the combined mesh for meshes that are already in the combined mesh.
+        /// This is faster than adding and removing a mesh and has a much lower memory footprint.
+        /// This method can only be used if the meshes being updated have the same layout(number of 
+        /// vertices, triangles, submeshes).
+        /// This is faster than removing and re-adding
+        /// For efficiency update as few channels as possible.
+        /// Apply must be called to apply the changes to the combined mesh
+        /// </summary>		
+        public abstract void UpdateGameObjects(GameObject[] gos, bool recalcBounds = true,
+                                        bool updateVertices = true, bool updateNormals = true, bool updateTangents = true,
+                                        bool updateUV = false, bool updateUV2 = false, bool updateUV3 = false, bool updateUV4 = false,
 										bool updateColors = false, bool updateSkinningInfo = false);		
 		
 		public abstract bool AddDeleteGameObjects(GameObject[] gos, GameObject[] deleteGOs, bool disableRendererInSource=true);
@@ -203,11 +219,12 @@ namespace DigitalOpus.MB.Core{
 		public abstract bool CombinedMeshContains(GameObject go);
 		public abstract void UpdateSkinnedMeshApproximateBounds();
 		public abstract void UpdateSkinnedMeshApproximateBoundsFromBones();
+        public abstract void CheckIntegrity();
 
-		/// <summary>
-		/// Updates the skinned mesh approximate bounds from the bounds of the source objects.
-		/// </summary>		
-		public abstract void UpdateSkinnedMeshApproximateBoundsFromBounds();
+        /// <summary>
+        /// Updates the skinned mesh approximate bounds from the bounds of the source objects.
+        /// </summary>		
+        public abstract void UpdateSkinnedMeshApproximateBoundsFromBounds();
 		
 		/// <summary>
 		/// Updates the skinned mesh bounds by creating a bounding box that contains the bones (skeleton) of the source objects.
@@ -251,5 +268,41 @@ namespace DigitalOpus.MB.Core{
 			}	
 			smr.localBounds = bigB;			
 		}		
+
+		protected virtual bool _CheckIfAllObjsToAddUseSameMaterialsAndCreateTemporaryTextrueBakeResult(GameObject[] gos){ 
+			_usingTemporaryTextureBakeResult = false;
+			Renderer r = MB_Utility.GetRenderer(gos[0]);
+			if (r != null){
+				Material[] mats = MB_Utility.GetGOMaterials(gos[0]);
+				for (int i = 0; i < gos.Length; i++){
+					if (gos[i] == null){
+						Debug.LogError(string.Format("Game object {0} in list of objects to add was null", i));
+						return false;
+					}
+					Material[] oMats = MB_Utility.GetGOMaterials(gos[i]);
+					if (oMats == null){
+						Debug.LogError(string.Format("Game object {0} in list of objects to add no renderer", i));
+						return false;							
+					}
+					for (int j = 0; j <oMats.Length; j++){
+						bool found = false;
+						for (int k = 0; k < mats.Length; k++){
+							if (oMats[j] == mats[k]){
+								found = true;
+								break;
+							}
+						}
+						if (found == false){
+							Debug.LogError (string.Format("Material Bake Result is null and game object {0} in list of objects to add did not have a subset of the materials in on the first object. You need to bake textures or all objects must have a subset of materials on the first object.",i));
+							return false;
+						}
+					}
+				}
+				_usingTemporaryTextureBakeResult = true;
+				_textureBakeResults = MB2_TextureBakeResults.CreateForMaterialsOnRenderer(r);
+				return true;
+			}
+			return false;
+		}
 	}
 }

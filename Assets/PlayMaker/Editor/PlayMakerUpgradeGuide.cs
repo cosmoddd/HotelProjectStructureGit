@@ -1,47 +1,28 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
+
+/* Moved to WelcomeWindow.cs
 
 namespace HutongGames.PlayMakerEditor
 {
     /// <summary>
     /// Shows critical upgrade info for each version
     /// </summary>
-    [InitializeOnLoad]
     public class PlayMakerUpgradeGuide : EditorWindow
     {
         private const string urlReleaseNotes = "https://hutonggames.fogbugz.com/default.asp?W311";
+        private const string urlTroubleshooting = "https://hutonggames.fogbugz.com/default.asp?W624";
 
-        private static bool showOnLoad;
+        private bool showOnLoad;
         private Vector2 scrollPosition;
 
-        static PlayMakerUpgradeGuide()
+        public void OnEnable()
         {
-            if (EditorPrefs.GetBool("Playmaker.ShowUpgradeGuide", true))
-            {
-                // Can't call GetWindow here, so use update callback
-                EditorApplication.update -= OpenNextUpdate;
-                EditorApplication.update += OpenNextUpdate;
-            }         
-        }
+            title = "PlayMaker";
+            position = new Rect(100,100,350,400);
+            minSize = new Vector2(350,200);
 
-        static void OpenNextUpdate()
-        {
-            Open();
-
-            EditorApplication.update -= OpenNextUpdate;
-        }
-
-        public static void Open()
-        {
-            var window = GetWindow<PlayMakerUpgradeGuide>(true);
-#if UNITY_5_1 || UNITY_5_2 || UNITY_5_3
-            window.titleContent = new GUIContent("PlayMaker");
-#else
-            window.title = "PlayMaker";
-#endif
-            window.minSize = new Vector2(350, 400);
-            showOnLoad = EditorPrefs.GetBool("Playmaker.ShowUpgradeGuide", true);
+            showOnLoad = EditorPrefs.GetBool(EditorPrefStrings.ShowUpgradeGuide, true);
         }
 
         public void OnGUI()
@@ -50,19 +31,15 @@ namespace HutongGames.PlayMakerEditor
 
             FsmEditorGUILayout.ToolWindowLargeTitle(this, "Upgrade Guide");
 
-            // Hack fix needed in 1.7.8 (fixed in 1.8.0)
-            GUILayout.Space(20);
-
             scrollPosition = GUILayout.BeginScrollView(scrollPosition);
 
-            EditorGUILayout.HelpBox("Always BACKUP projects before updating!", MessageType.Error);
+            EditorGUILayout.HelpBox("Always BACKUP projects before updating!\nUse Version Control to manage changes!", MessageType.Error);
 
-            GUILayout.Label("Version 1.7.8", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("This is a maintainance release for Unity 5 compatibility. " +
-                                    "\nNew features and bug fixes coming soon in 1.8.0", MessageType.Info);
+            GUILayout.Label("Version 1.8.0", EditorStyles.boldLabel);
+            EditorGUILayout.HelpBox("FSMs saved with 1.8.0 cannot be opened in earlier versions of PlayMaker! Please BACKUP projects!", MessageType.Warning);
 
             GUILayout.Label("Unity 5 Upgrade Notes", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox("If you're updating a Unity 4.x project please check the Troubleshooting guide on the PlayMaker Wiki.", MessageType.Warning);
+            EditorGUILayout.HelpBox("If you run into problems updating a Unity 4.x project please check the Troubleshooting guide on the PlayMaker Wiki.", MessageType.Warning);
             EditorGUILayout.HelpBox("Unity 5 removed component property shortcuts from GameObject. " +
                                     "\n\nThe Unity auto update process replaces these properties with GetComponent calls. " +
                                     "In many cases this is fine, but some third party actions and addons might need manual updating! " +
@@ -77,17 +54,17 @@ namespace HutongGames.PlayMakerEditor
             EditorGUILayout.HelpBox("PlayMakerGUI is only needed if you use OnGUI Actions. " +
                                     "If you don't use OnGUI actions un-check Auto-Add PlayMakerGUI in PlayMaker Preferences.", MessageType.Info);
  
-
             GUILayout.EndScrollView();
 
             GUILayout.FlexibleSpace();
+            FsmEditorGUILayout.Divider();
 
             EditorGUI.BeginChangeCheck();
             var dontShowAgain = GUILayout.Toggle(!showOnLoad, "Don't Show Again Until Next Update");
             if (EditorGUI.EndChangeCheck())
             {
                 showOnLoad = !dontShowAgain;
-                EditorPrefs.SetBool("Playmaker.ShowUpgradeGuide", showOnLoad);
+                EditorPrefs.SetBool(EditorPrefStrings.ShowUpgradeGuide, showOnLoad);
             }
 
             if (GUILayout.Button("Online Release Notes"))
@@ -97,3 +74,4 @@ namespace HutongGames.PlayMakerEditor
         }
     }
 }
+*/

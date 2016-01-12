@@ -10,6 +10,10 @@ void vert(inout appdata v)
 	v.vertex = mul(_Object2World, v.vertex);
 	v.uv = TRANSFORM_TEX(v.uv, _Density);
 
+	#ifdef GRASS_FOLLOW_SURFACE_NORMAL
+		v.normal = UnityObjectToWorldNormal(v.normal);
+	#endif
+
 	//Camera, or rather renderer pos
 	v.cameraPos = getCameraPos();
 

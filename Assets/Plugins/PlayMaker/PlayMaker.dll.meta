@@ -76,6 +76,12 @@ PluginImporter:
       settings:
         CompileFlags: 
         FrameworkDependencies: 
+    XboxOne:
+      enabled: 1 
+      settings: {} 
+    PS4:
+      enabled: 1 
+      settings: {} 
   userData: 
   assetBundleName: 
   assetBundleVariant: 

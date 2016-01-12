@@ -7,11 +7,12 @@ using DigitalOpus.MB.Core;
 
 public class MB_TextureCombinerRenderTexture{
 	public MB2_LogLevel LOG_LEVEL = MB2_LogLevel.info;
-	Material mat;
+	Material mat; //container for the shader that we will use to render the texture
 	RenderTexture _destinationTexture;
 	Camera myCamera;
 	int _padding;
 	bool _isNormalMap;
+    bool _fixOutOfBoundsUVs;
 
 	//only want to render once, not every frame
 	bool _doRenderAtlas = false;
@@ -22,13 +23,14 @@ public class MB_TextureCombinerRenderTexture{
 	Texture2D targTex;
 	MB3_TextureCombiner combiner;
 	
-	public Texture2D DoRenderAtlas(GameObject gameObject, int width, int height, int padding, Rect[] rss, List<MB3_TextureCombiner.MB_TexSet> textureSetss, int indexOfTexSetToRenders, bool isNormalMap, MB3_TextureCombiner texCombiner, MB2_LogLevel LOG_LEV){
+	public Texture2D DoRenderAtlas(GameObject gameObject, int width, int height, int padding, Rect[] rss, List<MB3_TextureCombiner.MB_TexSet> textureSetss, int indexOfTexSetToRenders, bool isNormalMap, bool fixOutOfBoundsUVs, MB3_TextureCombiner texCombiner, MB2_LogLevel LOG_LEV){
 		LOG_LEVEL = LOG_LEV;
 		textureSets = textureSetss;
 		indexOfTexSetToRender = indexOfTexSetToRenders;
 		_padding = padding;
 		_isNormalMap = isNormalMap;
-		combiner = texCombiner;
+        _fixOutOfBoundsUVs = fixOutOfBoundsUVs;
+        combiner = texCombiner;
 		rs = rss;
 		Shader s;
 		if (_isNormalMap){
@@ -41,7 +43,7 @@ public class MB_TextureCombinerRenderTexture{
 			return null;
 		}
 		mat = new Material(s);
-		_destinationTexture = new RenderTexture(width,height,24);
+		_destinationTexture = new RenderTexture(width,height,24,RenderTextureFormat.ARGB32);
 		_destinationTexture.filterMode = FilterMode.Point;
 		
 		myCamera = gameObject.GetComponent<Camera>();
@@ -52,11 +54,12 @@ public class MB_TextureCombinerRenderTexture{
 		myCamera.clearFlags = CameraClearFlags.Color;
 		
 		Transform camTransform = myCamera.GetComponent<Transform>();
-		camTransform.localPosition = new Vector3(width >> 1, height >> 1, 3);
+		camTransform.localPosition = new Vector3(width/2.0f, height/2f, 3);
 		camTransform.localRotation = Quaternion.Euler(0, 180, 180);
 		
 		_doRenderAtlas = true;
-		if (LOG_LEVEL >= MB2_LogLevel.debug) Debug.Log ("Begin Camera.Render");
+		if (LOG_LEVEL >= MB2_LogLevel.debug) Debug.Log(string.Format ("Begin Camera.Render destTex w={0} h={1} camPos={2}", width, height, camTransform.localPosition));
+        //This triggers the OnRenderObject callback
 		myCamera.Render();
 		_doRenderAtlas = false;
 		
@@ -77,8 +80,11 @@ public class MB_TextureCombinerRenderTexture{
 			sw.Start ();
 			for (int i = 0; i < rs.Length; i++){
 				MB3_TextureCombiner.MeshBakerMaterialTexture texInfo = textureSets[i].ts[indexOfTexSetToRender];
-				if (LOG_LEVEL >= MB2_LogLevel.trace && texInfo.t != null) Debug.Log ("Added " + texInfo.t + " to atlas w=" + texInfo.t.width + " h=" + texInfo.t.height + " offset=" + texInfo.offset + " scale=" + texInfo.scale + " rect=" + rs[i] + " padding=" + _padding);
-				CopyScaledAndTiledToAtlas(texInfo,rs[i],_padding,false,_destinationTexture.width,false);
+                if (LOG_LEVEL >= MB2_LogLevel.trace && texInfo.t != null) {
+                    Debug.Log("Added " + texInfo.t + " to atlas w=" + texInfo.t.width + " h=" + texInfo.t.height + " offset=" + texInfo.offset + " scale=" + texInfo.scale + " rect=" + rs[i] + " padding=" + _padding);
+                    _printTexture(texInfo.t);
+                }
+                CopyScaledAndTiledToAtlas(texInfo,rs[i]);
 			}
 			sw.Stop();
 			sw.Start();
@@ -119,6 +125,11 @@ public class MB_TextureCombinerRenderTexture{
 				}
 			}
 			tempTexture.Apply ();
+
+
+            if (LOG_LEVEL >= MB2_LogLevel.trace) {
+                _printTexture(tempTexture);
+            }
 			myCamera.targetTexture = null;
 			RenderTexture.active = null;
 			
@@ -127,18 +138,40 @@ public class MB_TextureCombinerRenderTexture{
 		}
 	}
 	
-	private bool IsOpenGL(){
+    /* 
+    Unity uses a non-standard format for storing normals for some platforms. Imagine the standard format is English, Unity's is French
+    When the normal-map checkbox is ticked on the asset importer the normal map is translated into french. When we build the normal atlas
+    we are reading the french. When we save and click the normal map tickbox we are translating french -> french. A double transladion that
+    breaks the normal map. To fix this we need to "unconvert" the normal map to english when saving the atlas as a texture so that unity importer
+    can do its thing properly. 
+    */
+    Color32 ConvertNormalFormatFromUnity_ToStandard(Color32 c) {
+        Vector3 n = Vector3.zero;
+        n.x = c.a * 2f - 1f;
+        n.y = c.g * 2f - 1f;
+        n.z = Mathf.Sqrt(1 - n.x * n.x - n.y * n.y);
+        //now repack in the regular format
+        Color32 cc = new Color32();
+        cc.a = 1;
+        cc.r = (byte) ((n.x + 1f) * .5f);
+        cc.g = (byte) ((n.y + 1f) * .5f);
+        cc.b = (byte) ((n.z + 1f) * .5f);
+        return cc;
+    }
+
+    private bool IsOpenGL(){
 		var graphicsDeviceVersion = SystemInfo.graphicsDeviceVersion;
 		return graphicsDeviceVersion.StartsWith("OpenGL");
 	}
 	
-	private void CopyScaledAndTiledToAtlas(MB3_TextureCombiner.MeshBakerMaterialTexture source, Rect rec, int _padding, bool _fixOutOfBoundsUVs, int maxSize, bool isNormalMap){			
+	private void CopyScaledAndTiledToAtlas(MB3_TextureCombiner.MeshBakerMaterialTexture source, Rect rec){			
 		Rect r = rec;
 
 		myCamera.backgroundColor = source.colorIfNoTexture;
 
 		if (source.t == null){
 			source.t = combiner._createTemporaryTexture(16,16,TextureFormat.ARGB32, true);
+            Debug.Log("Creating texture with color " + source.colorIfNoTexture + " isNormal" + _isNormalMap);
 			MB_Utility.setSolidColor(source.t,source.colorIfNoTexture);
 		}
 
@@ -168,6 +201,7 @@ public class MB_TextureCombinerRenderTexture{
 			srcPrTex.y += source.obUVoffset.y;
 			if (LOG_LEVEL >= MB2_LogLevel.trace) Debug.Log ("Fixing out of bounds UVs for tex " + source.t);
 		}
+
 		Texture tex = source.t;
 		
 		//main texture
@@ -185,7 +219,7 @@ public class MB_TextureCombinerRenderTexture{
 
 		//fill the padding first
 		Rect srcPr = new Rect();
-
+        
 		//top margin
 		srcPr.x = srcPrTex.x;
 		srcPr.y = srcPrTex.y + 1 - 1f / tex.height;
@@ -275,12 +309,25 @@ public class MB_TextureCombinerRenderTexture{
 		targPr.width = _padding;
 		targPr.height = _padding;
 		Graphics.DrawTexture(targPr, tex, srcPr, 0, 0, 0, 0, mat);
-
+ 
 		//now the texture
 		Graphics.DrawTexture(r, tex, srcPrTex, 0, 0, 0, 0, mat);
 
 		tex.wrapMode = oldTexWrapMode;
 	}
+
+    void _printTexture(Texture2D t) {
+        if (t.width * t.height > 100) Debug.Log("Not printing texture too large.");
+        Color32[] cols = t.GetPixels32();
+        string s = "";
+        for (int i = 0; i < t.height; i++) {
+            for (int j = 0; j < t.width; j++) {
+                s += cols[i * t.width + j] + ", ";
+            }
+            s += "\n";
+        }
+        Debug.Log(s);
+    }
 }
 
 [ExecuteInEditMode]
@@ -292,6 +339,7 @@ public class MB3_AtlasPackerRenderTexture : MonoBehaviour {
 	public int height;
 	public int padding;
 	public bool isNormalMap;
+    public bool fixOutOfBoundsUVs;
 	public Rect[] rects;
 	public Texture2D tex1;
 	public List<MB3_TextureCombiner.MB_TexSet> textureSets;
@@ -304,7 +352,7 @@ public class MB3_AtlasPackerRenderTexture : MonoBehaviour {
 	public Texture2D OnRenderAtlas(MB3_TextureCombiner combiner){
 		fastRenderer = new MB_TextureCombinerRenderTexture();
 		_doRenderAtlas = true;
-		Texture2D atlas = fastRenderer.DoRenderAtlas(this.gameObject,width,height,padding,rects,textureSets,indexOfTexSetToRender, isNormalMap, combiner, LOG_LEVEL);
+		Texture2D atlas = fastRenderer.DoRenderAtlas(this.gameObject,width,height,padding,rects,textureSets,indexOfTexSetToRender, isNormalMap, fixOutOfBoundsUVs, combiner, LOG_LEVEL);
 		_doRenderAtlas = false;
 		return atlas;
 	}

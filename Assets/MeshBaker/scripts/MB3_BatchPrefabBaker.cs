@@ -11,4 +11,7 @@ public class MB3_BatchPrefabBaker : MonoBehaviour {
 	}
 
 	public MB3_PrefabBakerRow[] prefabRows;
+
+	[HideInInspector]
+	public string resultPrefabCreationFolder; 
 }

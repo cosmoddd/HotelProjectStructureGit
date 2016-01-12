@@ -19,7 +19,7 @@ public class MB_Example : MonoBehaviour {
 		//Only to vertecies, tangents and normals
 		//Only want to call this once per frame since it is slow
 		meshbaker.UpdateGameObjects(objsToCombine);
-		meshbaker.Apply(false,true,true,true,false,false,false,false);	
+		meshbaker.Apply(false,true,true,true,false,false,false,false,false);	
 	}
 	
 	void OnGUI(){
