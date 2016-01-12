@@ -43,6 +43,8 @@ ModelImporter:
     100070: Beams_of_Concrete_001
     100072: big_railing_mirror_001
     100074: catwalk_mirror_axi_001
+    100076: mirror_axis_002
+    100078: mirror_axis_003
     400000: Back_Wall
     400002: Beams
     400004: Beams_of_Concrete
@@ -81,6 +83,8 @@ ModelImporter:
     400070: Beams_of_Concrete_001
     400072: big_railing_mirror_001
     400074: catwalk_mirror_axi_001
+    400076: mirror_axis_002
+    400078: mirror_axis_003
     2300000: Back_Wall
     2300002: Beams
     2300004: Beams_of_Concrete
