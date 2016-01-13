@@ -9,7 +9,7 @@ labels:
 - pebbles
 - texture
 - substance
-timeCreated: 1445372334
+timeCreated: 1452708892
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -45,44 +45,44 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Age
       value:
-        scalar[0]: .970000029
+        scalar[0]: 0.97
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Aged_Concrete_Color
       value:
-        scalar[0]: .391706347
-        scalar[1]: .406012148
-        scalar[2]: .463235319
+        scalar[0]: 0.39170635
+        scalar[1]: 0.40601215
+        scalar[2]: 0.46323532
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Concrete_Color
       value:
-        scalar[0]: .407843173
-        scalar[1]: .388235331
-        scalar[2]: .360784322
+        scalar[0]: 0.40784317
+        scalar[1]: 0.38823533
+        scalar[2]: 0.36078432
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Light_Angle
       value:
-        scalar[0]: .42899999
+        scalar[0]: 0.429
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Moss
       value:
-        scalar[0]: .524999976
+        scalar[0]: 0.525
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Moss_Color
       value:
-        scalar[0]: .25546065
-        scalar[1]: .772058845
-        scalar[2]: .259023368
+        scalar[0]: 0.25546065
+        scalar[1]: 0.77205884
+        scalar[2]: 0.25902337
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Depth
@@ -101,7 +101,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Normal
       value:
-        scalar[0]: .771000028
+        scalar[0]: 0.668
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -115,28 +115,28 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Hue_Shift
       value:
-        scalar[0]: .451999992
+        scalar[0]: 0.419
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Saturation
       value:
-        scalar[0]: .50999999
+        scalar[0]: 0.51
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Contrast
       value:
-        scalar[0]: .256999999
+        scalar[0]: 0.257
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -226,11 +226,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0199999996
+          second: 0.005
         data:
           first:
             name: _ZWrite
@@ -238,7 +238,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .261999995
+          second: 0.291
         data:
           first:
             name: _BumpScale
