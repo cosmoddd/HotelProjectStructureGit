@@ -10,7 +10,6 @@ public class DottieScript : MonoBehaviour {
     public string dottieTest;
     public int dialogLocator;
 
-
 	// Use this for initialization
 	void Start () {
 
@@ -31,11 +30,11 @@ public class DottieScript : MonoBehaviour {
 		void Update () {
 			
 		}
-		
+		/*
 		void TimeVacuum()
     {
         Debug.Log("hot pants in the evening sun");
-    }
+    }*/
 
     void SetDialogLocator(int i)
     {
