@@ -3,7 +3,7 @@ guid: 96ee9d75317f72d4fbe78c96bf21ffeb
 timeCreated: 1444326577
 licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: Desk
     100002: Desk_001
@@ -34,6 +34,7 @@ ModelImporter:
     100052: long_drawer_left
     100054: long_drawer_right
     100056: long_drawer_rear
+    100058: main_shelf
     400000: Desk
     400002: Desk_001
     400004: Desk_002
@@ -63,6 +64,7 @@ ModelImporter:
     400052: long_drawer_left
     400054: long_drawer_right
     400056: long_drawer_rear
+    400058: main_shelf
     2300000: Desk
     2300002: Desk_001
     2300004: Desk_002
@@ -91,6 +93,7 @@ ModelImporter:
     2300050: long_drawer_left
     2300052: long_drawer_right
     2300054: long_drawer_rear
+    2300056: main_shelf
     3300000: Desk
     3300002: Desk_001
     3300004: Desk_002
@@ -119,6 +122,7 @@ ModelImporter:
     3300050: long_drawer_left
     3300052: long_drawer_right
     3300054: long_drawer_rear
+    3300056: main_shelf
     4300000: Desk_005
     4300002: Desk_004
     4300004: Desk_003
@@ -147,6 +151,7 @@ ModelImporter:
     4300050: long_drawer_front
     4300052: long_drawer_bottom
     4300054: long_drawer_rear
+    4300056: main_shelf
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -156,6 +161,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -163,9 +169,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -189,20 +195,19 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
