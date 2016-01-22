@@ -338,8 +338,8 @@ public class vp_MovingPlatform : MonoBehaviour
 			m_Audio.PlayOneShot(SoundStop);
 
 		// snap in place
-		m_Transform.position = m_CurrentTargetPosition;
-		m_Transform.eulerAngles = m_CurrentTargetAngle;
+		//m_Transform.position = m_CurrentTargetPosition;
+		//m_Transform.eulerAngles = m_CurrentTargetAngle;
 		m_Moving = false;
 
 		// if we are returning home and have cooldown, disable platform for a while
@@ -355,7 +355,8 @@ public class vp_MovingPlatform : MonoBehaviour
 	/// </summary>
 	protected void UpdateMovement()
 	{
-
+		if (!m_Moving)
+			return;
 		if (m_Waypoints.Count < 2)
 			return;
 
