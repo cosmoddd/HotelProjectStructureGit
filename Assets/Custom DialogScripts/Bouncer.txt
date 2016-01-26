@@ -1,6 +1,9 @@
 //  dialog of the bouncer
 // 
 BEGIN
-	Bouncer
+	//NO MASK
 No.
+BREAK
+	//HAS MASK
+Yes.  Good mask.  Go ahead.
 END

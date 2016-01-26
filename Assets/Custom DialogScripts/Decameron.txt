@@ -1,0 +1,8 @@
+//Decameron is the big baddie.
+BEGIN
+	Decameron
+Who are you?
+Why are you down here?
+I can spot your outsider scent a mile away.
+Guards!!
+END
