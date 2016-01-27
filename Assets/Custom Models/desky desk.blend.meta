@@ -35,6 +35,7 @@ ModelImporter:
     100054: long_drawer_right
     100056: long_drawer_rear
     100058: main_shelf
+    100060: desk_body
     400000: Desk
     400002: Desk_001
     400004: Desk_002
@@ -65,6 +66,7 @@ ModelImporter:
     400054: long_drawer_right
     400056: long_drawer_rear
     400058: main_shelf
+    400060: desk_body
     2300000: Desk
     2300002: Desk_001
     2300004: Desk_002
@@ -94,6 +96,7 @@ ModelImporter:
     2300052: long_drawer_right
     2300054: long_drawer_rear
     2300056: main_shelf
+    2300058: desk_body
     3300000: Desk
     3300002: Desk_001
     3300004: Desk_002
@@ -123,6 +126,7 @@ ModelImporter:
     3300052: long_drawer_right
     3300054: long_drawer_rear
     3300056: main_shelf
+    3300058: desk_body
     4300000: Desk_005
     4300002: Desk_004
     4300004: Desk_003
@@ -152,6 +156,7 @@ ModelImporter:
     4300052: long_drawer_bottom
     4300054: long_drawer_rear
     4300056: main_shelf
+    4300058: desk_body
     7400000: Default Take
     9500000: //RootNode
   materials:
