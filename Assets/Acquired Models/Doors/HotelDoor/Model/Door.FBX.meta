@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 97fd260d06f2f7745bfc5d05d71f24ee
+timeCreated: 1427913110
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ChamferBox001
+    100002: ChamferBox002
+    100004: ChamferBox003
+    100006: //RootNode
+    100008: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437"
+    100010: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437001"
+    100012: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437002"
+    100014: "Layer:\u043C\u0435"
+    100016: Line001
+    100018: Line002
+    100020: Line003
+    100022: Rectangle002
+    100024: Shape001
+    100026: Shape002
+    100028: Shape003
+    100030: Shape004
+    100032: Shape005
+    100034: Shape006
+    100036: Shape007
+    100038: Shape008
+    100040: Shape009
+    100042: Door
+    100044: Doorhandle1
+    100046: Doorhandle2
+    100048: Hinge1
+    100050: Hinge2
+    100052: Hinge3
+    100054: Jamb
+    100056: Object001
+    100058: Base
+    400000: ChamferBox001
+    400002: ChamferBox002
+    400004: ChamferBox003
+    400006: //RootNode
+    400008: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437"
+    400010: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437001"
+    400012: "Layer:\u0421\u0442\u043E\u043B\u044F\u0440\u043A\u0430 \u0440\u0430\u0437\u0440\u0435\u0437002"
+    400014: "Layer:\u043C\u0435"
+    400016: Line001
+    400018: Line002
+    400020: Line003
+    400022: Rectangle002
+    400024: Shape001
+    400026: Shape002
+    400028: Shape003
+    400030: Shape004
+    400032: Shape005
+    400034: Shape006
+    400036: Shape007
+    400038: Shape008
+    400040: Shape009
+    400042: Door
+    400044: Doorhandle1
+    400046: Doorhandle2
+    400048: Hinge1
+    400050: Hinge2
+    400052: Hinge3
+    400054: Jamb
+    400056: Object001
+    400058: Base
+    2300000: ChamferBox001
+    2300002: ChamferBox002
+    2300004: ChamferBox003
+    2300006: Line001
+    2300008: Rectangle002
+    2300010: Shape008
+    2300012: Shape009
+    2300014: Door
+    2300016: Doorhandle1
+    2300018: Doorhandle2
+    2300020: Hinge1
+    2300022: Hinge2
+    2300024: Hinge3
+    2300026: Jamb
+    2300028: Object001
+    2300030: Base
+    3300000: ChamferBox001
+    3300002: ChamferBox002
+    3300004: ChamferBox003
+    3300006: Line001
+    3300008: Rectangle002
+    3300010: Shape008
+    3300012: Shape009
+    3300014: Door
+    3300016: Doorhandle1
+    3300018: Doorhandle2
+    3300020: Hinge1
+    3300022: Hinge2
+    3300024: Hinge3
+    3300026: Jamb
+    3300028: Object001
+    3300030: Base
+    4300000: Line001
+    4300002: Rectangle002
+    4300004: Shape008
+    4300006: Shape009
+    4300008: ChamferBox001
+    4300010: ChamferBox002
+    4300012: ChamferBox003
+    4300014: Jamb
+    4300016: Door
+    4300018: Doorhandle1
+    4300020: Doorhandle2
+    4300022: Hinge3
+    4300024: Hinge1
+    4300026: Hinge2
+    4300028: Object001
+    4300030: Base
+    6400000: Base
+    6400002: Doorhandle1
+    6400004: Doorhandle2
+    6400006: Jamb
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
