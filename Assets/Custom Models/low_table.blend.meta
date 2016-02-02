@@ -230,6 +230,7 @@ ModelImporter:
     2300140: ShortSides_006
     2300142: tvl_Buffet_000
     2300144: tvl_Console_001
+    2300146: Leg_001
     3300000: Bottom_000
     3300002: Bottom_001
     3300004: Door_000
@@ -303,6 +304,7 @@ ModelImporter:
     3300140: ShortSides_006
     3300142: tvl_Buffet_000
     3300144: tvl_Console_001
+    3300146: Leg_001
     4300000: tvl_Buffet_000
     4300002: ScrewHead_002
     4300004: ScrewHead_001
@@ -376,6 +378,7 @@ ModelImporter:
     4300140: DrawerBoxSide_002
     4300142: Knob_001
     4300144: Bottom_001
+    4300146: Leg_001
     7400000: Default Take
     9500000: //RootNode
   materials:
