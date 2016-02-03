@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: e95bb9266a4b7b54a9acc6c035f4c640
+timeCreated: 1454514756
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm-S-salvini
+    100002: BaseBrazo4_L
+    100004: BaseBrazo4_R
+    100006: BaseBrazo_L
+    100008: BaseBrazo_R
+    100010: BaseCola
+    100012: BaseCuello
+    100014: BasePierna_L
+    100016: BasePierna_R
+    100018: Brazo1_L
+    100020: Brazo1_R
+    100022: Brazo2_L
+    100024: Brazo2_R
+    100026: Cabeza
+    100028: Cola1
+    100030: Cola2
+    100032: Cuello
+    100034: Cuerpo
+    100036: Mano_L
+    100038: Mano_R
+    100040: Pie_L
+    100042: Pie_R
+    100044: PielCuello
+    100046: PielCuello2
+    100048: Pierna1_L
+    100050: Pierna1_R
+    100052: Pierna2_L
+    100054: Pierna2_R
+    100056: Pierna3_L
+    100058: Pierna3_R
+    100060: Raiz
+    100062: //RootNode
+    100064: Tortuga-S-Salvini
+    100066: Tortuga-S-Salvini_MeshPart0
+    100068: Tortuga-S-Salvini_MeshPart1
+    400000: Arm-S-salvini
+    400002: BaseBrazo4_L
+    400004: BaseBrazo4_R
+    400006: BaseBrazo_L
+    400008: BaseBrazo_R
+    400010: BaseCola
+    400012: BaseCuello
+    400014: BasePierna_L
+    400016: BasePierna_R
+    400018: Brazo1_L
+    400020: Brazo1_R
+    400022: Brazo2_L
+    400024: Brazo2_R
+    400026: Cabeza
+    400028: Cola1
+    400030: Cola2
+    400032: Cuello
+    400034: Cuerpo
+    400036: Mano_L
+    400038: Mano_R
+    400040: Pie_L
+    400042: Pie_R
+    400044: PielCuello
+    400046: PielCuello2
+    400048: Pierna1_L
+    400050: Pierna1_R
+    400052: Pierna2_L
+    400054: Pierna2_R
+    400056: Pierna3_L
+    400058: Pierna3_R
+    400060: Raiz
+    400062: //RootNode
+    400064: Tortuga-S-Salvini
+    400066: Tortuga-S-Salvini_MeshPart0
+    400068: Tortuga-S-Salvini_MeshPart1
+    4300000: Tortuga-S-Salvini_MeshPart0
+    4300002: Tortuga-S-Salvini_MeshPart1
+    7400000: Default Take
+    7400002: PoseLib
+    9500000: //RootNode
+    13700000: Tortuga-S-Salvini_MeshPart0
+    13700002: Tortuga-S-Salvini_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
