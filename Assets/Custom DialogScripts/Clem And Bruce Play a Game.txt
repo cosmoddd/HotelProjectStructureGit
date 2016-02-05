@@ -1,22 +1,22 @@
-//  dialog between Clem and Bruce at the opening part of the game.
+ï»¿//  dialog between Clem and Bruce at the opening part of the game.
 //  setting the scene for future dealings
 //  do not feed into the game until "BEGIN"
 BEGIN
 	Bruce
-You’ve cornered me.  
+Youâ€™ve cornered meeeee.
 	Clem
 Indeed I have.  
-You know you didn’t take enough pieces out of the bag when you had the chance.
+You know you didnâ€™t take enough pieces out of the bag when you had the chance.
 	Bruce
 Perhaps not.  I was trying something new.
 	Clem
-And that’s why I play you, Bruce.  Always trying something new. 
+And thatâ€™s why I play you, Bruce.  Always trying something new. 
 	Bruce
 I need a win tonight.  
-Nancy’s sleeping and the kitchen staff aren’t breathing down my neck for once.
+Nancyâ€™s sleeping and the kitchen staff arenâ€™t breathing down my neck for once.
 Let me try something new.  
 	Clem
-I’ve got you back in your corner, though. 
+Iâ€™ve got you back in your corner, though. 
 	Bruce
 Baron Up Left.  Round takes three. 
 And now you're roll the red dice.  
@@ -24,12 +24,12 @@ Come on, Clem, you need to try something new, too, eh?
 	Clem
 My gaming league in the city is a bad influence on me.  
 	Bruce
-You’re becoming predictable.
+Youâ€™re becoming predictable.
 	Clem
 Then I should be easy to beat, no?
 	Bruce
-You’re tempting me to mirror your own strategy and you already know it too well.  
-I’d rather lose trying something new and maybe finally crack you open.
+Youâ€™re tempting me to mirror your own strategy and you already know it too well.  
+Iâ€™d rather lose trying something new and maybe finally crack you open.
 	Clem
 You always try, but you rarely do. 
 	Bruce
@@ -38,15 +38,15 @@ The strength of this game, though, is that its possible.
 Have you had to deal with anyone at the conference?
 	Bruce
 Some developer ordered a turkey sandwich and complained that the bread wasn't toasted.  
-He didn’t even have his pickle.
+He didnâ€™t even have his pickle.
 	Clem
 I read that the vote on Title 3 got delayed again.
 	Bruce
- It’s going to pass.
+ Itâ€™s going to pass.
 	Clem
 Put a certain powder in one of those sandwiches next time.
 	Bruce
-Stop it.  You know I’ve actually thought about doing that to some of these guys.  
+Stop it.  You know Iâ€™ve actually thought about doing that to some of these guys.  
 	Clem
 Yeah.  Me, too, actually.  
 	Bruce
@@ -60,16 +60,16 @@ What's this I hear about you having a wine locker?
 It was Norwood's private wine locker.
 Somebody ought to use it, right?
 	Bruce
-Are you even going to drink what’s in there?
+Are you even going to drink whatâ€™s in there?
 	Clem
 Someday.  With the right person.
 	Bruce
-This right person probably wouldn’t find themselves at the Norwood Hotel, ever.
+This right person probably wouldnâ€™t find themselves at the Norwood Hotel, ever.
 	Clem
 Let me ask you something.
 Do you ever chat with the gals who go to the Holbein?
 	Bruce
-Clem, they’re from a different planet.  
+Clem, theyâ€™re from a different planet.  
 They know who I am and they keep their distance.
 	Clem
 You don't think one of them would want to have the the honor...
@@ -90,10 +90,10 @@ Like the outcome of this game.
 	Bruce
 No, I still have a move to make here.
 	Clem
-Are you noticing something on the board that I’m not?
+Are you noticing something on the board that Iâ€™m not?
 	Bruce
 Maybe, maybe not.  
 	Clem
-Oh, Bruce…
+Oh, Bruceâ€¦
 BREAK
 END

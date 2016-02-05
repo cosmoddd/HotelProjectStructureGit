@@ -1,4 +1,4 @@
-//
+ï»¿//
 	BEGIN
 	//Sandro looks at Dottie
 	//Sandro
@@ -42,7 +42,7 @@ This place?  Ha.
 Can I see a reservation confirmation number?
 	// Reservation False
 Hmmm...
-Unfortunately I can’t give you a room key without a reservation confirmation.
+Unfortunately I canâ€™t give you a room key without a reservation confirmation.
 Our system is antiquated like that.
 	//Sandro
 Protocol is strict due to the ongoing conference.
@@ -100,7 +100,7 @@ What's wrong?
 	//Dottie
 Oh boy, there must be a mistake.  
 Hmmm..  
-21 is Andre’s room.  
+21 is Andreâ€™s room.  
 	//Sandro looks at Dottie
 	//Sandro
 Hasn't Andre been there for, what, 20 years?
@@ -119,10 +119,10 @@ Yeah, the Norwood Suite.
 	//Dottie
 Are you kidding?  Absolutely no way.
 	//Sandro
-But it’s still vacant, right?
+But itâ€™s still vacant, right?
 	//Dottie
-Of course it’s vacant.  
-It’s the Norwood Suite.  
+Of course itâ€™s vacant.  
+Itâ€™s the Norwood Suite.  
 No one is permitted to stay there.
 	//Sandro
 Says Nadia.  
@@ -132,41 +132,41 @@ And last I heard, Nadia still cuts our checks.
 That she does.
 	//Dottie
 And she has said under no uncertain terms that the Norwood Suite is off-limits.  
-Really, I’m sorry, but there is very little I can do here besides offer you a refund.
+Really, Iâ€™m sorry, but there is very little I can do here besides offer you a refund.
 And this case of Blue Moose.
 	//Sandro
 Really, Dottie?
-Do you want to risk another bad write-up in Traveller’s Quarterly.  
+Do you want to risk another bad write-up in Travellerâ€™s Quarterly.  
 	//Dottie looks at Sandro
 	//Dottie
-No, and let’s not discuss that in front of our customers.
+No, and letâ€™s not discuss that in front of our customers.
 	//Sandro
-Technically, our friend here is no longer a customer - you’re turning him away! 
+Technically, our friend here is no longer a customer - youâ€™re turning him away! 
 	//Dottie looks at You
 	//Dottie
 You know what?  Here...
 Take the key.
 But by 8am, you need to be out of there.  
-The Norwood Suite was Peter Norwood’s bedroom when this was still his estate.
+The Norwood Suite was Peter Norwoodâ€™s bedroom when this was still his estate.
 A lot of his old stuff is still in there.  
-Anything out of place and you’ll be on the hook for a fortune you can't begin to fathom.  
+Anything out of place and youâ€™ll be on the hook for a fortune you can't begin to fathom.  
 Consider this an incredibly rare privilege.
 	//Sandro looks at You
 	//Sandro
-I don’t think half our staff have even seen inside the Norwood Suite,
+I donâ€™t think half our staff have even seen inside the Norwood Suite,
 	//Dottie looks at Sandro
 	//Dottie
-And Sandro, you’re responsible for making that room look like no one has been in there in twenty years.
+And Sandro, youâ€™re responsible for making that room look like no one has been in there in twenty years.
 Because that is indeed the case.  Right, Sandro? 
 	//Sandro looks at Dottie
 	//Sandro
-I’m a professional, Dottie.  
+Iâ€™m a professional, Dottie.  
 	//Dottie
 You keep telling yourself that.  
 Report to me in the morning.
 	//Dottie looks at You
 	//Sandro looks at You
-As for you… anything out of place and it goes on your card, got it?  
+As for youâ€¦ anything out of place and it goes on your card, got it?  
 Good.  Goodnight!
 // End of intro dialog.
 // Loop 2
