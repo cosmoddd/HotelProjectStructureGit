@@ -18,6 +18,10 @@ ModelImporter:
     100020: Face
     100022: Leg
     100024: Sides
+    100026: drawer_1
+    100028: drawer_2
+    100030: drawer_3
+    100032: drawer_4
     400000: //RootNode
     400002: Circle_000
     400004: Circle_001
@@ -31,6 +35,10 @@ ModelImporter:
     400020: Face
     400022: Leg
     400024: Sides
+    400026: drawer_1
+    400028: drawer_2
+    400030: drawer_3
+    400032: drawer_4
     2300000: //RootNode
     2300002: Circle_000
     2300004: Circle_001
@@ -44,6 +52,10 @@ ModelImporter:
     2300020: Face
     2300022: Leg
     2300024: Sides
+    2300026: drawer_1
+    2300028: drawer_2
+    2300030: drawer_3
+    2300032: drawer_4
     3300000: //RootNode
     3300002: Circle_000
     3300004: Circle_001
@@ -57,6 +69,10 @@ ModelImporter:
     3300020: Face
     3300022: Leg
     3300024: Sides
+    3300026: drawer_1
+    3300028: drawer_2
+    3300030: drawer_3
+    3300032: drawer_4
     4300000: Circle_001
     4300002: Circle_000
     4300004: side_2
@@ -69,6 +85,10 @@ ModelImporter:
     4300018: Face
     4300020: Leg
     4300022: Sides
+    4300024: drawer_2
+    4300026: drawer_1
+    4300028: drawer_3
+    4300030: drawer_4
     7400000: Default Take
     9500000: //RootNode
   materials:
