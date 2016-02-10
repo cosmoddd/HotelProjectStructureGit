@@ -10,23 +10,73 @@ ModelImporter:
     100004: Cylinder
     100006: NurbsPath
     100008: //RootNode
+    100010: BezierCurve
+    100012: BezierCurve_001
+    100014: Cylinder_001
+    100016: Cylinder_002
+    100018: Cylinder_003
+    100020: Cylinder_004
+    100022: Cylinder_005
+    100024: Plane
+    100026: Plane_001
+    100028: Plane_002
     400000: Cube
     400002: Cube_001
     400004: Cylinder
     400006: NurbsPath
     400008: //RootNode
+    400010: BezierCurve
+    400012: BezierCurve_001
+    400014: Cylinder_001
+    400016: Cylinder_002
+    400018: Cylinder_003
+    400020: Cylinder_004
+    400022: Cylinder_005
+    400024: Plane
+    400026: Plane_001
+    400028: Plane_002
     2300000: Cube
     2300002: Cube_001
     2300004: Cylinder
     2300006: NurbsPath
+    2300008: BezierCurve
+    2300010: BezierCurve_001
+    2300012: Cylinder_001
+    2300014: Cylinder_002
+    2300016: Cylinder_003
+    2300018: Cylinder_004
+    2300020: Cylinder_005
+    2300022: Plane
+    2300024: Plane_001
+    2300026: Plane_002
     3300000: Cube
     3300002: Cube_001
     3300004: Cylinder
     3300006: NurbsPath
+    3300008: BezierCurve
+    3300010: BezierCurve_001
+    3300012: Cylinder_001
+    3300014: Cylinder_002
+    3300016: Cylinder_003
+    3300018: Cylinder_004
+    3300020: Cylinder_005
+    3300022: Plane
+    3300024: Plane_001
+    3300026: Plane_002
     4300000: Cube
     4300002: Cube_001
     4300004: NurbsPath
     4300006: Cylinder
+    4300008: BezierCurve_001
+    4300010: BezierCurve
+    4300012: Cylinder_005
+    4300014: Cylinder_004
+    4300016: Cylinder_003
+    4300018: Cylinder_002
+    4300020: Plane_002
+    4300022: Cylinder_001
+    4300024: Plane_001
+    4300026: Plane
     7400000: Default Take
     9500000: //RootNode
   materials:
