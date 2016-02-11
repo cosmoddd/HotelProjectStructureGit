@@ -962,7 +962,7 @@ namespace Voxeland
 
 			if (land.profile) Profiler.EndSample ();
 			#endregion
-			
+		//	 /*
 			#region Relax 2
 			if (land.profile) Profiler.BeginSample ("Relax 2");
 
@@ -1030,6 +1030,64 @@ namespace Voxeland
 
 			if (land.profile) Profiler.EndSample ();
 			#endregion
+
+    //*/
+
+			//begin edit
+
+			/*
+
+			#region Relax 2
+			if (land.profile) Profiler.BeginSample ("Relax 2");
+
+			for (int r=0; r<10; r++)
+			{
+				Vector3[] relaxed = new Vector3[verts.Length];
+				processed = new bool[verts.Length];
+
+				//corners - smoothing on base level
+				for (int f=0; f<faces.Length; f++)
+				{
+					for (int c=0; c<4; c++)
+					{
+						int cornerNum = faces[f].cornerNums[c];
+						if (processed[cornerNum]) continue;
+						if (boundary[cornerNum]) { relaxed[cornerNum] = verts[cornerNum]; processed[cornerNum] = true; continue; }
+
+						relaxed[cornerNum] = GetSmoothedCorner(f,c,verts); //smoothing as usual
+
+						processed[cornerNum] = true;
+					}
+				}
+
+				for (int f=0; f<faces.Length; f++)
+				{
+					//sides - setting average value between corners
+					for (int s=0; s<4; s++)
+					{
+						int sideNum = faces[f].sideNums[s];
+						if (processed[sideNum]) continue;
+						if (boundary[sideNum]) { relaxed[sideNum] = verts[sideNum]; processed[sideNum] = true; continue; }
+
+						else relaxed[sideNum] = (verts[ faces[f].cornerNums[s] ] + verts[ faces[f].cornerNums[s+1] ] +
+							verts[ faces[f].centerNum ] + verts[ faces[faces[f].neigFaceNums[s] ].centerNum]) / 4f;
+
+						processed[sideNum] = true;
+					}
+
+					//center - between four sides
+					relaxed[ faces[f].centerNum ] = (verts[ faces[f].sideNums.a ] + verts[ faces[f].sideNums.c ] +
+						verts[ faces[f].sideNums.b ] + verts[ faces[f].sideNums.d ]) / 4f;
+				}
+
+				verts = relaxed;
+			}
+
+			if (land.profile) Profiler.EndSample ();
+			#endregion
+   */
+
+			//end edit
 			
 			#region Types
 			if (land.profile) Profiler.BeginSample ("Types");
