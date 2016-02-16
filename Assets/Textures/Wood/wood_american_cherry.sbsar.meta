@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7d6ab0d3d562c5547adba32aab62a3d9
-timeCreated: 1450446636
+timeCreated: 1455656858
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -36,14 +36,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: .519999981
+        scalar[0]: 0.52
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -57,14 +57,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .566999972
+        scalar[0]: 0.567
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .846000016
+        scalar[0]: 0.846
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -78,49 +78,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .384000003
+        scalar[0]: 0.384
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .731999993
+        scalar[0]: 0.732
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .675999999
+        scalar[0]: 0.676
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .536764741
-        scalar[1]: .414713383
-        scalar[2]: .386786371
+        scalar[0]: 0.53676474
+        scalar[1]: 0.41471338
+        scalar[2]: 0.38678637
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .699999988
+        scalar[0]: 0.7
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -210,11 +210,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0222999994
+          second: 0.0223
         data:
           first:
             name: _ZWrite
@@ -222,7 +222,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -259,7 +259,7 @@ SubstanceImporter:
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: cherry barn door_diffuse
       alphaSource: 6
@@ -355,7 +355,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -376,14 +376,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -397,49 +397,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .150000006
+        scalar[0]: 0.15
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .55686301
-        scalar[1]: .266667008
-        scalar[2]: .129411995
+        scalar[0]: 0.556863
+        scalar[1]: 0.266667
+        scalar[2]: 0.129412
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .498039007
+        scalar[0]: 0.498039
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -529,11 +529,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -541,7 +541,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -574,7 +574,7 @@ SubstanceImporter:
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: wood_american_cherry_diffuse
       alphaSource: 6
@@ -660,7 +660,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -681,14 +681,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .846000016
+        scalar[0]: 0.846
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -702,49 +702,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .384000003
+        scalar[0]: 0.384
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .731999993
+        scalar[0]: 0.732
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .675999999
+        scalar[0]: 0.676
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .376470625
-        scalar[1]: .0901960805
-        scalar[2]: .054901965
+        scalar[0]: 0.37647063
+        scalar[1]: 0.09019608
+        scalar[2]: 0.054901965
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .699999988
+        scalar[0]: 0.7
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -834,11 +834,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0222999994
+          second: 0.0223
         data:
           first:
             name: _ZWrite
@@ -846,7 +846,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -883,7 +883,7 @@ SubstanceImporter:
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: cherry double doors_diffuse
       alphaSource: 6
@@ -979,7 +979,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1000,14 +1000,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .528999984
+        scalar[0]: 0.529
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1021,49 +1021,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .528999984
+        scalar[0]: 0.529
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .504000008
+        scalar[0]: 0.504
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .528999984
+        scalar[0]: 0.529
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .694999993
+        scalar[0]: 0.695
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .874000013
+        scalar[0]: 0.874
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .286764681
-        scalar[1]: .109258495
-        scalar[2]: .0253027733
+        scalar[0]: 0.28676468
+        scalar[1]: 0.109258495
+        scalar[2]: 0.025302773
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .889999986
+        scalar[0]: 0.89
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1153,11 +1153,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0449000001
+          second: 0.01
         data:
           first:
             name: _ZWrite
@@ -1165,7 +1165,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -1173,7 +1173,7 @@ SubstanceImporter:
         data:
           first:
             name: _OcclusionStrength
-          second: .688000023
+          second: 0.576
         data:
           first:
             name: _DetailNormalMapScale
@@ -1198,11 +1198,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .875, g: .875, b: .875, a: 1}
+          second: {r: 0.875, g: 0.875, b: 0.875, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -1292,14 +1292,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: .382999986
+        scalar[0]: 0.383
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1313,14 +1313,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .465999991
+        scalar[0]: 0.466
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1334,49 +1334,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .52700001
+        scalar[0]: 0.527
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .245000005
+        scalar[0]: 0.245
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .620999992
+        scalar[0]: 0.621
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .654999971
+        scalar[0]: 0.655
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .470999986
+        scalar[0]: 0.471
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .632352948
-        scalar[1]: .354568183
-        scalar[2]: .223183379
+        scalar[0]: 0.63235295
+        scalar[1]: 0.35456818
+        scalar[2]: 0.22318338
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .769999981
+        scalar[0]: 0.77
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1466,11 +1466,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -1478,11 +1478,11 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
-          second: 3.44000006
+          second: 3.44
         data:
           first:
             name: _OcclusionStrength
@@ -1511,11 +1511,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+          second: {r: 0.8897059, g: 0.8897059, b: 0.8897059, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -1605,7 +1605,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .421999991
+        scalar[0]: 0.422
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1626,14 +1626,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1647,49 +1647,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .504999995
+        scalar[0]: 0.505
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .150000006
+        scalar[0]: 0.15
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .179000005
+        scalar[0]: 0.179
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .232999995
+        scalar[0]: 0.233
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .838235259
-        scalar[1]: .541143656
-        scalar[2]: .400627136
+        scalar[0]: 0.83823526
+        scalar[1]: 0.54114366
+        scalar[2]: 0.40062714
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .850000024
+        scalar[0]: 0.85
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1779,11 +1779,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0445000008
+          second: 0.0445
         data:
           first:
             name: _ZWrite
@@ -1791,7 +1791,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -1799,7 +1799,7 @@ SubstanceImporter:
         data:
           first:
             name: _OcclusionStrength
-          second: .688000023
+          second: 0.688
         data:
           first:
             name: _DetailNormalMapScale
@@ -1832,11 +1832,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .875, g: .875, b: .875, a: 1}
+          second: {r: 0.875, g: 0.875, b: 0.875, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -1936,7 +1936,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1957,14 +1957,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1978,49 +1978,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .150000006
+        scalar[0]: 0.15
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .55686301
-        scalar[1]: .266667008
-        scalar[2]: .129411995
+        scalar[0]: 0.556863
+        scalar[1]: 0.266667
+        scalar[2]: 0.129412
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .498039007
+        scalar[0]: 0.498039
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2110,11 +2110,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -2122,7 +2122,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -2155,7 +2155,7 @@ SubstanceImporter:
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     textureParameters:
     - name: rich cherry_diffuse
       alphaSource: 6
@@ -2241,14 +2241,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: .382999986
+        scalar[0]: 0.383
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2262,14 +2262,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .465999991
+        scalar[0]: 0.466
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .883000016
+        scalar[0]: 0.883
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2283,49 +2283,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .722000003
+        scalar[0]: 0.722
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .592000008
+        scalar[0]: 0.592
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .606999993
+        scalar[0]: 0.607
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .654999971
+        scalar[0]: 0.655
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .658999979
+        scalar[0]: 0.659
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .595588207
-        scalar[1]: .351792485
-        scalar[2]: .236483559
+        scalar[0]: 0.5955882
+        scalar[1]: 0.35179248
+        scalar[2]: 0.23648356
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .769999981
+        scalar[0]: 0.77
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2352,7 +2352,7 @@ SubstanceImporter:
             name: _BumpMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
+            scale: {x: 3, y: 0.2}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -2366,14 +2366,14 @@ SubstanceImporter:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
+            scale: {x: 3, y: 0.2}
             offset: {x: 0, y: 0}
         data:
           first:
             name: _OcclusionMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
+            scale: {x: 3, y: 0.2}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -2401,7 +2401,7 @@ SubstanceImporter:
             name: _SpecGlossMap
           second:
             texture: {instanceID: 0}
-            scale: {x: 3, y: .200000003}
+            scale: {x: 3, y: 0.2}
             offset: {x: 0, y: 0}
       floats:
         data:
@@ -2415,11 +2415,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0353999995
+          second: 0.0354
         data:
           first:
             name: _ZWrite
@@ -2427,11 +2427,11 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
-          second: 3.44000006
+          second: 3.44
         data:
           first:
             name: _OcclusionStrength
@@ -2460,11 +2460,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+          second: {r: 0.8897059, g: 0.8897059, b: 0.8897059, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -2554,7 +2554,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2575,14 +2575,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .629000008
+        scalar[0]: 0.629
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .838999987
+        scalar[0]: 0.839
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2596,49 +2596,49 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .528999984
+        scalar[0]: 0.529
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .81400001
+        scalar[0]: 0.814
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .657999992
+        scalar[0]: 0.658
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: knots
       value:
-        scalar[0]: .855000019
+        scalar[0]: 0.855
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .874000013
+        scalar[0]: 0.874
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .286764681
-        scalar[1]: .109258495
-        scalar[2]: .0253027733
+        scalar[0]: 0.28676468
+        scalar[1]: 0.109258495
+        scalar[2]: 0.025302773
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .850000024
+        scalar[0]: 0.85
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2728,11 +2728,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0449000001
+          second: 0.0449
         data:
           first:
             name: _ZWrite
@@ -2740,7 +2740,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -2748,7 +2748,7 @@ SubstanceImporter:
         data:
           first:
             name: _OcclusionStrength
-          second: .688000023
+          second: 0.688
         data:
           first:
             name: _DetailNormalMapScale
@@ -2773,11 +2773,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .875, g: .875, b: .875, a: 1}
+          second: {r: 0.875, g: 0.875, b: 0.875, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -2867,14 +2867,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: contrast
       value:
-        scalar[0]: .382999986
+        scalar[0]: 0.383
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2888,14 +2888,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: saturation
       value:
-        scalar[0]: .500999987
+        scalar[0]: 0.501
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: normal_intensity
       value:
-        scalar[0]: .883000016
+        scalar[0]: 0.883
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2909,21 +2909,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: ao_spreading
       value:
-        scalar[0]: .80400002
+        scalar[0]: 0.804
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_range
       value:
-        scalar[0]: .128000006
+        scalar[0]: 0.128
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: height_position
       value:
-        scalar[0]: .694000006
+        scalar[0]: 0.694
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2937,21 +2937,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: fibers
       value:
-        scalar[0]: .639999986
+        scalar[0]: 0.64
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: color
       value:
-        scalar[0]: .397058845
-        scalar[1]: .184976354
-        scalar[2]: .0846669674
+        scalar[0]: 0.39705884
+        scalar[1]: 0.18497635
+        scalar[2]: 0.08466697
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: base_roughness
       value:
-        scalar[0]: .889999986
+        scalar[0]: 0.89
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -3041,11 +3041,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0408999994
+          second: 0.0409
         data:
           first:
             name: _ZWrite
@@ -3053,11 +3053,11 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
-          second: 3.44000006
+          second: 3.44
         data:
           first:
             name: _OcclusionStrength
@@ -3086,11 +3086,11 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .889705896, g: .889705896, b: .889705896, a: 1}
+          second: {r: 0.8897059, g: 0.8897059, b: 0.8897059, a: 1}
         data:
           first:
             name: _SpecColor
-          second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+          second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
         data:
           first:
             name: _EmissionColorUI
