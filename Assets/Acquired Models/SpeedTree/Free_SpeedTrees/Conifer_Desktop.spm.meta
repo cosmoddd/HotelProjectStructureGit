@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 14d44276b82be5144b7a941927972567
+guid: 70417e08343ef354db9a6c398faf67bc
+timeCreated: 1452616719
+licenseType: Store
 SpeedTreeImporter:
   serializedVersion: 4
   mainColor: {r: 1, g: 1, b: 1, a: 1}
@@ -35,8 +37,8 @@ SpeedTreeImporter:
     enableHue: 1
     windQuality: 4
   - height: 0.01
-    castShadows: 0
-    receiveShadows: 0
+    castShadows: 1
+    receiveShadows: 1
     useLightProbes: 0
     reflectionProbeUsage: 0
     enableBump: 1
