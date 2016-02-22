@@ -81,6 +81,14 @@ ModelImporter:
     100146: ShortSides_006
     100148: tvl_Buffet_000
     100150: tvl_Console_001
+    100152: Drawer1
+    100154: Drawer2
+    100156: Drawer3
+    100158: Drawer4
+    100160: Drawer5
+    100162: Drawer6
+    100164: Sides
+    100166: Top
     400000: Bottom_000
     400002: Bottom_001
     400004: Door_000
@@ -157,6 +165,14 @@ ModelImporter:
     400146: ShortSides_006
     400148: tvl_Buffet_000
     400150: tvl_Console_001
+    400152: Drawer1
+    400154: Drawer2
+    400156: Drawer3
+    400158: Drawer4
+    400160: Drawer5
+    400162: Drawer6
+    400164: Sides
+    400166: Top
     2300000: Bottom_000
     2300002: Bottom_001
     2300004: Door_000
@@ -231,6 +247,15 @@ ModelImporter:
     2300142: tvl_Buffet_000
     2300144: tvl_Console_001
     2300146: Leg_001
+    2300148: //RootNode
+    2300150: Drawer1
+    2300152: Drawer2
+    2300154: Drawer3
+    2300156: Drawer4
+    2300158: Drawer5
+    2300160: Drawer6
+    2300162: Sides
+    2300164: Top
     3300000: Bottom_000
     3300002: Bottom_001
     3300004: Door_000
@@ -305,6 +330,15 @@ ModelImporter:
     3300142: tvl_Buffet_000
     3300144: tvl_Console_001
     3300146: Leg_001
+    3300148: //RootNode
+    3300150: Drawer1
+    3300152: Drawer2
+    3300154: Drawer3
+    3300156: Drawer4
+    3300158: Drawer5
+    3300160: Drawer6
+    3300162: Sides
+    3300164: Top
     4300000: tvl_Buffet_000
     4300002: ScrewHead_002
     4300004: ScrewHead_001
@@ -379,6 +413,14 @@ ModelImporter:
     4300142: Knob_001
     4300144: Bottom_001
     4300146: Leg_001
+    4300148: Top
+    4300150: Drawer1
+    4300152: Drawer3
+    4300154: Drawer5
+    4300156: Drawer4
+    4300158: Drawer6
+    4300160: Sides
+    4300162: Drawer2
     7400000: Default Take
     9500000: //RootNode
   materials:
