@@ -9,7 +9,7 @@ public class DialogFeeder : MonoBehaviour {
     public string[] lines;
     //public string currentLine;
     public int dialogLocator;
-
+	public bool needsFeed;
 
 	// Use this for initialization
 	void Start () {
