@@ -8,7 +8,7 @@ public class DialogFeeder : MonoBehaviour {
     public PlayMakerFSM thisFSM;
     public string[] lines;
     //public string currentLine;
-    public int dialogLocator;
+    public int dialogLocator = 0;
 	public bool needsFeed;
 
 	// Use this for initialization
