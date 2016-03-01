@@ -481,14 +481,14 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 		
 		// when water or snow is used you can use below defines to specify vertex channel that handles coverage (by default A channel)
 		// NOTE that vertex color channel specified interferes with one of the layer splat control (4th by default), so it' only does make sense using with USE_2_LAYERS_ONLY or USE_3_LAYERS_ONLY defines
-		//#define VERTEX_COLOR_TO_WATER_COVERAGE IN.color.a
+	//	 #define VERTEX_COLOR_TO_WATER_COVERAGE IN.color.a
 		//#define VERTEX_COLOR_TO_SNOW_COVERAGE IN.color.a
 		
 		// direct light atten can be taken from arbitrary vertex color channel (you need to use only 3 or 2 usable layers then)
 		//#define VERTEX_COLOR_AO_DAMP IN.color.a
 		// diffuse color can be also affected by constant color (TERRAIN_VertexColorBlend shader property variable).
 		// Level of multiplicative blending is driven from arbitrary vertex color channel defined below
-		//#define VERTEX_COLOR_BLEND IN.color.a
+	//	  #define VERTEX_COLOR_BLEND IN.color.a
 		
 		// we're texturing in local space
 		#define LOCAL_SPACE_UV
@@ -503,7 +503,7 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 		// forces 3 layers only, X side is first layer, Z side is 2nd, top (floor) + bottom (ceil) is 3rd layer
 //		#define WNORMAL_COVERAGE_X_Z_YposYneg
 		// forces 4 layers X side is first layer, Z side is 2nd, top (floor) is 3rd, bottom (ceil) is 4th layer
-		#define WNORMAL_COVERAGE_X_Z_Ypos_Yneg
+//		#define WNORMAL_COVERAGE_X_Z_Ypos_Yneg
 		// forces 2 layers X side is first layer,  top (floor) + bottom (ceil) is 2nd layer
 //		#define WNORMAL_COVERAGE_XZ_YposYneg
 		
@@ -529,19 +529,19 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 // blending at far distance only
 //#define RTP_DISTANCE_ONLY_UV_BLEND
 // usage of normals from blended layer at far distance
-//#define RTP_NORMALS_FOR_REPLACE_UV_BLEND
+#define RTP_NORMALS_FOR_REPLACE_UV_BLEND
 
 // comment below detail when not needed
-//#define RTP_SUPER_DETAIL
+#define RTP_SUPER_DETAIL
 //#define RTP_SUPER_DTL_MULTS
 // comment below if you don't use snow features
-#define RTP_SNOW
+//#define RTP_SNOW
 // layer number taken as snow normal for near distance (for deep snow cover)
 //#define RTP_SNW_CHOOSEN_LAYER_NORM_3
 // layer number taken as snow color/gloss for near distance
 //#define RTP_SNW_CHOOSEN_LAYER_COLOR_3
 // comment below if you don't use glitter features
-#define RTP_GLITTER
+//#define RTP_GLITTER
 
 // heightblend fake AO
 //#define RTP_HEIGHTBLEND_AO
@@ -559,7 +559,7 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 //#define SHARPEN_HEIGHTBLEND_EDGES_PASS2
 
 // vertical texture
-//#define RTP_VERTICAL_TEXTURE
+#define RTP_VERTICAL_TEXTURE
 
 // we use wet (can't be used with superdetail as globalnormal texture BA channels are shared)
 //#define RTP_WETNESS
@@ -581,11 +581,11 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 //
 
 // comment if you don't need global color map
-//#define COLOR_MAP
+#define COLOR_MAP
 // if not defined global color map will be blended (lerp)
 //#define RTP_COLOR_MAP_BLEND_MULTIPLY
 // advanced colormap blending per layer (used when COLOR_MAP is defined)
-//#define ADV_COLOR_MAP_BLENDING
+#define ADV_COLOR_MAP_BLENDING
 
 //
 // you can use it to control snow coverage from wet mask (special combined texture channel B)
