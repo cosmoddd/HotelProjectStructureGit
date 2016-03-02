@@ -8,15 +8,25 @@ ModelImporter:
     100000: Mball
     100002: Mball_009
     100004: //RootNode
+    100006: Mball_001
+    100008: Mball_014
     400000: Mball
     400002: Mball_009
     400004: //RootNode
+    400006: Mball_001
+    400008: Mball_014
     2300000: Mball
     2300002: Mball_009
+    2300004: Mball_001
+    2300006: Mball_014
     3300000: Mball
     3300002: Mball_009
+    3300004: Mball_001
+    3300006: Mball_014
     4300000: Mball_009
     4300002: Mball
+    4300004: Mball_014
+    4300006: Mball_001
     7400000: Default Take
     9500000: //RootNode
   materials:
