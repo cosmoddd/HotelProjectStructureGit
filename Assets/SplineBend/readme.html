@@ -1,0 +1,39 @@
+<p>This script allows you to bend the object, causing it to take the form of a spline. This flexible and easy to use tool is a great help for level-designer: Now there is no need to adjust roads or fences in a 3d editor.
+With the help of this script you can create objects of any length and complexity just from a repeated straight segment. It allows you to save money on buying expensive specialized road tools, and has far more features - with SplineBend you can bend and tile and any type of extended objects: railways, pipes, wires, tunnels, caves, and many, much more!</p>
+
+<p>Watch <a href="http://vimeo.com/user13913747/splinebend">this video</a> to see how it works.</p>
+
+<div class='vspace'></div><h2>Quick Tutorial</h2>
+<p>1. Put the object you are going to bent on a scene. When creating an object, consider that it will bend and tile in Z axis, and the top must llok in direction Y.</p>
+<p>2. Add SplineBend component (Scripts -> SplineBend). On both sides of the object two primary markers will appear.</p>
+<p>3. Place the markers to the desired trajectory. In order to move the marker - highlight it by clicking and drag it the same way as an ordinary game object. To add a marker - Ctrl-right click on the line between the markers. To delete a marker - just select it and press Delete key.</p>
+<p>4. Set the selected marker type in the inspector:</p>
+<li style='padding-left: 1.5em;'>smooth automatically creates a smooth curve between two adjacent markers;</li>
+<li style='padding-left: 1.5em;'>transform sets the spline direction by transform rotation and smoothness by transform scale;</li>
+<li style='padding-left: 1.5em;'>beizer allows to configure spline manually with handles.</li>
+<li style='padding-left: 1.5em;'>beizer corner handles can lie not only on a straight line, allowing you to create sharp edges;</li>
+<li style='padding-left: 1.5em;'>corner always creates sharp corners without smoothing.</li>
+<p>5. The tiles tab sets the desired tile count - the number of repetitions of this object in length.</p>
+<p>6. If you want to spread the mesh to the terrain or other mesh - for example, a road - in the tab Drop to Terrain enable Drop.</p>
+
+<div class='vspace'></div><h2>Properties</h2>
+<table width='100%'><tr class='tableheader'><td  class='prop'></td><td class='function'></td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Markers</span></td><td  align='left'>Array of markers used by current script instance.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Axis</span></td><td  align='left'>Rotates model to make it tile along chosen axis.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Marker Size</span></td><td  align='left'>Size of displayed marker gizmos.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Equalize</span></td><td  align='left'>Evently distributes mesh verts along spline. Helps to avoid density heterogeneity in beizer spline.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Meshes</span></td><td  align='left'>Object meshes:</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Initial Render Mesh</span></td><td  align='left'>Source of a graphical mesh. If object mesh is missing - assign it as Initial Mesh from file or prefab.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Initial Collision Mesh</span></td><td  align='left'>Source of a collision mesh. If object mesh is missing - assign it as Initial Mesh from file or prefab.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Render Mesh</span></td><td  align='left'>Current MeshFilter mesh.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Collision Mesh</span></td><td  align='left'>Current collider mesh.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Tiles</span></td><td  align='left'>Repeating mesh geometry settings:</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Tile Count</span></td><td  align='left'>Number of times mesh repeated.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Tile Offset</span></td><td  align='left'>Tile length. Distance between same points in different tiles.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Reset Tile Offset</span></td><td  align='left'>Gets tile offset using initial mesh bounding box.</td></tr>
+<tr ><td  align='left'><span class='doc-prop'>Drop to Terrain</span></td><td  align='left'>Places mesh at the surface of terrain or other collision mesh:</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Drop</span></td><td  align='left'>Turns Drop to Terrain on and off.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Seek Distance</span></td><td  align='left'>Drops vert to terrain only if distance to terrain is less than Seek Distance.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Terrain Layer</span></td><td  align='left'>Layer number of terrain object.</td></tr>
+<tr ><td  align='left'><span  style='padding-left: 1.5em;'>Height Offset</span></td><td  align='left'>Raises or lowers vert after Drop to Terrain.</td></tr>
+</table>
