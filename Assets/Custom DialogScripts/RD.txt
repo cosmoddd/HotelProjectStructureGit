@@ -1,0 +1,12 @@
+stuff
+BEGIN
+	RD
+My father always appreciates visitors.
+Even total strangers.
+He was hanging out with Peter Norwood's people, you know.
+The late-night salons, all of that.
+Good times.
+BREAK
+	RD
+Really good times.
+END
