@@ -9,4 +9,14 @@ Absolutely.
 Yeah...
 	Person B
 Fuck me.
+BREAK
+	Person A
+I sensed a disturbance in the turkey.
+	Person B
+Ya don't say...
 END
+INTURRUPT
+	Person A
+You look familiar...
+	Person B
+Yeah I've seen you around before... hmmm...
