@@ -10,25 +10,37 @@ ModelImporter:
     100004: Hair
     100006: Mouth
     100008: //RootNode
+    100010: cone
+    100012: Face_001
     400000: Eeyz
     400002: Face
     400004: Hair
     400006: Mouth
     400008: //RootNode
+    400010: cone
+    400012: Face_001
     2300000: Eeyz
     2300002: Face
     2300004: Hair
     2300006: Mouth
+    2300008: cone
+    2300010: Face_001
     3300000: Eeyz
     3300002: Face
     3300004: Hair
     3300006: Mouth
+    3300008: cone
+    3300010: Face_001
     4300000: Mouth
     4300002: Eeyz
     4300004: Hair
     4300006: Face
-    7400000: Default Take
+    4300008: cone
+    4300010: Face_001
+    7400000: mouth open
+    7400002: mouth close
     9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -49,7 +61,83 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mouth open
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Eeyz
+        weight: 1
+      - path: Face
+        weight: 1
+      - path: Hair
+        weight: 1
+      - path: Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: mouth close
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Eeyz
+        weight: 1
+      - path: Face
+        weight: 1
+      - path: Hair
+        weight: 1
+      - path: Mouth
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -87,7 +175,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

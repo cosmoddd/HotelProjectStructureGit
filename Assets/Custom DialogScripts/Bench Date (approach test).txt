@@ -1,0 +1,12 @@
+//  dialog of the couple
+// 
+BEGIN
+	Person A
+Isn't this a lovely view?
+	Person B
+Absolutely.
+	Person A
+Yeah...
+	Person B
+Fuck me.
+END
