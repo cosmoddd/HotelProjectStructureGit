@@ -1,0 +1,51 @@
+//  dialog of the couple
+// 
+BEGIN
+	Person A
+Line 5
+	Person B
+Line 7
+	Person A
+Line 9
+	Person B
+Line 11
+	Person A
+Line 13
+	Person B
+Line 15
+	Person A
+Line 17
+	Person B
+Line 19
+	Person A
+Line 21
+	Person B
+Line 23
+	Person A
+Line 25
+	Person B
+Line 27
+BREAK
+	Person A
+I sensed a disturbance in the turkey.
+	Person B
+Ya don't say...
+END
+INTURRUPT
+	Person A
+Line _36
+	Person B
+Line _38
+	Person A
+Line _40
+	Person B
+Line _42
+	Person A
+Line _44
+	Person B
+Line _46
+	Person A
+Line _48
+	Person B
+Line _50
+END

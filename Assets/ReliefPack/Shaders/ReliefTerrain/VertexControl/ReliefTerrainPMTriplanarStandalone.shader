@@ -644,13 +644,13 @@ Shader "Relief Pack - Standalone/Parallax Mapped Triplanar" {
 //
 #define UV_BLEND_ROUTE_LAYER_0 UV_BLEND_SRC_0
 #define UV_BLEND_ROUTE_LAYER_1 UV_BLEND_SRC_1
-#define UV_BLEND_ROUTE_LAYER_2 UV_BLEND_SRC_3
-#define UV_BLEND_ROUTE_LAYER_3 UV_BLEND_SRC_2
+#define UV_BLEND_ROUTE_LAYER_2 UV_BLEND_SRC_2
+#define UV_BLEND_ROUTE_LAYER_3 UV_BLEND_SRC_3
 // below routing shiould be exactly the same as above
 #define UV_BLENDMIX_ROUTE_LAYER_0 UV_BLENDMIX_SRC_0
 #define UV_BLENDMIX_ROUTE_LAYER_1 UV_BLENDMIX_SRC_1
-#define UV_BLENDMIX_ROUTE_LAYER_2 UV_BLENDMIX_SRC_3
-#define UV_BLENDMIX_ROUTE_LAYER_3 UV_BLENDMIX_SRC_2
+#define UV_BLENDMIX_ROUTE_LAYER_2 UV_BLENDMIX_SRC_2
+#define UV_BLENDMIX_ROUTE_LAYER_3 UV_BLENDMIX_SRC_3
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // we're using the same base code for standalone shader as for RTP terrain / mesh

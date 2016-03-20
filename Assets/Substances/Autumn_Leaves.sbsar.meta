@@ -8,7 +8,7 @@ labels:
 - ground
 - autumn
 - grass
-timeCreated: 1445613537
+timeCreated: 1458161458
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -44,14 +44,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Colour_Variation
       value:
-        scalar[0]: .773000002
+        scalar[0]: 0.773
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Density
       value:
-        scalar[0]: .344000012
+        scalar[0]: 0.344
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -72,28 +72,28 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Season
       value:
-        scalar[0]: .910000026
+        scalar[0]: 0.91
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Shadow
       value:
-        scalar[0]: .0790000036
+        scalar[0]: 0.079
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Size
       value:
-        scalar[0]: 3.98000002
+        scalar[0]: 3.98
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Size_Variation
       value:
-        scalar[0]: .500999987
+        scalar[0]: 0.501
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -114,14 +114,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Normal
       value:
-        scalar[0]: .523999989
+        scalar[0]: 0.196
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Emboss
       value:
-        scalar[0]: 8.76000023
+        scalar[0]: -1.71
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -135,21 +135,21 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Saturation
       value:
-        scalar[0]: .643000007
+        scalar[0]: 0.643
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Luminosity
       value:
-        scalar[0]: .446999997
+        scalar[0]: 0.447
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Contrast
       value:
-        scalar[0]: -.104999997
+        scalar[0]: -0.105
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -157,7 +157,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 1, y: 1}
+      scale: {x: 15, y: 15}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -239,11 +239,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0698999986
+          second: 0.0699
         data:
           first:
             name: _ZWrite
@@ -255,7 +255,7 @@ SubstanceImporter:
         data:
           first:
             name: _BumpScale
-          second: 4.44000006
+          second: 4.44
         data:
           first:
             name: _OcclusionStrength
@@ -372,14 +372,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Colour_Variation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Density
       value:
-        scalar[0]: .699999988
+        scalar[0]: 0.7
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -393,14 +393,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Light_Angle
       value:
-        scalar[0]: .125
+        scalar[0]: 0.125
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Season
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -442,7 +442,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Normal
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -463,14 +463,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Saturation
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Luminosity
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -567,11 +567,11 @@ SubstanceImporter:
         data:
           first:
             name: _Cutoff
-          second: .5
+          second: 0.5
         data:
           first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -579,7 +579,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale

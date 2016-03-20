@@ -6,10 +6,24 @@ ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: lounge
+    100004: lounge_top
+    100006: lounge_top_support
     400000: //RootNode
+    400002: lounge
+    400004: lounge_top
+    400006: lounge_top_support
     2300000: //RootNode
+    2300002: lounge
+    2300004: lounge_top
+    2300006: lounge_top_support
     3300000: //RootNode
+    3300002: lounge
+    3300004: lounge_top
+    3300006: lounge_top_support
     4300000: lounge
+    4300002: lounge_top_support
+    4300004: lounge_top
     7400000: Default Take
     9500000: //RootNode
   materials:
