@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: c88a575db45f72a48bdb79786862f99c
+timeCreated: 1458537510
+licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
@@ -7,8 +9,8 @@ SubstanceImporter:
     name: Crocodile_Skin
     prototypeName: Crocodile_Skin
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
-    renderQueue: -1
+    shaderKeywords: _ALPHABLEND_ON _NORMALMAP _PARALLAXMAP
+    renderQueue: 3000
     lightmapFlags: 5
     inputs:
     - name: $outputsize
@@ -128,6 +130,13 @@ SubstanceImporter:
             offset: {x: 0, y: 0}
         data:
           first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
@@ -161,30 +170,31 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
       floats:
         data:
           first:
             name: _SrcBlend
-          second: 1
+          second: 5
         data:
           first:
             name: _DstBlend
-          second: 0
+          second: 10
         data:
           first:
             name: _Cutoff
           second: 0.5
         data:
           first:
+            name: _ZWrite
+          second: 0
+        data:
+          first:
             name: _Glossiness
           second: 0.5
+        data:
+          first:
+            name: _Metallic
+          second: 0
         data:
           first:
             name: _BumpScale
@@ -208,15 +218,7 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
-          second: 0
-        data:
-          first:
-            name: _ZWrite
-          second: 1
-        data:
-          first:
-            name: _Metallic
-          second: 0
+          second: 2
       colors:
         data:
           first:
@@ -225,7 +227,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: 1, g: 1, b: 1, a: 1}
+          second: {r: 0.8308824, g: 0.5681769, b: 0.5681769, a: 1}
     textureParameters:
     - name: Crocodile_Skin_Diffuse
       alphaSource: 5

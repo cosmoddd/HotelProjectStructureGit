@@ -2,13 +2,29 @@
 // 
 BEGIN
 	Person A
-Isn't this a lovely view?
+Line 5
 	Person B
-Absolutely.
+Line 7
 	Person A
-Yeah...
+Line 9
 	Person B
-Fuck me.
+Line 11
+	Person A
+Line 13
+	Person B
+Line 15
+	Person A
+Line 17
+	Person B
+Line 19
+	Person A
+Line 21
+	Person B
+Line 23
+	Person A
+Line 25
+	Person B
+Line 27
 BREAK
 	Person A
 I sensed a disturbance in the turkey.
@@ -17,6 +33,19 @@ Ya don't say...
 END
 INTURRUPT
 	Person A
-You look familiar...
+Line _36
 	Person B
-Yeah I've seen you around before... hmmm...
+Line _38
+	Person A
+Line _40
+	Person B
+Line _42
+	Person A
+Line _44
+	Person B
+Line _46
+	Person A
+Line _48
+	Person B
+Line _50
+END
